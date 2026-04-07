@@ -1,0 +1,263 @@
+@import "tailwindcss";
+
+:root {
+  /* Haupt-Raster: etwas luftiger auf sehr grossen Screens */
+  --layout-max: 61.25rem; /* 980px */
+  --layout-narrow: 57.5rem; /* 920px — schmale Lesespalten */
+  --layout-wide: 66.25rem; /* 1060px — breitere Sektionen */
+  /* Markenfarben */
+  --brand: #595e49;
+  --brand-hover: #484c3d;
+  --brand-secondary: #cdd9c7;
+  --brand-complimentary: #4e3b44;
+  --brand-extra: #918a8f;
+  --brand-secondary-soft: color-mix(in srgb, var(--brand-secondary) 32%, transparent);
+  --brand-soft: color-mix(in srgb, var(--brand-secondary) 45%, #ffffff);
+  --brand-muted: color-mix(in srgb, var(--brand) 26%, transparent);
+  /* Apple-ähnliche Neutrals */
+  --paper: #f5f5f7;
+  --paper-2: #ffffff;
+  --ink: #1d1d1f;
+  --ink-muted: #6e6e73;
+  --line: rgba(0, 0, 0, 0.08);
+  --line-strong: rgba(0, 0, 0, 0.12);
+  /* Zweiter dekorativer Akzent (früher Gold) */
+  --gold: var(--brand-extra);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 16px 64px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 1536px) {
+  :root {
+    --layout-max: 65rem; /* 1040px */
+    --layout-narrow: 60.5rem;
+    --layout-wide: 70rem;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-complimentary: var(--brand-complimentary);
+  --color-brand-extra: var(--brand-extra);
+  --color-brand-secondary-soft: var(--brand-secondary-soft);
+  --color-white: #fff;
+  --color-brand-soft: var(--brand-soft);
+  --color-brand-muted: var(--brand-muted);
+  --color-gold: var(--gold);
+  --color-line: var(--line);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: color-mix(in srgb, var(--brand) 14%, transparent);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--brand) 28%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+.texture-grain {
+  position: relative;
+}
+.texture-grain::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Sektions-Kicker: komplementärer Ton */
+.section-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--brand-complimentary);
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 5vw + 0.35rem, 2.875rem);
+  font-weight: 600;
+  letter-spacing: -0.032em;
+  line-height: 1.08;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+@media (min-width: 1536px) {
+  .section-title {
+    font-size: clamp(1.5rem, 4vw + 0.5rem, 3rem);
+  }
+}
+
+@media (max-width: 380px) {
+  .section-eyebrow {
+    font-size: 0.6875rem;
+    letter-spacing: 0.16em;
+  }
+}
+
+/* Lesespalte im Stil apple.com Support / Produkt-Copy */
+.apple-read-column {
+  max-width: 42.5rem;
+}
+.apple-read-column p {
+  margin-bottom: 1.125rem;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--ink-muted);
+}
+.apple-read-column p:last-child {
+  margin-bottom: 0;
+}
+.apple-read-column h2,
+.apple-read-column h3 {
+  color: var(--ink);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.apple-read-column h2 {
+  margin-top: 2.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  line-height: 1.15;
+}
+.apple-read-column h2:first-child {
+  margin-top: 0;
+}
+.apple-read-column h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+.apple-read-column ul {
+  margin: 0.75rem 0 1rem;
+  padding-left: 1.25rem;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+}
+.apple-read-column li {
+  margin-bottom: 0.35rem;
+}
+
+.prose-practice {
+  max-width: 42rem;
+}
+.prose-practice p {
+  margin-bottom: 1rem;
+  line-height: 1.68;
+  font-size: clamp(1rem, 2.8vw, 1.0625rem);
+  color: var(--ink-muted);
+}
+.prose-practice p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-pre {
+  white-space: pre-wrap;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  color: var(--ink-muted);
+}
+
+/* Horizontale Ränder + Safe Area (iPhone Querformat / Notch) */
+.page-gutter {
+  padding-left: max(1rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1rem, env(safe-area-inset-right, 0px));
+}
+
+@media (min-width: 640px) {
+  .page-gutter {
+    padding-left: max(1.5rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1.5rem, env(safe-area-inset-right, 0px));
+  }
+}
+
+@media (min-width: 768px) {
+  .page-gutter {
+    padding-left: max(2rem, env(safe-area-inset-left, 0px));
+    padding-right: max(2rem, env(safe-area-inset-right, 0px));
+  }
+}
+
+/* Premium-Karten */
+.card-apple {
+  border-radius: 1.25rem;
+  background: var(--paper-2);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--line);
+  transition:
+    transform 0.45s cubic-bezier(0.25, 0.1, 0.25, 1),
+    box-shadow 0.45s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-apple:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+}
+
+/* Home — Leistungs-Kacheln: ruhig, ohne starke Farb-Overlays */
+.card-service-home {
+  border-radius: 1.5rem;
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.4s cubic-bezier(0.25, 0.1, 0.25, 1),
+    box-shadow 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .card-service-home:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-apple,
+  .card-service-home {
+    transition: none;
+  }
+
+  .card-apple:hover,
+  .card-service-home:hover {
+    transform: none;
+    box-shadow: var(--shadow);
+  }
+}

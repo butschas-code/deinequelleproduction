@@ -1,0 +1,35 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "[Business Name]",
+  "url": "[Website URL]",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "[Street + No.]",
+    "addressLocality": "[City]",
+    "postalCode": "[Postal Code]",
+    "addressCountry": "[Country]"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "[e.g., 4.8]",
+    "reviewCount": "[e.g., 127]"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Person",
+        "name": "[Reviewer name or initials]"
+      },
+      "datePublished": "[YYYY-MM-DD if present]",
+      "reviewBody": "[Review text]",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "[1-5]",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+  ]
+}
