@@ -8,15 +8,15 @@ const variants: Record<
 > = {
   dawn: {
     className:
-      "bg-[linear-gradient(165deg,#fdfbf7_0%,#f5f0e8_35%,#eef4ef_70%,#f8f6f1_100%)]",
+      "bg-[linear-gradient(165deg,#f2fdf8_0%,#e8f8f0_35%,#fdf5f8_70%,#f8f2f5_100%)]",
   },
   meadow: {
     className:
-      "bg-[linear-gradient(160deg,#f0f4f0_0%,#e8f0ea_40%,#f5f5f7_100%)]",
+      "bg-[linear-gradient(160deg,#edf8f2_0%,#e2f5ec_40%,#f6fdfb_100%)]",
   },
   mist: {
     className:
-      "bg-[linear-gradient(180deg,#f5f5f7_0%,#eef2f0_50%,#faf8f5_100%)]",
+      "bg-[linear-gradient(180deg,#f6fdfb_0%,#eef8f4_50%,#fdf8fa_100%)]",
   },
   warmWhite: {
     className: "bg-[linear-gradient(180deg,#ffffff_0%,#faf8f4_100%)]",
@@ -55,11 +55,11 @@ export function EmotionalSection({
       {showRadial ? (
         <>
           <div
-            className="pointer-events-none absolute -right-[20%] top-0 h-[min(400px,50vh)] w-[min(500px,55vw)] rounded-full bg-[radial-gradient(circle,rgba(78,59,68,0.08),transparent_70%)] blur-2xl"
+            className="pointer-events-none absolute -right-[20%] top-0 h-[min(400px,50vh)] w-[min(500px,55vw)] rounded-full bg-[radial-gradient(circle,rgba(30,110,72,0.07),transparent_70%)] blur-2xl"
             aria-hidden
           />
           <div
-            className="pointer-events-none absolute -left-[15%] bottom-0 h-[min(350px,45vh)] w-[min(450px,50vw)] rounded-full bg-[radial-gradient(circle,rgba(145,138,143,0.1),transparent_68%)] blur-2xl"
+            className="pointer-events-none absolute -left-[15%] bottom-0 h-[min(350px,45vh)] w-[min(450px,50vw)] rounded-full bg-[radial-gradient(circle,rgba(242,213,220,0.18),transparent_68%)] blur-2xl"
             aria-hidden
           />
         </>

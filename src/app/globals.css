@@ -6,16 +6,16 @@
   --layout-narrow: 57.5rem; /* 920px — schmale Lesespalten */
   --layout-wide: 66.25rem; /* 1060px — breitere Sektionen */
   /* Markenfarben */
-  --brand: #595e49;
-  --brand-hover: #484c3d;
-  --brand-secondary: #cdd9c7;
-  --brand-complimentary: #4e3b44;
-  --brand-extra: #918a8f;
+  --brand: #1e6e48;
+  --brand-hover: #186040;
+  --brand-secondary: #f2d5dc;
+  --brand-complimentary: #c0708a;
+  --brand-extra: #d4a843;
   --brand-secondary-soft: color-mix(in srgb, var(--brand-secondary) 32%, transparent);
   --brand-soft: color-mix(in srgb, var(--brand-secondary) 45%, #ffffff);
   --brand-muted: color-mix(in srgb, var(--brand) 26%, transparent);
   /* Apple-ähnliche Neutrals */
-  --paper: #f5f5f7;
+  --paper: #f6fdfb;
   --paper-2: #ffffff;
   --ink: #1d1d1f;
   --ink-muted: #6e6e73;

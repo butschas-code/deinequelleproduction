@@ -5,7 +5,7 @@ type ReviewJson = {
   "@type": "Review";
   author: { "@type": "Person"; name: string };
   datePublished: string;
-  reviewBody: string;
+  reviewBody?: string;
   reviewRating: {
     "@type": "Rating";
     ratingValue: number;
@@ -22,7 +22,7 @@ export function buildLocalBusinessJsonLd(opts: {
     "@type": "Review",
     author: { "@type": "Person", name: r.authorName },
     datePublished: r.datePublished,
-    reviewBody: r.reviewBody,
+    ...(r.reviewBody.trim() ? { reviewBody: r.reviewBody } : {}),
     reviewRating: {
       "@type": "Rating",
       ratingValue: r.reviewRating,

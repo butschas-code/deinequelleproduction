@@ -18,16 +18,16 @@ export function AmbientShell() {
         className="absolute inset-0 opacity-100"
         style={{
           background: `
-            radial-gradient(ellipse 90% 55% at 0% 0%, color-mix(in srgb, #cdd9c7 14%, transparent), transparent 50%),
-            radial-gradient(ellipse 70% 45% at 100% 0%, color-mix(in srgb, #918a8f 6%, transparent), transparent 48%),
-            linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 45%, #f5f5f7 100%)
+            radial-gradient(ellipse 90% 55% at 0% 0%, color-mix(in srgb, #c8eedd 16%, transparent), transparent 50%),
+            radial-gradient(ellipse 70% 45% at 100% 0%, color-mix(in srgb, #f2d5dc 8%, transparent), transparent 48%),
+            linear-gradient(180deg, #f9fefb 0%, #f6fdfb 45%, #f6fdfb 100%)
           `,
         }}
       />
 
       {/* Sehr dezente Flächen — apple.com-ähnliche Ruhe */}
       <motion.div
-        className="absolute -left-[18%] top-[10%] h-[min(420px,48vh)] w-[min(420px,48vw)] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(89,94,73,0.07),transparent_68%)] blur-3xl"
+        className="absolute -left-[18%] top-[10%] h-[min(420px,48vh)] w-[min(420px,48vw)] rounded-full bg-[radial-gradient(circle_at_35%_35%,rgba(30,110,72,0.07),transparent_68%)] blur-3xl"
         animate={
           reduce
             ? undefined
@@ -39,7 +39,7 @@ export function AmbientShell() {
         transition={{ duration: 28, repeat: Infinity, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute -right-[12%] top-[40%] h-[min(380px,42vh)] w-[min(480px,50vw)] rounded-full bg-[radial-gradient(circle_at_65%_40%,rgba(145,138,143,0.09),transparent_70%)] blur-3xl"
+        className="absolute -right-[12%] top-[40%] h-[min(380px,42vh)] w-[min(480px,50vw)] rounded-full bg-[radial-gradient(circle_at_65%_40%,rgba(242,213,220,0.12),transparent_70%)] blur-3xl"
         animate={
           reduce
             ? undefined

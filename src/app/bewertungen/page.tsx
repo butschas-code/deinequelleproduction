@@ -33,6 +33,7 @@ function StarRow({ rating }: { rating: 1 | 2 | 3 | 4 | 5 }) {
 
 export default function BewertungenPage() {
   const reviewsSorted = getReviewsSorted(googleReviews);
+  const reviewsWithText = reviewsSorted.filter((r) => r.reviewBody.trim().length > 0);
   const agg = getAggregateFromReviews(googleReviews);
   const ld = buildLocalBusinessJsonLd({
     reviews: reviewsSorted,
@@ -86,21 +87,7 @@ export default function BewertungenPage() {
             </SectionReveal>
           ) : null}
 
-          <SectionReveal delay={0.08} className="mt-10 md:mt-12">
-            <p className="text-[13px] leading-relaxed text-ink-muted">
-              Datenpflege in{" "}
-              <code className="rounded-md border border-[#ebe3db] bg-white/80 px-2 py-0.5 font-mono text-[12px] text-ink/90">
-                src/data/googleReviews.ts
-              </code>{" "}
-              (oder{" "}
-              <code className="rounded-md border border-[#ebe3db] bg-white/80 px-2 py-0.5 font-mono text-[12px] text-ink/90">
-                npm run reviews:fetch
-              </code>{" "}
-              mit Google Places API) — jede Bewertung erscheint hier mit Name, Datum und Text sowie im JSON-LD.
-            </p>
-          </SectionReveal>
-
-          {reviewsSorted.length === 0 ? (
+          {reviewsWithText.length === 0 ? (
             <SectionReveal delay={0.1} className="mt-12 md:mt-14">
               <article
                 className={`${cardClass} border-dashed text-center`}
@@ -125,7 +112,7 @@ export default function BewertungenPage() {
               className="mt-12 grid list-none gap-8 p-0 sm:grid-cols-2 sm:gap-x-8 sm:gap-y-10 md:mt-16 lg:gap-x-10"
               role="list"
             >
-              {reviewsSorted.map((r, i) => (
+              {reviewsWithText.map((r, i) => (
                 <li
                   key={`${r.authorName}-${r.datePublished}-${i}`}
                   className="h-full"
@@ -139,15 +126,9 @@ export default function BewertungenPage() {
                           {r.reviewRating}/5
                         </span>
                       </div>
-                      {r.reviewBody.trim() ? (
-                        <blockquote className="mt-5 flex-1 text-[15px] leading-[1.65] text-ink-muted md:text-[1.0625rem] md:leading-[1.62]">
-                          <p className="whitespace-pre-line">&ldquo;{r.reviewBody}&rdquo;</p>
-                        </blockquote>
-                      ) : (
-                        <p className="mt-5 flex-1 text-[15px] italic leading-relaxed text-ink-muted/85 md:text-[1.0625rem]">
-                          Kein schriftlicher Kommentar.
-                        </p>
-                      )}
+                      <blockquote className="mt-5 flex-1 text-[15px] leading-[1.65] text-ink-muted md:text-[1.0625rem] md:leading-[1.62]">
+                        <p className="whitespace-pre-line">&ldquo;{r.reviewBody}&rdquo;</p>
+                      </blockquote>
                       <footer className="mt-6 border-t border-[#ebe3db]/90 pt-5">
                         <p className="text-[15px] font-semibold text-ink md:text-[1.0625rem]">{r.authorName}</p>
                         <p className="mt-1.5 text-[13px] text-ink-muted md:text-[14px]">

@@ -18,17 +18,17 @@ export const wpOct2022 = {
   /** Kinesiologie: zweites Zitat-Band (Parallax) */
   kinesiologieQuoteTwoParallax: `${base}/claudia_dimmler_cj_2022-450_klein.jpg`,
   /** Bewegung, Praxisstimmung */
-  sportBewegung: `${base}/DeinQuelle-2284-scaled.jpg`,
+  sportBewegung: `${base}/DeinQuelle-2332-scaled.jpg`,
   /** Sport-Kinesiologie: Bildstapel neben Schwerpunkte */
-  sportSchwerpunkteA: "/images/legacy/hero-slides/DeinQuelle-1587-scaled.jpg",
-  sportSchwerpunkteB: `${base}/claudia_dimmler_cj_2022-167_klein.jpg`,
-  yogaKursraum: `${base}/Kursraum-2-scaled.jpg`,
+  sportSchwerpunkteA: `${base}/DeinQuelle-2143-scaled.jpg`,
+  sportSchwerpunkteB: `${base}/DeinQuelle-0809-scaled.jpg`,
+  yogaKursraum: "/images/new/yoga-raum-claudia-dimmler.jpg",
   /** Yoga-Seite: erstes Zitat-Band (Parallax) */
-  yogaQuoteParallax: `${base}/19.jpeg`,
+  yogaQuoteParallax: "/images/new/yoga-raum-claudia-dimmler.jpg",
   /** Yoga-Seite: zweites Bild neben „Ganzheitlich üben“ */
   yogaGanzheitlichStackB: `${base}/20201008_084811649_iOS-scaled-e1739546943143.jpg`,
   /** Yoga-Seite: Parallax-Hintergrund „Nidra / Beschwerden“ */
-  yogaNidraListeParallax: `${base}/0545afa6-9065-45ef-955c-1da5bc338eff.jpg`,
+  yogaNidraListeParallax: "/images/new/yoga-raum-claudia-dimmler.jpg",
   /** Räume & Atmosphäre */
   praxisStimmungA: `${base}/02.jpeg`,
   praxisStimmungB: `${base}/04.jpeg`,

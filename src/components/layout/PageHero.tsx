@@ -120,12 +120,12 @@ export function PageHero({
             className={
               overlayTint
                 ? "absolute inset-0"
-                : "absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_0%,rgba(255,255,255,0.14),transparent_55%),linear-gradient(168deg,#6a7058_0%,#595e49_42%,#4e3b44_100%)]"
+                : "absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_0%,rgba(255,255,255,0.14),transparent_55%),linear-gradient(168deg,#2a8058_0%,#1e6e48_42%,#c0708a_100%)]"
             }
             style={
               overlayTint
                 ? {
-                    background: `radial-gradient(ellipse 100% 80% at 50% 0%, rgba(255,255,255,0.14), transparent 55%), linear-gradient(168deg, color-mix(in srgb, ${overlayTint} 78%, white) 0%, ${overlayTint} 42%, #4e3b44 100%)`,
+                    background: `radial-gradient(ellipse 100% 80% at 50% 0%, rgba(255,255,255,0.14), transparent 55%), linear-gradient(168deg, color-mix(in srgb, ${overlayTint} 78%, white) 0%, ${overlayTint} 42%, #c0708a 100%)`,
                   }
                 : undefined
             }
@@ -139,8 +139,8 @@ export function PageHero({
               ? "pointer-events-none absolute inset-0"
               : `pointer-events-none absolute inset-0 bg-gradient-to-t to-black/25 ${
                   reduceGreenOverlay
-                    ? "from-[#595e49]/50 via-[#595e49]/26"
-                    : "from-[#595e49] via-[#595e49]/52"
+                    ? "from-[#1e6e48]/50 via-[#1e6e48]/26"
+                    : "from-[#1e6e48] via-[#1e6e48]/52"
                 }`
           }
           style={

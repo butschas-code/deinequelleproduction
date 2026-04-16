@@ -14,12 +14,12 @@ export const heroImages = {
     alt: "Claudia Dimmler — Kinesiologie",
   },
   sportKinesiologie: {
-    src: "/images/legacy/hero-slides/DeinQuelle-0613-scaled.jpg",
+    src: "/images/legacy/wp/2022/10/DeinQuelle-0328-scaled.jpg",
     alt: "Bewegung und Sport — Sport-Kinesiologie, Praxis DEINE QUELLE",
   },
   yoga: {
-    src: "/images/legacy/wp/2022/10/18.jpeg",
-    alt: "Hatha Yoga — Praxis DEINE QUELLE",
+    src: "/images/new/yoga-raum-claudia-dimmler.jpg",
+    alt: "Yogaraum — Praxis DEINE QUELLE",
   },
   ueberMich: {
     src: "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-302_klein.jpg",
