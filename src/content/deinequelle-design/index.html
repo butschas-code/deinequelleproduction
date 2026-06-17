@@ -241,17 +241,19 @@
     }
 
     .nav-links a {
-      font-size: 0.76rem;
-      font-weight: 400;
-      letter-spacing: 0.06em;
+      font-family: var(--f-b);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-      color: var(--text-mid);
+      color: var(--text);
       white-space: nowrap;
+      -webkit-font-smoothing: subpixel-antialiased;
       transition: color 0.28s var(--ease);
     }
 
     .nav-links a:hover {
-      color: var(--text);
+      color: var(--accent-dark);
     }
 
     /* ── CTA (far right) ───────────────────────────────────────── */
@@ -362,8 +364,8 @@
     .mob-link {
       font-family: var(--f-d);
       font-size: clamp(2.8rem, 7vw, 3.8rem);
-      font-weight: 300;
-      color: var(--text-mid);
+      font-weight: 400;
+      color: var(--text);
       opacity: 0;
       transform: translateY(22px);
       transition: color 0.3s, opacity 0.55s var(--ease), transform 0.55s var(--ease);
