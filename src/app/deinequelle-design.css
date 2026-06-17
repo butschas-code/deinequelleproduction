@@ -19,7 +19,7 @@ body:has(.deinequelle-design-page) {
   min-height: 100vh;
 }
 
-.dq-page-enter {
+.dq-page-enter > .deinequelle-design-page {
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   animation: dq-page-enter 0.24s var(--ease) both;
 }
@@ -27,17 +27,15 @@ body:has(.deinequelle-design-page) {
 @keyframes dq-page-enter {
   from {
     opacity: 0;
-    filter: blur(4px);
   }
 
   to {
     opacity: 1;
-    filter: none;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .dq-page-enter {
+  .dq-page-enter > .deinequelle-design-page {
     animation: none;
   }
 }
