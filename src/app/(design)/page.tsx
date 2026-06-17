@@ -23,7 +23,10 @@ function loadDesignBody() {
 
   const bookingAttrs = `href="${site.bookingUrl}" target="_blank" rel="noopener noreferrer"`;
 
+  const ghostAnchor = "__GHOST_KINESIOLOGIE__";
+
   return body
+    .replace('href="#kinesiologie" class="btn-ghost"', `href="${ghostAnchor}" class="btn-ghost"`)
     .replace('href="#" class="nav-logo-link"', 'href="/" class="nav-logo-link"')
     .replace(/images\/Logo\/Deine%20Quelle%20logo%206-2\.png/g, site.logo.src)
     .replace(/href="#kinesiologie"/g, 'href="/leistungen/kinesiologie"')
@@ -39,7 +42,8 @@ function loadDesignBody() {
     .replace(/href="mailto:info@deinequelle.com"/g, `href="mailto:${site.email}"`)
     .replace(/076 413 80 50/g, site.phone)
     .replace(/info@deinequelle.com/g, site.email)
-    .replace('href="#impressum"', 'href="/impressum"');
+    .replace('href="#impressum"', 'href="/impressum"')
+    .replace(`href="${ghostAnchor}" class="btn-ghost"`, 'href="#kinesiologie" class="btn-ghost"');
 }
 
 export default function HomePage() {

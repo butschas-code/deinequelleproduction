@@ -89,8 +89,6 @@
       /* Typography */
       --f-d: 'Cormorant Garamond', Georgia, serif;
       --f-b: 'Jost', system-ui, sans-serif;
-      --display-serif-weight: 300;
-      --display-serif-color: #3a332e;
 
       /* Motion */
       --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -241,19 +239,17 @@
     }
 
     .nav-links a {
-      font-family: var(--f-b);
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.07em;
+      font-size: 0.76rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--text);
+      color: var(--text-mid);
       white-space: nowrap;
-      -webkit-font-smoothing: subpixel-antialiased;
       transition: color 0.28s var(--ease);
     }
 
     .nav-links a:hover {
-      color: var(--accent-dark);
+      color: var(--text);
     }
 
     /* ── CTA (far right) ───────────────────────────────────────── */
@@ -364,8 +360,8 @@
     .mob-link {
       font-family: var(--f-d);
       font-size: clamp(2.8rem, 7vw, 3.8rem);
-      font-weight: 400;
-      color: var(--text);
+      font-weight: 300;
+      color: var(--text-mid);
       opacity: 0;
       transform: translateY(22px);
       transition: color 0.3s, opacity 0.55s var(--ease), transform 0.55s var(--ease);
@@ -418,7 +414,7 @@
 
     .hero-bg img {
       width: 100%;
-      height: 100%;
+      height: 115%;
       object-fit: cover;
       object-position: 60% 28%;
       will-change: transform;
@@ -447,24 +443,18 @@
       max-width: 820px;
     }
 
-    h1.hero-h1,
-    h2.spread-h2 {
-      font-family: var(--f-d);
-      font-weight: var(--display-serif-weight);
-      font-synthesis: none;
-      letter-spacing: 0.004em;
-      color: var(--display-serif-color);
-      text-rendering: auto;
-    }
-
     .hero-h1 {
-      font-size: clamp(3.35rem, 6.1vw, 5.9rem);
-      line-height: 1.03;
+      font-family: var(--f-d);
+      font-size: clamp(3.5rem, 6.5vw, 6.2rem);
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      color: var(--text);
       margin-bottom: 3.2rem;
     }
 
     .hero-h1 em {
-      font-weight: var(--display-serif-weight);
+      font-weight: 300;
       font-style: italic;
       color: var(--sage-dark);
     }
@@ -602,87 +592,65 @@
     }
 
     /* ═══════════════════════════════════════════════════════════════
-   BEGLEITUNG — Wobei ich dich begleite
+   SVC GROUPED ITEMS (Wobei ich dich begleite)
 ═══════════════════════════════════════════════════════════════ */
-    #begleitung {
-      background: var(--beige-warm);
-      padding: var(--section) 0;
-      border-top: 1px solid var(--sand-light);
-    }
-
-    .begl-head {
+    .svc-group {
       display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 6rem;
-      margin-bottom: 8rem;
+      align-items: flex-start;
+      gap: 1.2rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid;
+      transition: padding-left 0.4s var(--ease), opacity 0.4s var(--ease);
     }
 
-    .begl-h2 {
+    .svc-group:first-child {
+      border-top: 1px solid;
+    }
+
+    .svc-group:hover {
+      padding-left: 0.6rem;
+      opacity: 0.85;
+    }
+
+    .sage-bg .svc-group {
+      border-color: var(--sage-mid);
+    }
+
+    .svc-group-num {
       font-family: var(--f-d);
-      font-size: clamp(3rem, 5.2vw, 6.2rem);
-      font-weight: 400;
-      line-height: 1.0;
-      letter-spacing: -0.025em;
-      max-width: 14ch;
-      flex-shrink: 0;
-    }
-
-    .begl-intro {
-      font-size: 1.05rem;
+      font-size: 0.85rem;
       font-weight: 300;
-      color: var(--text-mid);
-      line-height: 1.9;
-      max-width: 50ch;
-      padding-bottom: 0.5rem;
-    }
-
-    .begl-rows {
-      border-top: 1px solid var(--sand);
-    }
-
-    .begl-row {
-      display: grid;
-      grid-template-columns: 4.5rem 24ch 1fr;
-      align-items: baseline;
-      gap: 3.5rem;
-      padding: 4.2rem 0;
-      border-bottom: 1px solid var(--sand);
-      cursor: default;
-      transition: background 0.5s var(--ease);
-    }
-
-    .begl-row:hover {
-      background: rgba(224, 236, 220, 0.38);
-    }
-
-    .begl-num {
-      font-family: var(--f-d);
-      font-size: 0.82rem;
-      font-weight: 300;
-      color: var(--sand);
       letter-spacing: 0.06em;
-      transition: color 0.5s var(--ease);
+      margin-top: 0.35rem;
     }
 
-    .begl-row:hover .begl-num {
+    .sage-bg .svc-group-num {
       color: var(--sage-mid);
     }
 
-    .begl-cat {
-      font-family: var(--f-d);
-      font-size: clamp(1.45rem, 1.9vw, 1.9rem);
-      font-weight: 500;
-      color: var(--text);
-      letter-spacing: -0.012em;
-      line-height: 1.2;
+    .svc-group-content {
+      flex: 1;
     }
 
-    .begl-items {
-      font-size: 1.12rem;
+    .svc-group-title {
+      font-family: var(--f-d);
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: -0.012em;
+      line-height: 1.25;
+      margin-bottom: 0.35rem;
+    }
+
+    .sage-bg .svc-group-title {
+      color: var(--sage-dark);
+    }
+
+    .svc-group-desc {
+      font-family: var(--f-b);
+      font-size: 0.96rem;
       font-weight: 300;
+      line-height: 1.6;
       color: var(--text-mid);
-      line-height: 2.1;
     }
 
     /* ═══════════════════════════════════════════════════════════════
@@ -766,14 +734,27 @@
       padding: 0 5.5rem;
     }
 
+    .spread-tag {
+      display: block;
+      font-family: var(--f-b);
+      font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 1.5rem;
+    }
+
     .spread-h2 {
-      font-size: clamp(2.7rem, 5.6vw, 5.4rem);
-      line-height: 1.03;
+      font-family: var(--f-d);
+      font-size: clamp(2.8rem, 6vw, 5.8rem);
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -0.03em;
       max-width: 18ch;
     }
 
     .spread-h2 em {
-      font-weight: var(--display-serif-weight);
+      font-weight: 300;
       font-style: italic;
     }
 
@@ -1691,22 +1672,7 @@
         padding: 8rem 2.5rem 6.5rem;
       }
 
-      .begl-head {
-        flex-direction: column;
-        gap: 3rem;
-        align-items: flex-start;
-        margin-bottom: 5rem;
-      }
 
-      .begl-row {
-        grid-template-columns: 3.5rem 1fr;
-        gap: 1.5rem;
-      }
-
-      .begl-items {
-        grid-column: 1 / -1;
-        padding-left: 5rem;
-      }
 
       .spread {
         height: 56vw;
@@ -1815,19 +1781,12 @@
         font-size: clamp(3.6rem, 13vw, 6rem);
       }
 
-      .begl-row {
-        grid-template-columns: 1fr;
-        gap: 0.4rem;
-        padding: 2.8rem 0;
+      .svc-group {
+        padding: 1.2rem 0;
       }
 
-      .begl-num {
+      .svc-group-num {
         display: none;
-      }
-
-      .begl-items {
-        padding-left: 0;
-        grid-column: auto;
       }
 
       .spread {
@@ -1866,11 +1825,11 @@
 
   <!-- ── MOBILE OVERLAY ────────────────────────────────────────── -->
   <div id="mob-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
-    <a href="/leistungen/kinesiologie" class="mob-link">Kinesiologie</a>
-    <a href="/leistungen/kinderwunsch" class="mob-link">Kinderwunsch</a>
-    <a href="/leistungen/yoga" class="mob-link">Yoga</a>
-    <a href="/ueber-mich" class="mob-link">Über mich</a>
-    <a href="/kontakt" class="mob-link">Kontakt</a>
+    <a href="#kinesiologie" class="mob-link">Kinesiologie</a>
+    <a href="#kinderwunsch" class="mob-link">Kinderwunsch</a>
+    <a href="#yoga" class="mob-link">Yoga</a>
+    <a href="#claudia" class="mob-link">Über mich</a>
+    <a href="#cta-final" class="mob-link">Termin buchen</a>
   </div>
 
   <!-- ── NAV — Option D: Logo Left · Links Centre · CTA Right ── -->
@@ -1878,18 +1837,18 @@
 
     <!-- Logo (left) — overflows bar on load, shrinks on scroll -->
     <div class="nav-logo-wrap">
-      <a href="#" class="nav-logo-link" aria-label="DeineQuelle">
-        <img src="images/Logo/Deine%20Quelle%20logo%206-2.png" alt="DeineQuelle Logo" class="nav-logo-img"
+      <a href="/" class="nav-logo-link" aria-label="DeineQuelle">
+        <img src="/images/brand/deinequelle-new-logo-09-trans.png" alt="DeineQuelle Logo" class="nav-logo-img"
           fetchpriority="high">
       </a>
     </div>
 
     <!-- Links (centre) -->
     <div class="nav-links">
-      <a href="/leistungen/kinesiologie">Kinesiologie</a>
-      <a href="/leistungen/kinderwunsch">Kinderwunsch</a>
-      <a href="/leistungen/yoga">Yoga</a>
-      <a href="/ueber-mich">Über mich</a>
+      <a href="#kinesiologie">Kinesiologie</a>
+      <a href="#kinderwunsch">Kinderwunsch</a>
+      <a href="#yoga">Yoga</a>
+      <a href="#claudia">Über mich</a>
     </div>
 
     <!-- CTA (far right) -->
@@ -1908,10 +1867,10 @@
   <!-- ══════════════════════════════════════════════════════════════
      HERO
 ══════════════════════════════════════════════════════════════ -->
-  <section id="hero" class="hero-home" style="--hero-object-position: 60% 28%; --hero-object-position-mobile: 68% 20%;">
+  <section id="hero">
     <div class="hero-bg">
       <img id="hero-img" src="images/hero/home-hero-new.jpg"
-        alt="Claudia Dimmler, Kinesiologin und Yogalehrerin in Adligenswil" onerror="this.style.display='none'">
+        alt="Ruhige, lichtdurchflutete Atmosphäre" onerror="this.style.display='none'">
     </div>
     <div class="hero-overlay"></div>
 
@@ -1930,9 +1889,8 @@
           Termin online buchen
           <span class="btn-pi">&#8599;</span>
         </a>
-        <a href="/leistungen/kinesiologie" class="btn-ghost">Angebot entdecken &rarr;</a>
+        <a href="#kinesiologie" class="btn-ghost">Angebot entdecken &rarr;</a>
       </div>
-      <p class="hero-location">Adligenswil bei Luzern</p>
     </div>
 
     <div class="scroll-cue" aria-hidden="true">
@@ -1943,7 +1901,7 @@
   <!-- ── TRUST STRIP ───────────────────────────────────────────── -->
   <div id="trust">
     <div class="trust-row">
-      <span>Dipl. Komplementärtherapeutin Kinesiologie AKT</span>
+      <span>Komplementärtherapeutin Kinesiologie mit eidg. Diplom</span>
       <span class="trust-dot">&bull;</span>
       <span>EMR-zertifiziert</span>
       <span class="trust-dot">&bull;</span>
@@ -1960,10 +1918,10 @@
 ══════════════════════════════════════════════════════════════ -->
   <section id="erklaert">
     <div class="erkl-inner">
-      <blockquote class="erkl-quote">
+      <blockquote class="erkl-quote reveal">
         „Dein Körper zeigt, wenn etwas aus dem Gleichgewicht ist."
       </blockquote>
-      <p class="erkl-body">
+      <p class="erkl-body reveal d2">
         Überbelastung, Dauerstress, unverarbeitete Erlebnisse, unterdrückte Gefühle
         und fordernde Lebensumstände rauben viel Energie. Kinesiologie unterstützt
         durch eine körperzentrierte Behandlung in Kombination mit dem Gespräch. Dies
@@ -1972,58 +1930,7 @@
     </div>
   </section>
 
-  <!-- ══════════════════════════════════════════════════════════════
-     WOBEI ICH BEGLEITE
-══════════════════════════════════════════════════════════════ -->
-  <section id="begleitung">
-    <div class="wrap">
-      <div class="begl-head reveal">
-        <h2 class="begl-h2">Wobei ich<br>dich begleite</h2>
-        <p class="begl-intro">
-          Beschwerden werden als Ausdruck einer verminderten Selbstregulation
-          betrachtet. Durch die ganzheitliche Sichtweise von Körper, Geist und
-          Seele verfolge ich einen umfassenden Therapieansatz, der frühzeitig
-          Krankheiten vorbeugen kann.
-        </p>
-      </div>
-      <div class="begl-rows">
-        <div class="begl-row reveal">
-          <span class="begl-num">01</span>
-          <span class="begl-cat">Körperliche Beschwerden</span>
-          <span class="begl-items">Schmerzen &nbsp;&middot;&nbsp; Muskuläre Verspannungen &nbsp;&middot;&nbsp;
-            Haltungsprobleme &nbsp;&middot;&nbsp; Koordinationsstörungen &nbsp;&middot;&nbsp; Überbelastungen
-            &nbsp;&middot;&nbsp; Verdauungsprobleme</span>
-        </div>
-        <div class="begl-row reveal d1">
-          <span class="begl-num">02</span>
-          <span class="begl-cat">Mentale Schwierigkeiten</span>
-          <span class="begl-items">Konzentrationsschwierigkeiten &nbsp;&middot;&nbsp; Lernschwierigkeiten
-            &nbsp;&middot;&nbsp; Motivationsprobleme &nbsp;&middot;&nbsp; Leistungsabfall &nbsp;&middot;&nbsp;
-            Energiemangel &nbsp;&middot;&nbsp; Blockierte Ressourcen &nbsp;&middot;&nbsp; Selbstwertprobleme</span>
-        </div>
-        <div class="begl-row reveal d2">
-          <span class="begl-num">03</span>
-          <span class="begl-cat">Seelische Belastungen</span>
-          <span class="begl-items">Stressempfindungen &nbsp;&middot;&nbsp; Ängste &nbsp;&middot;&nbsp;
-            Erschöpfungszustände &nbsp;&middot;&nbsp; Burnout &nbsp;&middot;&nbsp; Stimmungsschwankungen
-            &nbsp;&middot;&nbsp; Schlafbeschwerden &nbsp;&middot;&nbsp; Psychosomatik</span>
-        </div>
-        <div class="begl-row reveal d3">
-          <span class="begl-num">04</span>
-          <span class="begl-cat">Lebensphasen</span>
-          <span class="begl-items">Schwangerschaft &nbsp;&middot;&nbsp; Kinderwunsch &nbsp;&middot;&nbsp; Wechseljahre
-            &nbsp;&middot;&nbsp; Pubertät &nbsp;&middot;&nbsp; Trauer &nbsp;&middot;&nbsp; Herausfordernde
-            Entwicklungsschritte</span>
-        </div>
-        <div class="begl-row reveal d4">
-          <span class="begl-num">05</span>
-          <span class="begl-cat">Körper &amp; Sport</span>
-          <span class="begl-items">Regenerationsprobleme &nbsp;&middot;&nbsp; Muskuläre Beschwerden &nbsp;&middot;&nbsp;
-            Begleitung vor und nach Operationen &nbsp;&middot;&nbsp; Zusammenarbeit mit Physiotherapie</span>
-        </div>
-      </div>
-    </div>
-  </section>
+
 
   <!-- ══════════════════════════════════════════════════════════════
      KINESIOLOGIE
@@ -2032,14 +1939,15 @@
 
     <div class="spread sage-spread">
       <div class="spread-inner" data-parallax>
-        <img src="images/Kinesiology/claudia-302-hero-color-matched.jpg"
-          alt="Kinesiologie-Behandlung mit Muskeltest"
-          style="--img-object-position: center 30%; --img-object-position-mobile: center 28%;">
+        <img src="images/Kinesiology/claudia-302.jpg"
+          alt="Kinesiologie-Behandlung mit Muskeltest" style="object-position: center 30%;">
       </div>
       <div class="spread-intro reveal">
+        <span class="spread-tag">Komplementärtherapie</span>
         <h2 class="spread-h2">
-          Komplementärtherapie<br>
-          für Körper, <em>Geist und Seele</em>
+          Kinesiology<br>
+          für Körper, <em>Geist und<br>
+          Seele</em>
         </h2>
       </div>
     </div>
@@ -2071,13 +1979,41 @@
           </div>
 
           <div class="svc-items-col reveal d1">
-            <div class="svc-item">Blockaden lösen</div>
-            <div class="svc-item">Ressourcen stärken</div>
-            <div class="svc-item">Selbstregulation aktivieren</div>
-            <div class="svc-item">Körpereigenes Wissen nutzen</div>
-            <div class="svc-item">Lebensenergie steigern</div>
-            <div class="svc-item">Innere Balance wiederfinden</div>
-            <div class="svc-item">Genesungskompetenz stärken</div>
+            <div class="svc-group">
+              <span class="svc-group-num">01</span>
+              <div class="svc-group-content">
+                <h4 class="svc-group-title">Körperliche Beschwerden</h4>
+                <p class="svc-group-desc">Schmerzen &nbsp;&middot;&nbsp; Muskuläre Verspannungen &nbsp;&middot;&nbsp; Haltungsprobleme &nbsp;&middot;&nbsp; Koordinationsstörungen &nbsp;&middot;&nbsp; Überbelastungen &nbsp;&middot;&nbsp; Verdauungsprobleme</p>
+              </div>
+            </div>
+            <div class="svc-group">
+              <span class="svc-group-num">02</span>
+              <div class="svc-group-content">
+                <h4 class="svc-group-title">Mentale Schwierigkeiten</h4>
+                <p class="svc-group-desc">Konzentrationsschwierigkeiten &nbsp;&middot;&nbsp; Lernschwierigkeiten &nbsp;&middot;&nbsp; Motivationsprobleme &nbsp;&middot;&nbsp; Leistungsabfall &nbsp;&middot;&nbsp; Energiemangel &nbsp;&middot;&nbsp; Blockierte Ressourcen &nbsp;&middot;&nbsp; Selbstwertprobleme</p>
+              </div>
+            </div>
+            <div class="svc-group">
+              <span class="svc-group-num">03</span>
+              <div class="svc-group-content">
+                <h4 class="svc-group-title">Seelische Belastungen</h4>
+                <p class="svc-group-desc">Stressempfindungen &nbsp;&middot;&nbsp; Ängste &nbsp;&middot;&nbsp; Erschöpfungszustände &nbsp;&middot;&nbsp; Burnout &nbsp;&middot;&nbsp; Stimmungsschwankungen &nbsp;&middot;&nbsp; Schlafbeschwerden &nbsp;&middot;&nbsp; Psychosomatik</p>
+              </div>
+            </div>
+            <div class="svc-group">
+              <span class="svc-group-num">04</span>
+              <div class="svc-group-content">
+                <h4 class="svc-group-title">Lebensphasen</h4>
+                <p class="svc-group-desc">Schwangerschaft &nbsp;&middot;&nbsp; Kinderwunsch &nbsp;&middot;&nbsp; Wechseljahre &nbsp;&middot;&nbsp; Pubertät &nbsp;&middot;&nbsp; Trauer &nbsp;&middot;&nbsp; Herausfordernde Entwicklungsschritte</p>
+              </div>
+            </div>
+            <div class="svc-group">
+              <span class="svc-group-num">05</span>
+              <div class="svc-group-content">
+                <h4 class="svc-group-title">Körper &amp; Sport</h4>
+                <p class="svc-group-desc">Regenerationsprobleme &nbsp;&middot;&nbsp; Muskuläre Beschwerden &nbsp;&middot;&nbsp; Begleitung vor und nach Operationen &nbsp;&middot;&nbsp; Zusammenarbeit mit Physiotherapie</p>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -2092,8 +2028,8 @@
 
     <div class="spread wine-spread">
       <div class="spread-inner" data-parallax>
-        <img src="images/layout%20images/pregnant.png" alt="Einfühlsame Begleitung auf dem Weg zum Wunschkind"
-          style="--img-object-position: center 40%; --img-object-position-mobile: center 35%;">
+        <img src="images/layout images/pregnant.png" alt="Einfühlsame Begleitung auf dem Weg zum Wunschkind"
+          style="object-position: center 40%;">
       </div>
       <div class="spread-intro reveal">
         <h2 class="spread-h2">
@@ -2149,7 +2085,7 @@
     <div class="spread warm-spread">
       <div class="spread-inner" data-parallax>
         <img src="images/yoga/yoga-raum-claudia-dimmler.jpg" alt="Yoga Studio DeineQuelle Adligenswil"
-          style="--img-object-position: center center;">
+          style="object-position: center center;">
       </div>
       <div class="spread-intro reveal">
         <h2 class="spread-h2">
@@ -2202,8 +2138,7 @@
     <div class="spread light-spread">
       <div class="spread-inner" data-parallax>
         <img src="images/Claudia/claudia_dimmler_3.jpg"
-          alt="Claudia Dimmler, Kinesiologin und Yogalehrerin in Adligenswil"
-          style="--img-object-position: center 20%; --img-object-position-mobile: center 12%;"
+          alt="Claudia Dimmler, Kinesiologin und Yogalehrerin in Adligenswil" style="object-position: center 20%;"
           onerror="this.src='images/Claudia/claudia-dimmler-Kinesiologie-Adligenswil.jpg'">
       </div>
       <div class="spread-intro reveal">
@@ -2343,7 +2278,7 @@
       <div class="footer-grid">
         <!-- Col 1: Brand & Partner Logos -->
         <div class="footer-col brand-col">
-          <img src="images/Logo/Deine%20Quelle%20logo%206-2.png" alt="DeineQuelle Logo" class="footer-logo">
+          <img src="/images/brand/deinequelle-new-logo-09-trans.png" alt="DeineQuelle Logo" class="footer-logo">
           <p class="footer-desc">Ganzheitliche Begleitung mit Kinesiologie und Yoga für Körper, Geist und Seele.</p>
           <div class="footer-partner-logos">
             <img src="images/other/emr_zertifiziert_gs.png" alt="EMR zertifiziert" class="partner-logo">
@@ -2354,11 +2289,11 @@
         <div class="footer-col links-col">
           <h4>Navigation</h4>
           <ul>
-            <li><a href="/leistungen/kinesiologie">Kinesiologie</a></li>
-            <li><a href="/leistungen/kinderwunsch">Kinderwunsch</a></li>
-            <li><a href="/leistungen/yoga">Yoga</a></li>
-            <li><a href="/ueber-mich">Über mich</a></li>
-            <li><a href="/kontakt">Kontakt</a></li>
+            <li><a href="#kinesiologie">Kinesiologie</a></li>
+            <li><a href="#kinderwunsch">Kinderwunsch</a></li>
+            <li><a href="#yoga">Yoga</a></li>
+            <li><a href="#claudia">Über mich</a></li>
+            <li><a href="#cta-final">Termin buchen</a></li>
           </ul>
         </div>
         <!-- Col 3: Address & Contact -->
@@ -2388,12 +2323,8 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2026 DeineQuelle &middot; Claudia Dimmler, Adligenswil. Alle Rechte vorbehalten.</p>
-        <p>
-          <a href="/impressum">Impressum</a> ·
-          <a href="/datenschutz">Datenschutz</a> ·
-          <a href="/agb">AGB</a>
-        </p>
+        <p>&copy; 2025 DeineQuelle &middot; Claudia Dimmler, Adligenswil. Alle Rechte vorbehalten.</p>
+        <p><a href="/impressum">Impressum &amp; Datenschutz</a></p>
       </div>
     </div>
   </footer>

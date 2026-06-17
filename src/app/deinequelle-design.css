@@ -12,8 +12,6 @@ body:has(.deinequelle-design-page) > [role="region"][aria-label="Cookie- und Dat
 body:has(.deinequelle-design-page) {
   background: #FAF7F2;
   font-family: var(--font-body), system-ui, sans-serif;
-  -webkit-font-smoothing: subpixel-antialiased;
-  -moz-osx-font-smoothing: auto;
 }
 
 .deinequelle-design-page {
@@ -275,8 +273,8 @@ body:has(.deinequelle-design-page) {
       --sand-light: #EAE2D4;
 
       --text: #1C1410;
-      --text-mid: #564839;
-      --text-light: #8A7A6A;
+      --text-mid: #6A5948;
+      --text-light: #A09080;
 
       --accent: #7B6347;
       --accent-dark: #574430;
@@ -300,8 +298,6 @@ body:has(.deinequelle-design-page) {
       /* Typography */
       --f-d: var(--font-display), 'Cormorant Garamond', Georgia, serif;
       --f-b: var(--font-body), 'Jost', system-ui, sans-serif;
-      --display-serif-weight: 400;
-      --display-serif-color: #3a332e;
 
       /* Motion */
       --ease: cubic-bezier(0.16, 1, 0.3, 1);
@@ -356,20 +352,13 @@ body:has(.deinequelle-design-page) {
 ═══════════════════════════════════════════════════════════════ */
     .deinequelle-design-page {
       font-family: var(--f-b);
-      font-weight: 400;
+      font-weight: 300;
       font-size: 1.05rem;
       line-height: 1.9;
       color: var(--text);
       background: var(--beige);
-      -webkit-font-smoothing: subpixel-antialiased;
-      -moz-osx-font-smoothing: auto;
+      -webkit-font-smoothing: antialiased;
       overflow-x: clip;
-    }
-
-    .deinequelle-design-page :where(p, li, .svc-body, .erkl-body, .hero-sub, .claudia-right p, .schritt p) {
-      font-family: var(--f-b);
-      font-weight: 400;
-      text-rendering: geometricPrecision;
     }
 
     .deinequelle-design-page .wrap {
@@ -423,7 +412,7 @@ body:has(.deinequelle-design-page) {
       align-items: center;
       align-self: flex-start;
       height: 130px;
-      margin-top: 0;
+      margin-top: 15px;
       transition:
         height 0.55s cubic-bezier(0.16, 1, 0.3, 1),
         margin-top 0.55s cubic-bezier(0.16, 1, 0.3, 1);
@@ -571,8 +560,8 @@ body:has(.deinequelle-design-page) {
     .deinequelle-design-page .mob-link {
       font-family: var(--f-d);
       font-size: clamp(2.8rem, 7vw, 3.8rem);
-      font-weight: 400;
-      color: var(--text);
+      font-weight: 300;
+      color: var(--text-mid);
       opacity: 0;
       transform: translateY(22px);
       transition: color 0.3s, opacity 0.55s var(--ease), transform 0.55s var(--ease);
@@ -678,38 +667,61 @@ body:has(.deinequelle-design-page) {
 
     .deinequelle-design-page .nav-links a {
       font-family: var(--f-b);
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.07em;
+      font-size: 0.76rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--text);
+      color: var(--text-mid);
       white-space: nowrap;
       font-synthesis: none;
-      -webkit-font-smoothing: subpixel-antialiased;
       transition: color 0.28s var(--ease);
     }
 
     .deinequelle-design-page .nav-links a:hover {
-      color: var(--accent-dark);
-    }
-
-    .deinequelle-design-page :is(.hero-h1, .spread-h2, .erkl-quote) {
-      font-weight: var(--display-serif-weight);
-      letter-spacing: 0.004em;
-      color: var(--display-serif-color);
-      text-rendering: auto;
+      color: var(--text);
     }
 
     .deinequelle-design-page .hero-h1 {
-      font-size: clamp(3.35rem, 6.1vw, 5.9rem);
-      line-height: 1.03;
+      font-family: var(--f-d);
+      font-size: clamp(3.5rem, 6.5vw, 6.2rem);
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      color: var(--text);
       margin-bottom: 3.2rem;
     }
 
     .deinequelle-design-page .hero-h1 em {
-      font-weight: var(--display-serif-weight);
+      font-weight: 300;
       font-style: italic;
       color: var(--sage-dark);
+    }
+
+    .deinequelle-design-page .spread-h2 {
+      font-family: var(--f-d);
+      font-size: clamp(2.8rem, 6vw, 5.8rem);
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      max-width: 18ch;
+      color: var(--text);
+    }
+
+    .deinequelle-design-page .spread-h2 em {
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .deinequelle-design-page .erkl-quote {
+      font-family: var(--f-d);
+      font-size: clamp(2.6rem, 5.6vw, 6.8rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.18;
+      letter-spacing: -0.022em;
+      max-width: 22ch;
+      margin: 0 auto 5.5rem;
     }
 
     .deinequelle-design-page #hero.hero-em-wine .hero-h1 em {
@@ -883,25 +895,76 @@ body:has(.deinequelle-design-page) {
       text-align: center;
     }
 
-    .deinequelle-design-page .erkl-quote {
-      font-size: clamp(2.6rem, 5.6vw, 6.8rem);
-      font-style: italic;
-      font-weight: var(--display-serif-weight);
-      color: var(--text);
-      line-height: 1.18;
-      letter-spacing: -0.022em;
-      max-width: 22ch;
-      margin: 0 auto 5.5rem;
-    }
-
     .deinequelle-design-page .erkl-body {
       font-family: var(--f-b);
       font-size: 1.08rem;
-      font-weight: 400;
-      color: #3d342c;
+      font-weight: 300;
+      color: var(--text-mid);
       line-height: 1.92;
       max-width: 54ch;
       margin: 0 auto;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   SVC GROUPED ITEMS (Wobei ich dich begleite)
+═══════════════════════════════════════════════════════════════ */
+    .deinequelle-design-page .svc-group {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid;
+      transition: padding-left 0.4s var(--ease), opacity 0.4s var(--ease);
+    }
+
+    .deinequelle-design-page .svc-group:first-child {
+      border-top: 1px solid;
+    }
+
+    .deinequelle-design-page .svc-group:hover {
+      padding-left: 0.6rem;
+      opacity: 0.85;
+    }
+
+    .deinequelle-design-page .sage-bg .svc-group {
+      border-color: var(--sage-mid);
+    }
+
+    .deinequelle-design-page .svc-group-num {
+      font-family: var(--f-d);
+      font-size: 0.85rem;
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      margin-top: 0.35rem;
+    }
+
+    .deinequelle-design-page .sage-bg .svc-group-num {
+      color: var(--sage-mid);
+    }
+
+    .deinequelle-design-page .svc-group-content {
+      flex: 1;
+    }
+
+    .deinequelle-design-page .svc-group-title {
+      font-family: var(--f-d);
+      font-size: 1.35rem;
+      font-weight: 500;
+      letter-spacing: -0.012em;
+      line-height: 1.25;
+      margin-bottom: 0.35rem;
+    }
+
+    .deinequelle-design-page .sage-bg .svc-group-title {
+      color: var(--sage-dark);
+    }
+
+    .deinequelle-design-page .svc-group-desc {
+      font-family: var(--f-b);
+      font-size: 0.96rem;
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--text-mid);
     }
 
     /* ═══════════════════════════════════════════════════════════════
@@ -1408,17 +1471,6 @@ body:has(.deinequelle-design-page) {
       padding: 0 5.5rem;
     }
 
-    .deinequelle-design-page .spread-h2 {
-      font-size: clamp(2.7rem, 5.6vw, 5.4rem);
-      line-height: 1.03;
-      max-width: 18ch;
-    }
-
-    .deinequelle-design-page .spread-h2 em {
-      font-weight: var(--display-serif-weight);
-      font-style: italic;
-    }
-
     .deinequelle-design-page .sage-spread .spread-intro {
       color: var(--sage-dark);
     }
@@ -1573,7 +1625,7 @@ body:has(.deinequelle-design-page) {
     }
 
     .deinequelle-design-page :is(.warm-bg, .beige-bg, .warm-soft-bg, .warm-deep-bg) .svc-body {
-      color: #3d342c;
+      color: var(--text-mid);
     }
 
     .deinequelle-design-page :is(.warm-bg, .beige-bg, .warm-soft-bg, .warm-deep-bg) .svc-items-intro {
@@ -1979,7 +2031,7 @@ body:has(.deinequelle-design-page) {
     .deinequelle-design-page .svc-lead {
       font-family: var(--f-d);
       font-size: clamp(1.45rem, 2.3vw, 1.85rem);
-      font-weight: 400;
+      font-weight: 300;
       font-style: italic;
       font-synthesis: none;
       line-height: 1.6;
@@ -2001,7 +2053,7 @@ body:has(.deinequelle-design-page) {
 
     .deinequelle-design-page .svc-body {
       font-size: 1.12rem;
-      font-weight: 400;
+      font-weight: 300;
       line-height: 1.92;
       margin-bottom: 1.9rem;
       color: var(--text);
@@ -2016,7 +2068,7 @@ body:has(.deinequelle-design-page) {
     }
 
     .deinequelle-design-page .beige-bg .svc-body {
-      color: #3d342c;
+      color: var(--text-mid);
     }
 
     /* Right column: items as Cormorant rows, no markers */
@@ -3009,13 +3061,19 @@ body:has(.deinequelle-design-page) {
    SCROLL REVEAL
 ═══════════════════════════════════════════════════════════════ */
     .deinequelle-design-page .reveal {
-      opacity: 1;
-      transform: none;
+      opacity: 0;
+      transform: translateY(34px);
+      filter: blur(6px);
+      transition:
+        opacity 1s var(--ease),
+        transform 1s var(--ease),
+        filter 1s var(--ease);
     }
 
     .deinequelle-design-page .reveal.vis {
       opacity: 1;
       transform: none;
+      filter: none;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -3408,8 +3466,15 @@ body:has(.deinequelle-design-page) {
       }
 
       .deinequelle-design-page .hero-h1 {
-        font-size: clamp(2.6rem, 11vw, 4.2rem);
-        margin-bottom: 2rem;
+        font-size: clamp(3.6rem, 13vw, 6rem);
+      }
+
+      .deinequelle-design-page .svc-group {
+        padding: 1.2rem 0;
+      }
+
+      .deinequelle-design-page .svc-group-num {
+        display: none;
       }
 
       .deinequelle-design-page .hero-content {
