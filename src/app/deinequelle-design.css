@@ -12,6 +12,8 @@ body:has(.deinequelle-design-page) > [role="region"][aria-label="Cookie- und Dat
 body:has(.deinequelle-design-page) {
   background: #FAF7F2;
   font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .deinequelle-design-page {
@@ -25,10 +27,10 @@ body:has(.deinequelle-design-page) {
 
 .deinequelle-design-page .dq-kicker {
   margin-bottom: 1.4rem;
-  font-family: var(--f-d);
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.14em;
+  font-family: var(--f-b);
+  font-size: 0.76rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--accent);
   font-synthesis: none;
@@ -51,6 +53,13 @@ body:has(.deinequelle-design-page) {
 
 .deinequelle-design-page .dq-legal-prose {
   max-width: 44rem;
+}
+
+.deinequelle-design-page .dq-legal-prose-boxed {
+  margin-top: 1.5rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(221, 209, 188, 0.8);
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .deinequelle-design-page .dq-legal-heading {
@@ -309,7 +318,32 @@ body:has(.deinequelle-design-page) {
 
       color: var(--text);
       font-family: var(--f-b);
+      font-weight: 300;
       font-synthesis: none;
+    }
+
+    /* Reference body copy — Jost 300 across all prose surfaces */
+    .deinequelle-design-page :is(
+      p,
+      li,
+      .svc-body,
+      .erkl-body,
+      .hero-sub,
+      .hero-location,
+      .begl-intro,
+      .begl-items,
+      .svc-feature-body,
+      .svc-group-desc,
+      .claudia-right p,
+      .schritt p,
+      .schritte-foot p,
+      .dq-contact-card p,
+      .footer-desc,
+      .footer-col address,
+      .footer-bottom p
+    ) {
+      font-family: var(--f-b);
+      font-weight: 300;
     }
 
     /* Custom text selection */
@@ -651,7 +685,6 @@ body:has(.deinequelle-design-page) {
       .hero-h1,
       .spread-h2,
       .erkl-quote,
-      .dq-kicker,
       .begl-h2,
       .schritte-h2,
       .cta-h2,
@@ -1471,6 +1504,16 @@ body:has(.deinequelle-design-page) {
       padding: 0 5.5rem;
     }
 
+    .deinequelle-design-page .spread-tag {
+      display: block;
+      font-family: var(--f-b);
+      font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-bottom: 1.5rem;
+    }
+
     .deinequelle-design-page .sage-spread .spread-intro {
       color: var(--sage-dark);
     }
@@ -1629,7 +1672,7 @@ body:has(.deinequelle-design-page) {
     }
 
     .deinequelle-design-page :is(.warm-bg, .beige-bg, .warm-soft-bg, .warm-deep-bg) .svc-items-intro {
-      color: var(--text);
+      color: var(--text-mid);
     }
 
     .deinequelle-design-page :is(.warm-bg, .beige-bg, .warm-soft-bg, .warm-deep-bg) .svc-item {
@@ -1985,9 +2028,9 @@ body:has(.deinequelle-design-page) {
     .deinequelle-design-page .svc-feature-title {
       font-family: var(--f-d);
       font-size: clamp(1.35rem, 1.8vw, 1.55rem);
-      font-weight: 400;
-      letter-spacing: -0.01em;
-      line-height: 1.15;
+      font-weight: 500;
+      letter-spacing: -0.012em;
+      line-height: 1.25;
       color: var(--text);
       margin-bottom: 0.55rem;
     }
@@ -2056,7 +2099,7 @@ body:has(.deinequelle-design-page) {
       font-weight: 300;
       line-height: 1.92;
       margin-bottom: 1.9rem;
-      color: var(--text);
+      color: var(--text-mid);
     }
 
     .deinequelle-design-page .sage-bg .svc-body {
@@ -2079,12 +2122,12 @@ body:has(.deinequelle-design-page) {
     .deinequelle-design-page .svc-items-intro {
       font-family: var(--f-d);
       font-size: clamp(1.2rem, 1.7vw, 1.4rem);
-      font-weight: 400;
+      font-weight: 300;
       font-style: italic;
       line-height: 1.45;
       letter-spacing: -0.008em;
       margin-bottom: 1.2rem;
-      color: var(--text);
+      color: var(--text-mid);
     }
 
     .deinequelle-design-page .sage-bg .svc-items-intro {
@@ -2096,7 +2139,7 @@ body:has(.deinequelle-design-page) {
     }
 
     .deinequelle-design-page .beige-bg .svc-items-intro {
-      color: var(--text);
+      color: var(--text-mid);
     }
 
     .deinequelle-design-page .svc-item {
@@ -3269,7 +3312,7 @@ body:has(.deinequelle-design-page) {
 
       .deinequelle-design-page #hero.hero-home .hero-sub {
         color: var(--text-mid);
-        font-weight: 400;
+        font-weight: 300;
       }
 
       .deinequelle-design-page #hero.hero-home .hero-location {

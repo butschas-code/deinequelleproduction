@@ -12,13 +12,7 @@ type Props = {
   variant?: "editorial" | "boxed";
 };
 
-function LegalBlocks({
-  blocks,
-  variant,
-}: {
-  blocks: string[];
-  variant: "editorial" | "boxed";
-}) {
+function LegalBlocks({ blocks }: { blocks: string[] }) {
   return (
     <>
       {blocks.map((block, index) => {
@@ -32,11 +26,7 @@ function LegalBlocks({
           return (
             <h3
               key={`${block}-${index}`}
-              className={
-                variant === "editorial"
-                  ? "dq-legal-heading reveal"
-                  : "mb-4 mt-8 text-2xl font-medium text-ink first:mt-0"
-              }
+              className="dq-legal-heading reveal"
             >
               {block}
             </h3>
@@ -46,11 +36,7 @@ function LegalBlocks({
         return (
           <p
             key={`${block.slice(0, 40)}-${index}`}
-            className={
-              variant === "editorial"
-                ? "svc-body reveal"
-                : "mb-5 text-[1.05rem] font-[300] leading-[1.9] text-ink-muted last:mb-0"
-            }
+            className="svc-body reveal"
           >
             {block}
           </p>
@@ -108,11 +94,11 @@ export function DesignLegalPage({
 
                 {variant === "editorial" ? (
                   <article className="dq-legal-prose reveal d1">
-                    <LegalBlocks blocks={blocks} variant={variant} />
+                    <LegalBlocks blocks={blocks} />
                   </article>
                 ) : (
-                  <article className="reveal d1 mt-6 border border-black/10 bg-white/35 p-6 sm:p-8">
-                    <LegalBlocks blocks={blocks} variant={variant} />
+                  <article className="dq-legal-prose dq-legal-prose-boxed reveal d1">
+                    <LegalBlocks blocks={blocks} />
                   </article>
                 )}
               </div>
