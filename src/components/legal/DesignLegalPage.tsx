@@ -8,7 +8,57 @@ type Props = {
   subtitle?: string;
   intro?: string;
   textFile: string;
+  /** "editorial" = open prose like service sections; "boxed" = framed legal text block */
+  variant?: "editorial" | "boxed";
 };
+
+function LegalBlocks({
+  blocks,
+  variant,
+}: {
+  blocks: string[];
+  variant: "editorial" | "boxed";
+}) {
+  return (
+    <>
+      {blocks.map((block, index) => {
+        const isHeading =
+          block.length <= 80 &&
+          !/[.!?]/.test(block) &&
+          !/:/.test(block) &&
+          !/^\d/.test(block);
+
+        if (isHeading) {
+          return (
+            <h3
+              key={`${block}-${index}`}
+              className={
+                variant === "editorial"
+                  ? "dq-legal-heading reveal"
+                  : "mb-4 mt-8 text-2xl font-medium text-ink first:mt-0"
+              }
+            >
+              {block}
+            </h3>
+          );
+        }
+
+        return (
+          <p
+            key={`${block.slice(0, 40)}-${index}`}
+            className={
+              variant === "editorial"
+                ? "svc-body reveal"
+                : "mb-5 text-[1.05rem] font-[300] leading-[1.9] text-ink-muted last:mb-0"
+            }
+          >
+            {block}
+          </p>
+        );
+      })}
+    </>
+  );
+}
 
 export function DesignLegalPage({
   eyebrow = "Rechtliches",
@@ -16,6 +66,7 @@ export function DesignLegalPage({
   subtitle,
   intro,
   textFile,
+  variant = "boxed",
 }: Props) {
   const rawText = loadLegalText(textFile);
   const text = rawText
@@ -34,7 +85,9 @@ export function DesignLegalPage({
       <main className="deinequelle-design-page">
         <DesignNav />
 
-        <section className="svc warm-soft-bg">
+        <section
+          className={`svc warm-soft-bg${variant === "editorial" ? " dq-legal-section" : ""}`}
+        >
           <div className="wrap">
             <header className="svc-section-head reveal">
               <p className="dq-kicker">{eyebrow}</p>
@@ -53,28 +106,15 @@ export function DesignLegalPage({
               <div className="svc-prose-block">
                 {intro ? <p className="svc-lead reveal">{intro}</p> : null}
 
-                <article className="reveal d1 mt-6 border border-black/10 bg-white/35 p-6 sm:p-8">
-                  {blocks.map((block, index) => {
-                    const isHeading =
-                      block.length <= 80 &&
-                      !/[.!?]/.test(block) &&
-                      !/:/.test(block) &&
-                      !/^\d/.test(block);
-
-                    return isHeading ? (
-                      <h3 key={`${block}-${index}`} className="mb-4 mt-8 text-2xl font-medium text-ink first:mt-0">
-                        {block}
-                      </h3>
-                    ) : (
-                      <p
-                        key={`${block.slice(0, 40)}-${index}`}
-                        className="mb-5 text-[1.05rem] font-[300] leading-[1.9] text-ink-muted last:mb-0"
-                      >
-                        {block}
-                      </p>
-                    );
-                  })}
-                </article>
+                {variant === "editorial" ? (
+                  <article className="dq-legal-prose reveal d1">
+                    <LegalBlocks blocks={blocks} variant={variant} />
+                  </article>
+                ) : (
+                  <article className="reveal d1 mt-6 border border-black/10 bg-white/35 p-6 sm:p-8">
+                    <LegalBlocks blocks={blocks} variant={variant} />
+                  </article>
+                )}
               </div>
             </div>
           </div>

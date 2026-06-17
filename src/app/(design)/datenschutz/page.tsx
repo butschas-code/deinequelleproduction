@@ -12,7 +12,7 @@ export default function DatenschutzPage() {
       title="Datenschutz"
       subtitle="Datenschutzerklaerung"
       textFile="Datenschutzerklaerung-DSE.txt"
-      intro="Datenschutzerklaerung gemaess verlinktem PDF."
+      variant="editorial"
     />
   );
 }

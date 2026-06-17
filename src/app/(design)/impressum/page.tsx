@@ -11,7 +11,7 @@ export default function ImpressumPage() {
     <DesignLegalPage
       title="Impressum"
       textFile="Impressum-Kine_Yoga.txt"
-      intro="Vollstaendiger Rechtstext entsprechend dem PDF."
+      variant="editorial"
     />
   );
 }

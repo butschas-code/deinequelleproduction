@@ -12,7 +12,7 @@ export default function AgbPage() {
       title="AGB"
       subtitle="Allgemeine Geschaeftsbedingungen"
       textFile="AGB-Kine_Yoga.txt"
-      intro="AGB fuer Yoga und Kinesiologie KT."
+      variant="editorial"
     />
   );
 }

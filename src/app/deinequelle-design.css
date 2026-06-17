@@ -43,6 +43,32 @@ body:has(.deinequelle-design-page) {
   background: var(--beige);
 }
 
+.deinequelle-design-page .dq-legal-section {
+  padding-top: calc(var(--section) + 5.5rem);
+}
+
+.deinequelle-design-page .dq-legal-prose {
+  max-width: 44rem;
+}
+
+.deinequelle-design-page .dq-legal-heading {
+  font-family: var(--f-d);
+  font-size: clamp(1.45rem, 2vw, 1.85rem);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  color: var(--text);
+  margin: 2.6rem 0 1rem;
+  line-height: 1.2;
+}
+
+.deinequelle-design-page .dq-legal-heading:first-child {
+  margin-top: 0;
+}
+
+.deinequelle-design-page .dq-legal-prose .svc-body:last-child {
+  margin-bottom: 0;
+}
+
 .deinequelle-design-page .dq-contact-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(360px, 1fr);
@@ -280,6 +306,8 @@ body:has(.deinequelle-design-page) {
       /* Rhythm */
       --section: clamp(8rem, 13vw, 15rem);
       --section-sm: clamp(5rem, 8vw, 9rem);
+
+      color: var(--text);
     }
 
     /* Custom text selection */
@@ -1510,7 +1538,7 @@ body:has(.deinequelle-design-page) {
     }
 
     .deinequelle-design-page :is(.warm-bg, .beige-bg, .warm-soft-bg, .warm-deep-bg) .svc-body {
-      color: var(--text-mid);
+      color: #4a3f36;
     }
 
     .deinequelle-design-page :is(.warm-bg, .beige-bg, .warm-soft-bg, .warm-deep-bg) .svc-items-intro {
@@ -1937,9 +1965,10 @@ body:has(.deinequelle-design-page) {
 
     .deinequelle-design-page .svc-body {
       font-size: 1.12rem;
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.92;
       margin-bottom: 1.9rem;
+      color: var(--text);
     }
 
     .deinequelle-design-page .sage-bg .svc-body {
@@ -1951,7 +1980,7 @@ body:has(.deinequelle-design-page) {
     }
 
     .deinequelle-design-page .beige-bg .svc-body {
-      color: var(--text-mid);
+      color: #4a3f36;
     }
 
     /* Right column: items as Cormorant rows, no markers */
@@ -2944,19 +2973,16 @@ body:has(.deinequelle-design-page) {
    SCROLL REVEAL
 ═══════════════════════════════════════════════════════════════ */
     .deinequelle-design-page .reveal {
-      opacity: 0;
-      transform: translateY(34px);
-      filter: blur(6px);
+      opacity: 1;
+      transform: translateY(24px);
       transition:
-        opacity 1s var(--ease),
-        transform 1s var(--ease),
-        filter 1s var(--ease);
+        opacity 0.8s var(--ease),
+        transform 0.8s var(--ease);
     }
 
     .deinequelle-design-page .reveal.vis {
       opacity: 1;
       transform: none;
-      filter: none;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -3115,6 +3141,48 @@ body:has(.deinequelle-design-page) {
 
       .deinequelle-design-page .scroll-cue {
         display: none;
+      }
+
+      /* Home hero only: stronger readable text zone on mobile */
+      .deinequelle-design-page #hero.hero-home .hero-overlay {
+        background: linear-gradient(to top,
+            rgba(250, 247, 242, 1) 0%,
+            rgba(250, 247, 242, 0.98) 24%,
+            rgba(250, 247, 242, 0.92) 44%,
+            rgba(250, 247, 242, 0.62) 62%,
+            rgba(250, 247, 242, 0.22) 78%,
+            transparent 92%);
+      }
+
+      .deinequelle-design-page #hero.hero-home .hero-content {
+        width: 100%;
+        max-width: 100%;
+        padding-top: 4.5rem;
+        background: linear-gradient(to top,
+            rgba(250, 247, 242, 1) 0%,
+            rgba(250, 247, 242, 0.98) 38%,
+            rgba(250, 247, 242, 0.82) 72%,
+            rgba(250, 247, 242, 0) 100%);
+      }
+
+      .deinequelle-design-page #hero.hero-home .hero-h1 {
+        color: var(--text);
+        text-shadow:
+          0 0 28px rgba(250, 247, 242, 0.95),
+          0 2px 16px rgba(250, 247, 242, 0.75);
+      }
+
+      .deinequelle-design-page #hero.hero-home .hero-h1 em {
+        color: var(--sage-dark);
+      }
+
+      .deinequelle-design-page #hero.hero-home .hero-sub {
+        color: var(--text-mid);
+        font-weight: 400;
+      }
+
+      .deinequelle-design-page #hero.hero-home .hero-location {
+        color: var(--text-mid);
       }
 
       .deinequelle-design-page .spread-inner {
@@ -3313,6 +3381,14 @@ body:has(.deinequelle-design-page) {
 
       .deinequelle-design-page .hero-content {
         padding: 6.5rem 1.8rem 4.5rem;
+      }
+
+      .deinequelle-design-page #hero.hero-home .hero-content {
+        padding: 3.5rem 1.8rem 4rem;
+      }
+
+      .deinequelle-design-page #hero.hero-home .hero-h1 {
+        font-size: clamp(2.4rem, 10.5vw, 3.6rem);
       }
 
       .deinequelle-design-page .begl-row {

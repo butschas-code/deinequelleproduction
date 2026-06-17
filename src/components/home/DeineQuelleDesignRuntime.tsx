@@ -104,7 +104,7 @@ export function DeineQuelleDesignRuntime() {
 
     const revealFallback = window.setTimeout(() => {
       reveals.forEach((element) => element.classList.add("vis"));
-    }, 1800);
+    }, 400);
 
     return () => {
       window.clearTimeout(revealFallback);

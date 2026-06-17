@@ -481,7 +481,7 @@ function ContentSection({
   const hasFeatures = Boolean(section.features?.length);
   const proseBody =
     section.body.length > 0 ? (
-      <div className={proseColumns ? "svc-prose-columns reveal" : undefined}>
+      <div className={proseColumns ? "svc-prose-columns" : undefined}>
         {section.body.map((paragraph, index) => (
           <p
             key={paragraph}
@@ -542,7 +542,7 @@ function ContentSection({
           <p className="svc-lead svc-cover-lead reveal">{section.lead}</p>
         ) : null}
         {section.body.length > 0 ? (
-          <div className={proseColumns ? "svc-prose-columns reveal d1" : undefined}>
+          <div className={proseColumns ? "svc-prose-columns" : undefined}>
             {section.body.map((paragraph, index) => (
               <p
                 key={paragraph}
