@@ -1900,10 +1900,17 @@
   <!-- ══════════════════════════════════════════════════════════════
      HERO
 ══════════════════════════════════════════════════════════════ -->
-  <section id="hero">
+  <section id="hero" class="hero-home">
     <div class="hero-bg">
-      <img id="hero-img" src="images/hero/home-hero-new.jpg"
-        alt="Ruhige, lichtdurchflutete Atmosphäre" onerror="this.style.display='none'">
+      <picture>
+        <source media="(max-width: 960px)" srcset="/images/hero/home-hero-mobile.jpg" />
+        <img
+          id="hero-img"
+          src="images/hero/home-hero-new.jpg"
+          alt="Ruhige, lichtdurchflutete Atmosphäre"
+          onerror="this.style.display='none'"
+        />
+      </picture>
     </div>
     <div class="hero-overlay"></div>
 
@@ -2061,8 +2068,7 @@
 
     <div class="spread wine-spread">
       <div class="spread-inner" data-parallax>
-        <img src="images/layout images/pregnant.png" alt="Einfühlsame Begleitung auf dem Weg zum Wunschkind"
-          style="object-position: center 40%;">
+        <img src="images/layout images/pregnant.png" alt="Einfühlsame Begleitung auf dem Weg zum Wunschkind">
       </div>
       <div class="spread-intro reveal">
         <h2 class="spread-h2">
@@ -2171,7 +2177,7 @@
     <div class="spread light-spread">
       <div class="spread-inner" data-parallax>
         <img src="images/Claudia/claudia_dimmler_3.jpg"
-          alt="Claudia Dimmler, Kinesiologin und Yogalehrerin in Adligenswil" style="object-position: center 20%;"
+          alt="Claudia Dimmler, Kinesiologin und Yogalehrerin in Adligenswil"
           onerror="this.src='images/Claudia/claudia-dimmler-Kinesiologie-Adligenswil.jpg'">
       </div>
       <div class="spread-intro reveal">
@@ -2356,7 +2362,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2025 DeineQuelle &middot; Claudia Dimmler, Adligenswil. Alle Rechte vorbehalten.</p>
+        <p>&copy; 2026 DeineQuelle &middot; Claudia Dimmler, Adligenswil. Alle Rechte vorbehalten.</p>
         <p><a href="/impressum">Impressum &amp; Datenschutz</a></p>
       </div>
     </div>

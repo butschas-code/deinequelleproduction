@@ -9,7 +9,8 @@ body:has(.deinequelle-design-page) > [role="region"][aria-label="Cookie- und Dat
   display: none;
 }
 
-body:has(.deinequelle-design-page) {
+body:has(.deinequelle-design-page),
+body:has(.deinequelle-design-root) {
   background: #FAF7F2;
   font-family: var(--font-body), system-ui, sans-serif;
   -webkit-font-smoothing: auto;
@@ -17,10 +18,32 @@ body:has(.deinequelle-design-page) {
   text-rendering: geometricPrecision;
 }
 
-html:has(.deinequelle-design-page) {
+html:has(.deinequelle-design-page),
+html:has(.deinequelle-design-root) {
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
   text-rendering: geometricPrecision;
+}
+
+.deinequelle-design-root {
+  position: relative;
+  min-height: 100vh;
+}
+
+.deinequelle-design-chrome {
+  position: relative;
+  z-index: 9998;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.deinequelle-design-chrome #nav,
+.deinequelle-design-chrome #mob-overlay,
+.deinequelle-design-chrome #progress {
+  pointer-events: auto;
 }
 
 .deinequelle-design-page {
@@ -281,8 +304,8 @@ html:has(.deinequelle-design-page) {
     /* ═══════════════════════════════════════════════════════════════
    DESIGN TOKENS
 ═══════════════════════════════════════════════════════════════ */
+    .deinequelle-design-root,
     .deinequelle-design-page {
-      /* Palette */
       --beige: #FAF7F2;
       --beige-warm: #F4EDE3;
       --beige-sand: #EAE0D3;
@@ -334,6 +357,10 @@ html:has(.deinequelle-design-page) {
       /* Rhythm */
       --section: clamp(8rem, 13vw, 15rem);
       --section-sm: clamp(5rem, 8vw, 9rem);
+
+      /* Section display headings (spread, head, split, cover) */
+      --spread-h2-size: clamp(2.8rem, 6vw, 5.8rem);
+      --spread-h2-leading: 0.98;
 
       color: var(--text);
       font-family: var(--f-b);
@@ -410,7 +437,7 @@ html:has(.deinequelle-design-page) {
     /* ═══════════════════════════════════════════════════════════════
    SCROLL PROGRESS
 ═══════════════════════════════════════════════════════════════ */
-    .deinequelle-design-page #progress {
+    .deinequelle-design-chrome #progress {
       position: fixed;
       top: 0;
       left: 0;
@@ -449,7 +476,7 @@ html:has(.deinequelle-design-page) {
 ═══════════════════════════════════════════════════════════════ */
 
     /* Navbar bar itself */
-    .deinequelle-design-page #nav {
+    .deinequelle-design-chrome #nav {
       position: fixed;
       top: 0;
       left: 0;
@@ -460,11 +487,15 @@ html:has(.deinequelle-design-page) {
       align-items: center;
       gap: 3.5rem;
       padding: 0 5.5rem;
-      z-index: 500;
+      z-index: 9998;
       background: transparent;
       border-bottom: 1px solid transparent;
       /* overflow:visible lets the taller logo poke out at the top */
       overflow: visible;
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
       transition:
         background 0.55s cubic-bezier(0.16, 1, 0.3, 1),
         border-color 0.55s cubic-bezier(0.16, 1, 0.3, 1),
@@ -472,7 +503,7 @@ html:has(.deinequelle-design-page) {
         box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .deinequelle-design-page #nav.scrolled {
+    .deinequelle-design-chrome #nav.scrolled {
       background: rgba(250, 247, 242, 0.88);
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
@@ -482,7 +513,7 @@ html:has(.deinequelle-design-page) {
     }
 
     /* ── Logo ──────────────────────────────────────────────────── */
-    .deinequelle-design-page .nav-logo-wrap {
+    .deinequelle-design-chrome .nav-logo-wrap {
       flex-shrink: 0;
       display: flex;
       align-items: center;
@@ -494,12 +525,12 @@ html:has(.deinequelle-design-page) {
         margin-top 0.55s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .deinequelle-design-page .nav-logo-link {
+    .deinequelle-design-chrome .nav-logo-link {
       display: block;
       height: 100%;
     }
 
-    .deinequelle-design-page .nav-logo-img {
+    .deinequelle-design-chrome .nav-logo-img {
       height: 100%;
       width: auto;
       object-fit: contain;
@@ -511,17 +542,17 @@ html:has(.deinequelle-design-page) {
     }
 
     /* Scrolled: logo shrinks to bar height */
-    .deinequelle-design-page #nav.scrolled .nav-logo-wrap {
+    .deinequelle-design-chrome #nav.scrolled .nav-logo-wrap {
       height: 58px;
       margin-top: 0;
     }
 
-    .deinequelle-design-page #nav.scrolled .nav-logo-img {
+    .deinequelle-design-chrome #nav.scrolled .nav-logo-img {
       filter: none;
     }
 
     /* ── Links (centre) ────────────────────────────────────────── */
-    .deinequelle-design-page .nav-links {
+    .deinequelle-design-chrome .nav-links {
       display: flex;
       align-items: center;
       gap: 2.8rem;
@@ -529,7 +560,7 @@ html:has(.deinequelle-design-page) {
     }
 
     /* ── CTA (far right) ───────────────────────────────────────── */
-    .deinequelle-design-page .nav-cta {
+    .deinequelle-design-chrome .nav-cta {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
@@ -552,7 +583,7 @@ html:has(.deinequelle-design-page) {
         box-shadow 0.35s var(--ease);
     }
 
-    .deinequelle-design-page .nav-cta:hover {
+    .deinequelle-design-chrome .nav-cta:hover {
       background: #947858;
       border-color: #947858;
       color: var(--beige);
@@ -560,7 +591,7 @@ html:has(.deinequelle-design-page) {
       box-shadow: 0 4px 12px rgba(148, 120, 88, 0.1);
     }
 
-    .deinequelle-design-page .nav-cta-icon {
+    .deinequelle-design-chrome .nav-cta-icon {
       width: 26px;
       height: 26px;
       background: rgba(28, 20, 16, 0.06);
@@ -571,13 +602,13 @@ html:has(.deinequelle-design-page) {
       transition: transform 0.35s var(--ease), background-color 0.35s var(--ease);
     }
 
-    .deinequelle-design-page .nav-cta:hover .nav-cta-icon {
+    .deinequelle-design-chrome .nav-cta:hover .nav-cta-icon {
       background: rgba(255, 255, 255, 0.18);
       transform: translate(2px, -2px);
     }
 
     /* ── Hamburger (mobile only) ───────────────────────────────── */
-    .deinequelle-design-page .nav-ham {
+    .deinequelle-design-chrome .nav-ham {
       display: none;
       flex-direction: column;
       gap: 5px;
@@ -586,7 +617,7 @@ html:has(.deinequelle-design-page) {
       flex-shrink: 0;
     }
 
-    .deinequelle-design-page .nav-ham span {
+    .deinequelle-design-chrome .nav-ham span {
       display: block;
       width: 22px;
       height: 1.5px;
@@ -595,26 +626,26 @@ html:has(.deinequelle-design-page) {
       transform-origin: center;
     }
 
-    .deinequelle-design-page .nav-ham.open span:nth-child(1) {
+    .deinequelle-design-chrome .nav-ham.open span:nth-child(1) {
       transform: rotate(45deg) translate(4.5px, 4.5px);
     }
 
-    .deinequelle-design-page .nav-ham.open span:nth-child(2) {
+    .deinequelle-design-chrome .nav-ham.open span:nth-child(2) {
       opacity: 0;
       transform: scaleX(0);
     }
 
-    .deinequelle-design-page .nav-ham.open span:nth-child(3) {
+    .deinequelle-design-chrome .nav-ham.open span:nth-child(3) {
       transform: rotate(-45deg) translate(4.5px, -4.5px);
     }
 
     /* ═══════════════════════════════════════════════════════════════
    MOBILE OVERLAY
 ═══════════════════════════════════════════════════════════════ */
-    .deinequelle-design-page #mob-overlay {
+    .deinequelle-design-chrome #mob-overlay {
       position: fixed;
       inset: 0;
-      z-index: 400;
+      z-index: 9997;
       background: rgba(250, 247, 242, 0.97);
       backdrop-filter: blur(28px);
       -webkit-backdrop-filter: blur(28px);
@@ -628,14 +659,14 @@ html:has(.deinequelle-design-page) {
       transition: opacity 0.45s var(--ease);
     }
 
-    .deinequelle-design-page #mob-overlay.open {
+    .deinequelle-design-chrome #mob-overlay.open {
       opacity: 1;
       pointer-events: all;
     }
 
-    .deinequelle-design-page .mob-link {
+    .deinequelle-design-chrome .mob-link {
       font-family: var(--f-d);
-      font-size: clamp(2.8rem, 7vw, 3.8rem);
+      font-size: clamp(1.96rem, 4.9vw, 2.66rem);
       font-weight: 300;
       color: var(--text-mid);
       opacity: 0;
@@ -643,32 +674,32 @@ html:has(.deinequelle-design-page) {
       transition: color 0.3s, opacity 0.55s var(--ease), transform 0.55s var(--ease);
     }
 
-    .deinequelle-design-page #mob-overlay.open .mob-link {
+    .deinequelle-design-chrome #mob-overlay.open .mob-link {
       opacity: 1;
       transform: none;
     }
 
-    .deinequelle-design-page #mob-overlay.open .mob-link:nth-child(1) {
+    .deinequelle-design-chrome #mob-overlay.open .mob-link:nth-child(1) {
       transition-delay: 0.05s;
     }
 
-    .deinequelle-design-page #mob-overlay.open .mob-link:nth-child(2) {
+    .deinequelle-design-chrome #mob-overlay.open .mob-link:nth-child(2) {
       transition-delay: 0.11s;
     }
 
-    .deinequelle-design-page #mob-overlay.open .mob-link:nth-child(3) {
+    .deinequelle-design-chrome #mob-overlay.open .mob-link:nth-child(3) {
       transition-delay: 0.17s;
     }
 
-    .deinequelle-design-page #mob-overlay.open .mob-link:nth-child(4) {
+    .deinequelle-design-chrome #mob-overlay.open .mob-link:nth-child(4) {
       transition-delay: 0.23s;
     }
 
-    .deinequelle-design-page #mob-overlay.open .mob-link:nth-child(5) {
+    .deinequelle-design-chrome #mob-overlay.open .mob-link:nth-child(5) {
       transition-delay: 0.29s;
     }
 
-    .deinequelle-design-page .mob-link:hover {
+    .deinequelle-design-chrome .mob-link:hover {
       color: var(--text);
     }
 
@@ -862,6 +893,12 @@ html:has(.deinequelle-design-page) {
       overflow: hidden;
     }
 
+    .deinequelle-design-page .hero-bg picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
     .deinequelle-design-page .hero-bg img {
       width: 100%;
       height: var(--hero-image-height, 115%);
@@ -919,12 +956,12 @@ html:has(.deinequelle-design-page) {
       font-optical-sizing: auto;
     }
 
-    .deinequelle-design-page .mob-link {
+    .deinequelle-design-chrome .mob-link {
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
 
-    .deinequelle-design-page .nav-links a {
+    .deinequelle-design-chrome .nav-links a {
       font-family: var(--f-b);
       font-size: 0.76rem;
       font-weight: 400;
@@ -937,7 +974,7 @@ html:has(.deinequelle-design-page) {
       transition: color 0.28s var(--ease);
     }
 
-    .deinequelle-design-page .nav-links a:hover {
+    .deinequelle-design-chrome .nav-links a:hover {
       color: var(--text);
     }
 
@@ -959,9 +996,9 @@ html:has(.deinequelle-design-page) {
 
     .deinequelle-design-page .spread-h2 {
       font-family: var(--f-d);
-      font-size: clamp(2.8rem, 6vw, 5.8rem);
+      font-size: var(--spread-h2-size);
       font-weight: 400;
-      line-height: 0.98;
+      line-height: var(--spread-h2-leading);
       letter-spacing: -0.03em;
     }
 
@@ -973,6 +1010,12 @@ html:has(.deinequelle-design-page) {
     .deinequelle-design-page .spread-h2 em {
       font-weight: 300;
       font-style: italic;
+    }
+
+    .deinequelle-design-page .spread-h2.spread-h2-flow {
+      hyphens: none;
+      overflow-wrap: normal;
+      word-break: normal;
     }
 
     .deinequelle-design-page .erkl-quote {
@@ -1509,7 +1552,7 @@ html:has(.deinequelle-design-page) {
       align-items: center;
       gap: 1.5rem;
       width: 100%;
-      padding: clamp(1.75rem, 3vw, 2.35rem) 0;
+      padding: clamp(1.75rem, 3vw, 2.35rem) clamp(1.35rem, 3.5vw, 2rem);
       border: 0;
       background: transparent;
       text-align: left;
@@ -1557,7 +1600,7 @@ html:has(.deinequelle-design-page) {
     }
 
     .deinequelle-design-page .begl-accordion-panel-inner {
-      padding: 0 0 clamp(2.5rem, 4vw, 3.5rem);
+      padding: 0 clamp(1.35rem, 3.5vw, 2rem) clamp(2.5rem, 4vw, 3.5rem);
       max-width: 56rem;
     }
 
@@ -1595,14 +1638,28 @@ html:has(.deinequelle-design-page) {
       bottom: 12%;
     }
 
-    .deinequelle-design-page .spread-compact .spread-h2 {
-      font-size: clamp(2.2rem, 4vw, 4.2rem);
-    }
-
     .deinequelle-design-page .spread-inner {
       position: absolute;
       inset: -13% 0;
       will-change: transform;
+    }
+
+    /* Kinderwunsch spread — belly + hands sit on the right of the frame */
+    .deinequelle-design-page #kinderwunsch .spread-inner {
+      --img-object-position: 78% 42%;
+      --img-object-position-mobile: 86% 38%;
+    }
+
+    /* Claudia spread — face sits in the left third of the frame */
+    .deinequelle-design-page #claudia .spread-inner {
+      --img-object-position: 28% 38%;
+      --img-object-position-mobile: 22% 34%;
+    }
+
+    /* Kinesiologie Methode spread — muscle test, keep hands in frame */
+    .deinequelle-design-page #kinesiologie-methode .spread-inner {
+      --img-object-position: 50% 42%;
+      --img-object-position-mobile: 50% 44%;
     }
 
     .deinequelle-design-page .spread-inner img {
@@ -2015,8 +2072,6 @@ html:has(.deinequelle-design-page) {
 
     .deinequelle-design-page .svc-section-head-cover .spread-h2 {
       max-width: none;
-      font-size: clamp(3.2rem, 7.5vw, 6.4rem);
-      line-height: 1.02;
     }
 
     .deinequelle-design-page :is(.warm-bg, .warm-soft-bg, .warm-deep-bg, .beige-bg)
@@ -3499,40 +3554,58 @@ html:has(.deinequelle-design-page) {
 
     @media (max-width: 960px) {
 
-      /* Collapse links & CTA — show hamburger */
       .deinequelle-design-page {
-        overflow-x: clip;
+        --spread-h2-size: clamp(2.35rem, 8.5vw, 3.4rem);
+        --spread-h2-leading: 1.02;
       }
 
-      .deinequelle-design-page .nav-links,
-      .deinequelle-design-page .nav-cta {
+      /* Collapse links & CTA — show hamburger */
+      .deinequelle-design-chrome .nav-links,
+      .deinequelle-design-chrome .nav-cta {
         display: none;
       }
 
-      .deinequelle-design-page .nav-ham {
+      .deinequelle-design-chrome .nav-ham {
         display: flex;
       }
 
-      /* Logo shrinks a bit on mobile to avoid dominance */
-      .deinequelle-design-page .nav-logo-wrap {
-        height: 96px;
+      /* Logo fits inside the bar — no overhang above/below the nav */
+      .deinequelle-design-chrome .nav-logo-wrap {
+        height: 3.25rem;
+        margin-top: 0;
+        align-self: center;
+      }
+
+      .deinequelle-design-chrome #nav.scrolled .nav-logo-wrap {
+        height: 2.75rem;
         margin-top: 0;
       }
 
-      .deinequelle-design-page #nav.scrolled .nav-logo-wrap {
-        height: 52px;
-        margin-top: 0;
-      }
-
-      .deinequelle-design-page #nav {
+      .deinequelle-design-chrome #nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        z-index: 9998;
         padding: 0 2.5rem;
-        height: 82px;
+        padding-top: env(safe-area-inset-top, 0);
+        height: calc(4.25rem + env(safe-area-inset-top, 0px));
         gap: 0;
         justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        background: var(--beige);
+        backdrop-filter: blur(22px);
+        -webkit-backdrop-filter: blur(22px);
+        border-bottom: 1px solid rgba(221, 209, 188, 0.6);
+        box-shadow: 0 2px 28px rgba(28, 20, 16, 0.05);
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
       }
 
-      .deinequelle-design-page #nav.scrolled {
-        height: 60px;
+      .deinequelle-design-chrome #nav.scrolled {
+        height: calc(3.75rem + env(safe-area-inset-top, 0px));
       }
 
       .deinequelle-design-page .wrap {
@@ -3545,8 +3618,6 @@ html:has(.deinequelle-design-page) {
 
       .deinequelle-design-page .spread-intro .spread-h2 {
         max-width: none;
-        font-size: clamp(2.35rem, 8.5vw, 3.4rem);
-        line-height: 1.02;
         hyphens: auto;
         -webkit-hyphens: auto;
         overflow-wrap: break-word;
@@ -3566,11 +3637,6 @@ html:has(.deinequelle-design-page) {
         -webkit-hyphens: auto;
         overflow-wrap: break-word;
         text-wrap: balance;
-      }
-
-      .deinequelle-design-page .svc-section-head-cover .spread-h2 {
-        font-size: clamp(2.5rem, 10vw, 4rem);
-        line-height: 1.04;
       }
 
       .deinequelle-design-page .spread-intro {
@@ -3643,6 +3709,15 @@ html:has(.deinequelle-design-page) {
         font-size: clamp(2.2rem, 10vw, 3.25rem);
       }
 
+      /* Top cluster above & — slightly larger on mobile */
+      .deinequelle-design-page .hero-intro-cluster-tl .hero-intro-kicker {
+        font-size: clamp(1.26rem, 5.4vw, 1.74rem);
+      }
+
+      .deinequelle-design-page .hero-intro-cluster-tl .hero-intro-display {
+        font-size: clamp(2.64rem, 12vw, 3.9rem);
+      }
+
       .deinequelle-design-page .hero-intro-amp {
         font-size: clamp(4rem, 20vw, 7rem);
       }
@@ -3701,51 +3776,66 @@ html:has(.deinequelle-design-page) {
         display: none;
       }
 
-      /* Home hero only: stronger readable text zone on mobile */
-      .deinequelle-design-page #hero.hero-home .hero-overlay {
-        background: linear-gradient(to top,
-            rgba(250, 247, 242, 1) 0%,
-            rgba(250, 247, 242, 0.98) 24%,
-            rgba(250, 247, 242, 0.92) 44%,
-            rgba(250, 247, 242, 0.62) 62%,
-            rgba(250, 247, 242, 0.22) 78%,
-            transparent 92%);
-      }
-
-      .deinequelle-design-page #hero.hero-home .hero-content {
+      /* Photo heroes: legible type without covering the image */
+      .deinequelle-design-page #hero.hero-home .hero-content,
+      .deinequelle-design-page #hero.hero-readable .hero-content {
         width: 100%;
         max-width: 100%;
-        padding-top: 4.5rem;
-        background: linear-gradient(to top,
-            rgba(250, 247, 242, 1) 0%,
-            rgba(250, 247, 242, 0.98) 38%,
-            rgba(250, 247, 242, 0.82) 72%,
-            rgba(250, 247, 242, 0) 100%);
       }
 
-      .deinequelle-design-page #hero.hero-home .hero-h1 {
+      .deinequelle-design-page #hero.hero-home .hero-h1,
+      .deinequelle-design-page #hero.hero-readable .hero-h1 {
         color: var(--text);
-        text-shadow:
-          0 0 28px rgba(250, 247, 242, 0.95),
-          0 2px 16px rgba(250, 247, 242, 0.75);
+        text-shadow: 0 1px 2px rgba(28, 20, 16, 0.16);
       }
 
-      .deinequelle-design-page #hero.hero-home .hero-h1 em {
+      .deinequelle-design-page #hero.hero-home .hero-h1 em,
+      .deinequelle-design-page #hero.hero-readable .hero-h1 em {
         color: var(--sage-dark);
+        text-shadow: 0 1px 2px rgba(28, 20, 16, 0.18);
       }
 
-      .deinequelle-design-page #hero.hero-home .hero-sub {
-        color: var(--text-mid);
-        font-weight: 400;
+      .deinequelle-design-page #hero.hero-home .hero-sub,
+      .deinequelle-design-page #hero.hero-readable .hero-sub {
+        color: var(--text);
+        font-weight: 500;
+        line-height: 1.65;
+        max-width: none;
+        text-shadow: 0 1px 1px rgba(28, 20, 16, 0.14);
+      }
+
+      .deinequelle-design-page #hero.hero-readable .dq-kicker {
+        color: var(--accent-dark);
+        text-shadow: none;
+      }
+
+      .deinequelle-design-page #hero.hero-readable.hero-em-wine .hero-h1 em {
+        color: var(--wine);
+        text-shadow: 0 1px 2px rgba(28, 20, 16, 0.18);
+      }
+
+      .deinequelle-design-page #hero.hero-readable .hero-location {
+        color: var(--accent-dark);
+        font-weight: 500;
+        text-shadow: none;
+      }
+
+      .deinequelle-design-page #hero.hero-readable .hero-actions .btn-ghost {
+        text-shadow: none;
       }
 
       .deinequelle-design-page #hero.hero-home .hero-location {
         color: var(--accent-dark);
         font-weight: 500;
+        text-shadow: none;
       }
 
       .deinequelle-design-page .spread-inner {
         inset: -4% 0;
+      }
+
+      .deinequelle-design-page #kinesiologie-methode .spread-inner {
+        inset: 10% 0;
       }
 
       .deinequelle-design-page .spread-inner img,
@@ -3764,13 +3854,13 @@ html:has(.deinequelle-design-page) {
       }
 
       .deinequelle-design-page .begl-accordion-trigger {
-        grid-template-columns: 3.5rem 1fr auto;
-        gap: 1.25rem 1.5rem;
-        padding-right: 0.25rem;
+        grid-template-columns: 1fr auto;
+        gap: 1.25rem;
+        padding: 1.5rem 1.35rem;
       }
 
       .deinequelle-design-page .begl-accordion-panel-inner {
-        padding-left: 0;
+        padding: 0 1.35rem 2.5rem;
       }
 
       .deinequelle-design-page .svc-split,
@@ -3899,7 +3989,7 @@ html:has(.deinequelle-design-page) {
       .deinequelle-design-page {
         --section: 6.5rem;
         --section-sm: 4.5rem;
-        overflow-x: clip;
+        --spread-h2-size: clamp(2.1rem, 8.2vw, 3.2rem);
       }
 
       .deinequelle-design-page .wrap {
@@ -3918,18 +4008,19 @@ html:has(.deinequelle-design-page) {
         padding: 1.8rem 1.8rem;
       }
 
-      .deinequelle-design-page #nav {
+      .deinequelle-design-chrome #nav {
         padding: 0 1.8rem;
-        height: 74px;
+        padding-top: env(safe-area-inset-top, 0);
+        height: calc(3.75rem + env(safe-area-inset-top, 0px));
       }
 
-      .deinequelle-design-page .nav-logo-wrap {
-        height: 80px;
+      .deinequelle-design-chrome .nav-logo-wrap {
+        height: 2.75rem;
         margin-top: 0;
       }
 
-      .deinequelle-design-page #nav.scrolled .nav-logo-wrap {
-        height: 46px;
+      .deinequelle-design-chrome #nav.scrolled .nav-logo-wrap {
+        height: 2.5rem;
         margin-top: 0;
       }
 
@@ -3975,6 +4066,12 @@ html:has(.deinequelle-design-page) {
 
       .deinequelle-design-page #hero.hero-home .hero-h1 {
         font-size: clamp(2.4rem, 10.5vw, 3.6rem);
+        margin-bottom: 1.6rem;
+      }
+
+      .deinequelle-design-page #hero.hero-home .hero-sub {
+        font-size: 1.02rem;
+        margin-bottom: 2rem;
       }
 
       .deinequelle-design-page .begl-row {
@@ -4004,10 +4101,6 @@ html:has(.deinequelle-design-page) {
 
       .deinequelle-design-page .spread-intro {
         bottom: 6%;
-      }
-
-      .deinequelle-design-page .spread-intro .spread-h2 {
-        font-size: clamp(2.1rem, 8.2vw, 3.2rem);
       }
 
       .deinequelle-design-page .trust-dot {

@@ -28,7 +28,10 @@ export default function DesignLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={`${cormorant.variable} ${jost.variable} ${jost.className}`}>
+    <div
+      id="deinequelle-design-root"
+      className={`deinequelle-design-root ${cormorant.variable} ${jost.variable} ${jost.className}`}
+    >
       <DesignRouteTransition>{children}</DesignRouteTransition>
       <DeineQuelleDesignRuntime />
     </div>

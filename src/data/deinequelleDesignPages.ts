@@ -15,10 +15,14 @@ export type DesignPageData = {
   titleEmphasis: string;
   intro: string;
   heroImage: string;
+  /** Optional mobile hero image — shown below 960px when set. */
+  heroImageMobile?: string;
   heroAlt: string;
   heroObjectPosition?: string;
   /** Mobile hero focal point — falls back to heroObjectPosition or a safe default in CSS. */
   heroObjectPositionMobile?: string;
+  /** Stronger text contrast on photo heroes — typography only, no overlay changes. */
+  heroReadableText?: boolean;
   /** Hero image height inside .hero-bg — default 115% (cover zoom). Use 100% to show more of outpainted art. */
   heroImageHeight?: string;
   /** Hero title emphasis color — default sage (green) */
@@ -56,6 +60,8 @@ export type DesignPageData = {
     kicker?: string;
     title: string;
     titleEmphasis?: string;
+    /** Keep emphasis on the same line as the title — no forced line break before <em>. */
+    titleEmphasisInline?: boolean;
     image?: string;
     imageAlt?: string;
     imageObjectPosition?: string;
@@ -118,6 +124,8 @@ export type DesignPageData = {
   process?: {
     title: string;
     emphasis: string;
+    /** Keep emphasis on the same line as the last title line (e.g. «Begleitung ab»). */
+    emphasisInline?: boolean;
     /** Default sage (green); use light/warm/wine for themed pages */
     theme?: "sage" | "light" | "warm" | "wine";
     steps: {
@@ -148,9 +156,11 @@ export const designPages = {
     intro:
       "Kinesiologie unterstützt dich dabei, Stressmuster wahrzunehmen, Ressourcen zu stärken und wieder mehr Ruhe und Klarheit zu finden.",
     heroImage: "/images/hero/Kinesiologie_hero.jpg",
+    heroImageMobile: "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-196_klein.jpg",
     heroAlt: "Kinesiologie-Behandlung mit Muskeltest",
     heroObjectPosition: "right center",
     heroObjectPositionMobile: "76% 24%",
+    heroReadableText: true,
     heroImageHeight: "100%",
     heroActions: {
       primary: {
@@ -194,8 +204,8 @@ export const designPages = {
         titleEmphasis: "Komplementärtherapie",
         image: "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-357_klein.jpg",
         imageAlt: "Kinesiologische Begleitung in der Praxis",
-        imageObjectPosition: "center 30%",
-        imageObjectPositionMobile: "center 22%",
+        imageObjectPosition: "50% 42%",
+        imageObjectPositionMobile: "50% 44%",
         lead:
           "Zurück in die eigene Balance finden, mit Kinesiologie als sanfter und wirkungsvoller Begleitung für Körper, Geist und Seele.",
         body: [
@@ -405,8 +415,9 @@ export const designPages = {
     heroImage: "/images/layout images/pregnant.png",
     heroAlt: "Einfühlsame Begleitung auf dem Weg zum Wunschkind",
     heroEmphasisTone: "wine",
-    heroObjectPosition: "center 40%",
-    heroObjectPositionMobile: "center 32%",
+    heroObjectPosition: "78% 42%",
+    heroObjectPositionMobile: "86% 38%",
+    heroReadableText: true,
     heroActions: {
       primary: {
         label: "Termin buchen",
@@ -426,12 +437,13 @@ export const designPages = {
         id: "emotionaler-einstieg",
         theme: "wine",
         presentation: "head",
-        title: "Wenn Kinderwunsch\nzur",
-        titleEmphasis: "inneren Belastung\nwird",
+        title: "Wenn Kinderwunsch zur",
+        titleEmphasis: "inneren Belastung wird",
+        titleEmphasisInline: true,
         image: "/images/layout images/pregnant.png",
         imageAlt: "Einfühlsame Kinderwunschbegleitung",
-        imageObjectPosition: "center 40%",
-        imageObjectPositionMobile: "center 32%",
+        imageObjectPosition: "78% 42%",
+        imageObjectPositionMobile: "86% 38%",
         lead:
           "Ein unerfüllter Kinderwunsch berührt oft mehr als den Körper. Er berührt Hoffnung, Vertrauen, Partnerschaft, Sexualität, Selbstbild und das Gefühl, den eigenen Körper nicht mehr richtig verstehen zu können.",
         body: [
@@ -447,8 +459,8 @@ export const designPages = {
         titleEmphasis: "unterstützen",
         image: "/images/layout images/kinderwunsch-ganzheitliche-unterstuetzung.jpg",
         imageAlt: "Sanfte, ganzheitliche Kinderwunschbegleitung in ruhiger Atmosphäre",
-        imageObjectPosition: "center center",
-        imageObjectPositionMobile: "center 28%",
+        imageObjectPosition: "76% 38%",
+        imageObjectPositionMobile: "84% 32%",
         lead:
           "Kinesiologie ersetzt keine medizinische Behandlung. Sie kann dich jedoch ergänzend auf körperlicher, emotionaler und mentaler Ebene unterstützen.",
         body: [
@@ -518,8 +530,8 @@ export const designPages = {
         titleEmphasis: "behutsamen\nNeubeginn",
         image: "/images/layout images/kinderwunsch-fehlgeburt-trauer.jpg",
         imageAlt: "Weite, ruhige Landschaft — Raum für Trauer und behutsamen Neubeginn",
-        imageObjectPosition: "center top",
-        imageObjectPositionMobile: "center 35%",
+        imageObjectPosition: "74% 38%",
+        imageObjectPositionMobile: "82% 32%",
         lead: "Ein Verlust endet nicht einfach, nur weil der Körper weitermacht.",
         body: [
           "Auch ein früher Schwangerschaftsverlust kann tief berühren. Vielleicht fühlt sich dein Umfeld schon weiter an, während in dir noch Trauer, Schmerz oder Unsicherheit sind.",
@@ -569,6 +581,7 @@ export const designPages = {
     process: {
       title: "So läuft die\nBegleitung",
       emphasis: "ab",
+      emphasisInline: true,
       theme: "wine",
       steps: [
         {
@@ -927,8 +940,8 @@ export const designPages = {
         titleEmphasis: "Claudia",
         image: "/images/Claudia/claudia_dimmler_3.jpg",
         imageAlt: "Claudia Dimmler",
-        imageObjectPosition: "center 20%",
-        imageObjectPositionMobile: "center 16%",
+        imageObjectPosition: "28% 38%",
+        imageObjectPositionMobile: "22% 34%",
         lead:
           "Mein beruflicher Weg begann in der Medizin. Mit 19 Jahren schloss ich meine Ausbildung als medizinische Praxisassistentin ab und arbeitete danach fast zehn Jahre in diesem Beruf.",
         body: [
@@ -944,7 +957,8 @@ export const designPages = {
         presentation: "spread",
         kicker: "Mein Weg zu Yoga und Kinesiologie",
         title: "Ruhe, Körperwahrnehmung\nund",
-        titleEmphasis: "ganzheitliche\nBegleitung",
+        titleEmphasis: "ganzheitliche Begleitung",
+        titleEmphasisInline: true,
         image: "/images/Claudia/ueber-mich-weg-yoga-kinesiologie.jpg",
         imageAlt: "Claudia Dimmler in ruhiger, natürlicher Umgebung",
         imageObjectPosition: "center top",
@@ -1011,8 +1025,8 @@ export const designPages = {
         titleEmphasis: "ein gutes\nZusammenspiel",
         image: "/images/Claudia/claudia_dimmler_3.jpg",
         imageAlt: "Claudia Dimmler",
-        imageObjectPosition: "left center",
-        imageObjectPositionMobile: "center 24%",
+        imageObjectPosition: "28% 38%",
+        imageObjectPositionMobile: "22% 34%",
         lead:
           "Meine Vision ist, dass Menschen möglichst schnell, natürlich und nachhaltig wieder in ihre Gesundheit und Kraft finden.",
         body: [
@@ -1030,7 +1044,8 @@ export const designPages = {
         hideSpread: true,
         kicker: "Ausbildungen und Qualifikationen",
         title: "Fachlich fundiert und",
-        titleEmphasis: "ganzheitlich\ngeprägt",
+        titleEmphasis: "ganzheitlich geprägt",
+        titleEmphasisInline: true,
         image: "/images/Claudia/claudia-dimmler-Kinesiologie-Adligenswil.jpg",
         imageAlt: "Claudia Dimmler in der Praxis",
         imageObjectPosition: "center 25%",

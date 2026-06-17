@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { DesignChromePortal } from "@/components/deinequelle/DesignChromePortal";
+import { DesignNav } from "@/components/deinequelle/DesignNav";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { site } from "@/data/site";
@@ -45,12 +47,30 @@ function loadDesignBody() {
     .replace(`href="${ghostAnchor}" class="btn-ghost"`, 'href="#kinesiologie" class="btn-ghost"');
 }
 
+function splitDesignChrome(body: string) {
+  const navClose = body.indexOf("</nav>");
+  if (navClose === -1) {
+    throw new Error("Could not split DeineQuelle design chrome.");
+  }
+
+  const splitAt = navClose + "</nav>".length;
+  return {
+    chrome: body.slice(0, splitAt),
+    content: body.slice(splitAt),
+  };
+}
+
 export default function HomePage() {
+  const { content } = splitDesignChrome(loadDesignBody());
+
   return (
     <>
+      <DesignChromePortal>
+        <DesignNav />
+      </DesignChromePortal>
       <main
         className="deinequelle-design-page"
-        dangerouslySetInnerHTML={{ __html: loadDesignBody() }}
+        dangerouslySetInnerHTML={{ __html: content }}
       />
     </>
   );

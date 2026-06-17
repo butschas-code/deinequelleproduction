@@ -10,11 +10,9 @@ export function DeineQuelleDesignRuntime() {
     const page = document.querySelector<HTMLElement>(".deinequelle-design-page");
     if (!page) return;
 
-    const progress = page.querySelector<HTMLElement>("#progress");
+    const progress = document.querySelector<HTMLElement>("#progress");
     const spreads = Array.from(page.querySelectorAll<HTMLElement>("[data-parallax]"));
-    const nav = page.querySelector<HTMLElement>("#nav");
-    const ham = page.querySelector<HTMLButtonElement>("#ham");
-    const overlay = page.querySelector<HTMLElement>("#mob-overlay");
+    const nav = document.querySelector<HTMLElement>("#nav");
     const isMobile =
       /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 960;
 
@@ -60,31 +58,6 @@ export function DeineQuelleDesignRuntime() {
       }
     };
 
-    const toggleMenu = (open: boolean) => {
-      if (!ham || !overlay) return;
-
-      ham.classList.toggle("open", open);
-      overlay.classList.toggle("open", open);
-      ham.setAttribute("aria-expanded", String(open));
-      document.body.style.overflow = open ? "hidden" : "";
-    };
-
-    const onHamClick = () => {
-      toggleMenu(!overlay?.classList.contains("open"));
-    };
-    const onKeydown = (event: KeyboardEvent) => {
-      if (event.key === "Escape" && overlay?.classList.contains("open")) {
-        toggleMenu(false);
-      }
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    ham?.addEventListener("click", onHamClick);
-    overlay
-      ?.querySelectorAll<HTMLAnchorElement>(".mob-link")
-      .forEach((link) => link.addEventListener("click", () => toggleMenu(false)));
-    document.addEventListener("keydown", onKeydown);
-
     const hashLinks = Array.from(
       page.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'),
     );
@@ -101,6 +74,7 @@ export function DeineQuelleDesignRuntime() {
       history.pushState(null, "", hash);
     };
 
+    window.addEventListener("scroll", onScroll, { passive: true });
     hashLinks.forEach((link) => link.addEventListener("click", onHashClick));
 
     onScroll();
@@ -108,10 +82,7 @@ export function DeineQuelleDesignRuntime() {
     return () => {
       observer.disconnect();
       window.removeEventListener("scroll", onScroll);
-      ham?.removeEventListener("click", onHamClick);
-      document.removeEventListener("keydown", onKeydown);
       hashLinks.forEach((link) => link.removeEventListener("click", onHashClick));
-      document.body.style.overflow = "";
     };
   }, [pathname]);
 

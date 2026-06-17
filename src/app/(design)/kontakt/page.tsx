@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { DesignChromePortal } from "@/components/deinequelle/DesignChromePortal";
 import { DesignFooter, DesignNav, Hero } from "@/components/deinequelle/DesignPage";
 import type { DesignPageData } from "@/data/deinequelleDesignPages";
 import { site } from "@/data/site";
@@ -19,6 +20,7 @@ const contactHero: DesignPageData = {
   heroAlt: "Landschaftsstimmung wie auf der Startseite",
   heroObjectPosition: "center center",
   heroObjectPositionMobile: "68% 20%",
+  heroReadableText: true,
   finalCta: {
     title: "Kontakt",
     emphasis: "aufnehmen",
@@ -52,8 +54,10 @@ const contactOptions = [
 export default function KontaktPage() {
   return (
     <>
-      <main className="deinequelle-design-page">
+      <DesignChromePortal>
         <DesignNav />
+      </DesignChromePortal>
+      <main className="deinequelle-design-page">
         <Hero page={contactHero} />
 
         <section id="kontaktformular" className="dq-contact-section">

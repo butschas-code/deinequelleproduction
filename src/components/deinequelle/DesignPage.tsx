@@ -2,66 +2,16 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import { site } from "@/data/site";
 import type { DesignPageData } from "@/data/deinequelleDesignPages";
+import { designNavItems } from "@/data/designNavItems";
+import { DesignChromePortal } from "@/components/deinequelle/DesignChromePortal";
+import { DesignNav } from "@/components/deinequelle/DesignNav";
 import { GuideSectionAccordion } from "@/components/deinequelle/GuideSectionAccordion";
 import {
   DisplayHeading,
   DisplayHeadingLines,
 } from "@/components/deinequelle/DisplayHeadingLines";
 
-const navItems = [
-  { href: "/leistungen/kinesiologie", label: "Kinesiologie" },
-  { href: "/leistungen/kinderwunsch", label: "Kinderwunsch" },
-  { href: "/leistungen/yoga", label: "Yoga" },
-  { href: "/ueber-mich", label: "Über mich" },
-] as const;
-
-export function DesignNav() {
-  return (
-    <>
-      <div id="progress" aria-hidden="true" />
-      <div id="mob-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
-        {navItems.map((item) => (
-          <Link key={item.href} href={item.href} className="mob-link">
-            {item.label}
-          </Link>
-        ))}
-        <Link href="/kontakt" className="mob-link">
-          Kontakt
-        </Link>
-      </div>
-
-      <nav id="nav" aria-label="Hauptnavigation">
-        <div className="nav-logo-wrap">
-          <Link href="/" className="nav-logo-link" aria-label="DeineQuelle">
-            <img
-              src={site.logo.src}
-              alt="DeineQuelle Logo"
-              className="nav-logo-img"
-            />
-          </Link>
-        </div>
-        <div className="nav-links">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href}>
-              {item.label}
-            </Link>
-          ))}
-        </div>
-        <Link href="/kontakt" className="nav-cta">
-          Kontakt
-          <span className="nav-cta-icon" aria-hidden>
-            ↗
-          </span>
-        </Link>
-        <button className="nav-ham" id="ham" aria-label="Menü öffnen" aria-expanded="false" type="button">
-          <span />
-          <span />
-          <span />
-        </button>
-      </nav>
-    </>
-  );
-}
+export { DesignNav } from "@/components/deinequelle/DesignNav";
 
 export function Hero({ page }: { page: DesignPageData }) {
   const primaryAction = page.heroActions?.primary ?? {
@@ -79,7 +29,14 @@ export function Hero({ page }: { page: DesignPageData }) {
     <>
       <section
         id="hero"
-        className={page.heroEmphasisTone === "wine" ? "hero-em-wine" : undefined}
+        className={
+          [
+            page.heroEmphasisTone === "wine" ? "hero-em-wine" : undefined,
+            page.heroReadableText ? "hero-readable" : undefined,
+          ]
+            .filter(Boolean)
+            .join(" ") || undefined
+        }
         style={
           page.heroObjectPosition ||
           page.heroObjectPositionMobile ||
@@ -99,11 +56,14 @@ export function Hero({ page }: { page: DesignPageData }) {
         }
       >
         <div className="hero-bg">
-          <img
-            id="hero-img"
-            src={page.heroImage}
-            alt={page.heroAlt}
-          />
+          {page.heroImageMobile ? (
+            <picture>
+              <source media="(max-width: 960px)" srcSet={page.heroImageMobile} />
+              <img id="hero-img" src={page.heroImage} alt={page.heroAlt} />
+            </picture>
+          ) : (
+            <img id="hero-img" src={page.heroImage} alt={page.heroAlt} />
+          )}
         </div>
         <div className="hero-overlay" />
         <div className="hero-content">
@@ -321,6 +281,7 @@ function SectionHeading({
         className="spread-h2"
         title={section.title}
         emphasis={section.titleEmphasis}
+        emphasisInline={section.titleEmphasisInline}
       />
     </div>
   );
@@ -665,6 +626,7 @@ function Process({ process }: { process?: DesignPageData["process"] }) {
           className="schritte-h2 reveal"
           title={process.title}
           emphasis={process.emphasis}
+          emphasisInline={process.emphasisInline}
         />
         <div className="schritte-cols">
           {process.steps.map((step, index) => (
@@ -747,7 +709,7 @@ export function DesignFooter() {
           <div className="footer-col links-col">
             <h4>Navigation</h4>
             <ul>
-              {navItems.map((item) => (
+              {designNavItems.map((item) => (
                 <li key={item.href}>
                   <Link href={item.href}>{item.label}</Link>
                 </li>
@@ -804,8 +766,10 @@ export function DesignPage({ page }: { page: DesignPageData }) {
 
   return (
     <>
-      <main className={`deinequelle-design-page${dense ? " design-page-longform" : ""}`}>
+      <DesignChromePortal>
         <DesignNav />
+      </DesignChromePortal>
+      <main className={`deinequelle-design-page${dense ? " design-page-longform" : ""}`}>
         <Hero page={page} />
         {showQuoteAfterHero ? (
           <QuoteSection quote={page.quote} theme={page.quoteTheme} />

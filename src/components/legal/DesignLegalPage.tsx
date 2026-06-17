@@ -1,4 +1,5 @@
 import { loadLegalText } from "@/lib/legal/loadLegalText";
+import { DesignChromePortal } from "@/components/deinequelle/DesignChromePortal";
 import { DesignFooter, DesignNav } from "@/components/deinequelle/DesignPage";
 import { DisplayHeading } from "@/components/deinequelle/DisplayHeadingLines";
 
@@ -68,8 +69,10 @@ export function DesignLegalPage({
 
   return (
     <>
-      <main className="deinequelle-design-page">
+      <DesignChromePortal>
         <DesignNav />
+      </DesignChromePortal>
+      <main className="deinequelle-design-page">
 
         <section
           className={`svc warm-soft-bg${variant === "editorial" ? " dq-legal-section" : ""}`}
