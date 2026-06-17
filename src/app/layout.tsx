@@ -1,12 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { SiteHeader } from "@/components/layout/SiteHeader";
-import { SiteFooter } from "@/components/layout/SiteFooter";
 import { site } from "@/data/site";
 import { buildLocalBusinessJsonLd } from "@/lib/seo/jsonld";
 import { JsonLd } from "@/components/JsonLd";
-import { AmbientShell } from "@/components/ambient/AmbientShell";
 import { CookieBanner } from "@/components/consent/CookieBanner";
 
 const inter = Inter({
@@ -44,13 +41,8 @@ export default function RootLayout({
       <head>
         <JsonLd data={rootLd} />
       </head>
-      <body className="min-h-full flex flex-col overflow-x-hidden font-sans">
-        <SiteHeader />
-        <div className="relative z-0 flex flex-1 flex-col">
-          <AmbientShell />
-          <div className="relative z-[2] flex flex-1 flex-col">{children}</div>
-        </div>
-        <SiteFooter />
+      <body className="min-h-full">
+        {children}
         <CookieBanner />
       </body>
     </html>

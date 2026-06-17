@@ -2,9 +2,14 @@ export const site = {
   name: "DEINE QUELLE",
   tagline: "Mehr Leben",
   logo: {
-    src: "/images/brand/deine-quelle-logo.png",
-    width: 1322,
-    height: 804,
+    src: "/images/brand/deinequelle-new-logo-09-trans.png",
+    width: 3122,
+    height: 1269,
+  },
+  logoCompact: {
+    src: "/images/brand/deinequelle-new-logo-small-09-trans.png",
+    width: 2916,
+    height: 791,
   },
   practitioner: "Claudia Dimmler",
   description:

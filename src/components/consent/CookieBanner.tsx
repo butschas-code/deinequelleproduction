@@ -1,24 +1,47 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
 import Link from "next/link";
 import {
+  CONSENT_CHANGE_EVENT,
   CONSENT_STORAGE_KEY,
   type CookieConsentValue,
   writeConsent,
 } from "@/lib/consent";
 
-export function CookieBanner() {
-  const [open, setOpen] = useState(false);
+type ConsentSnapshot = CookieConsentValue | "unset";
 
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem(CONSENT_STORAGE_KEY);
-      if (raw !== "accepted" && raw !== "rejected") setOpen(true);
-    } catch {
-      setOpen(true);
-    }
-  }, []);
+function readConsentSnapshot(): ConsentSnapshot {
+  try {
+    const raw = localStorage.getItem(CONSENT_STORAGE_KEY);
+    return raw === "accepted" || raw === "rejected" ? raw : "unset";
+  } catch {
+    return "unset";
+  }
+}
+
+function subscribeToConsent(callback: () => void) {
+  const onStorage = (event: StorageEvent) => {
+    if (event.key === CONSENT_STORAGE_KEY) callback();
+  };
+
+  const onConsentChange = () => callback();
+
+  window.addEventListener("storage", onStorage);
+  window.addEventListener(CONSENT_CHANGE_EVENT, onConsentChange);
+
+  return () => {
+    window.removeEventListener("storage", onStorage);
+    window.removeEventListener(CONSENT_CHANGE_EVENT, onConsentChange);
+  };
+}
+
+export function CookieBanner() {
+  const consent = useSyncExternalStore(
+    subscribeToConsent,
+    readConsentSnapshot,
+    () => "accepted",
+  );
 
   const choose = (value: CookieConsentValue) => {
     try {
@@ -26,10 +49,9 @@ export function CookieBanner() {
     } catch {
       /* private mode / storage blocked */
     }
-    setOpen(false);
   };
 
-  if (!open) return null;
+  if (consent !== "unset") return null;
 
   return (
     <div
@@ -44,14 +66,21 @@ export function CookieBanner() {
               Cookies &amp; Datenschutz
             </h2>
             <p className="mt-2 text-[14px] leading-[1.6] text-ink-muted md:text-[15px] md:leading-relaxed">
-              Wir setzen Cookies und lokale Speicherung ein, soweit für den Betrieb der Website nötig, und
-              speichern deine Entscheidung. Nicht notwendige Cookies (z.&nbsp;B. für Reichweitenmessung)
-              verwenden wir nur mit deiner Zustimmung. Details in der{" "}
+              Wir verwenden notwendige Cookies und lokale Speicherung für den sicheren Betrieb dieser
+              Website. Optionale Cookies (z.&nbsp;B. Statistik) setzen wir nur mit deiner Einwilligung. Du
+              kannst jederzeit in den Datenschutzhinweisen mehr erfahren. Details in der{" "}
               <Link
                 href="/datenschutz"
                 className="font-medium text-brand underline decoration-brand/30 underline-offset-2 transition hover:decoration-brand"
               >
                 Datenschutzerklärung
+              </Link>
+              {" "}und im{" "}
+              <Link
+                href="/impressum"
+                className="font-medium text-brand underline decoration-brand/30 underline-offset-2 transition hover:decoration-brand"
+              >
+                Impressum
               </Link>
               .
             </p>
@@ -62,7 +91,7 @@ export function CookieBanner() {
               className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full border border-black/12 bg-white/90 px-6 text-[15px] font-semibold text-ink shadow-sm transition hover:border-brand-extra hover:bg-brand-secondary/25 sm:w-auto sm:min-w-[140px]"
               onClick={() => choose("rejected")}
             >
-              Ablehnen
+              Nur notwendige
             </button>
             <button
               type="button"

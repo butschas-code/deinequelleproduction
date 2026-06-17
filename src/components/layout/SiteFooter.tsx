@@ -22,11 +22,11 @@ export function SiteFooter() {
               <Image
                 src={site.logo.src}
                 alt=""
-                width={site.logo.width}
-                height={site.logo.height}
+                width={Math.round(52 * (site.logo.width / site.logo.height))}
+                height={52}
                 aria-hidden
+                unoptimized
                 className="h-11 w-auto shrink-0 object-contain md:h-[3.25rem]"
-                sizes="(max-width: 768px) 130px, 150px"
               />
               <span className="min-w-0">
                 <span className="block text-lg font-semibold tracking-[-0.02em] text-ink md:text-xl">

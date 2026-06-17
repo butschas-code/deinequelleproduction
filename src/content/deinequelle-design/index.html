@@ -1,0 +1,2489 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DeineQuelle &middot; Kinesiologie &amp; Yoga &middot; Adligenswil</title>
+  <meta name="description"
+    content="Claudia Dimmler begleitet dich mit Kinesiologie und Yoga in Adligenswil zu mehr innerer Balance.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ═══════════════════════════════════════════════════════════════
+   RESET
+═══════════════════════════════════════════════════════════════ */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul,
+    ol {
+      list-style: none;
+    }
+
+    button {
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    address {
+      font-style: normal;
+    }
+
+    strong {
+      font-weight: 500;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════════════════════════════════════ */
+    :root {
+      /* Palette */
+      --beige: #FAF7F2;
+      --beige-warm: #F4EDE3;
+      --beige-sand: #EAE0D3;
+      --sand: #DDD1BC;
+      --sand-light: #EAE2D4;
+
+      --text: #1C1410;
+      --text-mid: #6A5948;
+      --text-light: #A09080;
+
+      --accent: #7B6347;
+      --accent-dark: #574430;
+
+      --sage: #E9F0E6;
+      --sage-mid: #BDD0B7;
+      --sage-accent: #4A7048;
+      --sage-dark: #2E4A2E;
+
+      --blush: #F5EAE8;
+      --wine: #8A3A48;
+      --wine-dark: #2A1218;
+
+      /* Typography */
+      --f-d: 'Cormorant Garamond', Georgia, serif;
+      --f-b: 'Jost', system-ui, sans-serif;
+      --display-serif-weight: 300;
+      --display-serif-color: #3a332e;
+
+      /* Motion */
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in: cubic-bezier(0.4, 0, 1, 1);
+
+      /* Rhythm */
+      --section: clamp(8rem, 13vw, 15rem);
+      --section-sm: clamp(5rem, 8vw, 9rem);
+    }
+
+    /* Custom text selection */
+    ::selection {
+      background: rgba(74, 112, 72, 0.15);
+      color: var(--sage-dark);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   FILM GRAIN (fixed, pointer-events-none)
+═══════════════════════════════════════════════════════════════ */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9990;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      opacity: 0.026;
+      mix-blend-mode: multiply;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   SCROLL PROGRESS
+═══════════════════════════════════════════════════════════════ */
+    #progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 1.5px;
+      width: 0%;
+      background: var(--accent);
+      z-index: 9999;
+      transition: width 0.06s linear;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   BASE
+═══════════════════════════════════════════════════════════════ */
+    body {
+      font-family: var(--f-b);
+      font-weight: 300;
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: var(--text);
+      background: var(--beige);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .wrap {
+      max-width: 1340px;
+      margin: 0 auto;
+      padding: 0 5.5rem;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   OPTION D NAV — Logo Left, Links Centre, CTA Right
+   Logo starts large (130px), shrinks on scroll (68px)
+═══════════════════════════════════════════════════════════════ */
+
+    /* Navbar bar itself */
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 96px;
+      display: flex;
+      align-items: center;
+      gap: 3.5rem;
+      padding: 0 5.5rem;
+      z-index: 500;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      /* overflow:visible lets the taller logo poke out at the top */
+      overflow: visible;
+      transition:
+        background 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+        height 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+        box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #nav.scrolled {
+      background: rgba(250, 247, 242, 0.88);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      border-bottom: 1px solid rgba(221, 209, 188, 0.6);
+      height: 68px;
+      box-shadow: 0 2px 28px rgba(28, 20, 16, 0.05);
+    }
+
+    /* ── Logo ──────────────────────────────────────────────────── */
+    .nav-logo-wrap {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      /* a bit of extra height so logo can spill above bar */
+      height: 130px;
+      margin-top: 15px;
+      transition:
+        height 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+        margin-top 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .nav-logo-link {
+      display: block;
+      height: 100%;
+    }
+
+    .nav-logo-img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      /* subtle drop-shadow only on initial large state */
+      filter: drop-shadow(0 6px 18px rgba(28, 20, 16, 0.07));
+      transition:
+        filter 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Scrolled: logo shrinks to bar height */
+    #nav.scrolled .nav-logo-wrap {
+      height: 58px;
+      margin-top: 0;
+    }
+
+    #nav.scrolled .nav-logo-img {
+      filter: none;
+    }
+
+    /* ── Links (centre) ────────────────────────────────────────── */
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.8rem;
+      flex: 1;
+    }
+
+    .nav-links a {
+      font-size: 0.76rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      white-space: nowrap;
+      transition: color 0.28s var(--ease);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* ── CTA (far right) ───────────────────────────────────────── */
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.58rem 0.58rem 0.58rem 1.35rem;
+      background: #ffffff;
+      color: var(--text);
+      border: 1px solid var(--sand);
+      border-radius: 0;
+      font-family: var(--f-b);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+      transition:
+        background 0.35s var(--ease),
+        border-color 0.35s var(--ease),
+        color 0.35s var(--ease),
+        transform 0.35s var(--ease),
+        box-shadow 0.35s var(--ease);
+    }
+
+    .nav-cta:hover {
+      background: #947858;
+      border-color: #947858;
+      color: var(--beige);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(148, 120, 88, 0.1);
+    }
+
+    .nav-cta-icon {
+      width: 26px;
+      height: 26px;
+      background: rgba(28, 20, 16, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.84rem;
+      transition: transform 0.35s var(--ease), background-color 0.35s var(--ease);
+    }
+
+    .nav-cta:hover .nav-cta-icon {
+      background: rgba(255, 255, 255, 0.18);
+      transform: translate(2px, -2px);
+    }
+
+    /* ── Hamburger (mobile only) ───────────────────────────────── */
+    .nav-ham {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 6px;
+      color: var(--text);
+      flex-shrink: 0;
+    }
+
+    .nav-ham span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: currentColor;
+      transition: transform 0.45s var(--ease), opacity 0.3s;
+      transform-origin: center;
+    }
+
+    .nav-ham.open span:nth-child(1) {
+      transform: rotate(45deg) translate(4.5px, 4.5px);
+    }
+
+    .nav-ham.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    .nav-ham.open span:nth-child(3) {
+      transform: rotate(-45deg) translate(4.5px, -4.5px);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   MOBILE OVERLAY
+═══════════════════════════════════════════════════════════════ */
+    #mob-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 400;
+      background: rgba(250, 247, 242, 0.97);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.45s var(--ease);
+    }
+
+    #mob-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mob-link {
+      font-family: var(--f-d);
+      font-size: clamp(2.8rem, 7vw, 3.8rem);
+      font-weight: 300;
+      color: var(--text-mid);
+      opacity: 0;
+      transform: translateY(22px);
+      transition: color 0.3s, opacity 0.55s var(--ease), transform 0.55s var(--ease);
+    }
+
+    #mob-overlay.open .mob-link {
+      opacity: 1;
+      transform: none;
+    }
+
+    #mob-overlay.open .mob-link:nth-child(1) {
+      transition-delay: 0.05s;
+    }
+
+    #mob-overlay.open .mob-link:nth-child(2) {
+      transition-delay: 0.11s;
+    }
+
+    #mob-overlay.open .mob-link:nth-child(3) {
+      transition-delay: 0.17s;
+    }
+
+    #mob-overlay.open .mob-link:nth-child(4) {
+      transition-delay: 0.23s;
+    }
+
+    #mob-overlay.open .mob-link:nth-child(5) {
+      transition-delay: 0.29s;
+    }
+
+    .mob-link:hover {
+      color: var(--text);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════════════ */
+    #hero {
+      position: relative;
+      min-height: 100dvh;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 60% 28%;
+      will-change: transform;
+    }
+
+    /* Cream fade from left — image visible on right */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to right,
+          rgba(250, 247, 242, 0.97) 0%,
+          rgba(250, 247, 242, 0.86) 26%,
+          rgba(250, 247, 242, 0.44) 52%,
+          rgba(250, 247, 242, 0.0) 70%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 10rem 5.5rem 8rem;
+      max-width: 820px;
+    }
+
+    h1.hero-h1,
+    h2.spread-h2 {
+      font-family: var(--f-d);
+      font-weight: var(--display-serif-weight);
+      font-synthesis: none;
+      letter-spacing: 0.004em;
+      color: var(--display-serif-color);
+      text-rendering: auto;
+    }
+
+    .hero-h1 {
+      font-size: clamp(3.35rem, 6.1vw, 5.9rem);
+      line-height: 1.03;
+      margin-bottom: 3.2rem;
+    }
+
+    .hero-h1 em {
+      font-weight: var(--display-serif-weight);
+      font-style: italic;
+      color: var(--sage-dark);
+    }
+
+    .hero-sub {
+      font-size: 1.18rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.85;
+      max-width: 48ch;
+      margin-bottom: 4rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.8rem;
+    }
+
+    .hero-location {
+      font-family: var(--f-d);
+      font-size: 1.08rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text-light);
+      letter-spacing: 0.005em;
+    }
+
+    /* Animated scroll indicator */
+    .scroll-cue {
+      position: absolute;
+      bottom: 3rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .scroll-line {
+      width: 1px;
+      height: 56px;
+      background: var(--sand-light);
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+    }
+
+    .scroll-line::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--accent);
+      animation: linefall 2.6s var(--ease-in) infinite;
+    }
+
+    @keyframes linefall {
+      0% {
+        top: -100%;
+      }
+
+      100% {
+        top: 100%;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   TRUST STRIP
+═══════════════════════════════════════════════════════════════ */
+    #trust {
+      background: var(--beige);
+      border-bottom: 1px solid var(--sand-light);
+      padding: 1.7rem 0;
+    }
+
+    .trust-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.8rem;
+      flex-wrap: wrap;
+      padding: 0 3rem;
+    }
+
+    .trust-row span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--text-mid);
+    }
+
+    .trust-dot {
+      color: var(--sand);
+      font-size: 0.4rem;
+      line-height: 1;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   ERKLÄRT — Quote section (ultra-clean)
+═══════════════════════════════════════════════════════════════ */
+    #erklaert {
+      background: var(--beige);
+      padding: var(--section) 0;
+    }
+
+    .erkl-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 5.5rem;
+      text-align: center;
+    }
+
+    .erkl-quote {
+      font-family: var(--f-d);
+      font-size: clamp(2.6rem, 5.6vw, 6.8rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.18;
+      letter-spacing: -0.022em;
+      max-width: 22ch;
+      margin: 0 auto 5.5rem;
+    }
+
+    .erkl-body {
+      font-size: 1.08rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.92;
+      max-width: 54ch;
+      margin: 0 auto;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   BEGLEITUNG — Wobei ich dich begleite
+═══════════════════════════════════════════════════════════════ */
+    #begleitung {
+      background: var(--beige-warm);
+      padding: var(--section) 0;
+      border-top: 1px solid var(--sand-light);
+    }
+
+    .begl-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 6rem;
+      margin-bottom: 8rem;
+    }
+
+    .begl-h2 {
+      font-family: var(--f-d);
+      font-size: clamp(3rem, 5.2vw, 6.2rem);
+      font-weight: 400;
+      line-height: 1.0;
+      letter-spacing: -0.025em;
+      max-width: 14ch;
+      flex-shrink: 0;
+    }
+
+    .begl-intro {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.9;
+      max-width: 50ch;
+      padding-bottom: 0.5rem;
+    }
+
+    .begl-rows {
+      border-top: 1px solid var(--sand);
+    }
+
+    .begl-row {
+      display: grid;
+      grid-template-columns: 4.5rem 24ch 1fr;
+      align-items: baseline;
+      gap: 3.5rem;
+      padding: 4.2rem 0;
+      border-bottom: 1px solid var(--sand);
+      cursor: default;
+      transition: background 0.5s var(--ease);
+    }
+
+    .begl-row:hover {
+      background: rgba(224, 236, 220, 0.38);
+    }
+
+    .begl-num {
+      font-family: var(--f-d);
+      font-size: 0.82rem;
+      font-weight: 300;
+      color: var(--sand);
+      letter-spacing: 0.06em;
+      transition: color 0.5s var(--ease);
+    }
+
+    .begl-row:hover .begl-num {
+      color: var(--sage-mid);
+    }
+
+    .begl-cat {
+      font-family: var(--f-d);
+      font-size: clamp(1.45rem, 1.9vw, 1.9rem);
+      font-weight: 500;
+      color: var(--text);
+      letter-spacing: -0.012em;
+      line-height: 1.2;
+    }
+
+    .begl-items {
+      font-size: 1.12rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 2.1;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   FULL-SPREAD IMAGE (shared)
+═══════════════════════════════════════════════════════════════ */
+    .spread {
+      position: relative;
+      overflow: hidden;
+      height: 90vh;
+      min-height: 560px;
+    }
+
+    .spread-inner {
+      position: absolute;
+      inset: -13% 0;
+      will-change: transform;
+    }
+
+    .spread-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Tonal overlays fading to the solid background of the next section */
+    .sage-spread::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to bottom,
+          rgba(250, 247, 242, 0) 0%,
+          rgba(233, 240, 230, 0.15) 40%,
+          rgba(233, 240, 230, 0.75) 75%,
+          var(--sage) 100%);
+    }
+
+    .wine-spread::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to bottom,
+          rgba(250, 247, 242, 0) 0%,
+          rgba(245, 234, 232, 0.15) 40%,
+          rgba(245, 234, 232, 0.75) 75%,
+          var(--blush) 100%);
+    }
+
+    .warm-spread::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to bottom,
+          rgba(250, 247, 242, 0) 0%,
+          rgba(244, 237, 227, 0.15) 40%,
+          rgba(244, 237, 227, 0.75) 75%,
+          var(--beige-warm) 100%);
+    }
+
+    .light-spread::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to bottom,
+          rgba(250, 247, 242, 0) 0%,
+          rgba(244, 237, 227, 0.15) 40%,
+          rgba(244, 237, 227, 0.75) 75%,
+          var(--beige-warm) 100%);
+    }
+
+    /* Heading floated above the image bottom */
+    .spread-intro {
+      position: absolute;
+      bottom: 10%;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      padding: 0 5.5rem;
+    }
+
+    .spread-h2 {
+      font-size: clamp(2.7rem, 5.6vw, 5.4rem);
+      line-height: 1.03;
+      max-width: 18ch;
+    }
+
+    .spread-h2 em {
+      font-weight: var(--display-serif-weight);
+      font-style: italic;
+    }
+
+    .sage-spread .spread-intro {
+      color: var(--sage-dark);
+    }
+
+    .wine-spread .spread-intro {
+      color: var(--wine);
+    }
+
+    .warm-spread .spread-intro {
+      color: var(--text);
+    }
+
+    .light-spread .spread-intro {
+      color: var(--text);
+    }
+
+    .sage-spread .spread-h2 em {
+      color: var(--accent);
+    }
+
+    .wine-spread .spread-h2 em {
+      color: var(--wine-dark);
+    }
+
+    .warm-spread .spread-h2 em {
+      color: var(--accent);
+    }
+
+    .light-spread .spread-h2 em {
+      color: var(--accent);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   SERVICE CONTENT — editorial layout
+═══════════════════════════════════════════════════════════════ */
+    .svc {
+      padding: var(--section) 0;
+    }
+
+    .svc.sage-bg {
+      background: var(--sage);
+    }
+
+    .svc.blush-bg {
+      background: var(--blush);
+    }
+
+    .svc.beige-bg {
+      background: var(--beige-warm);
+      border-top: 1px solid var(--sand-light);
+    }
+
+    .svc-editorial {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 10rem;
+      align-items: start;
+    }
+
+    /* Left column: prose */
+    .svc-lead {
+      font-family: var(--f-d);
+      font-size: clamp(1.45rem, 2.3vw, 1.85rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+      margin-bottom: 2.8rem;
+    }
+
+    .sage-bg .svc-lead {
+      color: var(--sage-dark);
+    }
+
+    .blush-bg .svc-lead {
+      color: #4A2530;
+    }
+
+    .beige-bg .svc-lead {
+      color: var(--text);
+    }
+
+    .svc-body {
+      font-size: 1.12rem;
+      font-weight: 300;
+      line-height: 1.92;
+      margin-bottom: 1.9rem;
+    }
+
+    .sage-bg .svc-body {
+      color: #3A5538;
+    }
+
+    .blush-bg .svc-body {
+      color: #503035;
+    }
+
+    .beige-bg .svc-body {
+      color: var(--text-mid);
+    }
+
+    /* Right column: items as Cormorant rows, no markers */
+    .svc-items-col {
+      padding-top: 0.3rem;
+    }
+
+    .svc-item {
+      font-family: var(--f-d);
+      font-size: 1.25rem;
+      font-weight: 400;
+      letter-spacing: -0.008em;
+      line-height: 1;
+      padding: 1.45rem 0;
+      border-bottom: 1px solid;
+      transition: padding-left 0.4s var(--ease), opacity 0.4s var(--ease);
+    }
+
+    .svc-item:first-child {
+      border-top: 1px solid;
+    }
+
+    .svc-item:hover {
+      padding-left: 0.6rem;
+      opacity: 0.75;
+    }
+
+    .sage-bg .svc-item {
+      border-color: var(--sage-mid);
+      color: var(--sage-dark);
+    }
+
+    .blush-bg .svc-item {
+      border-color: rgba(180, 96, 110, 0.30);
+      color: #4A2530;
+    }
+
+    .beige-bg .svc-item {
+      border-color: var(--sand-light);
+      color: var(--text-mid);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════════════════════════════ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.92rem 0.92rem 0.92rem 1.95rem;
+      border: 1px solid transparent;
+      border-radius: 0;
+      font-family: var(--f-b);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      transition: background 0.38s var(--ease), border-color 0.38s var(--ease), color 0.38s var(--ease), transform 0.38s var(--ease), box-shadow 0.38s var(--ease);
+      margin-top: 1.2rem;
+    }
+
+    .btn:active {
+      transform: scale(0.983);
+    }
+
+    .btn-icon {
+      width: 27px;
+      height: 27px;
+      border-radius: 0;
+      background: rgba(28, 20, 16, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.84rem;
+      transition: transform 0.38s var(--ease), background-color 0.38s var(--ease);
+    }
+
+    .btn:hover .btn-icon {
+      transform: translate(2px, -2px);
+    }
+
+    .btn-sage {
+      background: #ffffff;
+      border-color: var(--sage-mid);
+      color: var(--sage-dark);
+    }
+
+    .btn-sage .btn-icon {
+      background: rgba(74, 112, 72, 0.07);
+    }
+
+    .btn-sage:hover {
+      background: #557A53;
+      border-color: #557A53;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(85, 122, 83, 0.15);
+    }
+
+    .btn-sage:hover .btn-icon {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-wine {
+      background: #ffffff;
+      border-color: rgba(138, 58, 72, 0.35);
+      color: var(--wine);
+    }
+
+    .btn-wine .btn-icon {
+      background: rgba(138, 58, 72, 0.07);
+    }
+
+    .btn-wine:hover {
+      background: #9E4C5A;
+      border-color: #9E4C5A;
+      color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(158, 76, 90, 0.15);
+    }
+
+    .btn-wine:hover .btn-icon {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .btn-accent {
+      background: #ffffff;
+      border-color: var(--sand);
+      color: var(--accent);
+    }
+
+    .btn-accent .btn-icon {
+      background: rgba(123, 99, 71, 0.07);
+    }
+
+    .btn-accent:hover {
+      background: #947858;
+      border-color: #947858;
+      color: var(--beige);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(148, 120, 88, 0.15);
+    }
+
+    .btn-accent:hover .btn-icon {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* Primary (hero) */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.94rem 0.94rem 0.94rem 1.95rem;
+      background: #ffffff;
+      color: var(--text);
+      border: 1px solid var(--sand);
+      border-radius: 0;
+      font-family: var(--f-b);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      transition: background 0.38s var(--ease), border-color 0.38s var(--ease), color 0.38s var(--ease), transform 0.38s var(--ease), box-shadow 0.38s var(--ease);
+    }
+
+    .btn-primary:hover {
+      background: #947858;
+      border-color: #947858;
+      color: var(--beige);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(148, 120, 88, 0.15);
+    }
+
+    .btn-primary .btn-pi {
+      width: 27px;
+      height: 27px;
+      border-radius: 0;
+      background: rgba(28, 20, 16, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.84rem;
+      transition: transform 0.38s var(--ease), background-color 0.38s var(--ease);
+    }
+
+    .btn-primary:hover .btn-pi {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translate(2px, -2px);
+    }
+
+    /* Ghost */
+    .btn-ghost {
+      font-family: var(--f-b);
+      font-size: 0.84rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding-bottom: 2px;
+      border-bottom: 1px solid var(--sand);
+      transition: color 0.35s var(--ease), border-color 0.35s var(--ease), gap 0.35s var(--ease);
+    }
+
+    .btn-ghost:hover {
+      color: var(--text);
+      border-color: var(--text);
+      gap: 0.95rem;
+    }
+
+    /* CTA dark */
+    .btn-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      padding: 0.94rem 0.94rem 0.94rem 1.95rem;
+      background: #ffffff;
+      color: var(--text);
+      border: 1px solid var(--sand);
+      border-radius: 0;
+      font-family: var(--f-b);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      transition: background 0.38s var(--ease), border-color 0.38s var(--ease), color 0.38s var(--ease), transform 0.38s var(--ease), box-shadow 0.38s var(--ease);
+    }
+
+    .btn-dark:hover {
+      background: #2E2520;
+      border-color: #2E2520;
+      color: var(--beige);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(46, 37, 32, 0.15);
+    }
+
+    .btn-dark .btn-pi {
+      width: 27px;
+      height: 27px;
+      border-radius: 0;
+      background: rgba(28, 20, 16, 0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.84rem;
+      transition: transform 0.38s var(--ease), background-color 0.38s var(--ease);
+    }
+
+    .btn-dark:hover .btn-pi {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translate(2px, -2px);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   CLAUDIA BIO
+═══════════════════════════════════════════════════════════════ */
+    .claudia-bio {
+      background: var(--beige-warm);
+      padding: var(--section) 0;
+    }
+
+    .claudia-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.7fr;
+      gap: 12rem;
+      align-items: start;
+    }
+
+    .claudia-left {
+      position: sticky;
+      top: 7rem;
+    }
+
+    .claudia-h2 {
+      font-family: var(--f-d);
+      font-size: clamp(2.2rem, 3.5vw, 4.4rem);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -0.022em;
+      color: var(--text);
+      margin-bottom: 2.8rem;
+    }
+
+    .claudia-h2 em {
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .claudia-creds {
+      padding-top: 2.4rem;
+      border-top: 1px solid var(--sand);
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .claudia-creds span {
+      font-size: 1.02rem;
+      font-weight: 300;
+      color: var(--text-mid);
+    }
+
+    .claudia-right p {
+      font-size: 1.12rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.92;
+      max-width: 58ch;
+      margin-bottom: 1.9rem;
+    }
+
+    .claudia-quote {
+      font-family: var(--f-d);
+      font-size: clamp(1.45rem, 2.5vw, 2.3rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--text);
+      line-height: 1.52;
+      border-left: 2px solid var(--accent);
+      padding-left: 2.4rem;
+      margin: 3.8rem 0;
+      max-width: 40ch;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   3 SCHRITTE
+═══════════════════════════════════════════════════════════════ */
+    #schritte {
+      background: var(--sage);
+      padding: var(--section) 0;
+      border-top: 1px solid var(--sage-mid);
+    }
+
+    .schritte-h2 {
+      font-family: var(--f-d);
+      font-size: clamp(2.6rem, 4.8vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.04;
+      letter-spacing: -0.022em;
+      color: var(--sage-dark);
+      margin-bottom: 8rem;
+      max-width: 18ch;
+    }
+
+    .schritte-h2 em {
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    .schritte-cols {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--sage-mid);
+    }
+
+    .schritt {
+      padding: 5.5rem 5.5rem 5.5rem 0;
+      border-right: 1px solid var(--sage-mid);
+    }
+
+    .schritt:nth-child(n+2) {
+      padding-left: 5.5rem;
+    }
+
+    .schritt:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .schritt-num {
+      font-family: var(--f-d);
+      font-size: clamp(7rem, 10vw, 12rem);
+      font-weight: 300;
+      color: var(--sage-mid);
+      line-height: 0.85;
+      margin-bottom: 1.8rem;
+    }
+
+    .schritt h3 {
+      font-family: var(--f-d);
+      font-size: 1.95rem;
+      font-weight: 400;
+      color: var(--sage-dark);
+      margin-bottom: 1.1rem;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+    }
+
+    .schritt p {
+      font-size: 1.12rem;
+      font-weight: 300;
+      color: #4A6A4A;
+      line-height: 1.82;
+      max-width: 32ch;
+    }
+
+    .schritte-foot {
+      margin-top: 5.5rem;
+      padding-top: 4.5rem;
+      border-top: 1px solid var(--sage-mid);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .schritte-foot p {
+      font-family: var(--f-d);
+      font-size: clamp(1.4rem, 2.2vw, 1.9rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--sage-accent);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   FINAL CTA (warm sand)
+═══════════════════════════════════════════════════════════════ */
+    #cta-final {
+      background: var(--beige-sand);
+      padding: var(--section) 0 0;
+      border-top: 1px solid var(--sand);
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 8rem;
+      align-items: center;
+      padding-bottom: 13rem;
+    }
+
+    .cta-h2 {
+      font-family: var(--f-d);
+      font-size: clamp(3.2rem, 6.5vw, 8rem);
+      font-weight: 400;
+      line-height: 0.97;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      margin-bottom: 2.4rem;
+    }
+
+    .cta-h2 em {
+      font-weight: 300;
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .cta-sub {
+      font-size: 1.15rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.85;
+      max-width: 48ch;
+    }
+
+    .cta-right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3rem;
+    }
+
+    .cta-contact {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .cta-contact a {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      transition: color 0.3s var(--ease);
+    }
+
+    .cta-contact a:hover {
+      color: var(--text);
+    }
+
+    /* Praxis info bar */
+    .praxis-bar {
+      border-top: 1px solid var(--sand);
+      padding: 4.5rem 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .praxis-cell {
+      padding: 0 3.5rem 0 0;
+      border-right: 1px solid var(--sand);
+    }
+
+    .praxis-cell:nth-child(n+2) {
+      padding-left: 3.5rem;
+    }
+
+    .praxis-cell:last-child {
+      border-right: none;
+      padding-right: 0;
+    }
+
+    .praxis-cell h4 {
+      font-family: var(--f-d);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      margin-bottom: 1rem;
+    }
+
+    .praxis-cell p,
+    .praxis-cell address {
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.9;
+      max-width: 28ch;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════════════ */
+    /* ═══════════════════════════════════════════════════════════════
+   FOOTER (Enhanced multi-column layout)
+   ═══════════════════════════════════════════════════════════════ */
+    footer {
+      background: var(--beige-sand);
+      border-top: 1px solid var(--sand);
+      padding: 6rem 5.5rem 3rem;
+    }
+
+    .footer-wrap {
+      max-width: 1340px;
+      margin: 0 auto;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 1fr 1.2fr;
+      gap: 4rem;
+      margin-bottom: 5rem;
+    }
+
+    .footer-col h4 {
+      font-family: var(--f-d);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--text-mid);
+      margin-bottom: 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-logo {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-desc {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+
+    .footer-partner-logos {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+    }
+
+    .partner-logo {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
+      opacity: 0.8;
+      transition: opacity 0.3s var(--ease);
+    }
+
+    .partner-logo:hover {
+      opacity: 1;
+    }
+
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .footer-col ul a {
+      font-size: 0.96rem;
+      color: var(--text-mid);
+      transition: color 0.3s var(--ease), padding-left 0.3s var(--ease);
+    }
+
+    .footer-col ul a:hover {
+      color: var(--text);
+      padding-left: 4px;
+    }
+
+    .footer-col address {
+      font-size: 0.96rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+    }
+
+    .contact-methods a {
+      color: var(--accent);
+      font-weight: 400;
+      transition: color 0.3s var(--ease);
+    }
+
+    .contact-methods a:hover {
+      color: var(--text);
+    }
+
+    .footer-map-container {
+      height: 180px;
+      width: 100%;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(28, 20, 16, 0.04);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--sand);
+      padding-top: 2.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .footer-bottom p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+    }
+
+    .footer-bottom a {
+      transition: color 0.3s var(--ease);
+    }
+
+    .footer-bottom a:hover {
+      color: var(--text);
+    }
+
+    /* Mobile responsive for footer */
+    @media (max-width: 960px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      footer {
+        padding: 4.5rem 1.8rem 2.2rem;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        margin-bottom: 3.5rem;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   SCROLL REVEAL
+═══════════════════════════════════════════════════════════════ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      filter: blur(6px);
+      transition:
+        opacity 1s var(--ease),
+        transform 1s var(--ease),
+        filter 1s var(--ease);
+    }
+
+    .reveal.vis {
+      opacity: 1;
+      transform: none;
+      filter: none;
+    }
+
+    .d1 {
+      transition-delay: 0.08s;
+    }
+
+    .d2 {
+      transition-delay: 0.18s;
+    }
+
+    .d3 {
+      transition-delay: 0.30s;
+    }
+
+    .d4 {
+      transition-delay: 0.44s;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════════════ */
+    @media (max-width: 1100px) {
+      .wrap {
+        padding: 0 3.5rem;
+      }
+
+      footer {
+        padding: 2.2rem 3.5rem;
+      }
+
+      .erkl-inner {
+        padding: 0 3.5rem;
+      }
+
+      .spread-intro {
+        padding: 0 3.5rem;
+      }
+
+      .svc-editorial {
+        gap: 6rem;
+      }
+
+      .claudia-grid {
+        gap: 7rem;
+      }
+    }
+
+    @media (max-width: 960px) {
+
+      /* Collapse links & CTA — show hamburger */
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-ham {
+        display: flex;
+      }
+
+      /* Logo shrinks a bit on mobile to avoid dominance */
+      .nav-logo-wrap {
+        height: 96px;
+        margin-top: 10px;
+      }
+
+      #nav.scrolled .nav-logo-wrap {
+        height: 52px;
+        margin-top: 0;
+      }
+
+      #nav {
+        padding: 0 2.5rem;
+        height: 82px;
+        gap: 0;
+        justify-content: space-between;
+      }
+
+      #nav.scrolled {
+        height: 60px;
+      }
+
+      .wrap {
+        padding: 0 2.5rem;
+      }
+
+      .erkl-inner {
+        padding: 0 2.5rem;
+      }
+
+      .spread-intro {
+        padding: 0 2.5rem;
+        bottom: 8%;
+      }
+
+      footer {
+        padding: 2rem 2.5rem;
+      }
+
+      /* Hero: bottom-align on mobile */
+      .hero-overlay {
+        background: linear-gradient(to top,
+            rgba(250, 247, 242, 0.97) 0%,
+            rgba(250, 247, 242, 0.70) 36%,
+            rgba(250, 247, 242, 0.20) 64%,
+            transparent 84%);
+      }
+
+      .hero-content {
+        max-width: 100%;
+        justify-content: flex-end;
+        padding: 8rem 2.5rem 6.5rem;
+      }
+
+      .begl-head {
+        flex-direction: column;
+        gap: 3rem;
+        align-items: flex-start;
+        margin-bottom: 5rem;
+      }
+
+      .begl-row {
+        grid-template-columns: 3.5rem 1fr;
+        gap: 1.5rem;
+      }
+
+      .begl-items {
+        grid-column: 1 / -1;
+        padding-left: 5rem;
+      }
+
+      .spread {
+        height: 56vw;
+        min-height: 340px;
+      }
+
+      .svc-editorial {
+        grid-template-columns: 1fr;
+        gap: 4.5rem;
+      }
+
+      .svc {
+        padding: var(--section-sm) 0;
+      }
+
+      .claudia-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+      }
+
+      .claudia-left {
+        position: static;
+      }
+
+      .schritte-cols {
+        grid-template-columns: 1fr;
+      }
+
+      .schritt {
+        border-right: none;
+        border-bottom: 1px solid var(--sage-mid);
+        padding: 4rem 0;
+      }
+
+      .schritt:nth-child(n+2) {
+        padding-left: 0;
+      }
+
+      .schritt:last-child {
+        border-bottom: none;
+      }
+
+      .cta-grid {
+        grid-template-columns: 1fr;
+        gap: 4.5rem;
+        padding-bottom: 8rem;
+      }
+
+      .praxis-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .praxis-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--sand);
+        padding: 2.8rem 0;
+      }
+
+      .praxis-cell:nth-child(n+2) {
+        padding-left: 0;
+      }
+
+      .praxis-cell:last-child {
+        border-bottom: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      :root {
+        --section: 6.5rem;
+        --section-sm: 4.5rem;
+      }
+
+      .wrap {
+        padding: 0 1.8rem;
+      }
+
+      .erkl-inner {
+        padding: 0 1.8rem;
+      }
+
+      .spread-intro {
+        padding: 0 1.8rem;
+      }
+
+      footer {
+        padding: 1.8rem 1.8rem;
+      }
+
+      #nav {
+        padding: 0 1.8rem;
+        height: 74px;
+      }
+
+      .nav-logo-wrap {
+        height: 80px;
+        margin-top: 8px;
+      }
+
+      #nav.scrolled .nav-logo-wrap {
+        height: 46px;
+        margin-top: 0;
+      }
+
+      .hero-h1 {
+        font-size: clamp(3.6rem, 13vw, 6rem);
+      }
+
+      .begl-row {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+        padding: 2.8rem 0;
+      }
+
+      .begl-num {
+        display: none;
+      }
+
+      .begl-items {
+        padding-left: 0;
+        grid-column: auto;
+      }
+
+      .spread {
+        height: 68vw;
+      }
+
+      .spread-h2 {
+        font-size: clamp(2.2rem, 9.5vw, 3.5rem);
+      }
+
+      .trust-dot {
+        display: none;
+      }
+
+      .trust-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+      }
+
+      .schritte-foot {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .erkl-quote {
+        font-size: clamp(2.4rem, 9vw, 4rem);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="progress" aria-hidden="true"></div>
+
+  <!-- ── MOBILE OVERLAY ────────────────────────────────────────── -->
+  <div id="mob-overlay" role="dialog" aria-modal="true" aria-label="Navigation">
+    <a href="/leistungen/kinesiologie" class="mob-link">Kinesiologie</a>
+    <a href="/leistungen/kinderwunsch" class="mob-link">Kinderwunsch</a>
+    <a href="/leistungen/yoga" class="mob-link">Yoga</a>
+    <a href="/ueber-mich" class="mob-link">Über mich</a>
+    <a href="/kontakt" class="mob-link">Kontakt</a>
+  </div>
+
+  <!-- ── NAV — Option D: Logo Left · Links Centre · CTA Right ── -->
+  <nav id="nav" aria-label="Hauptnavigation">
+
+    <!-- Logo (left) — overflows bar on load, shrinks on scroll -->
+    <div class="nav-logo-wrap">
+      <a href="#" class="nav-logo-link" aria-label="DeineQuelle">
+        <img src="images/Logo/Deine%20Quelle%20logo%206-2.png" alt="DeineQuelle Logo" class="nav-logo-img"
+          fetchpriority="high">
+      </a>
+    </div>
+
+    <!-- Links (centre) -->
+    <div class="nav-links">
+      <a href="/leistungen/kinesiologie">Kinesiologie</a>
+      <a href="/leistungen/kinderwunsch">Kinderwunsch</a>
+      <a href="/leistungen/yoga">Yoga</a>
+      <a href="/ueber-mich">Über mich</a>
+    </div>
+
+    <!-- CTA (far right) -->
+    <a href="#cta-final" class="nav-cta">
+      Termin buchen
+      <span class="nav-cta-icon">&#8599;</span>
+    </a>
+
+    <!-- Hamburger (mobile only) -->
+    <button class="nav-ham" id="ham" aria-label="Menü öffnen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+  </nav>
+
+  <!-- ══════════════════════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════════════════════ -->
+  <section id="hero" style="--hero-object-position: 60% 28%; --hero-object-position-mobile: 68% 20%;">
+    <div class="hero-bg">
+      <img id="hero-img" src="images/hero/home-hero-new.jpg"
+        alt="Claudia Dimmler, Kinesiologin und Yogalehrerin in Adligenswil" onerror="this.style.display='none'">
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <h1 class="hero-h1">
+        Im Gleichgewicht<br>
+        zu mehr<br>
+        <em>Lebensqualität.</em>
+      </h1>
+      <p class="hero-sub">
+        Ich begleite Kinder, Jugendliche und Erwachsene mit Kinesiologie und Yoga,
+        damit Körper, Geist und Seele wieder ins Gleichgewicht kommen.
+      </p>
+      <div class="hero-actions">
+        <a href="#cta-final" class="btn-primary">
+          Termin online buchen
+          <span class="btn-pi">&#8599;</span>
+        </a>
+        <a href="/leistungen/kinesiologie" class="btn-ghost">Angebot entdecken &rarr;</a>
+      </div>
+      <p class="hero-location">Adligenswil bei Luzern</p>
+    </div>
+
+    <div class="scroll-cue" aria-hidden="true">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── TRUST STRIP ───────────────────────────────────────────── -->
+  <div id="trust">
+    <div class="trust-row">
+      <span>Dipl. Komplementärtherapeutin Kinesiologie AKT</span>
+      <span class="trust-dot">&bull;</span>
+      <span>EMR-zertifiziert</span>
+      <span class="trust-dot">&bull;</span>
+      <span>KineSuisse Verbandsmitglied</span>
+      <span class="trust-dot">&bull;</span>
+      <span>CSS Coin Partnerin</span>
+      <span class="trust-dot">&bull;</span>
+      <span>Adligenswil bei Luzern</span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════════════
+     ERKLÄRT — Just the quote, enormous space
+══════════════════════════════════════════════════════════════ -->
+  <section id="erklaert">
+    <div class="erkl-inner">
+      <blockquote class="erkl-quote reveal">
+        „Dein Körper zeigt, wenn etwas aus dem Gleichgewicht ist."
+      </blockquote>
+      <p class="erkl-body reveal d2">
+        Überbelastung, Dauerstress, unverarbeitete Erlebnisse, unterdrückte Gefühle
+        und fordernde Lebensumstände rauben viel Energie. Kinesiologie unterstützt
+        durch eine körperzentrierte Behandlung in Kombination mit dem Gespräch. Dies
+        fördert dauerhaftes Wohlbefinden, Lebensenergie und innere Balance.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+     WOBEI ICH BEGLEITE
+══════════════════════════════════════════════════════════════ -->
+  <section id="begleitung">
+    <div class="wrap">
+      <div class="begl-head reveal">
+        <h2 class="begl-h2">Wobei ich<br>dich begleite</h2>
+        <p class="begl-intro">
+          Beschwerden werden als Ausdruck einer verminderten Selbstregulation
+          betrachtet. Durch die ganzheitliche Sichtweise von Körper, Geist und
+          Seele verfolge ich einen umfassenden Therapieansatz, der frühzeitig
+          Krankheiten vorbeugen kann.
+        </p>
+      </div>
+      <div class="begl-rows">
+        <div class="begl-row reveal">
+          <span class="begl-num">01</span>
+          <span class="begl-cat">Körperliche Beschwerden</span>
+          <span class="begl-items">Schmerzen &nbsp;&middot;&nbsp; Muskuläre Verspannungen &nbsp;&middot;&nbsp;
+            Haltungsprobleme &nbsp;&middot;&nbsp; Koordinationsstörungen &nbsp;&middot;&nbsp; Überbelastungen
+            &nbsp;&middot;&nbsp; Verdauungsprobleme</span>
+        </div>
+        <div class="begl-row reveal d1">
+          <span class="begl-num">02</span>
+          <span class="begl-cat">Mentale Schwierigkeiten</span>
+          <span class="begl-items">Konzentrationsschwierigkeiten &nbsp;&middot;&nbsp; Lernschwierigkeiten
+            &nbsp;&middot;&nbsp; Motivationsprobleme &nbsp;&middot;&nbsp; Leistungsabfall &nbsp;&middot;&nbsp;
+            Energiemangel &nbsp;&middot;&nbsp; Blockierte Ressourcen &nbsp;&middot;&nbsp; Selbstwertprobleme</span>
+        </div>
+        <div class="begl-row reveal d2">
+          <span class="begl-num">03</span>
+          <span class="begl-cat">Seelische Belastungen</span>
+          <span class="begl-items">Stressempfindungen &nbsp;&middot;&nbsp; Ängste &nbsp;&middot;&nbsp;
+            Erschöpfungszustände &nbsp;&middot;&nbsp; Burnout &nbsp;&middot;&nbsp; Stimmungsschwankungen
+            &nbsp;&middot;&nbsp; Schlafbeschwerden &nbsp;&middot;&nbsp; Psychosomatik</span>
+        </div>
+        <div class="begl-row reveal d3">
+          <span class="begl-num">04</span>
+          <span class="begl-cat">Lebensphasen</span>
+          <span class="begl-items">Schwangerschaft &nbsp;&middot;&nbsp; Kinderwunsch &nbsp;&middot;&nbsp; Wechseljahre
+            &nbsp;&middot;&nbsp; Pubertät &nbsp;&middot;&nbsp; Trauer &nbsp;&middot;&nbsp; Herausfordernde
+            Entwicklungsschritte</span>
+        </div>
+        <div class="begl-row reveal d4">
+          <span class="begl-num">05</span>
+          <span class="begl-cat">Körper &amp; Sport</span>
+          <span class="begl-items">Regenerationsprobleme &nbsp;&middot;&nbsp; Muskuläre Beschwerden &nbsp;&middot;&nbsp;
+            Begleitung vor und nach Operationen &nbsp;&middot;&nbsp; Zusammenarbeit mit Physiotherapie</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+     KINESIOLOGIE
+══════════════════════════════════════════════════════════════ -->
+  <section id="kinesiologie">
+
+    <div class="spread sage-spread">
+      <div class="spread-inner" data-parallax>
+        <img src="images/Kinesiology/claudia-302-hero-color-matched.jpg"
+          alt="Kinesiologie-Behandlung mit Muskeltest"
+          style="--img-object-position: center 30%; --img-object-position-mobile: center 28%;">
+      </div>
+      <div class="spread-intro reveal">
+        <h2 class="spread-h2">
+          Komplementärtherapie<br>
+          für Körper, <em>Geist und Seele</em>
+        </h2>
+      </div>
+    </div>
+
+    <div class="svc sage-bg">
+      <div class="wrap">
+        <div class="svc-editorial">
+
+          <div>
+            <p class="svc-lead reveal">
+              Die komplementärtherapeutische Kinesiologie ist eine ganzheitliche,
+              körperzentrierte Methode: Sie sieht Körper, Geist und Seele als
+              Einheit und verbindet westliche Medizin mit dem Wissen fernöstlicher Lehren.
+            </p>
+            <p class="svc-body reveal d1">
+              Sie nutzt den Muskeltest als Biofeedback-Instrument, um mit dem
+              körpereigenen Wissen in Verbindung zu treten und die Ursachen von
+              Ungleichgewichten aufzuspüren.
+            </p>
+            <p class="svc-body reveal d2">
+              Ziel ist es, Blockaden zu lösen, Ressourcen zu stärken und die
+              Selbstregulation des Körpers zu aktivieren. Das Ziel ist mehr Wohlbefinden,
+              Lebensenergie und innere Balance.
+            </p>
+            <a href="#" class="btn btn-sage reveal d3">
+              Mehr zur Kinesiologie
+              <span class="btn-icon">&#8599;</span>
+            </a>
+          </div>
+
+          <div class="svc-items-col reveal d1">
+            <div class="svc-item">Blockaden lösen</div>
+            <div class="svc-item">Ressourcen stärken</div>
+            <div class="svc-item">Selbstregulation aktivieren</div>
+            <div class="svc-item">Körpereigenes Wissen nutzen</div>
+            <div class="svc-item">Lebensenergie steigern</div>
+            <div class="svc-item">Innere Balance wiederfinden</div>
+            <div class="svc-item">Genesungskompetenz stärken</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+     KINDERWUNSCH
+══════════════════════════════════════════════════════════════ -->
+  <section id="kinderwunsch">
+
+    <div class="spread wine-spread">
+      <div class="spread-inner" data-parallax>
+        <img src="images/layout%20images/pregnant.png" alt="Einfühlsame Begleitung auf dem Weg zum Wunschkind"
+          style="--img-object-position: center 40%; --img-object-position-mobile: center 35%;">
+      </div>
+      <div class="spread-intro reveal">
+        <h2 class="spread-h2">
+          Ein geschützter Raum<br>
+          auf dem Weg zum <em>Wunschkind</em>
+        </h2>
+      </div>
+    </div>
+
+    <div class="svc blush-bg">
+      <div class="wrap">
+        <div class="svc-editorial">
+
+          <div>
+            <p class="svc-lead reveal">
+              Ein unerfüllter Kinderwunsch berührt alle Lebensbereiche:
+              körperlich, emotional und als Partnerschaft.
+            </p>
+            <p class="svc-body reveal d1">
+              Ich begleite dich in dieser sensiblen Zeit mit liebevoller und
+              professioneller Unterstützung im Rahmen der komplementärtherapeutischen
+              Kinesiologie. Dabei begegne ich dir stets ruhig, achtsam und auf Augenhöhe.
+            </p>
+            <p class="svc-body reveal d2">
+              Jeder Weg zum Kind ist individuell. Ich halte Raum für alles, was
+              dich bewegt: ohne Wertung, ohne Eile.
+            </p>
+            <a href="#" class="btn btn-wine reveal d3">
+              Mehr zur Kinderwunschbegleitung
+              <span class="btn-icon">&#8599;</span>
+            </a>
+          </div>
+
+          <div class="svc-items-col reveal d1">
+            <div class="svc-item">Natürlicher Kinderwunsch</div>
+            <div class="svc-item">Begleitung bei IVF, ICSI oder Insemination</div>
+            <div class="svc-item">Stressregulation während medizinischer Behandlungen</div>
+            <div class="svc-item">Unterstützung in Wartephasen</div>
+            <div class="svc-item">Begleitung nach Fehlgeburt oder stiller Geburt</div>
+            <div class="svc-item">Paarbegleitung in belastenden Phasen</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+     YOGA
+══════════════════════════════════════════════════════════════ -->
+  <section id="yoga">
+
+    <div class="spread warm-spread">
+      <div class="spread-inner" data-parallax>
+        <img src="images/yoga/yoga-raum-claudia-dimmler.jpg" alt="Yoga Studio DeineQuelle Adligenswil"
+          style="--img-object-position: center center;">
+      </div>
+      <div class="spread-intro reveal">
+        <h2 class="spread-h2">
+          Hatha Yoga mit<br>
+          <em>Pratyahara&#8209;Meditation</em>
+        </h2>
+      </div>
+    </div>
+
+    <div class="svc beige-bg">
+      <div class="wrap">
+        <div class="svc-editorial">
+
+          <div>
+            <p class="svc-lead reveal">
+              Im Mittelpunkt steht nicht die Leistung, sondern das bewusste Ankommen
+              im Körper, Moment für Moment.
+            </p>
+            <p class="svc-body reveal d1">
+              Traditionelle Körperübungen, Atemübungen und Meditationen, inspiriert
+              aus der Satyananda&reg;-Tradition, wirken den Herausforderungen des
+              Alltags entgegen und ermöglichen vollkommene Entspannung für
+              Körper und Geist.
+            </p>
+            <a href="#" class="btn btn-accent reveal d3">
+              Yoga Angebot ansehen
+              <span class="btn-icon">&#8599;</span>
+            </a>
+          </div>
+
+          <div class="svc-items-col reveal d1">
+            <div class="svc-item">Stressabbau &amp; innere Ruhe</div>
+            <div class="svc-item">Körperliche Anspannung lösen</div>
+            <div class="svc-item">Bewusste Körperwahrnehmung</div>
+            <div class="svc-item">Entspannung und Regeneration</div>
+            <div class="svc-item">Schlafstörungen lindern</div>
+            <div class="svc-item">Spirituelle Weiterentwicklung</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+     ÜBER CLAUDIA
+══════════════════════════════════════════════════════════════ -->
+  <section id="claudia">
+
+    <div class="spread light-spread">
+      <div class="spread-inner" data-parallax>
+        <img src="images/Claudia/claudia_dimmler_3.jpg"
+          alt="Claudia Dimmler, Kinesiologin und Yogalehrerin in Adligenswil"
+          style="--img-object-position: center 20%; --img-object-position-mobile: center 12%;"
+          onerror="this.src='images/Claudia/claudia-dimmler-Kinesiologie-Adligenswil.jpg'">
+      </div>
+      <div class="spread-intro reveal">
+        <h2 class="spread-h2">
+          Ruhige Begleitung mit<br>
+          <em>Erfahrung &amp; Feingefühl</em>
+        </h2>
+      </div>
+    </div>
+
+    <div class="claudia-bio">
+      <div class="wrap">
+        <div class="claudia-grid">
+
+          <div class="claudia-left reveal">
+            <h2 class="claudia-h2">
+              Mit Herz und<br>
+              <em>Erfahrung für dich da.</em>
+            </h2>
+            <div class="claudia-creds">
+              <span>Dipl. Komplementärtherapeutin Kinesiologie</span>
+              <span>Branchenzertifikat OdA-KT</span>
+              <span>Yogalehrerin nach der Satyananda&reg;-Tradition</span>
+              <span>Medizinische Praxisassistentin EFZ</span>
+            </div>
+          </div>
+
+          <div class="claudia-right">
+            <p class="reveal d1">
+              Geboren 1972 in Luzern, aufgewachsen in Luzern und Adligenswil. Nach meiner
+              Ausbildung zur medizinischen Praxisassistentin arbeitete ich zehn Jahre lang mit Freude in diesem Beruf.
+            </p>
+            <p class="reveal d1">
+              Schon seit meiner Kindheit ist Bewegung ein wesentlicher Teil meines Lebens,
+              wobei mich das Tanzen besonders fasziniert. Heute finde ich beim Bachata- und
+              Salsa-Tanzen einen wunderbaren, lebendigen Ausgleich zum Alltag.
+            </p>
+            <p class="reveal d2">
+              Als Mutter von vier Töchtern durfte ich eine intensive und bereichernde Familienzeit
+              erleben. Während dieser Jahre wuchs in mir das Bedürfnis nach innerer Ruhe. So
+              fand ich meinen Weg zum Yoga, zu Yoga Nidra und schliesslich zur Kinesiologie.
+            </p>
+            <blockquote class="claudia-quote reveal d3">
+              „Yoga, Yoga Nidra und die Kinesiologie haben mein Leben nachhaltig bereichert.
+              Diese Erfahrung möchte ich weitergeben und Menschen dabei unterstützen,
+              ihre eigene Kraftquelle zu entdecken.“
+            </blockquote>
+            <p class="reveal d3">
+              Heute begleite ich Menschen von Herzen gerne auf ihrem persönlichen Weg
+              zu mehr Balance, Wohlbefinden und Gesundheit.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+     3 SCHRITTE
+══════════════════════════════════════════════════════════════ -->
+  <section id="schritte">
+    <div class="wrap">
+      <h2 class="schritte-h2 reveal">In 3 Schritten zur <em>Gesundheit</em></h2>
+      <div class="schritte-cols">
+        <div class="schritt reveal">
+          <p class="schritt-num">1</p>
+          <h3>Termin online buchen</h3>
+          <p>Wähle deinen ersten Termin einfach online. Die Erstbehandlung dauert rund 90 Minuten.</p>
+        </div>
+        <div class="schritt reveal d1">
+          <p class="schritt-num">2</p>
+          <h3>Anliegen besprechen</h3>
+          <p>Wir schauen gemeinsam in einem offenen, vertrauensvollen Gespräch, was dich beschäftigt.</p>
+        </div>
+        <div class="schritt reveal d2">
+          <p class="schritt-num">3</p>
+          <h3>Selbstregulation stärken</h3>
+          <p>Mit Kinesiologie oder Yoga begleite ich dich Schritt für Schritt zu mehr Balance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+     FINAL CTA + PRAXIS INFO
+══════════════════════════════════════════════════════════════ -->
+  <section id="cta-final">
+    <div class="wrap">
+      <div class="cta-grid">
+        <div>
+          <h2 class="cta-h2 reveal">
+            Finde zurück zu mehr<br>
+            <em>innerer Balance.</em>
+          </h2>
+          <p class="cta-sub reveal d1">
+            Ob Kinderwunsch, Stress, Erschöpfung, Sport oder eine herausfordernde
+            Lebensphase: Ich begleite dich ruhig, achtsam und professionell.
+          </p>
+        </div>
+        <div class="cta-right reveal d2">
+          <a href="#" class="btn-dark">
+            Termin online buchen
+            <span class="btn-pi">&#8599;</span>
+          </a>
+          <div class="cta-contact">
+            <a href="tel:+41764138050">076 413 80 50</a>
+            <a href="mailto:info@deinequelle.com">info@deinequelle.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="praxis-bar reveal">
+        <div class="praxis-cell">
+          <h4>Sitzungsdauer</h4>
+          <p>Erstbehandlung rund <strong>90 Min.</strong><br>Folgesitzungen 60–75 Minuten.</p>
+        </div>
+        <div class="praxis-cell">
+          <h4>Krankenkasse</h4>
+          <p>EMR-zertifiziert. Je nach Zusatzversicherung Kostenübernahme möglich. CSS Coin Partnerin (Yoga).</p>
+        </div>
+        <div class="praxis-cell">
+          <h4>Praxisadresse</h4>
+          <address>
+            DeineQuelle &middot; Claudia Dimmler<br>
+            Meggerstrasse 4a, 6043 Adligenswil<br>
+            Parkplätze vorhanden &middot; Postauto Nr. 73
+          </address>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Partner Logos -->
+        <div class="footer-col brand-col">
+          <img src="images/Logo/Deine%20Quelle%20logo%206-2.png" alt="DeineQuelle Logo" class="footer-logo">
+          <p class="footer-desc">Ganzheitliche Begleitung mit Kinesiologie und Yoga für Körper, Geist und Seele.</p>
+          <div class="footer-partner-logos">
+            <img src="images/other/emr_zertifiziert_gs.png" alt="EMR zertifiziert" class="partner-logo">
+            <img src="images/other/css coin.png" alt="CSS Coin Partnerin" class="partner-logo">
+          </div>
+        </div>
+        <!-- Col 2: Navigation Links -->
+        <div class="footer-col links-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="/leistungen/kinesiologie">Kinesiologie</a></li>
+            <li><a href="/leistungen/kinderwunsch">Kinderwunsch</a></li>
+            <li><a href="/leistungen/yoga">Yoga</a></li>
+            <li><a href="/ueber-mich">Über mich</a></li>
+            <li><a href="/kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+        <!-- Col 3: Address & Contact -->
+        <div class="footer-col contact-col">
+          <h4>Kontakt</h4>
+          <address>
+            <strong>DeineQuelle &middot; Claudia Dimmler</strong><br>
+            Meggerstrasse 4a<br>
+            6043 Adligenswil<br>
+            <span class="contact-methods">
+              <a href="tel:+41764138050">076 413 80 50</a>
+              <a href="mailto:info@deinequelle.com">info@deinequelle.com</a>
+            </span>
+          </address>
+        </div>
+        <!-- Col 4: Map -->
+        <div class="footer-col map-col">
+          <h4>Standort</h4>
+          <div class="footer-map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.1417062402123!2d8.361952377284795!3d47.05710087114457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478564f2fb9a72c1%3A0x6e9f50e7a2d8e6cb!2sMeggerstrasse%204a%2C%206043%20Adligenswil!5e0!3m2!1sde!2sch!4v1716900000000!5m2!1sde!2sch"
+              width="100%" height="100%"
+              style="border:0; filter: grayscale(1) sepia(0.2) contrast(0.9) brightness(0.95); border-radius: 4px;"
+              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 DeineQuelle &middot; Claudia Dimmler, Adligenswil. Alle Rechte vorbehalten.</p>
+        <p>
+          <a href="/impressum">Impressum</a> ·
+          <a href="/datenschutz">Datenschutz</a> ·
+          <a href="/agb">AGB</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+
+      /* ── Progress bar ──────────────────────────────────────── */
+      var prog = document.getElementById('progress');
+
+      /* ── Parallax setup ────────────────────────────────────── */
+      var heroImg = document.getElementById('hero-img');
+      var spreads = document.querySelectorAll('[data-parallax]');
+      var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 960;
+
+      /* ── Scroll reveal (IntersectionObserver) ──────────────── */
+      var reveals = document.querySelectorAll('.reveal');
+      var io = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('vis');
+              io.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.07, rootMargin: '0px 0px -36px 0px' }
+      );
+
+      reveals.forEach(function (el) { io.observe(el); });
+
+      /* ── Scroll handler ────────────────────────────────────── */
+      function onScroll() {
+        var y = window.scrollY;
+        var max = document.body.scrollHeight - window.innerHeight;
+
+        /* Progress bar */
+        if (prog) prog.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+
+        /* Scrolled state for header */
+        var nav = document.getElementById('nav');
+        if (nav) {
+          if (y > 50) {
+            nav.classList.add('scrolled');
+          } else {
+            nav.classList.remove('scrolled');
+          }
+        }
+
+        /* Parallax */
+        if (!isMobile) {
+          if (heroImg) heroImg.style.transform = 'translateY(' + (y * 0.26) + 'px)';
+
+          spreads.forEach(function (el) {
+            var rect = el.parentElement.getBoundingClientRect();
+            if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+            var p = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+            el.style.transform = 'translateY(' + ((p - 0.5) * 20) + '%)';
+          });
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      /* ── Hamburger / mobile overlay ────────────────────────── */
+      var ham = document.getElementById('ham');
+      var overlay = document.getElementById('mob-overlay');
+
+      function toggleMenu(open) {
+        ham.classList.toggle('open', open);
+        overlay.classList.toggle('open', open);
+        ham.setAttribute('aria-expanded', String(open));
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+
+      ham.addEventListener('click', function () {
+        toggleMenu(!overlay.classList.contains('open'));
+      });
+
+      overlay.querySelectorAll('.mob-link').forEach(function (link) {
+        link.addEventListener('click', function () { toggleMenu(false); });
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && overlay.classList.contains('open')) toggleMenu(false);
+      });
+
+    }());
+  </script>
+
+</body>
+
+</html>
