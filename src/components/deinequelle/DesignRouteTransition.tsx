@@ -21,7 +21,7 @@ export function DesignRouteTransition({
   }, [pathname]);
 
   return (
-    <div key={pathname} className="dq-page-enter">
+    <div key={pathname}>
       {children}
     </div>
   );
