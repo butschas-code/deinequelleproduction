@@ -100,6 +100,25 @@ export function DeineQuelleDesignRuntime() {
       ?.querySelectorAll<HTMLAnchorElement>(".mob-link")
       .forEach((link) => link.addEventListener("click", () => toggleMenu(false)));
     document.addEventListener("keydown", onKeydown);
+
+    const hashLinks = Array.from(
+      page.querySelectorAll<HTMLAnchorElement>('a[href^="#"]'),
+    );
+    const onHashClick = (event: Event) => {
+      const link = event.currentTarget as HTMLAnchorElement;
+      const hash = link.getAttribute("href");
+      if (!hash || hash === "#") return;
+
+      const target = page.querySelector<HTMLElement>(hash);
+      if (!target) return;
+
+      event.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      history.pushState(null, "", hash);
+    };
+
+    hashLinks.forEach((link) => link.addEventListener("click", onHashClick));
+
     onScroll();
 
     const revealFallback = window.setTimeout(() => {
@@ -112,6 +131,7 @@ export function DeineQuelleDesignRuntime() {
       window.removeEventListener("scroll", onScroll);
       ham?.removeEventListener("click", onHamClick);
       document.removeEventListener("keydown", onKeydown);
+      hashLinks.forEach((link) => link.removeEventListener("click", onHashClick));
       document.body.style.overflow = "";
     };
   }, []);

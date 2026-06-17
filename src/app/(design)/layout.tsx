@@ -1,4 +1,5 @@
 import { Cormorant_Garamond, Jost } from "next/font/google";
+import { DesignRouteTransition } from "@/components/deinequelle/DesignRouteTransition";
 import "../deinequelle-design.css";
 
 const cormorant = Cormorant_Garamond({
@@ -22,6 +23,8 @@ export default function DesignLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className={`${cormorant.variable} ${jost.variable}`}>{children}</div>
+    <div className={`${cormorant.variable} ${jost.variable}`}>
+      <DesignRouteTransition>{children}</DesignRouteTransition>
+    </div>
   );
 }

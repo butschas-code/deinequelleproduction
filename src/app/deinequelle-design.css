@@ -19,6 +19,29 @@ body:has(.deinequelle-design-page) {
   min-height: 100vh;
 }
 
+.dq-page-enter {
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  animation: dq-page-enter 0.24s var(--ease) both;
+}
+
+@keyframes dq-page-enter {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+
+  to {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dq-page-enter {
+    animation: none;
+  }
+}
+
 .deinequelle-design-page iframe {
   display: block;
 }
@@ -226,7 +249,7 @@ body:has(.deinequelle-design-page) {
     }
 
     html:has(.deinequelle-design-page) {
-      scroll-behavior: smooth;
+      scroll-behavior: auto;
     }
 
     .deinequelle-design-page img {
