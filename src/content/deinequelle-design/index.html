@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap"
     rel="stylesheet">
 
   <style>
@@ -1865,6 +1865,39 @@
   </nav>
 
   <!-- ══════════════════════════════════════════════════════════════
+     HERO INTRO — Brand collage with animated type
+══════════════════════════════════════════════════════════════ -->
+  <section id="hero-intro" class="hero-intro" aria-label="Kinesiologie und Yoga">
+    <div class="hero-intro-bg">
+      <picture>
+        <source media="(max-width: 960px)" srcset="images/hero/hero-final-mobile.jpg" />
+        <img
+          src="images/hero/hero-final-desktop.jpg"
+          alt="Kinesiologie und Hatha Yoga bei DeineQuelle"
+          fetchpriority="high"
+        />
+      </picture>
+    </div>
+    <div class="hero-intro-wash" aria-hidden="true"></div>
+
+    <div class="hero-intro-type">
+      <div class="hero-intro-composition">
+        <div class="hero-intro-cluster hero-intro-cluster-tl">
+          <p class="hero-intro-kicker hero-intro-anim" style="--hero-i: 0">Komplementärtherapie</p>
+          <p class="hero-intro-display hero-intro-anim" style="--hero-i: 1">Kinesiologie</p>
+        </div>
+
+        <p class="hero-intro-amp hero-intro-anim" style="--hero-i: 2" aria-hidden="true">&amp;</p>
+
+        <div class="hero-intro-cluster hero-intro-cluster-br">
+          <p class="hero-intro-kicker hero-intro-anim" style="--hero-i: 3">Hatha</p>
+          <p class="hero-intro-display hero-intro-anim" style="--hero-i: 4">Yoga</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
      HERO
 ══════════════════════════════════════════════════════════════ -->
   <section id="hero">
@@ -1900,7 +1933,7 @@
 
   <!-- ── TRUST STRIP ───────────────────────────────────────────── -->
   <div id="trust">
-    <div class="trust-row">
+    <div class="trust-row reveal">
       <span>Komplementärtherapeutin Kinesiologie mit eidg. Diplom</span>
       <span class="trust-dot">&bull;</span>
       <span>EMR-zertifiziert</span>
@@ -2336,8 +2369,7 @@
       /* ── Progress bar ──────────────────────────────────────── */
       var prog = document.getElementById('progress');
 
-      /* ── Parallax setup ────────────────────────────────────── */
-      var heroImg = document.getElementById('hero-img');
+      /* ── Parallax setup (spread sections only) ─────────────── */
       var spreads = document.querySelectorAll('[data-parallax]');
       var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 960;
 
@@ -2375,10 +2407,8 @@
           }
         }
 
-        /* Parallax */
+        /* Parallax — spread sections only; hero image scrolls with text */
         if (!isMobile) {
-          if (heroImg) heroImg.style.transform = 'translateY(' + (y * 0.26) + 'px)';
-
           spreads.forEach(function (el) {
             var rect = el.parentElement.getBoundingClientRect();
             if (rect.bottom < 0 || rect.top > window.innerHeight) return;

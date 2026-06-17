@@ -2,6 +2,7 @@
 
 import { useId, useState } from "react";
 import type { DesignPageData } from "@/data/deinequelleDesignPages";
+import { DisplayHeading } from "@/components/deinequelle/DisplayHeadingLines";
 
 type Guide = NonNullable<DesignPageData["guideSection"]>;
 
@@ -19,15 +20,12 @@ export function GuideSectionAccordion({
     <section id="begleitung" className={surfaceClass.trim() || undefined}>
       <div className="wrap">
         <div className="begl-head reveal">
-          <h2 className="begl-h2">
-            {guide.title}
-            {guide.titleEmphasis ? (
-              <>
-                <br />
-                {guide.titleEmphasis}
-              </>
-            ) : null}
-          </h2>
+          <DisplayHeading
+            as="h2"
+            className="begl-h2"
+            title={guide.title}
+            emphasis={guide.titleEmphasis}
+          />
           <p className="begl-intro">{guide.intro}</p>
         </div>
 

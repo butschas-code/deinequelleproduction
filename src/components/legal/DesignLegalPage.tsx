@@ -1,6 +1,6 @@
 import { loadLegalText } from "@/lib/legal/loadLegalText";
 import { DesignFooter, DesignNav } from "@/components/deinequelle/DesignPage";
-import { DeineQuelleDesignRuntime } from "@/components/home/DeineQuelleDesignRuntime";
+import { DisplayHeading } from "@/components/deinequelle/DisplayHeadingLines";
 
 type Props = {
   eyebrow?: string;
@@ -77,15 +77,12 @@ export function DesignLegalPage({
           <div className="wrap">
             <header className="svc-section-head reveal">
               <p className="dq-kicker">{eyebrow}</p>
-              <h1 className="spread-h2">
-                {title}
-                {subtitle ? (
-                  <>
-                    <br />
-                    <em>{subtitle}</em>
-                  </>
-                ) : null}
-              </h1>
+              <DisplayHeading
+                as="h1"
+                className="spread-h2"
+                title={title}
+                emphasis={subtitle}
+              />
             </header>
 
             <div className="svc-editorial svc-editorial-single">
@@ -108,8 +105,6 @@ export function DesignLegalPage({
 
         <DesignFooter />
       </main>
-
-      <DeineQuelleDesignRuntime />
     </>
   );
 }

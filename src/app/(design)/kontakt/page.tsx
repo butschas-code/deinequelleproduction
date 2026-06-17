@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { DesignFooter, DesignNav, Hero } from "@/components/deinequelle/DesignPage";
-import { DeineQuelleDesignRuntime } from "@/components/home/DeineQuelleDesignRuntime";
 import type { DesignPageData } from "@/data/deinequelleDesignPages";
 import { site } from "@/data/site";
 export const metadata: Metadata = {
@@ -64,8 +63,8 @@ export default function KontaktPage() {
                 <p className="dq-kicker">So erreichst du mich</p>
                 <h2>Wähle den Weg, der für dich am einfachsten ist.</h2>
                 <div className="dq-contact-cards">
-                  {contactOptions.map((option) => (
-                    <article key={option.title} className="dq-contact-card">
+                  {contactOptions.map((option, index) => (
+                    <article key={option.title} className={`dq-contact-card reveal d${Math.min(index + 1, 3)}`}>
                       <h3>{option.title}</h3>
                       <p>{option.body}</p>
                       <div className="dq-contact-actions">
@@ -141,7 +140,6 @@ export default function KontaktPage() {
 
         <DesignFooter />
       </main>
-      <DeineQuelleDesignRuntime />
     </>
   );
 }

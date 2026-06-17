@@ -144,13 +144,13 @@ export const designPages = {
     contentLayout: "dense",
     eyebrow: "Kinesiologie",
     title: "Zurück in Balance",
-    titleEmphasis: "mit Körper, Gefühl und innerer Kraft.",
+    titleEmphasis: "mit Körper, Gefühl\nund innerer Kraft.",
     intro:
       "Kinesiologie unterstützt dich dabei, Stressmuster wahrzunehmen, Ressourcen zu stärken und wieder mehr Ruhe und Klarheit zu finden.",
     heroImage: "/images/hero/Kinesiologie_hero.jpg",
     heroAlt: "Kinesiologie-Behandlung mit Muskeltest",
     heroObjectPosition: "right center",
-    heroObjectPositionMobile: "center 35%",
+    heroObjectPositionMobile: "76% 24%",
     heroImageHeight: "100%",
     heroActions: {
       primary: {
@@ -173,12 +173,12 @@ export const designPages = {
         theme: "sage",
         hideSpread: true,
         kicker: "Komplementärtherapie",
-        title: "Ganzheitlich auf dem Weg zu",
-        titleEmphasis: "Gesundheit und innerer Balance",
+        title: "Ganzheitlich auf dem\nWeg zu",
+        titleEmphasis: "Gesundheit und\ninnerer Balance",
         image: "/images/Claudia/claudia-dimmler-Kinesiologie-Adligenswil.jpg",
         imageAlt: "Claudia Dimmler, Komplementärtherapeutin in Adligenswil",
         imageObjectPosition: "center 25%",
-        imageObjectPositionMobile: "center 18%",
+        imageObjectPositionMobile: "center 20%",
         lead:
           "Komplementärtherapie begleitet Menschen ganzheitlich auf ihrem Weg zu mehr Gesundheit, Wohlbefinden und innerer Balance. Sie betrachtet Körper, Geist und Seele als Einheit und unterstützt die natürlichen Selbstheilungskräfte des Menschen.",
         body: [
@@ -190,11 +190,12 @@ export const designPages = {
         id: "kinesiologie-methode",
         theme: "sage-deep",
         kicker: "Methode",
-        title: "Kinesiologie, eine anerkannte Methode der",
+        title: "Kinesiologie,\neine anerkannte\nMethode der",
         titleEmphasis: "Komplementärtherapie",
         image: "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-357_klein.jpg",
         imageAlt: "Kinesiologische Begleitung in der Praxis",
         imageObjectPosition: "center 30%",
+        imageObjectPositionMobile: "center 22%",
         lead:
           "Zurück in die eigene Balance finden, mit Kinesiologie als sanfter und wirkungsvoller Begleitung für Körper, Geist und Seele.",
         body: [
@@ -208,11 +209,11 @@ export const designPages = {
         theme: "sage",
         kicker: "Was ist Kinesiologie?",
         title: "Kinesiologie,",
-        titleEmphasis: "die Lehre der Bewegung",
+        titleEmphasis: "die Lehre\nder Bewegung",
         image: "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-347_klein.jpg",
         imageAlt: "Claudia Dimmler in ruhiger Praxisatmosphäre",
         imageObjectPosition: "center 20%",
-        imageObjectPositionMobile: "center 12%",
+        imageObjectPositionMobile: "center 16%",
         lead:
           "Die Kinesiologie verbindet Erkenntnisse der westlichen Medizin mit dem Wissen traditioneller östlicher Heilmethoden. Elemente wie die Lehre von Yin und Yang, die fünf Elemente, das Meridiansystem und Akupressur fliessen ebenso in die Arbeit ein wie Erkenntnisse aus Medizin, Psychologie, Pädagogik, Ernährungs- und Bewegungslehre.",
         body: [
@@ -225,10 +226,11 @@ export const designPages = {
         theme: "sage-soft",
         kicker: "Wahrnehmung",
         title: "Dein Körper zeigt,",
-        titleEmphasis: "wenn etwas nicht stimmt",
+        titleEmphasis: "wenn etwas\nnicht stimmt",
         image: "/images/Kinesiology/claudia_dimmler_cj_2022-117_resize.jpg",
         imageAlt: "Lichtvolle, ruhige Atmosphäre in der Praxis",
         imageObjectPosition: "center center",
+        imageObjectPositionMobile: "center 26%",
         lead:
           "Manchmal spüren wir deutlich, dass etwas aus dem Gleichgewicht geraten ist. Der Körper ist angespannt. Der Schlaf wird unruhig. Gedanken kreisen. Gefühle werden schwer. Beschwerden zeigen sich, ohne dass sofort klar ist, woher sie kommen.",
         body: [
@@ -244,11 +246,12 @@ export const designPages = {
         id: "sportkinesiologie",
         theme: "sage",
         kicker: "Sportkinesiologie",
-        title: "Für Bewegung, Regeneration und",
-        titleEmphasis: "sportliche Belastung",
+        title: "Für Bewegung,\nRegeneration und",
+        titleEmphasis: "sportliche\nBelastung",
         image: "/images/legacy/wp/2022/10/DeinQuelle-1557-scaled.jpg",
         imageAlt: "Sportkinesiologie in der Praxis",
         imageObjectPosition: "center 30%",
+        imageObjectPositionMobile: "center 24%",
         lead:
           "Sportkinesiologie betrachtet den Menschen in seiner Gesamtheit und berücksichtigt das Zusammenspiel von Körper, Geist, biochemischen Prozessen und dem individuellen Umfeld.",
         body: [
@@ -274,10 +277,11 @@ export const designPages = {
         theme: "sage-soft",
         kicker: "Wirkung",
         title: "Wie wirkt Kinesiologie?",
-        titleEmphasis: "Veränderung wird über den Körper erfahrbar",
+        titleEmphasis: "Veränderung wird über\nden Körper erfahrbar",
         image: "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-425_klein.jpg",
         imageAlt: "Kinesiologische Sitzung mit Claudia Dimmler",
         imageObjectPosition: "center 25%",
+        imageObjectPositionMobile: "center 20%",
         lead:
           "Kinesiologie wirkt über die Förderung der natürlichen Selbstregulation des Menschen. Sie betrachtet Körper, Geist und Seele als Einheit und unterstützt dabei, Belastungen, Stress und Energieungleichgewichte bewusst wahrzunehmen und auszugleichen.",
         body: [
@@ -287,7 +291,7 @@ export const designPages = {
       },
     ],
     guideSection: {
-      title: "Wann kann Kinesiologie",
+      title: "Wann kann\nKinesiologie",
       titleEmphasis: "unterstützen?",
       layout: "accordion",
       theme: "sage-deep",
@@ -379,7 +383,7 @@ export const designPages = {
     },
     guideAfterSectionId: "koerper-signale",
     finalCta: {
-      title: "Bereit, deinem Körper",
+      title: "Bereit, deinem\nKörper",
       emphasis: "zuzuhören?",
       body:
         "Dein Körper spricht mit dir, manchmal leise, manchmal deutlich. Wenn du seine Signale besser verstehen und wieder mehr Balance, Klarheit und Wohlbefinden in dein Leben bringen möchtest, begleite ich dich gerne ein Stück auf deinem Weg.",
@@ -402,6 +406,7 @@ export const designPages = {
     heroAlt: "Einfühlsame Begleitung auf dem Weg zum Wunschkind",
     heroEmphasisTone: "wine",
     heroObjectPosition: "center 40%",
+    heroObjectPositionMobile: "center 32%",
     heroActions: {
       primary: {
         label: "Termin buchen",
@@ -421,11 +426,12 @@ export const designPages = {
         id: "emotionaler-einstieg",
         theme: "wine",
         presentation: "head",
-        title: "Wenn Kinderwunsch zur",
-        titleEmphasis: "inneren Belastung wird",
+        title: "Wenn Kinderwunsch\nzur",
+        titleEmphasis: "inneren Belastung\nwird",
         image: "/images/layout images/pregnant.png",
         imageAlt: "Einfühlsame Kinderwunschbegleitung",
         imageObjectPosition: "center 40%",
+        imageObjectPositionMobile: "center 32%",
         lead:
           "Ein unerfüllter Kinderwunsch berührt oft mehr als den Körper. Er berührt Hoffnung, Vertrauen, Partnerschaft, Sexualität, Selbstbild und das Gefühl, den eigenen Körper nicht mehr richtig verstehen zu können.",
         body: [
@@ -437,11 +443,12 @@ export const designPages = {
         theme: "wine-soft",
         presentation: "spread",
         kicker: "Ganzheitliche Unterstützung",
-        title: "Stress regulieren, Körper und Hormone",
+        title: "Stress regulieren, Körper\nund Hormone",
         titleEmphasis: "unterstützen",
         image: "/images/layout images/kinderwunsch-ganzheitliche-unterstuetzung.jpg",
         imageAlt: "Sanfte, ganzheitliche Kinderwunschbegleitung in ruhiger Atmosphäre",
         imageObjectPosition: "center center",
+        imageObjectPositionMobile: "center 28%",
         lead:
           "Kinesiologie ersetzt keine medizinische Behandlung. Sie kann dich jedoch ergänzend auf körperlicher, emotionaler und mentaler Ebene unterstützen.",
         body: [
@@ -456,11 +463,12 @@ export const designPages = {
         presentation: "split",
         splitMedia: "right",
         kicker: "Natürlicher Kinderwunsch",
-        title: "Den eigenen Körper",
-        titleEmphasis: "bewusster begleiten",
+        title: "Den eigenen\nKörper",
+        titleEmphasis: "bewusster\nbegleiten",
         image: "/images/layout images/kinderwunsch-natuerlicher-kinderwunsch.jpg",
         imageAlt: "Frau in ruhiger, achtsamer Haltung — Begleitung auf dem natürlichen Weg zum Wunschkind",
         imageObjectPosition: "center center",
+        imageObjectPositionMobile: "center 30%",
         lead:
           "Wenn du dir ein Kind wünschst und deinen Körper besser wahrnehmen möchtest, kann Kinesiologie helfen, deinen Zyklus, deine Bedürfnisse und dein inneres Erleben feiner zu spüren.",
         body: [
@@ -477,6 +485,7 @@ export const designPages = {
         image: "/images/Kinesiology/claudia-302.jpg",
         imageAlt: "Kinesiologische Begleitung in der Praxis",
         imageObjectPosition: "center 30%",
+        imageObjectPositionMobile: "center 22%",
         lead:
           "Medizinische Kinderwunschbehandlungen können Hoffnung geben und gleichzeitig sehr fordernd sein.",
         body: [
@@ -505,11 +514,12 @@ export const designPages = {
         theme: "wine",
         presentation: "compact",
         kicker: "Nach Fehlgeburt oder Schwangerschaftsverlust",
-        title: "Raum für Trauer und",
-        titleEmphasis: "behutsamen Neubeginn",
+        title: "Raum für\nTrauer und",
+        titleEmphasis: "behutsamen\nNeubeginn",
         image: "/images/layout images/kinderwunsch-fehlgeburt-trauer.jpg",
         imageAlt: "Weite, ruhige Landschaft — Raum für Trauer und behutsamen Neubeginn",
         imageObjectPosition: "center top",
+        imageObjectPositionMobile: "center 35%",
         lead: "Ein Verlust endet nicht einfach, nur weil der Körper weitermacht.",
         body: [
           "Auch ein früher Schwangerschaftsverlust kann tief berühren. Vielleicht fühlt sich dein Umfeld schon weiter an, während in dir noch Trauer, Schmerz oder Unsicherheit sind.",
@@ -523,11 +533,12 @@ export const designPages = {
         theme: "wine-soft",
         presentation: "head",
         kicker: "Wenn der Weg schon lange dauert",
-        title: "Wieder Boden unter den",
+        title: "Wieder Boden\nunter den",
         titleEmphasis: "Füssen spüren",
         image: "/images/Claudia/claudia-dimmler-Kinesiologie-Adligenswil.jpg",
         imageAlt: "Claudia Dimmler, Komplementärtherapeutin in Adligenswil",
         imageObjectPosition: "center 25%",
+        imageObjectPositionMobile: "center 18%",
         lead:
           "Je länger der Kinderwunsch unerfüllt bleibt, desto mehr kann sich das innere Erleben verändern.",
         body: [
@@ -542,11 +553,12 @@ export const designPages = {
         presentation: "split",
         splitMedia: "left",
         kicker: "Partnerschaft",
-        title: "Gemeinsam durch eine",
+        title: "Gemeinsam\ndurch eine",
         titleEmphasis: "sensible Zeit",
         image: "/images/layout images/kinderwunsch-partnerschaft.jpg",
         imageAlt: "Zwei Hände in ruhiger, verbundener Geste — Partnerschaft im Kinderwunsch",
         imageObjectPosition: "center center",
+        imageObjectPositionMobile: "center 42%",
         lead: "Kinderwunsch betrifft oft die ganze Beziehung.",
         body: [
           "Zwei Menschen gehen denselben Weg, erleben ihn aber nicht immer auf dieselbe Weise. Eine Person möchte reden, die andere braucht Rückzug. Eine Person sucht Lösungen, die andere versucht, nicht daran zu zerbrechen.",
@@ -555,7 +567,7 @@ export const designPages = {
       },
     ],
     process: {
-      title: "So läuft die Begleitung",
+      title: "So läuft die\nBegleitung",
       emphasis: "ab",
       theme: "wine",
       steps: [
@@ -574,8 +586,8 @@ export const designPages = {
       ],
     },
     finalCta: {
-      title: "Du musst diesen Weg",
-      emphasis: "nicht allein gehen",
+      title: "Du musst\ndiesen Weg",
+      emphasis: "nicht allein\ngehen",
       body:
         "Kinderwunsch kann ein stiller Schmerz sein. Hier bekommt er Raum. Ich begleite dich achtsam, körperorientiert und mit viel Respekt für deinen persönlichen Weg.",
       primaryLabel: "Termin buchen",
@@ -589,13 +601,14 @@ export const designPages = {
     slug: "/leistungen/yoga",
     contentLayout: "dense",
     eyebrow: "Hatha Yoga und Yoga Nidra",
-    title: "Ankommen. Atmen.",
-    titleEmphasis: "Innere Ruhe finden.",
+    title: "Ankommen.\nAtmen.",
+    titleEmphasis: "Innere Ruhe\nfinden.",
     intro:
       "Yoga für Körperbewusstsein, Entspannung, Kraft und mehr Balance im Alltag.",
     heroImage: "/images/hero/yoga hero.jpg",
     heroAlt: "Hatha Yoga bei DeineQuelle in Adligenswil",
     heroObjectPosition: "center center",
+    heroObjectPositionMobile: "center 28%",
     heroActions: {
       primary: {
         label: "Kontakt aufnehmen",
@@ -627,6 +640,7 @@ export const designPages = {
         image: "/images/yoga/yoga-raum-claudia-dimmler.jpg",
         imageAlt: "Ruhiger Yogaraum in Adligenswil",
         imageObjectPosition: "center center",
+        imageObjectPositionMobile: "center 26%",
         lead: "Yoga muss nicht perfekt sein. Du musst nicht besonders beweglich, sportlich oder erfahren sein.",
         body: [
           "In meinen Yogalektionen geht es darum, den Körper wahrzunehmen, den Atem zu spüren und Schritt für Schritt wieder mehr Ruhe, Stabilität und Verbindung zu dir selbst aufzubauen.",
@@ -639,10 +653,11 @@ export const designPages = {
         presentation: "spread",
         kicker: "Satyananda Yoga",
         title: "Inspiriert aus der",
-        titleEmphasis: "Satyananda Yoga Lehre",
+        titleEmphasis: "Satyananda\nYoga Lehre",
         image: "/images/yoga/yoga-raum-claudia-dimmler.jpg",
         imageAlt: "Hatha Yoga Praxis im Studio",
         imageObjectPosition: "center 35%",
+        imageObjectPositionMobile: "center 26%",
         lead: "Meine Yogalektionen sind inspiriert aus der Satyananda Yoga Lehre.",
         body: [
           "Diese integrale Yogatradition verbindet verschiedene Wege des Yoga zu einem ganzheitlichen System. Körper, Atem, Geist, Emotionen und innere Entwicklung werden dabei als verbunden betrachtet.",
@@ -657,10 +672,11 @@ export const designPages = {
         splitMedia: "left",
         kicker: "Inhalte einer Yogalektion",
         title: "Was dich in einer",
-        titleEmphasis: "Yogalektion erwartet",
+        titleEmphasis: "Yogalektion\nerwartet",
         image: "/images/yoga/03.jpg",
         imageAlt: "Ganzheitliche Yogapraxis",
         imageObjectPosition: "center center",
+        imageObjectPositionMobile: "center 30%",
         lead:
           "In jeder Yogalektion verbinden sich verschiedene Elemente zu einer ruhigen und ganzheitlichen Praxis.",
         body: [],
@@ -694,7 +710,7 @@ export const designPages = {
         presentation: "cover",
         kicker: "Yoga Nidra",
         title: "Geführte",
-        titleEmphasis: "Tiefenentspannung",
+        titleEmphasis: "Tiefen\u00ADentspannung",
         lead: "Yoga Nidra ist eine geführte Tiefenentspannung.",
         body: [
           "Im Alltag sind wir oft vielen Reizen ausgesetzt. Der Geist wird müde, der Körper bleibt angespannt und das Nervensystem findet schwer zur Ruhe.",
@@ -708,10 +724,11 @@ export const designPages = {
         presentation: "compact",
         kicker: "Für wen eignet sich Yoga Nidra?",
         title: "Ruhe finden in",
-        titleEmphasis: "belastenden Lebensphasen",
+        titleEmphasis: "belastenden\nLebensphasen",
         image: "/images/yoga/yoga-nidra-fuer-wen.jpg",
         imageAlt: "Ruhige Yogastudio-Atmosphäre am Morgen",
         imageObjectPosition: "center center",
+        imageObjectPositionMobile: "center 28%",
         lead:
           "Yoga Nidra eignet sich für Menschen, die viel leisten, schlecht abschalten können oder körperlich, mental oder emotional belastet sind.",
         body: [],
@@ -741,6 +758,7 @@ export const designPages = {
         image: "/images/yoga/yoga-raum-claudia-dimmler.jpg",
         imageAlt: "Yoga für Balance und Regeneration",
         imageObjectPosition: "center center",
+        imageObjectPositionMobile: "center 26%",
         lead: "Yoga und Yoga Nidra können dich unterstützen bei:",
         body: [],
         layout: "single",
@@ -768,11 +786,12 @@ export const designPages = {
         presentation: "split",
         splitMedia: "left",
         kicker: "Kurse und Angebote",
-        title: "Yoga im Studio, online",
+        title: "Yoga im Studio,\nonline",
         titleEmphasis: "oder auf Anfrage",
         image: "/images/yoga/Claudia_breath.png",
         imageAlt: "Claudia Dimmler bei einer Atemübung im Yogaraum",
         imageObjectPosition: "center center",
+        imageObjectPositionMobile: "center 32%",
         lead: "Die Yogalektionen finden im Studio und online statt.",
         body: [
           "Privatlektionen, Firmenworkshops und Kurse sind auf Anfrage möglich. Für aktuelle Kurse, Zeiten und freie Plätze melde ich dir gerne persönlich Bescheid.",
@@ -798,14 +817,14 @@ export const designPages = {
   sport: {
     slug: "/leistungen/sport-kinesiologie",
     eyebrow: "Sport-Kinesiologie",
-    title: "Leistung und Regeneration",
-    titleEmphasis: "ganzheitlich begleiten.",
+    title: "Leistung und\nRegeneration",
+    titleEmphasis: "ganzheitlich\nbegleiten.",
     intro:
       "Sportkinesiologie unterstützt bei Überlastungsbeschwerden, Regeneration, mentaler Stärke und der Vorbeugung von Verletzungen.",
     heroImage: "/images/Kinesiology/claudia-302.jpg",
     heroAlt: "Sportkinesiologie in der Praxis",
     heroObjectPosition: "center 30%",
-    heroObjectPositionMobile: "center 28%",
+    heroObjectPositionMobile: "center 22%",
     trustItems: [
       "Regeneration fördern",
       "Überlastung reduzieren",
@@ -818,10 +837,11 @@ export const designPages = {
         theme: "sage",
         kicker: "Bewegung",
         title: "Körper, Psyche und",
-        titleEmphasis: "Biochemie im Zusammenspiel",
+        titleEmphasis: "Biochemie im\nZusammenspiel",
         image: "/images/Kinesiology/claudia-302.jpg",
         imageAlt: "Kinesiologische Begleitung für Sportlerinnen und Sportler",
         imageObjectPosition: "center 30%",
+        imageObjectPositionMobile: "center 22%",
         lead:
           "Nicht ausschliesslich die körperliche Form ist massgebend für sportliche Leistung.",
         body: [
@@ -845,7 +865,7 @@ export const designPages = {
       },
     ],
     process: {
-      title: "In 3 Schritten zu",
+      title: "In 3 Schritten\nzu",
       emphasis: "mehr Stabilität",
       steps: [
         {
@@ -863,7 +883,7 @@ export const designPages = {
       ],
     },
     finalCta: {
-      title: "Bring Bewegung und",
+      title: "Bring Bewegung\nund",
       emphasis: "Balance zusammen.",
       body: "Sport-Kinesiologie kann dich ergänzend zu Training, Medizin und Physiotherapie unterstützen.",
       primaryLabel: "Termin online buchen",
@@ -875,14 +895,14 @@ export const designPages = {
     slug: "/ueber-mich",
     contentLayout: "dense",
     eyebrow: "Über mich",
-    title: "Ich begleite Menschen zurück zu",
-    titleEmphasis: "Körper, Kraft und innerer Balance.",
+    title: "Ich begleite Menschen\nzurück zu",
+    titleEmphasis: "Körper, Kraft und\ninnerer Balance.",
     intro:
       "Mit Kinesiologie und Yoga unterstütze ich dich achtsam, warm und körperorientiert.",
     heroImage: "/images/hero/about_hero.jpg",
     heroAlt: "Claudia Dimmler, Kinesiologin und Yogalehrerin",
     heroObjectPosition: "right 38%",
-    heroObjectPositionMobile: "center 32%",
+    heroObjectPositionMobile: "72% 26%",
     heroImageHeight: "100%",
     heroActions: {
       primary: {
@@ -908,7 +928,7 @@ export const designPages = {
         image: "/images/Claudia/claudia_dimmler_3.jpg",
         imageAlt: "Claudia Dimmler",
         imageObjectPosition: "center 20%",
-        imageObjectPositionMobile: "center 12%",
+        imageObjectPositionMobile: "center 16%",
         lead:
           "Mein beruflicher Weg begann in der Medizin. Mit 19 Jahren schloss ich meine Ausbildung als medizinische Praxisassistentin ab und arbeitete danach fast zehn Jahre in diesem Beruf.",
         body: [
@@ -923,11 +943,12 @@ export const designPages = {
         theme: "warm-deep",
         presentation: "spread",
         kicker: "Mein Weg zu Yoga und Kinesiologie",
-        title: "Ruhe, Körperwahrnehmung und",
-        titleEmphasis: "ganzheitliche Begleitung",
+        title: "Ruhe, Körperwahrnehmung\nund",
+        titleEmphasis: "ganzheitliche\nBegleitung",
         image: "/images/Claudia/ueber-mich-weg-yoga-kinesiologie.jpg",
         imageAlt: "Claudia Dimmler in ruhiger, natürlicher Umgebung",
         imageObjectPosition: "center top",
+        imageObjectPositionMobile: "center 28%",
         imageInset: "-4% 0",
         lead:
           "Mit 26 Jahren heiratete ich und wurde später Mutter von vier Mädchen. Der Familienalltag war wunderschön, aber auch körperlich und emotional intensiv. In dieser Zeit suchte ich nach einer Entspannungstechnik, die in kurzer Zeit wirksam ist und mir hilft, wieder mehr Ruhe und Kraft zu finden.",
@@ -945,10 +966,11 @@ export const designPages = {
         splitMedia: "left",
         kicker: "Gesundheit beginnt mit Verbindung",
         title: "Mehr als die",
-        titleEmphasis: "Abwesenheit von Beschwerden",
+        titleEmphasis: "Abwesenheit von\nBeschwerden",
         image: "/images/other/about_block_4.jpg",
         imageAlt: "Ruhige, natürliche Szene als Symbol für Verbundenheit und Gesundheit",
         imageObjectPosition: "center center",
+        imageObjectPositionMobile: "center 32%",
         lead:
           "Für mich bedeutet Gesundheit, dass ein Mensch sich wieder spürt, dem eigenen Körper zuhören kann und Zugang zu seinen Ressourcen findet.",
         body: [
@@ -963,10 +985,11 @@ export const designPages = {
         presentation: "head",
         kicker: "Wie ich arbeite",
         title: "Ruhig, achtsam und",
-        titleEmphasis: "ressourcenorientiert",
+        titleEmphasis: "ressourcen\u00ADorientiert",
         image: "/images/Kinesiology/claudia-302.jpg",
         imageAlt: "Kinesiologische Begleitung",
         imageObjectPosition: "center 30%",
+        imageObjectPositionMobile: "center 22%",
         lead:
           "In der Kinesiologie nutze ich den Muskeltest als körpereigenes Rückmeldesystem. Er kann sichtbar machen, wo Stress gespeichert ist, welche Themen das System belasten und welche Impulse stärkend wirken können.",
         body: [
@@ -984,12 +1007,12 @@ export const designPages = {
         splitMedia: "right",
         splitBodyFullWidth: true,
         kicker: "Meine Vision",
-        title: "Schneller gesund werden durch",
-        titleEmphasis: "ein gutes Zusammenspiel",
+        title: "Schneller gesund\nwerden durch",
+        titleEmphasis: "ein gutes\nZusammenspiel",
         image: "/images/Claudia/claudia_dimmler_3.jpg",
         imageAlt: "Claudia Dimmler",
         imageObjectPosition: "left center",
-        imageObjectPositionMobile: "center 28%",
+        imageObjectPositionMobile: "center 24%",
         lead:
           "Meine Vision ist, dass Menschen möglichst schnell, natürlich und nachhaltig wieder in ihre Gesundheit und Kraft finden.",
         body: [
@@ -1007,10 +1030,11 @@ export const designPages = {
         hideSpread: true,
         kicker: "Ausbildungen und Qualifikationen",
         title: "Fachlich fundiert und",
-        titleEmphasis: "ganzheitlich geprägt",
+        titleEmphasis: "ganzheitlich\ngeprägt",
         image: "/images/Claudia/claudia-dimmler-Kinesiologie-Adligenswil.jpg",
         imageAlt: "Claudia Dimmler in der Praxis",
         imageObjectPosition: "center 25%",
+        imageObjectPositionMobile: "center 18%",
         lead:
           "Meine Arbeit verbindet medizinisches Grundwissen, langjährige Körpererfahrung, Yoga, Yoga Nidra und Komplementärtherapie.",
         body: [],

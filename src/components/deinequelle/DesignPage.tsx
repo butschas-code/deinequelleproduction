@@ -2,8 +2,11 @@ import type { CSSProperties } from "react";
 import Link from "next/link";
 import { site } from "@/data/site";
 import type { DesignPageData } from "@/data/deinequelleDesignPages";
-import { DeineQuelleDesignRuntime } from "@/components/home/DeineQuelleDesignRuntime";
 import { GuideSectionAccordion } from "@/components/deinequelle/GuideSectionAccordion";
+import {
+  DisplayHeading,
+  DisplayHeadingLines,
+} from "@/components/deinequelle/DisplayHeadingLines";
 
 const navItems = [
   { href: "/leistungen/kinesiologie", label: "Kinesiologie" },
@@ -104,23 +107,20 @@ export function Hero({ page }: { page: DesignPageData }) {
         </div>
         <div className="hero-overlay" />
         <div className="hero-content">
-          <p className="dq-kicker">{page.eyebrow}</p>
-          <h1 className="hero-h1">
-            {page.title.split("\n").map((line, index) => (
-              <span key={index}>
-                {index > 0 ? <br /> : null}
-                {line}
-              </span>
-            ))}
+          <p className="dq-kicker reveal">{page.eyebrow}</p>
+          <h1 className="hero-h1 reveal d1" lang="de-CH">
+            <DisplayHeadingLines text={page.title} />
             {page.titleEmphasis ? (
               <>
                 <br />
-                <em>{page.titleEmphasis}</em>
+                <em>
+                  <DisplayHeadingLines text={page.titleEmphasis} />
+                </em>
               </>
             ) : null}
           </h1>
-          <p className="hero-sub">{page.intro}</p>
-          <div className="hero-actions">
+          <p className="hero-sub reveal d2">{page.intro}</p>
+          <div className="hero-actions reveal d3">
             <a
               href={primaryAction.href}
               className="btn-primary"
@@ -144,7 +144,7 @@ export function Hero({ page }: { page: DesignPageData }) {
               </a>
             ) : null}
           </div>
-          <p className="hero-location">Adligenswil bei Luzern</p>
+          <p className="hero-location reveal d4">Adligenswil bei Luzern</p>
         </div>
         <div className="scroll-cue" aria-hidden="true">
           <div className="scroll-line" />
@@ -153,7 +153,7 @@ export function Hero({ page }: { page: DesignPageData }) {
 
       {page.trustItems ? (
         <div id="trust">
-          <div className="trust-row">
+          <div className="trust-row reveal">
             {page.trustItems.map((item, index) => (
               <span key={item}>
                 {index > 0 ? <span className="trust-dot">•</span> : null}
@@ -240,15 +240,12 @@ function GuideSection({ guide }: { guide: NonNullable<DesignPageData["guideSecti
     <section id="begleitung" className={surfaceClass.trim() || undefined}>
       <div className="wrap">
         <div className="begl-head reveal">
-          <h2 className="begl-h2">
-            {guide.title}
-            {guide.titleEmphasis ? (
-              <>
-                <br />
-                {guide.titleEmphasis}
-              </>
-            ) : null}
-          </h2>
+          <DisplayHeading
+            as="h2"
+            className="begl-h2"
+            title={guide.title}
+            emphasis={guide.titleEmphasis}
+          />
           <p className="begl-intro">{guide.intro}</p>
         </div>
         <div className="begl-rows">
@@ -319,15 +316,12 @@ function SectionHeading({
   return (
     <div className={className}>
       {section.kicker ? <p className="dq-kicker">{section.kicker}</p> : null}
-      <h2 className="spread-h2">
-        {section.title}
-        {section.titleEmphasis ? (
-          <>
-            <br />
-            <em>{section.titleEmphasis}</em>
-          </>
-        ) : null}
-      </h2>
+      <DisplayHeading
+        as="h2"
+        className="spread-h2"
+        title={section.title}
+        emphasis={section.titleEmphasis}
+      />
     </div>
   );
 }
@@ -446,15 +440,17 @@ function ContentSection({
       }`}
     >
       {section.itemsIntro ? (
-        <p className="svc-items-intro">{section.itemsIntro}</p>
+        <p className={itemsAsTopics ? "svc-topic-label" : "svc-items-intro"}>
+          {section.itemsIntro}
+        </p>
       ) : null}
       {itemsAsTopics ? (
-        <div className="svc-items-matrix">
-          {section.items.map((item) => (
-            <div key={item} className="svc-item">
-              {item}
-            </div>
-          ))}
+        <div className="svc-topic-block">
+          <ul className="svc-topic-list">
+            {section.items.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
         </div>
       ) : (
         section.items.map((item) => (
@@ -664,9 +660,12 @@ function Process({ process }: { process?: DesignPageData["process"] }) {
       }
     >
       <div className="wrap">
-        <h2 className="schritte-h2 reveal">
-          {process.title} <em>{process.emphasis}</em>
-        </h2>
+        <DisplayHeading
+          as="h2"
+          className="schritte-h2 reveal"
+          title={process.title}
+          emphasis={process.emphasis}
+        />
         <div className="schritte-cols">
           {process.steps.map((step, index) => (
             <div key={step.title} className={`schritt reveal d${index}`}>
@@ -689,11 +688,12 @@ function FinalCta({ cta }: { cta?: DesignPageData["finalCta"] }) {
       <div className="wrap">
         <div className="cta-grid">
           <div>
-            <h2 className="cta-h2 reveal">
-              {cta.title}
-              <br />
-              <em>{cta.emphasis}</em>
-            </h2>
+            <DisplayHeading
+              as="h2"
+              className="cta-h2 reveal"
+              title={cta.title}
+              emphasis={cta.emphasis}
+            />
             <p className="cta-sub reveal d1">{cta.body}</p>
           </div>
           <div className="cta-right reveal d2">
@@ -828,7 +828,6 @@ export function DesignPage({ page }: { page: DesignPageData }) {
         </div>
         <DesignFooter />
       </main>
-      <DeineQuelleDesignRuntime />
     </>
   );
 }

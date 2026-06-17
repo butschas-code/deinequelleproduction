@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { site } from "@/data/site";
-import { DeineQuelleDesignRuntime } from "@/components/home/DeineQuelleDesignRuntime";
 export const metadata: Metadata = {
   title: "DeineQuelle · Kinesiologie & Yoga · Adligenswil",
   description:
@@ -53,7 +52,6 @@ export default function HomePage() {
         className="deinequelle-design-page"
         dangerouslySetInnerHTML={{ __html: loadDesignBody() }}
       />
-      <DeineQuelleDesignRuntime />
     </>
   );
 }
