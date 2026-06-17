@@ -257,7 +257,8 @@ export const designPages = {
         theme: "sage",
         kicker: "Sportkinesiologie",
         title: "Für Bewegung,\nRegeneration und",
-        titleEmphasis: "sportliche\nBelastung",
+        titleEmphasis: "sportliche Belastung",
+        titleEmphasisInline: true,
         image: "/images/legacy/wp/2022/10/DeinQuelle-1557-scaled.jpg",
         imageAlt: "Sportkinesiologie in der Praxis",
         imageObjectPosition: "center 30%",
@@ -579,9 +580,8 @@ export const designPages = {
       },
     ],
     process: {
-      title: "So läuft die\nBegleitung",
-      emphasis: "ab",
-      emphasisInline: true,
+      title: "So läuft die",
+      emphasis: "Begleitung ab",
       theme: "wine",
       steps: [
         {
@@ -801,6 +801,7 @@ export const designPages = {
         kicker: "Kurse und Angebote",
         title: "Yoga im Studio,\nonline",
         titleEmphasis: "oder auf Anfrage",
+        titleEmphasisInline: true,
         image: "/images/yoga/Claudia_breath.png",
         imageAlt: "Claudia Dimmler bei einer Atemübung im Yogaraum",
         imageObjectPosition: "center center",

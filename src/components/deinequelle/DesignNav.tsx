@@ -32,6 +32,20 @@ export function DesignNav() {
     return () => document.removeEventListener("keydown", onKeydown);
   }, []);
 
+  useEffect(() => {
+    const nav = document.getElementById("nav");
+    if (!nav) return;
+
+    const onScroll = () => {
+      nav.classList.toggle("scrolled", window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
       <div id="progress" aria-hidden="true" />

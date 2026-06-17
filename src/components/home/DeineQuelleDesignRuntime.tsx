@@ -10,9 +10,7 @@ export function DeineQuelleDesignRuntime() {
     const page = document.querySelector<HTMLElement>(".deinequelle-design-page");
     if (!page) return;
 
-    const progress = document.querySelector<HTMLElement>("#progress");
     const spreads = Array.from(page.querySelectorAll<HTMLElement>("[data-parallax]"));
-    const nav = document.querySelector<HTMLElement>("#nav");
     const isMobile =
       /iPhone|iPad|iPod|Android/i.test(navigator.userAgent) || window.innerWidth < 960;
 
@@ -34,13 +32,10 @@ export function DeineQuelleDesignRuntime() {
     const onScroll = () => {
       const y = window.scrollY;
       const max = document.body.scrollHeight - window.innerHeight;
+      const progress = document.querySelector<HTMLElement>("#progress");
 
       if (progress) {
         progress.style.width = `${max > 0 ? (y / max) * 100 : 0}%`;
-      }
-
-      if (nav) {
-        nav.classList.toggle("scrolled", y > 50);
       }
 
       if (!isMobile) {

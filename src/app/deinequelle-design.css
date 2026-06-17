@@ -473,7 +473,9 @@ html:has(.deinequelle-design-root) {
     /* ═══════════════════════════════════════════════════════════════
    OPTION D NAV — Logo Left, Links Centre, CTA Right
    Logo starts large (130px), shrinks on scroll (68px)
+   Desktop only — mobile nav is fully defined in the 960px block below.
 ═══════════════════════════════════════════════════════════════ */
+    @media (min-width: 961px) {
 
     /* Navbar bar itself */
     .deinequelle-design-chrome #nav {
@@ -606,6 +608,8 @@ html:has(.deinequelle-design-root) {
       background: rgba(255, 255, 255, 0.18);
       transform: translate(2px, -2px);
     }
+
+    } /* end desktop nav */
 
     /* ── Hamburger (mobile only) ───────────────────────────────── */
     .deinequelle-design-chrome .nav-ham {

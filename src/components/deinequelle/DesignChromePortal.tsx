@@ -27,7 +27,7 @@ export function DesignChromePortal({ children, html }: DesignChromePortalProps) 
   );
 
   if (!root) {
-    return chrome;
+    return null;
   }
 
   return createPortal(chrome, root);
