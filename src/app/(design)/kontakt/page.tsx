@@ -21,6 +21,16 @@ const contactHero: DesignPageData = {
   heroObjectPosition: "center center",
   heroObjectPositionMobile: "68% 20%",
   heroReadableText: true,
+  heroActions: {
+    primary: {
+      label: "Formular öffnen",
+      href: "#kontaktformular",
+    },
+    secondary: {
+      label: "Kontaktwege ansehen",
+      href: "#kontaktformular",
+    },
+  },
   finalCta: {
     title: "Kontakt",
     emphasis: "aufnehmen",

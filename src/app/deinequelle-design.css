@@ -3658,11 +3658,12 @@ html:has(.deinequelle-design-root) {
       }
 
       .deinequelle-design-page .hero-intro {
-        min-height: 100svh;
+        margin-top: calc(4.25rem + env(safe-area-inset-top, 0px));
+        min-height: calc(100svh - 4.25rem - env(safe-area-inset-top, 0px));
       }
 
       .deinequelle-design-page .hero-intro-type {
-        min-height: 100svh;
+        min-height: calc(100svh - 4.25rem - env(safe-area-inset-top, 0px));
       }
 
       .deinequelle-design-page .hero-intro-bg img {
@@ -3674,7 +3675,8 @@ html:has(.deinequelle-design-root) {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: clamp(0.45rem, 1.8vh, 0.9rem);
+        gap: clamp(0.2rem, 0.9vh, 0.45rem);
+        padding: clamp(1.4rem, 5vh, 3.2rem) 1.25rem clamp(1.2rem, 4vh, 2.6rem);
       }
 
       .deinequelle-design-page .hero-intro-cluster {
@@ -3706,24 +3708,52 @@ html:has(.deinequelle-design-root) {
       }
 
       .deinequelle-design-page .hero-intro-kicker {
-        font-size: clamp(1.05rem, 4.5vw, 1.45rem);
+        font-family: var(--f-b);
+        font-size: clamp(1.45rem, 6.6vw, 2.15rem);
+        font-weight: 500 !important;
+        line-height: 0.96;
+        letter-spacing: -0.065em;
+        text-shadow:
+          0 0 16px rgba(250, 247, 242, 0.4),
+          0 1px 6px rgba(250, 247, 242, 0.25);
       }
 
       .deinequelle-design-page .hero-intro-display {
-        font-size: clamp(2.2rem, 10vw, 3.25rem);
+        font-family: var(--f-d) !important;
+        font-size: clamp(3.05rem, 14vw, 4.85rem);
+        font-weight: 500 !important;
+        line-height: 0.84;
+        letter-spacing: -0.062em;
       }
 
       /* Top cluster above & — slightly larger on mobile */
       .deinequelle-design-page .hero-intro-cluster-tl .hero-intro-kicker {
-        font-size: clamp(1.26rem, 5.4vw, 1.74rem);
+        font-size: clamp(1.55rem, 7vw, 2.25rem);
       }
 
       .deinequelle-design-page .hero-intro-cluster-tl .hero-intro-display {
-        font-size: clamp(2.64rem, 12vw, 3.9rem);
+        font-size: clamp(3.25rem, 15vw, 5.15rem);
+        margin-left: clamp(1.8rem, 9vw, 3rem);
+        margin-top: clamp(0.05rem, 0.8vh, 0.25rem);
       }
 
       .deinequelle-design-page .hero-intro-amp {
-        font-size: clamp(4rem, 20vw, 7rem);
+        font-family: var(--f-d) !important;
+        font-size: clamp(5.25rem, 24vw, 8.3rem);
+        font-weight: 500 !important;
+        line-height: 0.8;
+        letter-spacing: -0.075em;
+        margin: clamp(-0.1rem, -0.3vh, 0rem) 0 clamp(-0.25rem, -0.6vh, 0rem);
+      }
+
+      .deinequelle-design-page .hero-intro-cluster-br .hero-intro-kicker {
+        font-size: clamp(1.38rem, 6.1vw, 2rem);
+      }
+
+      .deinequelle-design-page .hero-intro-cluster-br .hero-intro-display {
+        font-size: clamp(3rem, 13.5vw, 4.65rem);
+        margin-left: clamp(1rem, 6vw, 2.2rem);
+        margin-top: clamp(0.05rem, 0.6vh, 0.2rem);
       }
 
       .deinequelle-design-page .hero-intro-wash {
@@ -4127,3 +4157,525 @@ html:has(.deinequelle-design-root) {
       }
     }
   
+/* Client revision overrides: typography, page balance, and homepage scroll behavior. */
+.deinequelle-design-page {
+  --type-base: 1.26rem;
+  --type-weight-body: 400;
+  --type-weight-ui: 400;
+  --type-weight-display-light: 400;
+}
+
+.deinequelle-design-page [id] {
+  scroll-margin-top: 6rem;
+}
+
+.deinequelle-design-page .hero-intro-kicker,
+.deinequelle-design-page .hero-intro-cluster-tl .hero-intro-kicker,
+.deinequelle-design-page .hero-intro-cluster-br .hero-intro-kicker {
+  font-family: var(--f-b) !important;
+  font-weight: 500 !important;
+  font-synthesis: weight;
+}
+
+.deinequelle-design-page .hero-intro-display,
+.deinequelle-design-page .hero-intro-amp,
+.deinequelle-design-page .hero-intro-cluster-tl .hero-intro-display,
+.deinequelle-design-page .hero-intro-cluster-br .hero-intro-display {
+  font-family: var(--f-d) !important;
+  font-weight: 500 !important;
+}
+
+.deinequelle-design-chrome :is(
+  .nav-links a,
+  .nav-cta,
+  .mob-link
+) {
+  font-family: var(--f-b, var(--font-body), "Jost", system-ui, sans-serif);
+  font-weight: 400;
+}
+
+.deinequelle-design-chrome .mob-link {
+  font-size: clamp(2.1rem, 9vw, 3.2rem);
+  letter-spacing: 0;
+}
+
+.deinequelle-design-chrome #mob-overlay.open {
+  background: rgba(250, 247, 242, 0.96);
+  backdrop-filter: blur(18px);
+}
+
+.deinequelle-design-page :is(
+  p,
+  li,
+  h3,
+  .svc-lead,
+  .svc-body,
+  .svc-item,
+  .svc-items-intro,
+  .svc-topic-label,
+  .svc-topic-list li,
+  .svc-feature-title,
+  .svc-feature-body,
+  .begl-cat,
+  .begl-lead,
+  .begl-list li,
+  .begl-goal,
+  .begl-intro,
+  .schritt h3,
+  .schritt p,
+  .dq-contact-card h3,
+  .dq-contact-card p,
+  .dq-contact-address,
+  .footer-desc,
+  .footer-col address
+) {
+  font-family: var(--f-b);
+  font-weight: 400;
+}
+
+.deinequelle-design-page :is(
+  #hero.hero-readable .hero-sub,
+  .svc-lead,
+  .svc-editorial-topics .svc-lead,
+  .svc-density-tight .svc-editorial-topics .svc-lead
+) {
+  font-family: var(--f-b) !important;
+  font-weight: 400 !important;
+}
+
+.deinequelle-design-page :is(
+  .dq-kicker,
+  .nav-links a,
+  .nav-cta,
+  .mob-link,
+  .trust-row span,
+  .svc-group-title,
+  .svc-group-desc,
+  .svc-feature-num,
+  .begl-num,
+  .schritt-num,
+  .footer-col h4
+) {
+  font-family: var(--f-b);
+  font-weight: 400;
+}
+
+.deinequelle-design-page :is(
+  .hero-h1,
+  .hero-h1 em,
+  .spread-h2,
+  .spread-h2 em,
+  .erkl-quote,
+  .begl-h2,
+  .begl-h2 em,
+  .schritte-h2,
+  .schritte-h2 em,
+  .cta-h2,
+  .cta-h2 em
+) {
+  font-weight: 400;
+}
+
+.deinequelle-design-page :is(
+  .hero-sub,
+  .svc-lead,
+  .svc-body,
+  .svc-topic-list li,
+  .svc-feature-body,
+  .begl-intro,
+  .begl-lead,
+  .begl-list li,
+  .begl-goal,
+  .schritt p,
+  .cta-sub,
+  .dq-contact-card p,
+  .dq-contact-address,
+  .footer-desc,
+  .footer-col address
+) {
+  font-size: var(--type-base);
+  line-height: 1.75;
+}
+
+.deinequelle-design-page :is(
+  .btn,
+  .btn-primary,
+  .btn-ghost,
+  .btn-dark,
+  .nav-cta,
+  .dq-contact-actions a
+) {
+  font-size: clamp(0.9rem, 0.82vw, 1rem);
+  font-weight: 400;
+}
+
+.deinequelle-design-page .hero-location {
+  display: none !important;
+}
+
+@media (min-width: 760px) {
+  .deinequelle-design-page #hero.hero-home {
+    position: sticky;
+    top: 0;
+    z-index: 0;
+    min-height: 100vh;
+  }
+
+  .deinequelle-design-page #hero.hero-home ~ * {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+.deinequelle-design-page .dq-contact-aside h2 {
+  font-family: var(--f-b);
+  font-size: clamp(2rem, 3.2vw, 3.35rem);
+  font-weight: 400;
+  line-height: 1.12;
+  letter-spacing: 0;
+}
+
+.deinequelle-design-page .dq-contact-card h3 {
+  font-size: clamp(1.25rem, 1.5vw, 1.55rem);
+  line-height: 1.25;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.deinequelle-design-page #nidra-fuer-wen .svc {
+  text-align: center;
+}
+
+.deinequelle-design-page #nidra-fuer-wen .svc-editorial-flow {
+  max-width: 980px;
+  margin-inline: auto;
+}
+
+.deinequelle-design-page #nidra-fuer-wen .dq-kicker {
+  font-size: clamp(1rem, 1.3vw, 1.24rem);
+  text-align: center;
+}
+
+.deinequelle-design-page #nidra-fuer-wen .spread-h2,
+.deinequelle-design-page #wobei-yoga .spread-h2 {
+  font-size: clamp(3.35rem, 6.4vw, 6.7rem);
+}
+
+.deinequelle-design-page #nidra-fuer-wen .spread-intro {
+  left: 50%;
+  right: auto;
+  max-width: min(900px, calc(100% - 4rem));
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.deinequelle-design-page #nidra-fuer-wen .spread-h2 {
+  max-width: none;
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.deinequelle-design-page #nidra-fuer-wen .spread-h2 em {
+  hyphens: none;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+@media (min-width: 760px) {
+  .deinequelle-design-page .hero-intro {
+    min-height: 90svh;
+  }
+
+  .deinequelle-design-page .hero-intro-type {
+    min-height: 90svh;
+  }
+
+  .deinequelle-design-page .hero-intro-bg img {
+    object-position: center center;
+  }
+
+  .deinequelle-design-page .hero-intro-wash {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(228, 162, 86, 0.28) 0%,
+        rgba(228, 162, 86, 0.24) 45%,
+        rgba(143, 96, 45, 0.18) 100%
+      ),
+      rgba(245, 205, 152, 0.34);
+  }
+
+  .deinequelle-design-page .hero-intro-composition {
+    position: absolute;
+    inset: 0;
+    display: block;
+    font-family: var(--f-d);
+    color: var(--sage-dark);
+    pointer-events: none;
+  }
+
+  .deinequelle-design-page .hero-intro-cluster {
+    position: absolute;
+    left: auto;
+    top: auto;
+    width: auto;
+    max-width: none;
+    gap: 0;
+    transform: none;
+    color: var(--sage-dark);
+  }
+
+  .deinequelle-design-page .hero-intro-cluster-tl {
+    left: 8.15%;
+    top: 20.8%;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .deinequelle-design-page .hero-intro-cluster-br {
+    left: 62.8%;
+    top: 60.6%;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .deinequelle-design-page .hero-intro-kicker,
+  .deinequelle-design-page .hero-intro-cluster-tl .hero-intro-kicker,
+  .deinequelle-design-page .hero-intro-cluster-br .hero-intro-kicker {
+    font-family: var(--f-b);
+    font-size: clamp(2.15rem, 5.2vw, 4.15rem);
+    font-weight: 500 !important;
+    line-height: 0.92;
+    letter-spacing: -0.065em;
+    color: var(--sage-dark);
+    font-synthesis: weight;
+    text-shadow:
+      0 0 18px rgba(250, 247, 242, 0.34),
+      0 1px 7px rgba(250, 247, 242, 0.24);
+  }
+
+  .deinequelle-design-page .hero-intro-display,
+  .deinequelle-design-page .hero-intro-cluster-tl .hero-intro-display,
+  .deinequelle-design-page .hero-intro-cluster-br .hero-intro-display {
+    font-family: var(--f-d) !important;
+    font-size: clamp(4.1rem, 9.35vw, 7.5rem);
+    font-weight: 500 !important;
+    line-height: 0.82;
+    letter-spacing: -0.062em;
+    color: var(--sage-dark);
+    text-shadow:
+      0 0 18px rgba(250, 247, 242, 0.32),
+      0 1px 7px rgba(250, 247, 242, 0.22);
+  }
+
+  .deinequelle-design-page .hero-intro-cluster-tl .hero-intro-display {
+    margin-left: clamp(3.6rem, 7.4vw, 5.9rem);
+    margin-top: clamp(0.15rem, 0.8vw, 0.65rem);
+  }
+
+  .deinequelle-design-page .hero-intro-cluster-br .hero-intro-kicker {
+    font-size: clamp(2.05rem, 4.85vw, 3.9rem);
+    letter-spacing: -0.062em;
+  }
+
+  .deinequelle-design-page .hero-intro-cluster-br .hero-intro-display {
+    font-size: clamp(4.05rem, 9vw, 7.2rem);
+    margin-left: clamp(1.75rem, 3.5vw, 2.8rem);
+    margin-top: clamp(0.05rem, 0.6vw, 0.5rem);
+  }
+
+  .deinequelle-design-page .hero-intro-amp {
+    position: absolute;
+    left: 51.5%;
+    top: 58.8%;
+    transform: translate(-50%, -50%);
+    font-family: var(--f-d) !important;
+    font-size: clamp(7.1rem, 18vw, 14.4rem);
+    font-weight: 500 !important;
+    line-height: 0.82;
+    letter-spacing: -0.075em;
+    color: var(--sage-dark);
+    text-shadow:
+      0 0 20px rgba(250, 247, 242, 0.3),
+      0 1px 8px rgba(250, 247, 242, 0.22);
+  }
+}
+
+.deinequelle-design-page #nidra-fuer-wen .svc-topic-list {
+  justify-content: center;
+  padding-left: 0;
+  list-style: none;
+}
+
+.deinequelle-design-page #nidra-fuer-wen .svc-topic-list li {
+  list-style: none;
+}
+
+.deinequelle-design-page #nidra-fuer-wen .svc-topic-list li::before {
+  display: none;
+}
+
+.deinequelle-design-page #medizinische-behandlung .svc-editorial {
+  grid-template-columns: minmax(0, 0.9fr) minmax(340px, 0.75fr);
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: start;
+}
+
+.deinequelle-design-page #medizinische-behandlung .svc-items-col {
+  border-top: 1px solid rgba(138, 58, 72, 0.22);
+}
+
+.deinequelle-design-page #medizinische-behandlung .svc-item {
+  font-size: clamp(1.05rem, 1.1vw, 1.2rem);
+  line-height: 1.45;
+  padding: 1rem 0;
+}
+
+.deinequelle-design-page #medizinische-behandlung .svc-note-full {
+  max-width: 780px;
+}
+
+.deinequelle-design-page #nach-verlust .svc {
+  padding-top: calc(var(--section-sm) + 2rem);
+}
+
+.deinequelle-design-page #sportkinesiologie :is(.svc-items-intro, .svc-item) {
+  font-family: var(--f-b);
+  font-weight: 400;
+}
+
+.deinequelle-design-page #yoga-videos .svc-features {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.deinequelle-design-page #yoga-videos .svc-feature {
+  min-height: 220px;
+  border: 1px dashed rgba(123, 99, 71, 0.35);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(250, 247, 242, 0.32)),
+    repeating-linear-gradient(
+      45deg,
+      rgba(123, 99, 71, 0.06) 0,
+      rgba(123, 99, 71, 0.06) 8px,
+      transparent 8px,
+      transparent 18px
+    );
+}
+
+@media (max-width: 960px) {
+  .deinequelle-design-page {
+    --type-base: 1.16rem;
+  }
+
+  .deinequelle-design-page [id] {
+    scroll-margin-top: 5.25rem;
+  }
+
+  .deinequelle-design-page #medizinische-behandlung .svc-editorial,
+  .deinequelle-design-page #yoga-videos .svc-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile lock-in for the entrance hero. Keep the approved desktop composition untouched. */
+@media (max-width: 759px) {
+  .deinequelle-design-chrome #nav {
+    position: fixed !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: calc(3.9rem + env(safe-area-inset-top, 0px)) !important;
+    padding: 0 4.75rem 0 1.35rem !important;
+    padding-top: env(safe-area-inset-top, 0px) !important;
+    overflow: hidden !important;
+    background: var(--beige) !important;
+  }
+
+  .deinequelle-design-chrome #nav.scrolled {
+    height: calc(3.7rem + env(safe-area-inset-top, 0px)) !important;
+  }
+
+  .deinequelle-design-chrome .nav-logo-wrap,
+  .deinequelle-design-chrome #nav.scrolled .nav-logo-wrap {
+    display: flex !important;
+    width: min(56vw, 14rem) !important;
+    height: 3rem !important;
+    max-height: 3rem !important;
+    margin-top: 0 !important;
+    align-self: center !important;
+    align-items: center !important;
+  }
+
+  .deinequelle-design-chrome .nav-logo-link {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    height: 100% !important;
+    overflow: hidden !important;
+  }
+
+  .deinequelle-design-chrome .nav-logo-img {
+    width: auto !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    object-fit: contain !important;
+    object-position: left center !important;
+  }
+
+  .deinequelle-design-chrome .nav-ham {
+    position: absolute !important;
+    top: 50% !important;
+    right: 1.35rem !important;
+    transform: translateY(-50%) !important;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex: 0 0 2.75rem;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    z-index: 2;
+  }
+
+  .deinequelle-design-page .hero-intro {
+    margin-top: calc(3.9rem + env(safe-area-inset-top, 0px)) !important;
+    min-height: calc(100svh - 3.9rem - env(safe-area-inset-top, 0px)) !important;
+  }
+
+  .deinequelle-design-page .hero-intro-type {
+    min-height: calc(100svh - 3.9rem - env(safe-area-inset-top, 0px)) !important;
+  }
+
+  .deinequelle-design-page .hero-intro-composition {
+    gap: clamp(0.15rem, 0.65vh, 0.4rem);
+    justify-content: flex-start;
+    padding: clamp(11.5rem, 26vh, 14.25rem) 1.15rem clamp(1rem, 3.5vh, 2.2rem);
+  }
+
+  .deinequelle-design-page .hero-intro-cluster {
+    max-width: min(92vw, 24rem);
+  }
+
+  .deinequelle-design-page .hero-intro-kicker,
+  .deinequelle-design-page .hero-intro-cluster-tl .hero-intro-kicker,
+  .deinequelle-design-page .hero-intro-cluster-br .hero-intro-kicker {
+    font-family: var(--f-b) !important;
+    font-weight: 500 !important;
+    line-height: 0.94;
+    letter-spacing: -0.065em;
+  }
+
+  .deinequelle-design-page .hero-intro-display,
+  .deinequelle-design-page .hero-intro-cluster-tl .hero-intro-display,
+  .deinequelle-design-page .hero-intro-cluster-br .hero-intro-display,
+  .deinequelle-design-page .hero-intro-amp {
+    font-family: var(--f-d) !important;
+    font-weight: 500 !important;
+    line-height: 0.82;
+    letter-spacing: -0.07em;
+  }
+}

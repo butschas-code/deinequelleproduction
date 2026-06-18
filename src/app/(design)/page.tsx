@@ -26,7 +26,20 @@ function loadDesignBody() {
 
   const ghostAnchor = "__GHOST_KINESIOLOGIE__";
 
-  return body
+  const stripSection = (source: string, id: string) => {
+    const start = source.indexOf(`<section id="${id}"`);
+    if (start === -1) return source;
+    const end = source.indexOf("</section>", start);
+    if (end === -1) return source;
+    return source.slice(0, start) + source.slice(end + "</section>".length);
+  };
+
+  const cleanedBody = stripSection(
+    body.replace(/\s*<p class="hero-location"[^>]*>[\s\S]*?<\/p>/g, ""),
+    "schritte",
+  );
+
+  return cleanedBody
     .replace('href="#kinesiologie" class="btn-ghost"', `href="${ghostAnchor}" class="btn-ghost"`)
     .replace('href="#" class="nav-logo-link"', 'href="/" class="nav-logo-link"')
     .replace(/images\/Logo\/Deine%20Quelle%20logo%206-2\.png/g, site.logo.src)

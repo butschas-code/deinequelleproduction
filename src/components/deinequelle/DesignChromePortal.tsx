@@ -1,7 +1,7 @@
 "use client";
 
 import { createPortal } from "react-dom";
-import { useLayoutEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 
 const ROOT_ID = "deinequelle-design-root";
 
@@ -13,8 +13,12 @@ type DesignChromePortalProps = {
 export function DesignChromePortal({ children, html }: DesignChromePortalProps) {
   const [root, setRoot] = useState<HTMLElement | null>(null);
 
-  useLayoutEffect(() => {
-    setRoot(document.getElementById(ROOT_ID));
+  useEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      setRoot(document.getElementById(ROOT_ID));
+    });
+
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   const chrome = html ? (

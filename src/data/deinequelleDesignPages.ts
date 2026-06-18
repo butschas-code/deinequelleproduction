@@ -304,7 +304,7 @@ export const designPages = {
     guideSection: {
       title: "Wann kann\nKinesiologie",
       titleEmphasis: "unterstützen?",
-      layout: "accordion",
+      layout: "expanded",
       theme: "sage-deep",
       intro:
         "Kinesiologie eignet sich für Kinder, Jugendliche, Erwachsene und ältere Menschen in den unterschiedlichsten Lebenssituationen. Sie unterstützt dabei, das Wohlbefinden zu fördern, innere Ressourcen zu stärken und körperliche, emotionale sowie mentale Balance wiederzufinden.",
@@ -506,7 +506,7 @@ export const designPages = {
         ],
         layout: "single",
         density: "tight",
-        itemsVariant: "topics",
+        itemsVariant: "list",
         itemsIntro: "Kinesiologie kann ergänzend begleiten bei:",
         items: [
           "IVF",
@@ -520,7 +520,7 @@ export const designPages = {
         ],
         note:
           "Der Fokus liegt auf Stressabbau, emotionaler Stabilisierung, Ressourcenstärkung und einem besseren inneren Halt während der Behandlung.",
-        noteVariant: "editorial",
+        noteVariant: "callout",
       },
       {
         id: "nach-verlust",
@@ -808,15 +808,75 @@ export const designPages = {
         imageObjectPositionMobile: "center 32%",
         lead: "Die Yogalektionen finden im Studio und online statt.",
         body: [
-          "Privatlektionen, Firmenworkshops und Kurse sind auf Anfrage möglich. Für aktuelle Kurse, Zeiten und freie Plätze melde ich dir gerne persönlich Bescheid.",
-          "Yoga kann mit CSS Coin, TWINT oder auf Rechnung bezahlt werden.",
+          "Hatha Yoga mit Pratyahara-Meditation findet als 75- oder 90-minütige Lektion statt. Die Kurse werden im Studio und online durchgeführt.",
+          "Mindestteilnehmerzahl: 3 Personen. Privatlektionen, Firmenworkshops und Kurse sind auf Anfrage möglich.",
         ],
         layout: "single",
+        density: "tight",
+        itemsIntro: "Aktuelle Kurszeiten:",
+        items: [
+          "Montag: 9.30 - 11.00 (90 Min.)",
+          "Montag: 18.15 - 19.30 (75 Min.)",
+          "Montag: 19.45 - 21.15 (90 Min.)",
+          "Mittwoch: 18.00 - 19.30 (90 Min.)",
+          "Mittwoch: 19.45 - 21.00 (75 Min.)",
+        ],
+        note:
+          "Freie Plätze, Online-Teilnahme und Anmeldung: info@deinequelle.com oder 076 413 80 50.",
+        noteVariant: "callout",
         cta: {
           label: "Kontakt aufnehmen",
           href: "/kontakt",
           tone: "accent",
         },
+      },
+      {
+        id: "preise",
+        theme: "light",
+        presentation: "head",
+        kicker: "Preise",
+        title: "Tarife für",
+        titleEmphasis: "Studio und online",
+        lead: "Yoga kann mit CSS Coin, TWINT oder auf Rechnung bezahlt werden.",
+        body: [
+          "Lektionen à 75 Minuten: Einzellektion Fr. 34.00, Abo Fr. 28.50 pro Lektion, Online-Einzellektion Fr. 30.00, Online-Abo Fr. 25.00 pro Lektion.",
+          "Lektionen à 90 Minuten: Einzellektion Fr. 39.00, Abo Fr. 33.50 pro Lektion, Online-Einzellektion Fr. 35.00, Online-Abo Fr. 29.00 pro Lektion.",
+        ],
+        layout: "single",
+        features: [
+          {
+            title: "Privatlektionen",
+            body: "Kosten auf Anfrage.",
+          },
+          {
+            title: "Firmenworkshops und Kurse",
+            body: "Kosten auf Anfrage oder gemäss Ausschreibung.",
+          },
+        ],
+      },
+      {
+        id: "yoga-videos",
+        theme: "warm-soft",
+        presentation: "head",
+        kicker: "Videos",
+        title: "Video-Übungen",
+        titleEmphasis: "folgen",
+        lead:
+          "Hier entstehen Videobereiche für ausgewählte Yoga- und Yoga-Nidra-Inhalte.",
+        body: [
+          "Die finalen Videos werden ergänzt, sobald die Kundin sie auf YouTube oder einer vergleichbaren Plattform bereitgestellt hat.",
+        ],
+        layout: "single",
+        features: [
+          {
+            title: "Yoga Nidra",
+            body: "Platzhalter für ein eingebettetes Video.",
+          },
+          {
+            title: "Hatha Yoga",
+            body: "Platzhalter für ein eingebettetes Video.",
+          },
+        ],
       },
     ],
     finalCta: {

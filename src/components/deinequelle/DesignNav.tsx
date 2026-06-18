@@ -11,7 +11,11 @@ export function DesignNav() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    setMenuOpen(false);
+    const frame = window.requestAnimationFrame(() => {
+      setMenuOpen(false);
+    });
+
+    return () => window.cancelAnimationFrame(frame);
   }, [pathname]);
 
   useEffect(() => {

@@ -104,7 +104,6 @@ export function Hero({ page }: { page: DesignPageData }) {
               </a>
             ) : null}
           </div>
-          <p className="hero-location reveal d4">Adligenswil bei Luzern</p>
         </div>
         <div className="scroll-cue" aria-hidden="true">
           <div className="scroll-line" />
