@@ -4679,3 +4679,40 @@ html:has(.deinequelle-design-root) {
     letter-spacing: -0.07em;
   }
 }
+
+/* Desktop logo alignment for the final horizontal mark. */
+@media (min-width: 961px) {
+  .deinequelle-design-chrome #nav {
+    height: 112px;
+    align-items: center;
+  }
+
+  .deinequelle-design-chrome #nav.scrolled {
+    height: 86px;
+  }
+
+  .deinequelle-design-chrome .nav-logo-wrap {
+    align-self: center;
+    height: 92px;
+    margin-top: 0;
+    align-items: center;
+    transform: translateY(2px);
+  }
+
+  .deinequelle-design-chrome .nav-logo-link {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  .deinequelle-design-chrome .nav-logo-img {
+    height: 100%;
+    object-position: left center;
+  }
+
+  .deinequelle-design-chrome #nav.scrolled .nav-logo-wrap {
+    height: 62px;
+    margin-top: 0;
+    transform: translateY(1px);
+  }
+}
