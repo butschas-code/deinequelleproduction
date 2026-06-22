@@ -4,7 +4,7 @@ import { DesignFooter, DesignNav, Hero } from "@/components/deinequelle/DesignPa
 import type { DesignPageData } from "@/data/deinequelleDesignPages";
 import { site } from "@/data/site";
 export const metadata: Metadata = {
-  title: "Kontakt",
+  title: "Kontakt · Lass uns ins Gespräch kommen",
   description:
     "Kontakt zu DeineQuelle in Adligenswil: Termin buchen, E-Mail senden, anrufen, WhatsApp schreiben oder Kontaktformular nutzen.",
 };
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 const contactHero: DesignPageData = {
   slug: "/kontakt",
   eyebrow: "Kontakt",
-  title: "Lass uns",
-  titleEmphasis: "sprechen.",
+  title: "Lass uns ins Gespräch",
+  titleEmphasis: "kommen.",
   intro:
     "Für Kinesiologie, Kinderwunschbegleitung und Yoga erreichst du mich per Formular, E-Mail, Telefon oder WhatsApp/SMS.",
   heroImage: "/images/hero/home-hero-new.jpg",

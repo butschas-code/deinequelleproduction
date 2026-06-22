@@ -4716,3 +4716,163 @@ html:has(.deinequelle-design-root) {
     transform: translateY(1px);
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   HERO REVIEW — internal clone pages (/hero-review/*)
+═══════════════════════════════════════════════════════════════ */
+.hero-review-banner {
+  position: sticky;
+  top: 0;
+  z-index: 10001;
+  background: #f5e6a8;
+  border-bottom: 1px solid rgba(28, 20, 16, 0.12);
+  color: #3d2f1f;
+}
+
+.hero-review-banner-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0.85rem 1.25rem 1rem;
+}
+
+.hero-review-banner-kicker {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.hero-review-banner-title {
+  margin-top: 0.2rem;
+  font-family: var(--font-display), "Cormorant Garamond", Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.hero-review-banner-desc {
+  margin-top: 0.35rem;
+  max-width: 52rem;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  opacity: 0.88;
+}
+
+.hero-review-banner-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.hero-review-banner-links a {
+  color: #2e4a2e;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.hero-review-banner-links a:hover {
+  color: #1c1410;
+}
+
+.hero-review-index {
+  min-height: 60vh;
+  background: var(--beige, #faf7f2);
+  padding: clamp(2rem, 5vw, 4rem) 1.25rem 5rem;
+}
+
+.hero-review-index-inner {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+
+.hero-review-index h1 {
+  font-family: var(--font-display), "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 500;
+  color: #1c1410;
+}
+
+.hero-review-index > .hero-review-index-inner > p {
+  margin-top: 1rem;
+  max-width: 42rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: #6a5948;
+}
+
+.hero-review-index-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-review-card {
+  display: grid;
+  grid-template-columns: minmax(7rem, 9rem) 1fr;
+  gap: 1rem;
+  overflow: hidden;
+  border: 1px solid rgba(28, 20, 16, 0.08);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 8px 28px rgba(28, 20, 16, 0.06);
+  transition: transform 0.25s var(--ease, cubic-bezier(0.16, 1, 0.3, 1)),
+    box-shadow 0.25s var(--ease, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.hero-review-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(28, 20, 16, 0.1);
+}
+
+.hero-review-card-thumb {
+  position: relative;
+  min-height: 6.5rem;
+  background: #eae0d3;
+}
+
+.hero-review-card-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 1.1rem 1rem 0;
+}
+
+.hero-review-card-copy h2 {
+  font-family: var(--font-display), "Cormorant Garamond", Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1c1410;
+}
+
+.hero-review-card-copy p {
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #6a5948;
+}
+
+.hero-review-card-url {
+  margin-top: 0.55rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  color: #4a7048;
+}
+
+@media (max-width: 640px) {
+  .hero-review-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-review-card-thumb {
+    min-height: 9rem;
+  }
+
+  .hero-review-card-copy {
+    padding: 0 1rem 1rem;
+  }
+}
