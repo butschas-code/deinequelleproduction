@@ -4,3 +4,9 @@ export const designNavItems = [
   { href: "/leistungen/yoga", label: "Yoga" },
   { href: "/ueber-mich", label: "Über mich" },
 ] as const;
+
+export const designContactNavItem = {
+  href: "/kontakt",
+  label: "Lass uns ins Gespräch kommen",
+  labelLines: ["Lass uns ins", "Gespräch kommen"],
+} as const;

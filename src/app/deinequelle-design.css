@@ -609,6 +609,43 @@ html:has(.deinequelle-design-root) {
       transform: translate(2px, -2px);
     }
 
+    .deinequelle-design-chrome .nav-cta-contact {
+      text-transform: none;
+      letter-spacing: 0.01em;
+      font-size: 0.68rem;
+      line-height: 1.15;
+      padding: 0.5rem 0.5rem 0.5rem 1rem;
+      gap: 0.65rem;
+    }
+
+    .deinequelle-design-chrome .nav-cta-label {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .deinequelle-design-chrome .nav-cta-line {
+      display: block;
+      white-space: nowrap;
+    }
+
+    @media (min-width: 961px) and (max-width: 1180px) {
+      .deinequelle-design-chrome #nav {
+        gap: 2rem;
+        padding: 0 3rem;
+      }
+
+      .deinequelle-design-chrome .nav-links {
+        gap: 1.6rem;
+      }
+
+      .deinequelle-design-chrome .nav-cta-contact {
+        font-size: 0.62rem;
+        padding-left: 0.85rem;
+      }
+    }
+
     } /* end desktop nav */
 
     /* ── Hamburger (mobile only) ───────────────────────────────── */
@@ -705,6 +742,23 @@ html:has(.deinequelle-design-root) {
 
     .deinequelle-design-chrome .mob-link:hover {
       color: var(--text);
+    }
+
+    .deinequelle-design-chrome .mob-link-contact {
+      max-width: min(17.5rem, 86vw);
+      text-align: center;
+      line-height: 1.06;
+    }
+
+    .deinequelle-design-chrome .mob-link-label {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.08em;
+    }
+
+    .deinequelle-design-chrome .mob-link-line {
+      display: block;
     }
 
     /* ═══════════════════════════════════════════════════════════════
@@ -4197,6 +4251,13 @@ html:has(.deinequelle-design-root) {
 .deinequelle-design-chrome .mob-link {
   font-size: clamp(2.1rem, 9vw, 3.2rem);
   letter-spacing: 0;
+}
+
+.deinequelle-design-chrome .mob-link-contact {
+  font-size: clamp(1.55rem, 6.8vw, 2.35rem);
+  line-height: 1.08;
+  max-width: min(17.5rem, 86vw);
+  text-wrap: balance;
 }
 
 .deinequelle-design-chrome #mob-overlay.open {

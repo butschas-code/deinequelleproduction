@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { site } from "@/data/site";
-import { designNavItems } from "@/data/designNavItems";
+import { designContactNavItem, designNavItems } from "@/data/designNavItems";
 
 export function DesignNav() {
   const pathname = usePathname();
@@ -70,8 +70,18 @@ export function DesignNav() {
             {item.label}
           </Link>
         ))}
-        <Link href="/kontakt" className="mob-link" onClick={() => setMenuOpen(false)}>
-          Kontakt
+        <Link
+          href={designContactNavItem.href}
+          className="mob-link mob-link-contact"
+          onClick={() => setMenuOpen(false)}
+        >
+          <span className="mob-link-label" aria-label={designContactNavItem.label}>
+            {designContactNavItem.labelLines.map((line) => (
+              <span key={line} className="mob-link-line">
+                {line}
+              </span>
+            ))}
+          </span>
         </Link>
       </div>
 
@@ -88,8 +98,14 @@ export function DesignNav() {
             </Link>
           ))}
         </div>
-        <Link href="/kontakt" className="nav-cta">
-          Kontakt
+        <Link href={designContactNavItem.href} className="nav-cta nav-cta-contact">
+          <span className="nav-cta-label" aria-label={designContactNavItem.label}>
+            {designContactNavItem.labelLines.map((line) => (
+              <span key={line} className="nav-cta-line">
+                {line}
+              </span>
+            ))}
+          </span>
           <span className="nav-cta-icon" aria-hidden>
             ↗
           </span>
