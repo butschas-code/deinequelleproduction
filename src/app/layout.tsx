@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Dancing_Script, Inter, Lato } from "next/font/google";
 import "./globals.css";
 import { site } from "@/data/site";
 import { buildLocalBusinessJsonLd } from "@/lib/seo/jsonld";
@@ -11,6 +11,20 @@ const inter = Inter({
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "600", "700"],
+});
+
+const lato = Lato({
+  variable: "--font-lato",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "700"],
+});
+
+const dancingScript = Dancing_Script({
+  variable: "--font-dancing-script",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["700"],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +51,10 @@ export default function RootLayout({
   const rootLd = buildLocalBusinessJsonLd({ reviews: [], aggregateRating: null });
 
   return (
-    <html lang="de-CH" className={`${inter.variable} h-full antialiased`}>
+    <html
+      lang="de-CH"
+      className={`${inter.variable} ${lato.variable} ${dancingScript.variable} h-full antialiased`}
+    >
       <head>
         <JsonLd data={rootLd} />
       </head>

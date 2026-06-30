@@ -104,6 +104,11 @@ export type DesignPageData = {
     titleEmphasis?: string;
     intro: string;
     footnote?: string;
+    logos?: {
+      src: string;
+      alt: string;
+      shape?: "wide" | "square";
+    }[];
     /** Collapse categories into one-at-a-time panels (keeps full copy, less scroll) */
     layout?: "accordion" | "expanded";
     theme?: "beige" | "sage" | "sage-soft" | "sage-deep" | "warm" | "warm-soft" | "warm-deep";
@@ -152,7 +157,7 @@ export const designPages = {
     contentLayout: "dense",
     eyebrow: "Kinesiologie",
     title: "Zurück in Balance",
-    titleEmphasis: "mit Körper, Gefühl\nund innerer Kraft.",
+    titleEmphasis: "mit Körper, Gefühl\n& innerer Kraft",
     intro:
       "Kinesiologie unterstützt dich dabei, Stressmuster wahrzunehmen, Ressourcen zu stärken und wieder mehr Ruhe und Klarheit zu finden.",
     heroImage: "/images/hero/Kinesiologie_hero.jpg",
@@ -169,7 +174,7 @@ export const designPages = {
         external: true,
       },
       secondary: {
-        label: "Kontakt aufnehmen",
+        label: "Kontakt",
         href: "/kontakt",
       },
     },
@@ -184,7 +189,7 @@ export const designPages = {
         hideSpread: true,
         kicker: "Komplementärtherapie",
         title: "Ganzheitlich auf dem\nWeg zu",
-        titleEmphasis: "Gesundheit und\ninnerer Balance",
+        titleEmphasis: "Gesundheit &\ninnerer Balance",
         image: "/images/Claudia/claudia-dimmler-Kinesiologie-Adligenswil.jpg",
         imageAlt: "Claudia Dimmler, Komplementärtherapeutin in Adligenswil",
         imageObjectPosition: "center 25%",
@@ -253,37 +258,6 @@ export const designPages = {
         layout: "single",
       },
       {
-        id: "sportkinesiologie",
-        theme: "sage",
-        kicker: "Sportkinesiologie",
-        title: "Für Bewegung,\nRegeneration und",
-        titleEmphasis: "sportliche Belastung",
-        titleEmphasisInline: true,
-        image: "/images/legacy/wp/2022/10/DeinQuelle-1557-scaled.jpg",
-        imageAlt: "Sportkinesiologie in der Praxis",
-        imageObjectPosition: "center 30%",
-        imageObjectPositionMobile: "center 24%",
-        lead:
-          "Sportkinesiologie betrachtet den Menschen in seiner Gesamtheit und berücksichtigt das Zusammenspiel von Körper, Geist, biochemischen Prozessen und dem individuellen Umfeld.",
-        body: [
-          "Sportliche Leistungsfähigkeit hängt nicht allein von Kraft, Ausdauer oder Technik ab. Auch Faktoren wie Stress, Regeneration, Koordination, Bewegungsmuster, mentale Belastungen und emotionale Blockaden beeinflussen Gesundheit, Wohlbefinden und Leistungsfähigkeit.",
-          "Besonders bei wiederkehrenden Beschwerden, eingeschränkter Belastbarkeit oder nach Verletzungen kann die Sportkinesiologie eine wertvolle Ergänzung zu bestehenden medizinischen, physiotherapeutischen oder sportwissenschaftlichen Massnahmen sein. Die Zusammenarbeit mit Ärztinnen und Ärzten, Physiotherapeutinnen und Physiotherapeuten, Trainerinnen und Trainern sowie weiteren Fachpersonen ist dabei jederzeit möglich und sinnvoll.",
-        ],
-        itemsIntro: "Sportkinesiologie kann unterstützend eingesetzt werden bei:",
-        items: [
-          "Sportbedingte körperliche und mentale Beschwerden",
-          "Wiederkehrende Überlastungen und Verletzungen",
-          "Regeneration nach intensiven Belastungen oder Verletzungen",
-          "Verbesserung von Koordination und Bewegungsabläufen",
-          "Trainings- und Wettkampfvorbereitung",
-          "Konzentrations- und Fokusthemen im Sport",
-          "Unsicherheiten, Leistungsdruck oder mentale Blockaden",
-        ],
-        note:
-          "Hinweis: Liegt ein gesundheitliches Anliegen, eine Beschwerde oder ein Regenerationsbedarf vor, kann die Begleitung im Rahmen der Komplementärtherapie erfolgen. Eine ausschliesslich auf Leistungssteigerung, Leistungsoptimierung oder Wettkampfperformance ausgerichtete Begleitung gilt als Selbstzahlerleistung und wird nicht über die Zusatzversicherung abgerechnet.",
-        noteVariant: "callout",
-      },
-      {
         id: "wirkung",
         theme: "sage-soft",
         kicker: "Wirkung",
@@ -310,6 +284,23 @@ export const designPages = {
         "Kinesiologie eignet sich für Kinder, Jugendliche, Erwachsene und ältere Menschen in den unterschiedlichsten Lebenssituationen. Sie unterstützt dabei, das Wohlbefinden zu fördern, innere Ressourcen zu stärken und körperliche, emotionale sowie mentale Balance wiederzufinden.",
       footnote:
         "Jeder Mensch ist einzigartig. Deshalb wird jede Sitzung individuell auf die aktuellen Bedürfnisse und Ziele abgestimmt.",
+      logos: [
+        {
+          src: "/images/other/OdA_KT_Label_DE_Diplom.jpg",
+          alt: "OdA KT Diplom Label",
+          shape: "square",
+        },
+        {
+          src: "/images/other/emr_zertifiziert_gs.svg",
+          alt: "EMR zertifiziert",
+          shape: "wide",
+        },
+        {
+          src: "/images/other/Kinesuisse_Logo_Byline_rechts_Black_RGB.svg",
+          alt: "KineSuisse Verbandsmitglied",
+          shape: "wide",
+        },
+      ],
       categories: [
         {
           number: "01",
@@ -401,7 +392,7 @@ export const designPages = {
       primaryLabel: "Termin buchen",
       primaryHref: site.bookingUrl,
       primaryExternal: true,
-      secondaryLabel: "Kontakt aufnehmen",
+      secondaryLabel: "Kontakt",
       secondaryHref: "/kontakt",
     },
   },
@@ -413,11 +404,12 @@ export const designPages = {
     titleEmphasis: "zum\u00A0Wunschkind",
     intro:
       "Kinesiologische Kinderwunschbegleitung für Frauen und Paare, die ihren Körper auf eine mögliche Schwangerschaft vorbereiten, Stress reduzieren und emotional gestärkt durch den Kinderwunschprozess gehen möchten.",
-    heroImage: "/images/layout images/pregnant.png",
-    heroAlt: "Einfühlsame Begleitung auf dem Weg zum Wunschkind",
+    heroImage: "/images/hero/review/02-editorial-therapy.jpg",
+    heroAlt: "Ruhige therapeutische Begleitung auf dem Weg zum Wunschkind",
     heroEmphasisTone: "wine",
-    heroObjectPosition: "78% 42%",
-    heroObjectPositionMobile: "86% 38%",
+    heroObjectPosition: "68% center",
+    heroObjectPositionMobile: "62% 28%",
+    heroImageHeight: "100%",
     heroReadableText: true,
     heroActions: {
       primary: {
@@ -426,7 +418,7 @@ export const designPages = {
         external: true,
       },
       secondary: {
-        label: "Kontakt aufnehmen",
+        label: "Kontakt",
         href: "/kontakt",
       },
     },
@@ -456,7 +448,7 @@ export const designPages = {
         theme: "wine-soft",
         presentation: "spread",
         kicker: "Ganzheitliche Unterstützung",
-        title: "Stress regulieren, Körper\nund Hormone",
+        title: "Stress regulieren, Körper\n& Hormone",
         titleEmphasis: "unterstützen",
         image: "/images/layout images/kinderwunsch-ganzheitliche-unterstuetzung.jpg",
         imageAlt: "Sanfte, ganzheitliche Kinderwunschbegleitung in ruhiger Atmosphäre",
@@ -491,14 +483,15 @@ export const designPages = {
       {
         id: "medizinische-behandlung",
         theme: "wine-deep",
-        presentation: "head",
+        presentation: "split",
+        splitMedia: "right",
         kicker: "Medizinische Kinderwunschbehandlung",
         title: "Begleitung während",
         titleEmphasis: "IVF, ICSI oder IUI",
-        image: "/images/Kinesiology/claudia-302.jpg",
-        imageAlt: "Kinesiologische Begleitung in der Praxis",
-        imageObjectPosition: "center 30%",
-        imageObjectPositionMobile: "center 22%",
+        image: "/images/layout images/kinderwunsch-ganzheitliche-unterstuetzung.jpg",
+        imageAlt: "Ruhige Begleitung während medizinischer Kinderwunschbehandlung",
+        imageObjectPosition: "68% 42%",
+        imageObjectPositionMobile: "70% 34%",
         lead:
           "Medizinische Kinderwunschbehandlungen können Hoffnung geben und gleichzeitig sehr fordernd sein.",
         body: [
@@ -527,19 +520,17 @@ export const designPages = {
         theme: "wine",
         presentation: "compact",
         kicker: "Nach Fehlgeburt oder Schwangerschaftsverlust",
-        title: "Raum für\nTrauer und",
+        title: "Raum für\nTrauer &",
         titleEmphasis: "behutsamen\nNeubeginn",
         image: "/images/layout images/kinderwunsch-fehlgeburt-trauer.jpg",
         imageAlt: "Weite, ruhige Landschaft — Raum für Trauer und behutsamen Neubeginn",
-        imageObjectPosition: "74% 38%",
-        imageObjectPositionMobile: "82% 32%",
+        imageObjectPosition: "74% 18%",
+        imageObjectPositionMobile: "82% 18%",
         lead: "Ein Verlust endet nicht einfach, nur weil der Körper weitermacht.",
         body: [
           "Auch ein früher Schwangerschaftsverlust kann tief berühren. Vielleicht fühlt sich dein Umfeld schon weiter an, während in dir noch Trauer, Schmerz oder Unsicherheit sind.",
-          "In der kinesiologischen Begleitung entsteht Raum für Trauer, Körperwahrnehmung und behutsamen Neubeginn.",
+          "In der kinesiologischen Begleitung entsteht Raum für Trauer, Körperwahrnehmung und behutsamen Neubeginn. Ohne Druck. Ohne Eile. Ohne Bewertung.",
         ],
-        note: "Ohne Druck. Ohne Eile. Ohne Bewertung.",
-        noteVariant: "tagline",
       },
       {
         id: "langer-weg",
@@ -589,7 +580,7 @@ export const designPages = {
           body: "Du kannst online einen Termin buchen oder dich per Telefon, WhatsApp, E-Mail oder Kontaktformular melden.",
         },
         {
-          title: "Ankommen und klären",
+          title: "Ankommen & klären",
           body: "Wir schauen, wo du gerade stehst: natürlich, medizinisch begleitet, nach Verlust oder in einer Pause.",
         },
         {
@@ -606,7 +597,7 @@ export const designPages = {
       primaryLabel: "Termin buchen",
       primaryHref: site.bookingUrl,
       primaryExternal: true,
-      secondaryLabel: "Kontakt aufnehmen",
+      secondaryLabel: "Kontakt",
       secondaryHref: "/kontakt",
     },
   },
@@ -614,17 +605,18 @@ export const designPages = {
     slug: "/leistungen/yoga",
     contentLayout: "dense",
     eyebrow: "Hatha Yoga und Yoga Nidra",
-    title: "Ankommen.\nAtmen.",
-    titleEmphasis: "Innere Ruhe\nfinden.",
+    title: "Ankommen\nAtmen",
+    titleEmphasis: "Innere Ruhe\nfinden",
     intro:
       "Yoga für Körperbewusstsein, Entspannung, Kraft und mehr Balance im Alltag.",
     heroImage: "/images/hero/yoga hero.jpg",
     heroAlt: "Hatha Yoga bei DeineQuelle in Adligenswil",
-    heroObjectPosition: "center center",
-    heroObjectPositionMobile: "center 28%",
+    heroObjectPosition: "40% center",
+    heroObjectPositionMobile: "42% 28%",
+    heroImageHeight: "100%",
     heroActions: {
       primary: {
-        label: "Kontakt aufnehmen",
+        label: "Kontakt",
         href: "/kontakt",
       },
       secondary: {
@@ -767,7 +759,7 @@ export const designPages = {
         presentation: "head",
         kicker: "Wobei Yoga unterstützen kann",
         title: "Mehr Ruhe, Kraft",
-        titleEmphasis: "und Balance",
+        titleEmphasis: "& Balance",
         image: "/images/yoga/yoga-raum-claudia-dimmler.jpg",
         imageAlt: "Yoga für Balance und Regeneration",
         imageObjectPosition: "center center",
@@ -825,7 +817,7 @@ export const designPages = {
           "Freie Plätze, Online-Teilnahme und Anmeldung: info@deinequelle.com oder 076 413 80 50.",
         noteVariant: "callout",
         cta: {
-          label: "Kontakt aufnehmen",
+          label: "Kontakt",
           href: "/kontakt",
           tone: "accent",
         },
@@ -836,7 +828,7 @@ export const designPages = {
         presentation: "head",
         kicker: "Preise",
         title: "Tarife für",
-        titleEmphasis: "Studio und online",
+        titleEmphasis: "Studio & online",
         lead: "Yoga kann mit CSS Coin, TWINT oder auf Rechnung bezahlt werden.",
         body: [
           "Lektionen à 75 Minuten: Einzellektion Fr. 34.00, Abo Fr. 28.50 pro Lektion, Online-Einzellektion Fr. 30.00, Online-Abo Fr. 25.00 pro Lektion.",
@@ -849,7 +841,7 @@ export const designPages = {
             body: "Kosten auf Anfrage.",
           },
           {
-            title: "Firmenworkshops und Kurse",
+            title: "Firmenworkshops & Kurse",
             body: "Kosten auf Anfrage oder gemäss Ausschreibung.",
           },
         ],
@@ -884,18 +876,18 @@ export const designPages = {
       emphasis: "für dich",
       body:
         "Wenn du dir mehr Ruhe, Kraft und Verbindung zu deinem Körper wünschst, freue ich mich, dich im Yoga zu begleiten.",
-      primaryLabel: "Kontakt aufnehmen",
+      primaryLabel: "Kontakt",
       primaryHref: "/kontakt",
     },
   },
   sport: {
     slug: "/leistungen/sport-kinesiologie",
     eyebrow: "Sport-Kinesiologie",
-    title: "Leistung und\nRegeneration",
-    titleEmphasis: "ganzheitlich\nbegleiten.",
+    title: "Sportkinesiologie",
+    titleEmphasis: "Komplementärtherapie",
     intro:
-      "Sportkinesiologie unterstützt bei Überlastungsbeschwerden, Regeneration, mentaler Stärke und der Vorbeugung von Verletzungen.",
-    heroImage: "/images/Kinesiology/claudia-302.jpg",
+      "Sportkinesiologie fördert die Leistungsfähigkeit eines Sportlers, einer Sportlerin durch Optimieren von Ungleichgewichten in Biomechanik, Biochemie und Psyche.",
+    heroImage: "/images/sections/sportkinesiologie-editorial.jpg",
     heroAlt: "Sportkinesiologie in der Praxis",
     heroObjectPosition: "center 30%",
     heroObjectPositionMobile: "center 22%",
@@ -909,18 +901,18 @@ export const designPages = {
       {
         id: "sport",
         theme: "sage",
-        kicker: "Bewegung",
-        title: "Körper, Psyche und",
-        titleEmphasis: "Biochemie im\nZusammenspiel",
-        image: "/images/Kinesiology/claudia-302.jpg",
+        kicker: "Sportkinesiologie",
+        title: "Potential",
+        titleEmphasis: "vollumfänglich\nausschöpfen",
+        image: "/images/sections/sportkinesiologie-editorial.jpg",
         imageAlt: "Kinesiologische Begleitung für Sportlerinnen und Sportler",
         imageObjectPosition: "center 30%",
         imageObjectPositionMobile: "center 22%",
         lead:
-          "Nicht ausschliesslich die körperliche Form ist massgebend für sportliche Leistung.",
+          "Sportkinesiologie fördert die Leistungsfähigkeit eines Sportlers, einer Sportlerin durch Optimieren von Ungleichgewichten in Biomechanik, Biochemie und Psyche, damit das eigene Potential vollumfänglich ausgeschöpft werden kann.",
         body: [
-          "Sportkinesiologie bezieht körperliche, mentale und biochemische Ebenen mit ein und unterstützt damit Leistungsfähigkeit und Regeneration.",
-          "Bei Überlastungsbeschwerden kann sie helfen, muskuläre Probleme früh wahrzunehmen und Verletzungen wie Muskelrisse möglichst zu vermeiden. Ergänzend zur Physiotherapie kann der Weg zurück in Bewegung deutlich effizienter werden.",
+          "Die Begleitung kann körperliche und geistige Beschwerden einordnen und die Optimierung biochemischer, organischer und zellulärer Abläufe im Körper unterstützen.",
+          "Sie kann ergänzend mit Trainerinnen und Trainern, Ärztinnen und Ärzten, Physiotherapeutinnen und Physiotherapeuten sowie weiteren gesundheitsfördernden Therapieformen zusammenspielen.",
         ],
         cta: {
           label: "Termin online buchen",
@@ -929,12 +921,13 @@ export const designPages = {
           tone: "sage",
         },
         items: [
-          "Trainingsoptimierung",
-          "Wettkampfvorbereitung",
-          "Stressmanagement",
-          "Regeneration nach Erschöpfung",
+          "Behandlung von körperlichen und geistigen Beschwerden sowie Optimierung des biochemischen, organischen und zellulären Ablaufs im Körper",
+          "Trainingsoptimierung durch Schritt-für-Schritt-Optimierung einzelner Elemente aus dem entsprechenden Sportbereich",
+          "Wettkampfvorbereitung in Form eines ganzheitlichen Stressmanagements",
+          "Unterstützung beim Management von Blockaden und Krisen",
+          "Fördern der Rekonvaleszenz nach körperlicher Erschöpfung und/oder Verletzungen",
           "Vorbereitung auf Operationen",
-          "Zusammenarbeit mit Physiotherapie",
+          "Zusammenarbeit mit Trainern, Ärzten, Physiotherapeuten sowie weiteren gesundheitsfördernden Therapieformen",
         ],
       },
     ],
@@ -957,7 +950,7 @@ export const designPages = {
       ],
     },
     finalCta: {
-      title: "Bring Bewegung\nund",
+      title: "Bring Bewegung\n&",
       emphasis: "Balance zusammen.",
       body: "Sport-Kinesiologie kann dich ergänzend zu Training, Medizin und Physiotherapie unterstützen.",
       primaryLabel: "Termin online buchen",
@@ -970,7 +963,7 @@ export const designPages = {
     contentLayout: "dense",
     eyebrow: "Über mich",
     title: "Ich begleite Menschen\nzurück zu",
-    titleEmphasis: "Körper, Kraft und\ninnerer Balance.",
+    titleEmphasis: "Körper, Kraft &\ninnerer Balance",
     intro:
       "Mit Kinesiologie und Yoga unterstütze ich dich achtsam, warm und körperorientiert.",
     heroImage: "/images/hero/about_hero.jpg",
@@ -980,7 +973,7 @@ export const designPages = {
     heroImageHeight: "100%",
     heroActions: {
       primary: {
-        label: "Kontakt aufnehmen",
+        label: "Kontakt",
         href: "/kontakt",
       },
     },
@@ -1017,7 +1010,7 @@ export const designPages = {
         theme: "warm-deep",
         presentation: "spread",
         kicker: "Mein Weg zu Yoga und Kinesiologie",
-        title: "Ruhe, Körperwahrnehmung\nund",
+        title: "Ruhe, Körperwahrnehmung\n&",
         titleEmphasis: "ganzheitliche Begleitung",
         titleEmphasisInline: true,
         image: "/images/Claudia/ueber-mich-weg-yoga-kinesiologie.jpg",
@@ -1059,7 +1052,7 @@ export const designPages = {
         theme: "warm-soft",
         presentation: "head",
         kicker: "Wie ich arbeite",
-        title: "Ruhig, achtsam und",
+        title: "Ruhig, achtsam &",
         titleEmphasis: "ressourcen\u00ADorientiert",
         image: "/images/Kinesiology/claudia-302.jpg",
         imageAlt: "Kinesiologische Begleitung",
@@ -1104,7 +1097,7 @@ export const designPages = {
         presentation: "head",
         hideSpread: true,
         kicker: "Ausbildungen und Qualifikationen",
-        title: "Fachlich fundiert und",
+        title: "Fachlich fundiert &",
         titleEmphasis: "ganzheitlich geprägt",
         titleEmphasisInline: true,
         image: "/images/Claudia/claudia-dimmler-Kinesiologie-Adligenswil.jpg",
@@ -1167,7 +1160,7 @@ export const designPages = {
       emphasis: "sprechen",
       body:
         "Wenn du spürst, dass du dir Unterstützung wünschst, freue ich mich über deine Nachricht. Gemeinsam schauen wir, was du gerade brauchst und welcher Weg für dich passend ist.",
-      primaryLabel: "Kontakt aufnehmen",
+      primaryLabel: "Kontakt",
       primaryHref: "/kontakt",
       secondaryLabel: "Termin für Kinesiologie buchen",
       secondaryHref: site.bookingUrl,

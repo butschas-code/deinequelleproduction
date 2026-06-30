@@ -4,7 +4,7 @@ import { designPages } from "@/data/deinequelleDesignPages";
 export const metadata: Metadata = {
   title: "Kinesiologie",
   description:
-    "Kinesiologie in Adligenswil: ganzheitliche Komplementärtherapie mit Muskeltest für Balance, Stressregulation, Sportkinesiologie und innere Kraft.",
+    "Kinesiologie in Adligenswil: ganzheitliche Komplementärtherapie mit Muskeltest für Balance, Stressregulation und innere Kraft.",
 };
 
 export default function KinesiologiePage() {

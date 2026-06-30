@@ -15,7 +15,7 @@ export { DesignNav } from "@/components/deinequelle/DesignNav";
 
 export function Hero({ page }: { page: DesignPageData }) {
   const primaryAction = page.heroActions?.primary ?? {
-    label: page.finalCta?.primaryLabel ?? "Kontakt aufnehmen",
+    label: page.finalCta?.primaryLabel ?? "Kontakt",
     href: page.finalCta?.primaryHref ?? "/kontakt",
     external: page.finalCta?.primaryExternal,
   };
@@ -33,6 +33,7 @@ export function Hero({ page }: { page: DesignPageData }) {
           [
             page.heroEmphasisTone === "wine" ? "hero-em-wine" : undefined,
             page.heroReadableText ? "hero-readable" : undefined,
+            page.slug === "/leistungen/kinesiologie" ? "hero-kinesiologie" : undefined,
           ]
             .filter(Boolean)
             .join(" ") || undefined
@@ -225,6 +226,18 @@ function GuideSection({ guide }: { guide: NonNullable<DesignPageData["guideSecti
           ))}
         </div>
         {guide.footnote ? <p className="begl-footnote reveal">{guide.footnote}</p> : null}
+        {guide.logos?.length ? (
+          <div className="begl-logo-strip reveal d1" aria-label="Zertifizierungen und Verbände">
+            {guide.logos.map((logo) => (
+              <div
+                key={logo.src}
+                className={`begl-logo-item${logo.shape === "square" ? " begl-logo-square" : ""}`}
+              >
+                <img src={logo.src} alt={logo.alt} />
+              </div>
+            ))}
+          </div>
+        ) : null}
       </div>
     </section>
   );

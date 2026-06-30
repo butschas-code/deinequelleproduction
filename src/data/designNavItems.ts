@@ -1,5 +1,6 @@
 export const designNavItems = [
   { href: "/leistungen/kinesiologie", label: "Kinesiologie" },
+  { href: "/leistungen/sport-kinesiologie", label: "Sportkinesiologie" },
   { href: "/leistungen/kinderwunsch", label: "Kinderwunsch" },
   { href: "/leistungen/yoga", label: "Yoga" },
   { href: "/ueber-mich", label: "Über mich" },
@@ -7,6 +8,6 @@ export const designNavItems = [
 
 export const designContactNavItem = {
   href: "/kontakt",
-  label: "Lass uns ins Gespräch kommen",
-  labelLines: ["Lass uns ins", "Gespräch kommen"],
+  label: "Kontakt",
+  labelLines: ["Kontakt"],
 } as const;
