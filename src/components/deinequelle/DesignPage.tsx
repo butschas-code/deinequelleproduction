@@ -14,6 +14,10 @@ import {
 export { DesignNav } from "@/components/deinequelle/DesignNav";
 
 export function Hero({ page }: { page: DesignPageData }) {
+  const slugClass =
+    page.slug === "/"
+      ? undefined
+      : `hero-${page.slug.replace(/^\/+/, "").replace(/[^a-z0-9]+/gi, "-").replace(/-$/, "")}`;
   const primaryAction = page.heroActions?.primary ?? {
     label: page.finalCta?.primaryLabel ?? "Kontakt",
     href: page.finalCta?.primaryHref ?? "/kontakt",
@@ -34,6 +38,7 @@ export function Hero({ page }: { page: DesignPageData }) {
             page.heroEmphasisTone === "wine" ? "hero-em-wine" : undefined,
             page.heroReadableText ? "hero-readable" : undefined,
             page.slug === "/leistungen/kinesiologie" ? "hero-kinesiologie" : undefined,
+            slugClass,
           ]
             .filter(Boolean)
             .join(" ") || undefined
@@ -191,6 +196,14 @@ function guideSurfaceClass(theme?: NonNullable<DesignPageData["guideSection"]>["
 
 function GuideSection({ guide }: { guide: NonNullable<DesignPageData["guideSection"]> }) {
   const surfaceClass = guideSurfaceClass(guide.theme);
+  const getLogoStyle = (src: string) =>
+    src.includes("Kinesuisse_Logo")
+      ? {
+          width: "clamp(18rem, 29vw, 26rem)",
+          maxWidth: "min(100%, 26rem)",
+          maxHeight: "none",
+        }
+      : undefined;
 
   if (guide.layout === "accordion") {
     return <GuideSectionAccordion guide={guide} surfaceClass={surfaceClass} />;
@@ -231,9 +244,14 @@ function GuideSection({ guide }: { guide: NonNullable<DesignPageData["guideSecti
             {guide.logos.map((logo) => (
               <div
                 key={logo.src}
-                className={`begl-logo-item${logo.shape === "square" ? " begl-logo-square" : ""}`}
+                className={`begl-logo-item begl-logo-${logo.src
+                  .split("/")
+                  .pop()
+                  ?.replace(/\.[^.]+$/, "")
+                  .replace(/[^a-z0-9]+/gi, "-")
+                  .toLowerCase()}${logo.shape === "square" ? " begl-logo-square" : ""}`}
               >
-                <img src={logo.src} alt={logo.alt} />
+                <img src={logo.src} alt={logo.alt} style={getLogoStyle(logo.src)} />
               </div>
             ))}
           </div>
@@ -775,6 +793,7 @@ export function DesignFooter() {
 export function DesignPage({ page }: { page: DesignPageData }) {
   const dense = page.contentLayout === "dense";
   const showQuoteAfterHero = page.quote && !page.quoteAfterSectionId;
+  const visibleSections = page.sections.filter((section) => !section.hidden);
 
   return (
     <>
@@ -788,7 +807,7 @@ export function DesignPage({ page }: { page: DesignPageData }) {
         ) : null}
         <div id="content">
           <GuideRows page={page} />
-          {page.sections.map((section) => (
+          {visibleSections.map((section) => (
             <div key={section.id}>
               <ContentSection section={section} dense={dense} />
               {page.quote && page.quoteAfterSectionId === section.id ? (

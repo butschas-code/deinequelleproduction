@@ -21,10 +21,7 @@
 const BASE = "https://maps.googleapis.com/maps/api/place";
 
 function apiKey() {
-  const k =
-    process.env.GOOGLE_MAPS_API_KEY ||
-    process.env.GOOGLE_PLACES_API_KEY ||
-    process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
+  const k = process.env.GOOGLE_MAPS_API_KEY || process.env.GOOGLE_PLACES_API_KEY;
   if (!k?.trim()) {
     console.error(
       "Fehlender API-Key: setze GOOGLE_MAPS_API_KEY (oder GOOGLE_PLACES_API_KEY).",

@@ -60,6 +60,8 @@ export type DesignPageData = {
     kicker?: string;
     title: string;
     titleEmphasis?: string;
+    /** Keep the content ready in data, but do not render it yet. */
+    hidden?: boolean;
     /** Keep emphasis on the same line as the title — no forced line break before <em>. */
     titleEmphasisInline?: boolean;
     image?: string;
@@ -404,11 +406,11 @@ export const designPages = {
     titleEmphasis: "zum\u00A0Wunschkind",
     intro:
       "Kinesiologische Kinderwunschbegleitung für Frauen und Paare, die ihren Körper auf eine mögliche Schwangerschaft vorbereiten, Stress reduzieren und emotional gestärkt durch den Kinderwunschprozess gehen möchten.",
-    heroImage: "/images/hero/review/02-editorial-therapy.jpg",
-    heroAlt: "Ruhige therapeutische Begleitung auf dem Weg zum Wunschkind",
+    heroImage: "/images/layout images/pregnant.png",
+    heroAlt: "Einfühlsame Begleitung auf dem Weg zum Wunschkind",
     heroEmphasisTone: "wine",
-    heroObjectPosition: "68% center",
-    heroObjectPositionMobile: "62% 28%",
+    heroObjectPosition: "78% 42%",
+    heroObjectPositionMobile: "86% 38%",
     heroImageHeight: "100%",
     heroReadableText: true,
     heroActions: {
@@ -450,10 +452,10 @@ export const designPages = {
         kicker: "Ganzheitliche Unterstützung",
         title: "Stress regulieren, Körper\n& Hormone",
         titleEmphasis: "unterstützen",
-        image: "/images/layout images/kinderwunsch-ganzheitliche-unterstuetzung.jpg",
-        imageAlt: "Sanfte, ganzheitliche Kinderwunschbegleitung in ruhiger Atmosphäre",
-        imageObjectPosition: "76% 38%",
-        imageObjectPositionMobile: "84% 32%",
+        image: "/images/hero/review/02-editorial-therapy.jpg",
+        imageAlt: "Ruhige therapeutische Begleitung mit fliessendem Tuch",
+        imageObjectPosition: "68% center",
+        imageObjectPositionMobile: "62% 28%",
         lead:
           "Kinesiologie ersetzt keine medizinische Behandlung. Sie kann dich jedoch ergänzend auf körperlicher, emotionaler und mentaler Ebene unterstützen.",
         body: [
@@ -529,7 +531,7 @@ export const designPages = {
         lead: "Ein Verlust endet nicht einfach, nur weil der Körper weitermacht.",
         body: [
           "Auch ein früher Schwangerschaftsverlust kann tief berühren. Vielleicht fühlt sich dein Umfeld schon weiter an, während in dir noch Trauer, Schmerz oder Unsicherheit sind.",
-          "In der kinesiologischen Begleitung entsteht Raum für Trauer, Körperwahrnehmung und behutsamen Neubeginn. Ohne Druck. Ohne Eile. Ohne Bewertung.",
+          "In der kinesiologischen Begleitung entsteht Raum für Trauer, Körperwahrnehmung und behutsamen Neubeginn.\nOhne Druck. Ohne Eile. Ohne Bewertung.",
         ],
       },
       {
@@ -848,6 +850,7 @@ export const designPages = {
       },
       {
         id: "yoga-videos",
+        hidden: true,
         theme: "warm-soft",
         presentation: "head",
         kicker: "Videos",
@@ -901,13 +904,11 @@ export const designPages = {
       {
         id: "sport",
         theme: "sage",
+        presentation: "head",
+        hideSpread: true,
         kicker: "Sportkinesiologie",
         title: "Potential",
         titleEmphasis: "vollumfänglich\nausschöpfen",
-        image: "/images/sections/sportkinesiologie-editorial.jpg",
-        imageAlt: "Kinesiologische Begleitung für Sportlerinnen und Sportler",
-        imageObjectPosition: "center 30%",
-        imageObjectPositionMobile: "center 22%",
         lead:
           "Sportkinesiologie fördert die Leistungsfähigkeit eines Sportlers, einer Sportlerin durch Optimieren von Ungleichgewichten in Biomechanik, Biochemie und Psyche, damit das eigene Potential vollumfänglich ausgeschöpft werden kann.",
         body: [

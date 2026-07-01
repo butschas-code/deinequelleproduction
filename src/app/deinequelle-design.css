@@ -1642,34 +1642,55 @@ html:has(.deinequelle-design-root) {
     }
 
     .deinequelle-design-page .begl-logo-strip {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: minmax(5rem, 0.7fr) minmax(14rem, 1.25fr) minmax(18rem, 1.8fr);
       align-items: center;
-      gap: clamp(1.25rem, 2.5vw, 2rem);
+      gap: clamp(2rem, 4vw, 4rem);
       margin-top: clamp(1.6rem, 3vw, 2.4rem);
-      max-width: 48rem;
+      width: min(100%, 78rem);
+      max-width: none;
     }
 
     .deinequelle-design-page .begl-logo-item {
       display: flex;
       align-items: center;
       justify-content: center;
-      min-width: clamp(8rem, 12vw, 10.5rem);
-      min-height: clamp(4.25rem, 6vw, 5.25rem);
+      min-height: clamp(4.75rem, 7vw, 6.2rem);
+      min-width: 0;
     }
 
     .deinequelle-design-page .begl-logo-item img {
       display: block;
       width: auto;
       height: auto;
-      max-width: clamp(8.5rem, 14vw, 11rem);
-      max-height: clamp(3.3rem, 5.2vw, 4.4rem);
+      max-width: clamp(11rem, 18vw, 15rem);
+      max-height: clamp(4.4rem, 6.4vw, 5.8rem);
       object-fit: contain;
     }
 
     .deinequelle-design-page .begl-logo-square img {
       max-width: clamp(4.1rem, 6vw, 5rem);
       max-height: clamp(4.1rem, 6vw, 5rem);
+    }
+
+    .deinequelle-design-page .begl-logo-kinesuisse-logo-byline-rechts-black-rgb {
+      justify-content: flex-start;
+    }
+
+    .deinequelle-design-page .begl-logo-kinesuisse-logo-byline-rechts-black-rgb img {
+      max-width: clamp(13rem, 21vw, 18rem);
+      max-height: clamp(5rem, 7vw, 6.3rem);
+    }
+
+    @media (max-width: 820px) {
+      .deinequelle-design-page .begl-logo-strip {
+        grid-template-columns: 1fr;
+        justify-items: start;
+      }
+
+      .deinequelle-design-page .begl-logo-item {
+        justify-content: flex-start;
+      }
     }
 
     .deinequelle-design-page .begl-accordion {
@@ -3914,6 +3935,10 @@ html:has(.deinequelle-design-root) {
         );
       }
 
+      .deinequelle-design-page #hero.hero-home .hero-bg img {
+        object-position: 88% 24%;
+      }
+
       .deinequelle-design-page .hero-overlay {
         background: linear-gradient(to top,
             var(--beige) 0%,
@@ -4638,6 +4663,19 @@ html:has(.deinequelle-design-root) {
   margin-inline: auto;
 }
 
+.deinequelle-design-page :is(#nidra-fuer-wen, #wobei-yoga) .svc-lead {
+  font-family: var(--f-b) !important;
+  font-size: clamp(1.05rem, 1.25vw, 1.22rem) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0 !important;
+}
+
+.deinequelle-design-page #wobei-yoga .svc-lead {
+  max-width: 52rem;
+}
+
 .deinequelle-design-page #nidra-fuer-wen .dq-kicker {
   font-size: clamp(1rem, 1.3vw, 1.24rem);
   text-align: center;
@@ -4885,7 +4923,7 @@ html:has(.deinequelle-design-root) {
 }
 
 .deinequelle-design-page #nach-verlust .spread-intro {
-  bottom: 12%;
+  bottom: 4%;
 }
 
 .deinequelle-design-page #nach-verlust .spread-h2 {
@@ -4902,6 +4940,10 @@ html:has(.deinequelle-design-root) {
   display: block;
   margin-top: 0.08em;
   line-height: 0.92;
+}
+
+.deinequelle-design-page #nach-verlust .svc-body-last {
+  white-space: pre-line;
 }
 
 .deinequelle-design-page #sportkinesiologie :is(.svc-items-intro, .svc-item) {
@@ -5108,11 +5150,11 @@ html:has(.deinequelle-design-root) {
   }
 
   .deinequelle-design-chrome #nav.scrolled .nav-links {
-    transform: translateY(10px);
+    transform: translateY(14px);
   }
 
   .deinequelle-design-chrome #nav.scrolled .nav-cta-contact {
-    transform: translateY(10px);
+    transform: translateY(14px);
   }
 }
 
@@ -5386,5 +5428,191 @@ html:has(.deinequelle-design-root) {
     .dq-legal-heading
   ) em {
     font-size: clamp(2.35rem, 11.5vw, 3.15rem) !important;
+  }
+}
+
+/* Yoga topic blocks: keep intro/list typography aligned with normal section copy. */
+.deinequelle-design-page :is(#nidra-fuer-wen, #wobei-yoga) :is(
+  .svc-lead,
+  .svc-topic-label,
+  .svc-topic-list li,
+  .svc-items-intro
+) {
+  font-family: var(--f-b) !important;
+  font-size: var(--type-base) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  line-height: 1.7 !important;
+  letter-spacing: 0 !important;
+}
+
+.deinequelle-design-page #nidra-fuer-wen .svc-lead {
+  max-width: 42rem;
+}
+
+.deinequelle-design-page #wobei-yoga .svc-lead {
+  max-width: 42rem;
+}
+
+/* Mobile lock-in for the recent content/design updates. */
+@media (max-width: 960px) {
+  .deinequelle-design-page .begl-logo-strip {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    gap: 1.35rem !important;
+    width: 100% !important;
+    margin-top: 2rem !important;
+  }
+
+  .deinequelle-design-page .begl-logo-item {
+    width: 100% !important;
+    min-height: auto !important;
+    justify-content: center !important;
+  }
+
+  .deinequelle-design-page .begl-logo-square img {
+    max-width: 4.5rem !important;
+    max-height: 4.5rem !important;
+  }
+
+  .deinequelle-design-page .begl-logo-item:not(.begl-logo-square) img {
+    max-width: min(100%, 18rem) !important;
+    max-height: 4.8rem !important;
+  }
+
+  .deinequelle-design-page .begl-logo-kinesuisse-logo-byline-rechts-black-rgb img {
+    width: min(100%, 20rem) !important;
+    max-width: 20rem !important;
+    max-height: none !important;
+  }
+
+  .deinequelle-design-page :is(#nidra-fuer-wen, #wobei-yoga) :is(
+    .svc-lead,
+    .svc-topic-label,
+    .svc-topic-list li,
+    .svc-items-intro
+  ) {
+    font-size: clamp(1rem, 4vw, 1.08rem) !important;
+    line-height: 1.62 !important;
+  }
+
+  .deinequelle-design-page :is(#nidra-fuer-wen, #wobei-yoga) .svc-lead {
+    max-width: 34rem !important;
+  }
+
+  .deinequelle-design-page #wobei-yoga .svc-topic-list,
+  .deinequelle-design-page #nidra-fuer-wen .svc-topic-list {
+    grid-template-columns: 1fr !important;
+    width: min(100%, 24rem) !important;
+    margin-inline: auto !important;
+    row-gap: 0.35rem !important;
+  }
+
+  .deinequelle-design-page #nach-verlust .spread-intro {
+    bottom: 8% !important;
+  }
+
+  .deinequelle-design-page #nach-verlust .spread-h2 {
+    max-width: min(9.5ch, calc(100vw - 3.6rem)) !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .deinequelle-design-page #hero.hero-home .hero-bg img {
+    object-position: 84% 24% !important;
+  }
+
+  .deinequelle-design-page .begl-logo-kinesuisse-logo-byline-rechts-black-rgb img {
+    width: min(100%, 18.5rem) !important;
+  }
+}
+
+/* Mobile hero lock-in: keep every page as a real full-image hero. */
+@media (max-width: 960px) {
+  .deinequelle-design-page #hero .hero-bg {
+    background: transparent !important;
+  }
+
+  .deinequelle-design-page #hero .hero-bg img {
+    height: var(--hero-image-height-mobile, var(--hero-image-height, 100%)) !important;
+    min-height: 0 !important;
+    object-fit: cover !important;
+    object-position: var(
+      --hero-object-position-mobile,
+      var(--hero-object-position, center 24%)
+    ) !important;
+  }
+
+  .deinequelle-design-page #hero.hero-home .hero-bg img {
+    object-position: 66% 20% !important;
+  }
+
+  .deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-bg img {
+    object-position: 54% 18% !important;
+  }
+
+  .deinequelle-design-page #hero.hero-leistungen-yoga .hero-bg img {
+    object-position: 42% 24% !important;
+  }
+
+  .deinequelle-design-page #hero.hero-kontakt .hero-overlay,
+  .deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-overlay,
+  .deinequelle-design-page #hero.hero-leistungen-yoga .hero-overlay {
+    background:
+      linear-gradient(to bottom,
+        rgba(250, 247, 242, 0.02) 0%,
+        rgba(250, 247, 242, 0.16) 44%,
+        rgba(250, 247, 242, 0.48) 100%),
+      linear-gradient(to right,
+        rgba(250, 247, 242, 0.58) 0%,
+        rgba(250, 247, 242, 0.34) 45%,
+        rgba(250, 247, 242, 0.06) 84%) !important;
+  }
+
+  .deinequelle-design-page #hero.hero-home .hero-overlay {
+    background:
+      linear-gradient(to bottom,
+        rgba(250, 247, 242, 0.08) 0%,
+        rgba(250, 247, 242, 0.24) 42%,
+        rgba(250, 247, 242, 0.62) 100%),
+      linear-gradient(to right,
+        rgba(250, 247, 242, 0.76) 0%,
+        rgba(250, 247, 242, 0.44) 48%,
+        rgba(250, 247, 242, 0.08) 86%) !important;
+  }
+
+  .deinequelle-design-page #hero .hero-content {
+    padding: 7.5rem 2.5rem 5.5rem !important;
+  }
+
+  .deinequelle-design-page #hero :is(.hero-h1, .hero-h1 em, .hero-sub) {
+    text-shadow:
+      0 1px 1px rgba(250, 247, 242, 0.92),
+      0 0 18px rgba(250, 247, 242, 0.72),
+      0 1px 8px rgba(28, 20, 16, 0.14) !important;
+  }
+
+  .deinequelle-design-page #hero :is(.dq-kicker, .hero-location, .hero-actions a) {
+    text-shadow: 0 1px 10px rgba(250, 247, 242, 0.84) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .deinequelle-design-page #hero .hero-content {
+    padding: 3.5rem 1.8rem 4rem !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .deinequelle-design-page #hero.hero-home .hero-bg img {
+    object-position: 66% 20% !important;
+  }
+
+  .deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-bg img {
+    object-position: 54% 18% !important;
+  }
+
+  .deinequelle-design-page #hero.hero-leistungen-yoga .hero-bg img {
+    object-position: 42% 24% !important;
   }
 }
