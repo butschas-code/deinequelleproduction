@@ -5138,12 +5138,12 @@ html:has(.deinequelle-design-root) {
 
   .deinequelle-design-chrome .nav-links {
     gap: clamp(1.4rem, 2.2vw, 2.35rem);
-    transform: translateY(18px);
+    transform: translateY(8px);
     transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
   }
 
   .deinequelle-design-chrome .nav-cta-contact {
-    transform: translateY(18px);
+    transform: translateY(8px);
   }
 
   .deinequelle-design-chrome #nav.scrolled .nav-logo-wrap {
@@ -5153,11 +5153,11 @@ html:has(.deinequelle-design-root) {
   }
 
   .deinequelle-design-chrome #nav.scrolled .nav-links {
-    transform: translateY(14px);
+    transform: translateY(8px);
   }
 
   .deinequelle-design-chrome #nav.scrolled .nav-cta-contact {
-    transform: translateY(14px);
+    transform: translateY(8px);
   }
 }
 
