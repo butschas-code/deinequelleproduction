@@ -17,7 +17,7 @@ const lato = Lato({
   variable: "--font-lato",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "700"],
+  weight: ["300", "400", "700", "900"],
 });
 
 const dancingScript = Dancing_Script({

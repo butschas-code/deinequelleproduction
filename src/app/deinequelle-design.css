@@ -5617,3 +5617,120 @@ html:has(.deinequelle-design-root) {
     object-position: 42% 24% !important;
   }
 }
+
+/* Typography lock-in: Lato display/body, Dancing Script reserved for quote blocks. */
+.deinequelle-design-page {
+  --f-b: var(--font-lato), Lato, system-ui, sans-serif;
+  --f-display-block: var(--font-lato), Lato, system-ui, sans-serif;
+  --type-weight-body: 500;
+}
+
+.deinequelle-design-page :is(
+  p,
+  li,
+  h3,
+  .svc-lead,
+  .svc-body,
+  .svc-item,
+  .svc-items-intro,
+  .svc-topic-label,
+  .svc-topic-list li,
+  .svc-feature-title,
+  .svc-feature-body,
+  .begl-cat,
+  .begl-intro,
+  .begl-lead,
+  .begl-list li,
+  .begl-goal,
+  .schritt p,
+  .dq-contact-card p,
+  .dq-contact-address,
+  .footer-desc,
+  .footer-col address
+) {
+  font-family: var(--f-b) !important;
+  font-weight: 500 !important;
+}
+
+.deinequelle-design-page :is(
+  .hero-sub,
+  .hero-location,
+  #hero .dq-kicker,
+  #hero.hero-readable .hero-sub
+) {
+  font-family: var(--f-b) !important;
+  font-weight: 300 !important;
+}
+
+.deinequelle-design-page :is(
+  .hero-h1,
+  .spread-h2,
+  .begl-h2,
+  .schritte-h2,
+  .cta-h2,
+  .claudia-h2,
+  .dq-legal-heading
+) {
+  font-family: var(--f-display-block) !important;
+  font-weight: 900 !important;
+  font-style: normal !important;
+  letter-spacing: -0.04em !important;
+  color: var(--heading-block) !important;
+}
+
+.deinequelle-design-page :is(
+  .hero-h1 em,
+  .spread-h2 em,
+  .begl-h2 em,
+  .schritte-h2 em,
+  .cta-h2 em,
+  .claudia-h2 em,
+  .dq-legal-heading em
+) {
+  font-family: var(--f-display-block) !important;
+  font-weight: 300 !important;
+  font-style: normal !important;
+  letter-spacing: -0.035em !important;
+  color: var(--heading-block) !important;
+}
+
+.deinequelle-design-page :is(
+  .hero-h1,
+  .spread-h2,
+  .begl-h2,
+  .schritte-h2,
+  .cta-h2,
+  .claudia-h2,
+  .dq-legal-heading
+) {
+  line-height: 0.94 !important;
+}
+
+.deinequelle-design-page :is(
+  .hero-h1 em,
+  .spread-h2 em,
+  .begl-h2 em,
+  .schritte-h2 em,
+  .cta-h2 em,
+  .claudia-h2 em,
+  .dq-legal-heading em
+) {
+  line-height: 0.94 !important;
+}
+
+.deinequelle-design-page :is(.erkl-quote, .claudia-quote) {
+  font-family: var(--f-display-script) !important;
+  font-weight: 700 !important;
+  font-style: normal !important;
+  letter-spacing: normal !important;
+  line-height: 1.12 !important;
+}
+
+.deinequelle-design-page .erkl-quote {
+  font-size: clamp(2.8rem, 5.2vw, 5.4rem) !important;
+  max-width: 20ch !important;
+}
+
+.deinequelle-design-page .claudia-quote {
+  font-size: clamp(2.2rem, 4vw, 4rem) !important;
+}

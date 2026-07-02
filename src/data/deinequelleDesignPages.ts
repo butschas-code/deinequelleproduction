@@ -1114,7 +1114,7 @@ export const designPages = {
     guideSection: {
       title: "Ausbildungen",
       titleEmphasis: "im Überblick",
-      layout: "accordion",
+      layout: "expanded",
       theme: "warm-soft",
       intro:
         "Medizinischer Hintergrund, Yoga und Kinesiologie bilden zusammen die Basis meiner Arbeit.",
