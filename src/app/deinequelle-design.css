@@ -5009,7 +5009,7 @@ html:has(.deinequelle-design-root) {
     height: calc(3.9rem + env(safe-area-inset-top, 0px)) !important;
     padding: 0 4.75rem 0 1.35rem !important;
     padding-top: env(safe-area-inset-top, 0px) !important;
-    overflow: hidden !important;
+    overflow: visible !important;
     background: var(--beige) !important;
   }
 
@@ -5026,6 +5026,7 @@ html:has(.deinequelle-design-root) {
     margin-top: 0 !important;
     align-self: center !important;
     align-items: center !important;
+    overflow: visible !important;
   }
 
   .deinequelle-design-chrome .nav-logo-link {
@@ -5033,14 +5034,15 @@ html:has(.deinequelle-design-root) {
     align-items: center !important;
     width: 100% !important;
     height: 100% !important;
-    overflow: hidden !important;
+    overflow: visible !important;
   }
 
   .deinequelle-design-chrome .nav-logo-img {
     width: auto !important;
-    height: 100% !important;
+    height: 200% !important;
     max-width: 100% !important;
-    max-height: 100% !important;
+    max-height: none !important;
+    margin-top: 14px !important;
     object-fit: contain !important;
     object-position: left center !important;
   }
@@ -5129,7 +5131,8 @@ html:has(.deinequelle-design-root) {
   }
 
   .deinequelle-design-chrome .nav-logo-img {
-    height: 100%;
+    height: 132%;
+    margin-top: -15px;
     object-position: left center;
   }
 
