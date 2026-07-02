@@ -5602,7 +5602,7 @@ html:has(.deinequelle-design-root) {
 
 @media (max-width: 640px) {
   .deinequelle-design-page #hero .hero-content {
-    padding: 3.5rem 1.8rem 4rem !important;
+    padding: 6.25rem 1.8rem 4rem !important;
   }
 }
 
