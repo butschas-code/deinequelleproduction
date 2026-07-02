@@ -5455,6 +5455,13 @@ html:has(.deinequelle-design-root) {
   max-width: 42rem;
 }
 
+@media (min-width: 961px) {
+  .deinequelle-design-page #yoga-nidra .svc-lead {
+    max-width: 48rem;
+    white-space: nowrap;
+  }
+}
+
 /* Mobile lock-in for the recent content/design updates. */
 @media (max-width: 960px) {
   .deinequelle-design-page .begl-logo-strip {
@@ -5733,4 +5740,130 @@ html:has(.deinequelle-design-root) {
 
 .deinequelle-design-page .claudia-quote {
   font-size: clamp(2.2rem, 4vw, 4rem) !important;
+}
+
+@media (max-width: 640px) {
+  .deinequelle-design-page #hero.hero-home .hero-bg img {
+    object-position: 56% 20% !important;
+  }
+
+  .deinequelle-design-page #hero.hero-home .hero-h1 {
+    font-size: clamp(2.85rem, 10.2vw, 3.25rem) !important;
+    max-width: 7.4em;
+  }
+
+  .deinequelle-design-page #hero.hero-home .hero-h1 em {
+    font-size: clamp(2.45rem, 9vw, 2.95rem) !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .deinequelle-design-page #hero.hero-home .hero-bg img {
+    object-position: 56% 20% !important;
+  }
+}
+
+/* Mobile hero readability refinement: stronger supporting text, lighter image wash. */
+.deinequelle-design-page #hero :is(.hero-sub, .hero-location) {
+  color: color-mix(in srgb, var(--text) 86%, var(--sage-dark) 14%) !important;
+  font-weight: 500 !important;
+}
+
+.deinequelle-design-page #hero .hero-h1 em {
+  font-weight: 300 !important;
+}
+
+.deinequelle-design-page #lektion .svc-lead {
+  font-size: clamp(1.35rem, 1.55vw, 1.55rem) !important;
+  line-height: 1.55 !important;
+  max-width: 34rem;
+}
+
+@media (max-width: 960px) {
+  .deinequelle-design-page #hero .hero-overlay {
+    background:
+      linear-gradient(to bottom,
+        rgba(250, 247, 242, 0.01) 0%,
+        rgba(250, 247, 242, 0.1) 44%,
+        rgba(250, 247, 242, 0.36) 100%),
+      linear-gradient(to right,
+        rgba(250, 247, 242, 0.46) 0%,
+        rgba(250, 247, 242, 0.24) 46%,
+        rgba(250, 247, 242, 0.04) 86%) !important;
+  }
+
+  .deinequelle-design-page #hero.hero-home .hero-overlay {
+    background:
+      linear-gradient(to bottom,
+        rgba(250, 247, 242, 0.04) 0%,
+        rgba(250, 247, 242, 0.14) 42%,
+        rgba(250, 247, 242, 0.42) 100%),
+      linear-gradient(to right,
+        rgba(250, 247, 242, 0.54) 0%,
+        rgba(250, 247, 242, 0.28) 48%,
+        rgba(250, 247, 242, 0.05) 86%) !important;
+  }
+
+  .deinequelle-design-page #hero :is(.hero-h1, .hero-h1 em, .hero-sub) {
+    text-shadow:
+      0 1px 1px rgba(250, 247, 242, 0.82),
+      0 0 14px rgba(250, 247, 242, 0.52),
+      0 1px 7px rgba(28, 20, 16, 0.16) !important;
+  }
+
+  .deinequelle-design-page #hero .hero-actions .btn-ghost {
+    border-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+/* Desktop readability pass: keep the refined layout, but give text more ink. */
+@media (min-width: 961px) {
+  .deinequelle-design-chrome .nav-links a {
+    color: color-mix(in srgb, var(--text) 84%, var(--sage-dark) 16%) !important;
+    font-weight: 500 !important;
+  }
+
+  .deinequelle-design-chrome .nav-links a:hover,
+  .deinequelle-design-chrome .nav-links .nav-link-contact {
+    color: var(--text) !important;
+  }
+
+  .deinequelle-design-page #hero .hero-sub {
+    font-weight: 500 !important;
+    text-shadow:
+      0 1px 1px rgba(250, 247, 242, 0.82),
+      0 0 12px rgba(250, 247, 242, 0.48) !important;
+  }
+}
+
+/* Yoga Nidra audience section: return to the normal left-aligned section rhythm. */
+.deinequelle-design-page #nidra-fuer-wen .svc,
+.deinequelle-design-page #nidra-fuer-wen .dq-kicker,
+.deinequelle-design-page #nidra-fuer-wen .spread-intro,
+.deinequelle-design-page #nidra-fuer-wen .svc-topic-list li {
+  text-align: left !important;
+}
+
+.deinequelle-design-page #nidra-fuer-wen .svc-editorial-flow {
+  justify-items: stretch !important;
+}
+
+.deinequelle-design-page #nidra-fuer-wen .spread-intro {
+  left: auto !important;
+  right: auto !important;
+  transform: none !important;
+  margin-inline: 0 !important;
+}
+
+.deinequelle-design-page #nidra-fuer-wen :is(
+  .svc-prose-block,
+  .svc-items-topics,
+  .svc-lead
+) {
+  margin-inline: 0 !important;
+}
+
+.deinequelle-design-page #nidra-fuer-wen .svc-topic-list {
+  justify-items: stretch !important;
 }
