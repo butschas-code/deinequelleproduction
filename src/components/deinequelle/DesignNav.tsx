@@ -97,19 +97,10 @@ export function DesignNav() {
               {item.label}
             </Link>
           ))}
+          <Link href={designContactNavItem.href} className="nav-link-contact">
+            {designContactNavItem.label}
+          </Link>
         </div>
-        <Link href={designContactNavItem.href} className="nav-cta nav-cta-contact">
-          <span className="nav-cta-label" aria-label={designContactNavItem.label}>
-            {designContactNavItem.labelLines.map((line) => (
-              <span key={line} className="nav-cta-line">
-                {line}
-              </span>
-            ))}
-          </span>
-          <span className="nav-cta-icon" aria-hidden>
-            ↗
-          </span>
-        </Link>
         <button
           className={`nav-ham${menuOpen ? " open" : ""}`}
           id="ham"

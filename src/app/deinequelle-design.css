@@ -1087,6 +1087,11 @@ html:has(.deinequelle-design-root) {
       color: var(--text);
     }
 
+    .deinequelle-design-chrome .nav-links .nav-link-contact {
+      color: var(--text);
+      font-weight: 700;
+    }
+
     .deinequelle-design-page .hero-h1 {
       font-family: var(--f-d);
       font-size: clamp(3.5rem, 6.5vw, 6.2rem);
@@ -2622,7 +2627,7 @@ html:has(.deinequelle-design-root) {
       font-size: 1.25rem;
       font-weight: 400;
       letter-spacing: -0.008em;
-      line-height: 1;
+      line-height: 1.2;
       padding: 1.45rem 0;
       border-bottom: 1px solid;
     }
@@ -2684,7 +2689,7 @@ html:has(.deinequelle-design-root) {
       border-top: none;
       padding: 1.05rem 0;
       font-size: 1.08rem;
-      line-height: 1.35;
+      line-height: 1.2;
     }
 
     .deinequelle-design-page .svc-items-matrix .svc-item:first-child {
@@ -4890,7 +4895,7 @@ html:has(.deinequelle-design-root) {
   font-family: var(--f-b);
   font-size: clamp(0.98rem, 1vw, 1.08rem);
   font-weight: 400;
-  line-height: 1.4;
+  line-height: 1.2;
   text-align: center;
 }
 
@@ -5140,10 +5145,6 @@ html:has(.deinequelle-design-root) {
     gap: clamp(1.4rem, 2.2vw, 2.35rem);
     transform: translateY(8px);
     transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .deinequelle-design-chrome .nav-cta-contact {
-    transform: translateY(8px);
   }
 
   .deinequelle-design-chrome #nav.scrolled .nav-logo-wrap {
