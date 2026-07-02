@@ -1072,7 +1072,7 @@ html:has(.deinequelle-design-root) {
 
     .deinequelle-design-chrome .nav-links a {
       font-family: var(--f-b);
-      font-size: 0.76rem;
+      font-size: 1rem;
       font-weight: 400;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -5152,10 +5152,7 @@ html:has(.deinequelle-design-root) {
     transform: translateY(19px);
   }
 
-  .deinequelle-design-chrome #nav.scrolled .nav-links {
-    transform: translateY(8px);
-  }
-
+  .deinequelle-design-chrome #nav.scrolled .nav-links,
   .deinequelle-design-chrome #nav.scrolled .nav-cta-contact {
     transform: translateY(8px);
   }
