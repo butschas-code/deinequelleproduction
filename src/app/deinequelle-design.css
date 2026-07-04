@@ -5566,20 +5566,22 @@ html:has(.deinequelle-design-root) {
     background:
       linear-gradient(to bottom,
         rgba(250, 247, 242, 0.02) 0%,
-        rgba(250, 247, 242, 0.1) 44%,
-        rgba(250, 247, 242, 0.34) 100%),
+        rgba(250, 247, 242, 0.18) 38%,
+        rgba(250, 247, 242, 0.46) 68%,
+        rgba(250, 247, 242, 0.66) 100%),
       linear-gradient(to right,
-        rgba(250, 247, 242, 0.46) 0%,
-        rgba(250, 247, 242, 0.24) 45%,
-        rgba(250, 247, 242, 0.03) 84%) !important;
+        rgba(250, 247, 242, 0.52) 0%,
+        rgba(250, 247, 242, 0.3) 45%,
+        rgba(250, 247, 242, 0.05) 84%) !important;
   }
 
   .deinequelle-design-page #hero.hero-home .hero-overlay {
     background:
       linear-gradient(to bottom,
         rgba(250, 247, 242, 0.03) 0%,
-        rgba(250, 247, 242, 0.13) 42%,
-        rgba(250, 247, 242, 0.4) 100%),
+        rgba(250, 247, 242, 0.18) 40%,
+        rgba(250, 247, 242, 0.46) 70%,
+        rgba(250, 247, 242, 0.62) 100%),
       linear-gradient(to right,
         rgba(250, 247, 242, 0.54) 0%,
         rgba(250, 247, 242, 0.27) 48%,
@@ -5821,11 +5823,12 @@ html:has(.deinequelle-design-root) {
     background:
       linear-gradient(to bottom,
         rgba(250, 247, 242, 0.01) 0%,
-        rgba(250, 247, 242, 0.07) 44%,
-        rgba(250, 247, 242, 0.28) 100%),
+        rgba(250, 247, 242, 0.14) 40%,
+        rgba(250, 247, 242, 0.42) 70%,
+        rgba(250, 247, 242, 0.6) 100%),
       linear-gradient(to right,
         rgba(250, 247, 242, 0.38) 0%,
-        rgba(250, 247, 242, 0.18) 46%,
+        rgba(250, 247, 242, 0.24) 46%,
         rgba(250, 247, 242, 0.02) 86%) !important;
   }
 
@@ -5833,11 +5836,12 @@ html:has(.deinequelle-design-root) {
     background:
       linear-gradient(to bottom,
         rgba(250, 247, 242, 0.03) 0%,
-        rgba(250, 247, 242, 0.1) 42%,
-        rgba(250, 247, 242, 0.32) 100%),
+        rgba(250, 247, 242, 0.16) 40%,
+        rgba(250, 247, 242, 0.44) 70%,
+        rgba(250, 247, 242, 0.6) 100%),
       linear-gradient(to right,
         rgba(250, 247, 242, 0.46) 0%,
-        rgba(250, 247, 242, 0.2) 48%,
+        rgba(250, 247, 242, 0.26) 48%,
         rgba(250, 247, 242, 0.02) 86%) !important;
   }
 
@@ -6109,4 +6113,20 @@ html:has(.deinequelle-design-root) {
   .svc-items-intro
 ) {
   color: #294d5f !important;
+}
+
+/* Headline light parts: keep page colors, but use the same italic non-fat style everywhere. */
+.deinequelle-design-page :is(
+  .hero-h1 em,
+  .spread-h2 em,
+  .begl-h2 em,
+  .schritte-h2 em,
+  .cta-h2 em,
+  .claudia-h2 em,
+  .dq-legal-heading em
+) {
+  font-family: var(--f-display-block) !important;
+  font-weight: 400 !important;
+  font-style: italic !important;
+  letter-spacing: -0.025em !important;
 }
