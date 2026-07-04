@@ -120,7 +120,7 @@ html:has(.deinequelle-design-root) {
 .deinequelle-design-page .dq-contact-aside h2 {
   font-family: var(--f-d);
   font-size: clamp(2.6rem, 5vw, 5.4rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1;
   letter-spacing: -0.025em;
   color: var(--text);
@@ -712,7 +712,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-chrome .mob-link {
       font-family: var(--f-d);
       font-size: clamp(1.96rem, 4.9vw, 2.66rem);
-      font-weight: 300;
+      font-weight: 400;
       color: var(--text-mid);
       opacity: 0;
       transform: translateY(22px);
@@ -1103,7 +1103,7 @@ html:has(.deinequelle-design-root) {
     }
 
     .deinequelle-design-page .hero-h1 em {
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
       color: var(--sage-dark);
     }
@@ -1122,7 +1122,7 @@ html:has(.deinequelle-design-root) {
     }
 
     .deinequelle-design-page .spread-h2 em {
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
     }
 
@@ -1135,7 +1135,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .erkl-quote {
       font-family: var(--f-d);
       font-size: clamp(2.6rem, 5.6vw, 6.8rem);
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
       color: var(--text);
       line-height: 1.18;
@@ -1150,7 +1150,7 @@ html:has(.deinequelle-design-root) {
 
     .deinequelle-design-page .hero-sub {
       font-size: 1.18rem;
-      font-weight: 300;
+      font-weight: 400;
       color: var(--text-mid);
       line-height: 1.85;
       max-width: 48ch;
@@ -1168,7 +1168,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .hero-location {
       font-family: var(--f-d);
       font-size: 1.08rem;
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
       color: var(--text-light);
       letter-spacing: 0.005em;
@@ -1328,7 +1328,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .erkl-body {
       font-family: var(--f-b);
       font-size: 1.08rem;
-      font-weight: 300;
+      font-weight: 400;
       color: var(--text-mid);
       line-height: 1.92;
       max-width: 54ch;
@@ -1360,9 +1360,10 @@ html:has(.deinequelle-design-root) {
     }
 
     .deinequelle-design-page .svc-group-num {
+      display: none;
       font-family: var(--f-d);
       font-size: 0.85rem;
-      font-weight: 300;
+      font-weight: 400;
       letter-spacing: 0.06em;
       margin-top: 0.35rem;
     }
@@ -1547,7 +1548,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .begl-num {
       font-family: var(--f-d);
       font-size: 0.82rem;
-      font-weight: 300;
+      font-weight: 400;
       color: var(--sand);
       letter-spacing: 0.06em;
       transition: color 0.5s var(--ease);
@@ -1628,7 +1629,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .begl-goal {
       font-family: var(--f-d);
       font-size: clamp(1.15rem, 1.6vw, 1.35rem);
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
       line-height: 1.65;
       color: var(--sage-dark);
@@ -1639,7 +1640,7 @@ html:has(.deinequelle-design-root) {
       margin-top: clamp(4rem, 7vw, 6rem);
       font-family: var(--f-d);
       font-size: clamp(1.35rem, 2vw, 1.75rem);
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
       line-height: 1.55;
       color: var(--text-mid);
@@ -2415,7 +2416,7 @@ html:has(.deinequelle-design-root) {
       background: transparent;
       font-family: var(--f-d);
       font-size: clamp(1.35rem, 2vw, 1.75rem);
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
       line-height: 1.55;
       letter-spacing: -0.012em;
@@ -2496,7 +2497,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .svc-feature-num {
       font-family: var(--f-d);
       font-size: 0.78rem;
-      font-weight: 300;
+      font-weight: 400;
       letter-spacing: 0.08em;
       color: var(--sand);
       margin-bottom: 0.65rem;
@@ -2551,7 +2552,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .svc-lead {
       font-family: var(--f-d);
       font-size: clamp(1.45rem, 2.3vw, 1.85rem);
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
       font-synthesis: none;
       line-height: 1.6;
@@ -2574,7 +2575,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .svc-body {
       font-family: var(--f-b);
       font-size: 1.12rem;
-      font-weight: 300;
+      font-weight: 400;
       line-height: 1.92;
       margin-bottom: 1.9rem;
       color: var(--text-mid);
@@ -2602,7 +2603,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .svc-items-intro {
       font-family: var(--f-d);
       font-size: clamp(1.2rem, 1.7vw, 1.4rem);
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
       line-height: 1.45;
       letter-spacing: -0.008em;
@@ -2707,7 +2708,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .svc-editorial-topics .svc-note.svc-note-editorial {
       font-family: var(--f-b);
       font-size: 1.12rem;
-      font-weight: 300;
+      font-weight: 400;
       font-style: normal;
       line-height: 1.92;
       letter-spacing: 0;
@@ -2718,7 +2719,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .svc-editorial-topics .svc-lead {
       font-family: var(--f-d);
       font-size: clamp(1.45rem, 2.3vw, 1.85rem);
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
       line-height: 1.6;
       letter-spacing: -0.01em;
@@ -3109,7 +3110,7 @@ html:has(.deinequelle-design-root) {
     }
 
     .deinequelle-design-page .claudia-h2 em {
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
     }
 
@@ -3139,7 +3140,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .claudia-quote {
       font-family: var(--f-d);
       font-size: clamp(1.45rem, 2.5vw, 2.3rem);
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
       color: var(--text);
       line-height: 1.52;
@@ -3288,7 +3289,7 @@ html:has(.deinequelle-design-root) {
     }
 
     .deinequelle-design-page .schritte-h2 em {
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
     }
 
@@ -3315,7 +3316,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .schritt-num {
       font-family: var(--f-d);
       font-size: clamp(7rem, 10vw, 12rem);
-      font-weight: 300;
+      font-weight: 400;
       color: var(--sage-mid);
       line-height: 0.85;
       margin-bottom: 1.8rem;
@@ -3353,7 +3354,7 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .schritte-foot p {
       font-family: var(--f-d);
       font-size: clamp(1.4rem, 2.2vw, 1.9rem);
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
       color: var(--sage-accent);
     }
@@ -3386,7 +3387,7 @@ html:has(.deinequelle-design-root) {
     }
 
     .deinequelle-design-page .cta-h2 em {
-      font-weight: 300;
+      font-weight: 400;
       font-style: italic;
       color: var(--accent);
     }
@@ -4937,10 +4938,6 @@ html:has(.deinequelle-design-root) {
   letter-spacing: -0.025em;
 }
 
-.deinequelle-design-page #nach-verlust .spread-h2 br:last-of-type {
-  display: none;
-}
-
 .deinequelle-design-page #nach-verlust .spread-h2 em {
   display: block;
   margin-top: 0.08em;
@@ -5527,7 +5524,7 @@ html:has(.deinequelle-design-root) {
 
 @media (max-width: 420px) {
   .deinequelle-design-page #hero.hero-home .hero-bg img {
-    object-position: 84% 24% !important;
+    object-position: 66% 20% !important;
   }
 
   .deinequelle-design-page .begl-logo-kinesuisse-logo-byline-rechts-black-rgb img {
@@ -5560,7 +5557,7 @@ html:has(.deinequelle-design-root) {
   }
 
   .deinequelle-design-page #hero.hero-leistungen-yoga .hero-bg img {
-    object-position: 42% 24% !important;
+    object-position: 58% 38% !important;
   }
 
   .deinequelle-design-page #hero.hero-kontakt .hero-overlay,
@@ -5569,24 +5566,24 @@ html:has(.deinequelle-design-root) {
     background:
       linear-gradient(to bottom,
         rgba(250, 247, 242, 0.02) 0%,
-        rgba(250, 247, 242, 0.16) 44%,
-        rgba(250, 247, 242, 0.48) 100%),
+        rgba(250, 247, 242, 0.1) 44%,
+        rgba(250, 247, 242, 0.34) 100%),
       linear-gradient(to right,
-        rgba(250, 247, 242, 0.58) 0%,
-        rgba(250, 247, 242, 0.34) 45%,
-        rgba(250, 247, 242, 0.06) 84%) !important;
+        rgba(250, 247, 242, 0.46) 0%,
+        rgba(250, 247, 242, 0.24) 45%,
+        rgba(250, 247, 242, 0.03) 84%) !important;
   }
 
   .deinequelle-design-page #hero.hero-home .hero-overlay {
     background:
       linear-gradient(to bottom,
-        rgba(250, 247, 242, 0.08) 0%,
-        rgba(250, 247, 242, 0.24) 42%,
-        rgba(250, 247, 242, 0.62) 100%),
+        rgba(250, 247, 242, 0.03) 0%,
+        rgba(250, 247, 242, 0.13) 42%,
+        rgba(250, 247, 242, 0.4) 100%),
       linear-gradient(to right,
-        rgba(250, 247, 242, 0.76) 0%,
-        rgba(250, 247, 242, 0.44) 48%,
-        rgba(250, 247, 242, 0.08) 86%) !important;
+        rgba(250, 247, 242, 0.54) 0%,
+        rgba(250, 247, 242, 0.27) 48%,
+        rgba(250, 247, 242, 0.04) 86%) !important;
   }
 
   .deinequelle-design-page #hero .hero-content {
@@ -5621,7 +5618,7 @@ html:has(.deinequelle-design-root) {
   }
 
   .deinequelle-design-page #hero.hero-leistungen-yoga .hero-bg img {
-    object-position: 42% 24% !important;
+    object-position: 58% 38% !important;
   }
 }
 
@@ -5666,7 +5663,7 @@ html:has(.deinequelle-design-root) {
   #hero.hero-readable .hero-sub
 ) {
   font-family: var(--f-b) !important;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
 }
 
 .deinequelle-design-page :is(
@@ -5695,7 +5692,7 @@ html:has(.deinequelle-design-root) {
   .dq-legal-heading em
 ) {
   font-family: var(--f-display-block) !important;
-  font-weight: 300 !important;
+  font-weight: 400 !important;
   font-style: normal !important;
   letter-spacing: -0.035em !important;
   color: var(--heading-block) !important;
@@ -5742,9 +5739,29 @@ html:has(.deinequelle-design-root) {
   font-size: clamp(2.2rem, 4vw, 4rem) !important;
 }
 
+.deinequelle-design-page #hero.hero-home .hero-home-title-mobile {
+  display: none;
+}
+
+.deinequelle-design-page #sportkinesiologie .sportkinesiologie-title-mobile {
+  display: none;
+}
+
+.deinequelle-design-page #yoga .yoga-title-mobile {
+  display: none;
+}
+
 @media (max-width: 640px) {
   .deinequelle-design-page #hero.hero-home .hero-bg img {
-    object-position: 56% 20% !important;
+    object-position: 66% 20% !important;
+  }
+
+  .deinequelle-design-page #hero.hero-home .hero-home-title-desktop {
+    display: none;
+  }
+
+  .deinequelle-design-page #hero.hero-home .hero-home-title-mobile {
+    display: inline;
   }
 
   .deinequelle-design-page #hero.hero-home .hero-h1 {
@@ -5755,22 +5772,42 @@ html:has(.deinequelle-design-root) {
   .deinequelle-design-page #hero.hero-home .hero-h1 em {
     font-size: clamp(2.45rem, 9vw, 2.95rem) !important;
   }
+
+  .deinequelle-design-page #hero.hero-home .hero-sub {
+    max-width: min(24ch, 76vw) !important;
+  }
+
+  .deinequelle-design-page #sportkinesiologie .sportkinesiologie-title-desktop {
+    display: none;
+  }
+
+  .deinequelle-design-page #sportkinesiologie .sportkinesiologie-title-mobile {
+    display: inline;
+  }
+
+  .deinequelle-design-page #yoga .yoga-title-desktop {
+    display: none;
+  }
+
+  .deinequelle-design-page #yoga .yoga-title-mobile {
+    display: inline;
+  }
 }
 
 @media (max-width: 420px) {
   .deinequelle-design-page #hero.hero-home .hero-bg img {
-    object-position: 56% 20% !important;
+    object-position: 66% 20% !important;
   }
 }
 
 /* Mobile hero readability refinement: stronger supporting text, lighter image wash. */
 .deinequelle-design-page #hero :is(.hero-sub, .hero-location) {
   color: color-mix(in srgb, var(--text) 86%, var(--sage-dark) 14%) !important;
-  font-weight: 500 !important;
+  font-weight: 400 !important;
 }
 
 .deinequelle-design-page #hero .hero-h1 em {
-  font-weight: 300 !important;
+  font-weight: 400 !important;
 }
 
 .deinequelle-design-page #lektion .svc-lead {
@@ -5784,24 +5821,24 @@ html:has(.deinequelle-design-root) {
     background:
       linear-gradient(to bottom,
         rgba(250, 247, 242, 0.01) 0%,
-        rgba(250, 247, 242, 0.1) 44%,
-        rgba(250, 247, 242, 0.36) 100%),
+        rgba(250, 247, 242, 0.07) 44%,
+        rgba(250, 247, 242, 0.28) 100%),
       linear-gradient(to right,
-        rgba(250, 247, 242, 0.46) 0%,
-        rgba(250, 247, 242, 0.24) 46%,
-        rgba(250, 247, 242, 0.04) 86%) !important;
+        rgba(250, 247, 242, 0.38) 0%,
+        rgba(250, 247, 242, 0.18) 46%,
+        rgba(250, 247, 242, 0.02) 86%) !important;
   }
 
   .deinequelle-design-page #hero.hero-home .hero-overlay {
     background:
       linear-gradient(to bottom,
-        rgba(250, 247, 242, 0.04) 0%,
-        rgba(250, 247, 242, 0.14) 42%,
-        rgba(250, 247, 242, 0.42) 100%),
+        rgba(250, 247, 242, 0.03) 0%,
+        rgba(250, 247, 242, 0.1) 42%,
+        rgba(250, 247, 242, 0.32) 100%),
       linear-gradient(to right,
-        rgba(250, 247, 242, 0.54) 0%,
-        rgba(250, 247, 242, 0.28) 48%,
-        rgba(250, 247, 242, 0.05) 86%) !important;
+        rgba(250, 247, 242, 0.46) 0%,
+        rgba(250, 247, 242, 0.2) 48%,
+        rgba(250, 247, 242, 0.02) 86%) !important;
   }
 
   .deinequelle-design-page #hero :is(.hero-h1, .hero-h1 em, .hero-sub) {
@@ -5811,9 +5848,60 @@ html:has(.deinequelle-design-root) {
       0 1px 7px rgba(28, 20, 16, 0.16) !important;
   }
 
+  .deinequelle-design-page #hero .hero-sub {
+    color: color-mix(in srgb, var(--text) 88%, var(--sage-dark) 12%) !important;
+    font-weight: 400 !important;
+    text-shadow:
+      0 1px 1px rgba(250, 247, 242, 0.72),
+      0 1px 8px rgba(28, 20, 16, 0.28) !important;
+  }
+
+  .deinequelle-design-page #hero.hero-leistungen-kinderwunsch .hero-sub {
+    color: color-mix(in srgb, var(--wine) 72%, var(--wine-dark) 28%) !important;
+    text-shadow:
+      0 1px 1px rgba(250, 247, 242, 0.48),
+      0 1px 5px rgba(28, 20, 16, 0.34) !important;
+  }
+
+  .deinequelle-design-page #hero.hero-kinesiologie .hero-sub {
+    color: color-mix(in srgb, var(--sage-dark) 82%, var(--text) 18%) !important;
+    text-shadow:
+      0 1px 1px rgba(250, 247, 242, 0.54),
+      0 1px 5px rgba(28, 20, 16, 0.32) !important;
+  }
+
+  .deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-sub {
+    color: #294d5f !important;
+    text-shadow:
+      0 1px 1px rgba(250, 247, 242, 0.5),
+      0 1px 5px rgba(28, 20, 16, 0.34) !important;
+  }
+
+  .deinequelle-design-page #hero.hero-ueber-mich .hero-sub {
+    color: color-mix(in srgb, var(--sage-dark) 70%, var(--text) 30%) !important;
+    text-shadow:
+      0 1px 1px rgba(250, 247, 242, 0.5),
+      0 1px 5px rgba(28, 20, 16, 0.34) !important;
+  }
+
+  .deinequelle-design-page #hero.hero-leistungen-yoga .hero-sub {
+    color: color-mix(in srgb, var(--sage-dark) 76%, var(--accent-dark) 24%) !important;
+    text-shadow:
+      0 1px 1px rgba(250, 247, 242, 0.52),
+      0 1px 5px rgba(28, 20, 16, 0.32) !important;
+  }
+
   .deinequelle-design-page #hero .hero-actions .btn-ghost {
     border-bottom: 0 !important;
     padding-bottom: 0 !important;
+  }
+
+  .deinequelle-design-page #ganzheitliche-unterstuetzung .spread-intro .dq-kicker {
+    color: rgba(250, 247, 242, 0.92) !important;
+    opacity: 1 !important;
+    text-shadow:
+      0 1px 2px rgba(28, 20, 16, 0.34),
+      0 0 14px rgba(28, 20, 16, 0.32) !important;
   }
 }
 
@@ -5830,10 +5918,37 @@ html:has(.deinequelle-design-root) {
   }
 
   .deinequelle-design-page #hero .hero-sub {
-    font-weight: 500 !important;
+    color: color-mix(in srgb, var(--text) 88%, var(--sage-dark) 12%) !important;
+    font-weight: 400 !important;
     text-shadow:
-      0 1px 1px rgba(250, 247, 242, 0.82),
-      0 0 12px rgba(250, 247, 242, 0.48) !important;
+      0 1px 1px rgba(250, 247, 242, 0.78),
+      0 0 10px rgba(250, 247, 242, 0.42),
+      0 1px 4px rgba(28, 20, 16, 0.16) !important;
+  }
+
+  .deinequelle-design-page #hero.hero-home .hero-sub {
+    color: color-mix(in srgb, var(--accent-dark) 76%, var(--text) 24%) !important;
+  }
+
+  .deinequelle-design-page #hero.hero-kinesiologie .hero-sub {
+    color: color-mix(in srgb, var(--sage-dark) 82%, var(--text) 18%) !important;
+  }
+
+  .deinequelle-design-page #hero.hero-leistungen-kinderwunsch .hero-sub,
+  .deinequelle-design-page #hero.hero-em-wine .hero-sub {
+    color: color-mix(in srgb, var(--wine) 72%, var(--wine-dark) 28%) !important;
+  }
+
+  .deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-sub {
+    color: #294d5f !important;
+  }
+
+  .deinequelle-design-page #hero.hero-leistungen-yoga .hero-sub {
+    color: color-mix(in srgb, var(--sage-dark) 76%, var(--accent-dark) 24%) !important;
+  }
+
+  .deinequelle-design-page #hero.hero-ueber-mich .hero-sub {
+    color: color-mix(in srgb, var(--sage-dark) 70%, var(--text) 30%) !important;
   }
 }
 
@@ -5866,4 +5981,132 @@ html:has(.deinequelle-design-root) {
 
 .deinequelle-design-page #nidra-fuer-wen .svc-topic-list {
   justify-items: stretch !important;
+}
+
+/* Theme color restore: keep typography consistent, but let each page keep its own color world. */
+.deinequelle-design-page:has(#hero.hero-leistungen-kinderwunsch) {
+  --heading-script: var(--wine);
+  --heading-block: color-mix(in srgb, var(--wine) 74%, var(--wine-dark) 26%);
+}
+
+.deinequelle-design-page:has(#hero.hero-leistungen-sport-kinesiologie) {
+  --heading-script: #356276;
+  --heading-block: #294d5f;
+}
+
+.deinequelle-design-page:has(#hero.hero-leistungen-yoga),
+.deinequelle-design-page:has(#hero.hero-kinesiologie),
+.deinequelle-design-page:has(#hero.hero-ueber-mich) {
+  --heading-script: var(--sage-accent);
+  --heading-block: var(--sage-dark);
+}
+
+.deinequelle-design-page :is(.wine-spread, .wine-soft-spread, .wine-deep-spread) :is(
+  .dq-kicker,
+  .spread-tag,
+  .spread-h2
+) {
+  color: var(--wine) !important;
+}
+
+.deinequelle-design-page :is(.wine-spread, .wine-soft-spread, .wine-deep-spread) .spread-h2 em {
+  color: var(--wine-dark) !important;
+}
+
+.deinequelle-design-page :is(.blush-bg, .wine-soft-bg, .wine-deep-bg) :is(
+  .dq-kicker,
+  .spread-tag,
+  .svc-section-head,
+  .svc-section-head-cover,
+  .spread-h2
+) {
+  color: var(--wine) !important;
+}
+
+.deinequelle-design-page :is(.blush-bg, .wine-soft-bg, .wine-deep-bg) :is(
+  .spread-h2 em,
+  .svc-lead,
+  .svc-body,
+  .svc-body-last,
+  .svc-items-intro,
+  .svc-topic-label,
+  .svc-topic-list li,
+  .svc-feature-title,
+  .svc-feature-body,
+  .svc-note,
+  .svc-item
+) {
+  color: #503035 !important;
+}
+
+.deinequelle-design-page :is(.sage-spread, .sage-soft-spread, .sage-deep-spread) :is(
+  .dq-kicker,
+  .spread-tag,
+  .spread-h2
+) {
+  color: var(--sage-dark) !important;
+}
+
+.deinequelle-design-page :is(.sage-spread, .sage-soft-spread, .sage-deep-spread) .spread-h2 em {
+  color: var(--sage-accent) !important;
+}
+
+.deinequelle-design-page :is(.sage-bg, .sage-soft-bg, .sage-deep-bg) :is(
+  .dq-kicker,
+  .spread-tag,
+  .svc-section-head,
+  .svc-section-head-cover,
+  .spread-h2,
+  .spread-h2 em,
+  .svc-lead,
+  .svc-body,
+  .svc-body-last,
+  .svc-items-intro,
+  .svc-topic-label,
+  .svc-topic-list li,
+  .svc-feature-title,
+  .svc-feature-body,
+  .svc-note,
+  .svc-item
+) {
+  color: var(--sage-dark) !important;
+}
+
+.deinequelle-design-page:has(#hero.hero-leistungen-sport-kinesiologie) :is(
+  #hero .dq-kicker,
+  #hero .hero-h1,
+  #hero .hero-h1 em,
+  #hero .hero-sub,
+  #content .dq-kicker,
+  #content .spread-tag,
+  #content .spread-h2,
+  #content .spread-h2 em,
+  #content .svc-lead,
+  #content .svc-body,
+  #content .svc-body-last,
+  #content .svc-items-intro,
+  #content .svc-topic-label,
+  #content .svc-topic-list li,
+  #content .svc-feature-title,
+  #content .svc-feature-body,
+  #content .svc-item,
+  #schritte .schritte-h2,
+  #schritte .schritte-h2 em,
+  #schritte .schritt h3,
+  #schritte .schritt p
+) {
+  color: #294d5f !important;
+}
+
+.deinequelle-design-page #sportkinesiologie :is(
+  .dq-kicker,
+  .spread-tag,
+  .spread-h2,
+  .spread-h2 em,
+  .svc-lead,
+  .svc-body,
+  .svc-item,
+  .svc-items-intro
+) {
+  color: #294d5f !important;
 }
