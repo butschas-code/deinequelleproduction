@@ -6130,3 +6130,12 @@ html:has(.deinequelle-design-root) {
   font-style: italic !important;
   letter-spacing: -0.025em !important;
 }
+
+/* Hero light headline parts: match the requested lighter italic reference. */
+.deinequelle-design-page #hero .hero-h1 em {
+  font-family: var(--f-display-block) !important;
+  font-weight: 300 !important;
+  font-style: italic !important;
+  font-synthesis: none !important;
+  letter-spacing: -0.025em !important;
+}
