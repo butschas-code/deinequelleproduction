@@ -6139,3 +6139,103 @@ html:has(.deinequelle-design-root) {
   font-synthesis: none !important;
   letter-spacing: -0.025em !important;
 }
+
+/* Mobile heroes: remove text outline/shadow effects from every hero text element. */
+@media (max-width: 960px) {
+  .deinequelle-design-page #hero :is(
+    .dq-kicker,
+    .hero-h1,
+    .hero-h1 em,
+    .hero-sub,
+    .hero-location,
+    .hero-actions a,
+    .hero-actions .btn,
+    .hero-actions .btn span
+  ) {
+    text-shadow: none !important;
+    -webkit-text-stroke: 0 transparent !important;
+    text-stroke: 0 transparent !important;
+    filter: none !important;
+  }
+}
+
+/* Yoga page color restore: warm brown tones, not the green/sage page palette. */
+.deinequelle-design-page:has(#hero.hero-leistungen-yoga) {
+  --heading-script: var(--accent);
+  --heading-block: var(--accent-dark);
+}
+
+.deinequelle-design-page:has(#hero.hero-leistungen-yoga) :is(
+  #hero .dq-kicker,
+  #content .dq-kicker,
+  #content .spread-tag,
+  #content .svc-section-head,
+  #content .svc-section-head-cover
+) {
+  color: var(--accent) !important;
+}
+
+.deinequelle-design-page:has(#hero.hero-leistungen-yoga) :is(
+  #hero .hero-h1,
+  #hero .hero-h1 em,
+  #content .spread-h2,
+  #content .spread-h2 em,
+  #content .begl-h2,
+  #content .begl-h2 em,
+  #content .schritte-h2,
+  #content .schritte-h2 em,
+  #content .cta-h2,
+  #content .cta-h2 em,
+  #content .svc-feature-title,
+  #content .svc-topic-label,
+  #content .svc-item
+) {
+  color: var(--accent-dark) !important;
+}
+
+.deinequelle-design-page:has(#hero.hero-leistungen-yoga) :is(
+  #hero .hero-sub,
+  #content .svc-lead,
+  #content .svc-body,
+  #content .svc-body-last,
+  #content .svc-items-intro,
+  #content .svc-topic-list li,
+  #content .svc-feature-body,
+  #content p,
+  #content li
+) {
+  color: var(--text-mid) !important;
+}
+
+.deinequelle-design-page:has(#hero.hero-leistungen-yoga) #hero .hero-sub {
+  color: color-mix(in srgb, var(--text) 72%, var(--accent-dark) 28%) !important;
+}
+
+/* Kinderwunsch headline restore: light headline parts stay wine, not body brown/black. */
+.deinequelle-design-page:has(#hero.hero-leistungen-kinderwunsch) :is(
+  #content .spread-h2 em,
+  #content .begl-h2 em,
+  #content .schritte-h2 em,
+  #content .cta-h2 em,
+  #content .dq-legal-heading em
+) {
+  color: var(--wine) !important;
+}
+
+/* Final headline emphasis authority: light parts are italic, lighter, and use the page accent color. */
+.deinequelle-design-page :is(
+  .hero-h1 em,
+  .spread-h2 em,
+  .begl-h2 em,
+  .schritte-h2 em,
+  .cta-h2 em,
+  .claudia-h2 em,
+  .dq-legal-heading em
+) {
+  font-family: var(--f-display-block) !important;
+  font-weight: 300 !important;
+  font-style: italic !important;
+  font-synthesis: none !important;
+  letter-spacing: -0.025em !important;
+  color: var(--heading-script) !important;
+}

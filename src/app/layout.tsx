@@ -18,6 +18,7 @@ const lato = Lato({
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400", "700", "900"],
+  style: ["normal", "italic"],
 });
 
 const dancingScript = Dancing_Script({
