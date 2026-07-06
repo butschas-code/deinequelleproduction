@@ -6262,37 +6262,37 @@ html:has(.deinequelle-design-root) {
   opacity: 0.78 !important;
 }
 
-/* Home hero final color pass: keep supporting copy and actions in the warm yoga brown palette. */
+/* Home hero final color pass: keep supporting copy and actions in the green hero palette. */
 .deinequelle-design-page #hero.hero-home .hero-sub {
-  color: color-mix(in srgb, var(--accent-dark) 82%, var(--text) 18%) !important;
+  color: color-mix(in srgb, var(--sage-dark) 88%, var(--text) 12%) !important;
 }
 
 .deinequelle-design-page #hero.hero-home .hero-actions .btn-primary,
 .deinequelle-design-page #hero.hero-home .hero-actions .btn-ghost {
-  color: var(--accent-dark) !important;
+  color: var(--sage-dark) !important;
 }
 
 .deinequelle-design-page #hero.hero-home .hero-actions .btn-primary {
-  border-color: color-mix(in srgb, var(--accent-dark) 34%, var(--sand) 66%) !important;
+  border-color: color-mix(in srgb, var(--sage-dark) 34%, var(--sand) 66%) !important;
 }
 
 .deinequelle-design-page #hero.hero-home .hero-actions .btn-primary .btn-pi {
-  background: color-mix(in srgb, var(--accent-dark) 12%, transparent) !important;
+  background: color-mix(in srgb, var(--sage-dark) 12%, transparent) !important;
 }
 
 .deinequelle-design-page #hero.hero-home .hero-actions .btn-ghost {
-  border-color: color-mix(in srgb, var(--accent-dark) 42%, var(--sand) 58%) !important;
+  border-color: color-mix(in srgb, var(--sage-dark) 42%, var(--sand) 58%) !important;
 }
 
 .deinequelle-design-page #hero.hero-home .hero-actions .btn-primary:hover {
-  background: var(--accent-dark) !important;
-  border-color: var(--accent-dark) !important;
+  background: var(--sage-dark) !important;
+  border-color: var(--sage-dark) !important;
   color: var(--beige) !important;
 }
 
 .deinequelle-design-page #hero.hero-home .hero-actions .btn-ghost:hover {
-  color: var(--accent-dark) !important;
-  border-color: var(--accent-dark) !important;
+  color: var(--sage-dark) !important;
+  border-color: var(--sage-dark) !important;
 }
 
 .deinequelle-design-page:has(#hero.hero-kinesiologie) #begleitung .begl-footnote {
