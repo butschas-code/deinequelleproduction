@@ -4834,20 +4834,21 @@ html:has(.deinequelle-design-root) {
 }
 
 .deinequelle-design-page #nidra-fuer-wen .svc-topic-list {
-  grid-template-columns: repeat(2, minmax(13rem, 1fr));
-  width: min(100%, 720px);
-  justify-content: center;
-  justify-items: center;
+  display: block;
+  columns: 2 13rem;
   column-gap: clamp(2.5rem, 6vw, 5.5rem);
+  width: min(100%, 720px);
   padding-left: 0;
   list-style: none;
   margin-inline: auto;
 }
 
 .deinequelle-design-page #nidra-fuer-wen .svc-topic-list li {
+  break-inside: avoid;
   list-style: none;
   width: 100%;
   max-width: 18rem;
+  margin: 0 auto 0.55rem;
   padding-left: 0;
   text-align: center;
 }
@@ -4858,7 +4859,7 @@ html:has(.deinequelle-design-root) {
 
 @media (max-width: 640px) {
   .deinequelle-design-page #nidra-fuer-wen .svc-topic-list {
-    grid-template-columns: 1fr;
+    columns: 1;
     width: min(100%, 22rem);
     row-gap: 0.2rem;
   }
@@ -6238,4 +6239,65 @@ html:has(.deinequelle-design-root) {
   font-synthesis: none !important;
   letter-spacing: -0.025em !important;
   color: var(--heading-script) !important;
+}
+
+/* Kinesiologie page final color pass: guide copy follows the sage page palette. */
+.deinequelle-design-page:has(#hero.hero-kinesiologie) #begleitung :is(
+  .begl-intro,
+  .begl-cat,
+  .begl-lead,
+  .begl-list li,
+  .begl-goal,
+  .begl-footnote
+) {
+  color: var(--sage-dark) !important;
+}
+
+.deinequelle-design-page:has(#hero.hero-kinesiologie) #begleitung .begl-num {
+  color: var(--sage-accent) !important;
+}
+
+.deinequelle-design-page:has(#hero.hero-kinesiologie) #begleitung .begl-list li::before {
+  background: var(--sage-accent) !important;
+  opacity: 0.78 !important;
+}
+
+/* Home hero final color pass: keep supporting copy and actions in the warm yoga brown palette. */
+.deinequelle-design-page #hero.hero-home .hero-sub {
+  color: color-mix(in srgb, var(--accent-dark) 82%, var(--text) 18%) !important;
+}
+
+.deinequelle-design-page #hero.hero-home .hero-actions .btn-primary,
+.deinequelle-design-page #hero.hero-home .hero-actions .btn-ghost {
+  color: var(--accent-dark) !important;
+}
+
+.deinequelle-design-page #hero.hero-home .hero-actions .btn-primary {
+  border-color: color-mix(in srgb, var(--accent-dark) 34%, var(--sand) 66%) !important;
+}
+
+.deinequelle-design-page #hero.hero-home .hero-actions .btn-primary .btn-pi {
+  background: color-mix(in srgb, var(--accent-dark) 12%, transparent) !important;
+}
+
+.deinequelle-design-page #hero.hero-home .hero-actions .btn-ghost {
+  border-color: color-mix(in srgb, var(--accent-dark) 42%, var(--sand) 58%) !important;
+}
+
+.deinequelle-design-page #hero.hero-home .hero-actions .btn-primary:hover {
+  background: var(--accent-dark) !important;
+  border-color: var(--accent-dark) !important;
+  color: var(--beige) !important;
+}
+
+.deinequelle-design-page #hero.hero-home .hero-actions .btn-ghost:hover {
+  color: var(--accent-dark) !important;
+  border-color: var(--accent-dark) !important;
+}
+
+.deinequelle-design-page:has(#hero.hero-kinesiologie) #begleitung .begl-footnote {
+  color: var(--sage-dark) !important;
+  font-family: var(--f-display-block) !important;
+  font-weight: 300 !important;
+  font-style: italic !important;
 }
