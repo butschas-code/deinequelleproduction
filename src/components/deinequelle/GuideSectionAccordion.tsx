@@ -61,7 +61,7 @@ export function GuideSectionAccordion({
                   hidden={!isOpen}
                 >
                   <div className="begl-accordion-panel-inner">
-                    <p className="begl-lead">{row.lead}</p>
+                    {row.lead ? <p className="begl-lead">{row.lead}</p> : null}
                     <ul className="begl-list begl-list-columns">
                       {row.bullets.map((item) => (
                         <li key={item}>{item}</li>

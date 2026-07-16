@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   // Allow HMR + dev assets when accessing the dev server from your LAN IP.
-  // Add additional IPs / hostnames as needed.
-  allowedDevOrigins: ["192.168.0.242", "*.local"],
+  // Add additional IPs / hostnames as needed (IP may change per network).
+  allowedDevOrigins: ["192.168.0.242", "172.20.10.10", "*.local"],
   images: {
     remotePatterns: [
       {

@@ -12,7 +12,7 @@ export type DesignPageData = {
   contentLayout?: "default" | "dense";
   eyebrow: string;
   title: string;
-  titleEmphasis: string;
+  titleEmphasis?: string;
   intro: string;
   heroImage: string;
   /** Optional mobile hero image — shown below 960px when set. */
@@ -112,12 +112,12 @@ export type DesignPageData = {
       shape?: "wide" | "square";
     }[];
     /** Collapse categories into one-at-a-time panels (keeps full copy, less scroll) */
-    layout?: "accordion" | "expanded";
+    layout?: "accordion" | "expanded" | "groups";
     theme?: "beige" | "sage" | "sage-soft" | "sage-deep" | "warm" | "warm-soft" | "warm-deep";
     categories: {
       number: string;
       category: string;
-      lead: string;
+      lead?: string;
       bullets: string[];
       goal?: string;
     }[];
@@ -158,10 +158,10 @@ export const designPages = {
     slug: "/leistungen/kinesiologie",
     contentLayout: "dense",
     eyebrow: "Kinesiologie",
-    title: "Zurück zur\nBalance",
+    title: "Zurück zur\nGesundheit",
     titleEmphasis: "mit Körper,\nGefühl &\ninnerer Kraft",
     intro:
-      "Kinesiologie unterstützt dich dabei, Stressmuster wahrzunehmen, Ressourcen zu stärken und wieder mehr Ruhe und Klarheit zu finden.",
+      "Kinesiologie unterstützt deine Gesundheit indem sie Blockaden löst, Stressmuster erkennen lässt und Ressourcen stärkt.",
     heroImage: "/images/hero/Kinesiologie_hero.jpg",
     heroAlt: "Kinesiologie-Behandlung mit Muskeltest",
     heroObjectPosition: "right center",
@@ -181,7 +181,6 @@ export const designPages = {
     },
     quote:
       "Gesundheit entsteht in Balance – im Zusammenspiel von Körper, Geist und Seele.",
-    quoteAfterSectionId: "komplementaertherapie",
     quoteTheme: "sage-soft",
     sections: [
       {
@@ -404,7 +403,7 @@ export const designPages = {
     title: "Unterstütze\ndeinen Körper",
     titleEmphasis: "auf dem Weg\nzum\u00A0Wunschkind",
     intro:
-      "Kinesiologische Kinderwunschbegleitung für Frauen und Paare, die ihren Körper auf eine mögliche Schwangerschaft vorbereiten, Stress reduzieren und emotional gestärkt durch den Kinderwunschprozess gehen möchten.",
+      "Kinesiologische Kinderwunschbegleitung für Paare, die ihren Körper auf eine Schwangerschaft vorbereiten möchten, Stress reduzieren und emotional gestärkt durch den Kinderwunschprozess gehen möchten.",
     heroImage: "/images/layout images/pregnant.png",
     heroAlt: "Einfühlsame Begleitung auf dem Weg zum Wunschkind",
     heroEmphasisTone: "wine",
@@ -432,15 +431,15 @@ export const designPages = {
         theme: "wine",
         presentation: "head",
         title: "Wenn\nKinderwunsch",
-        titleEmphasis: "zur inneren\nBelastung wird",
+        titleEmphasis: "zur Belastung\nwird",
         image: "/images/layout images/pregnant.png",
         imageAlt: "Einfühlsame Kinderwunschbegleitung",
         imageObjectPosition: "78% 42%",
         imageObjectPositionMobile: "86% 38%",
         lead:
-          "Ein unerfüllter Kinderwunsch berührt oft mehr als den Körper. Er berührt Hoffnung, Vertrauen, Partnerschaft, Sexualität, Selbstbild und das Gefühl, den eigenen Körper nicht mehr richtig verstehen zu können.",
+          "Ein unerfüllter Kinderwunsch berührt oft mehr als nur den Körper. Er berührt Hoffnung, Vertrauen, Partnerschaft, Sexualität, Selbstbild und das Gefühl, den eigenen Körper nicht mehr richtig verstehen zu können.",
         body: [
-          "Viele Frauen und Paare erleben diese Zeit als Wechsel zwischen Zuversicht und Enttäuschung, Kontrolle und Ohnmacht, Nähe und Rückzug.",
+          "Viele Paare erleben diese Zeit als Wechsel zwischen Zuversicht und Enttäuschung, Kontrolle und Ohnmacht, Nähe und Rückzug.",
         ],
       },
       {
@@ -468,8 +467,8 @@ export const designPages = {
         presentation: "split",
         splitMedia: "right",
         kicker: "Natürlicher Kinderwunsch",
-        title: "Den eigenen\nKörper",
-        titleEmphasis: "bewusster\nbegleiten",
+        title: "Körper",
+        titleEmphasis: "bewusst\nbegleiten",
         image: "/images/layout images/kinderwunsch-natuerlicher-kinderwunsch.jpg",
         imageAlt: "Frau in ruhiger, achtsamer Haltung — Begleitung auf dem natürlichen Weg zum Wunschkind",
         imageObjectPosition: "center center",
@@ -604,11 +603,11 @@ export const designPages = {
   yoga: {
     slug: "/leistungen/yoga",
     contentLayout: "dense",
-    eyebrow: "Hatha Yoga und Yoga Nidra",
-    title: "Ankommen\nAtmen",
-    titleEmphasis: "Innere Ruhe\nfinden",
+    eyebrow: "Hatha Yoga und Satyananda Yoga Nidra®",
+    title: "Innehalten",
+    titleEmphasis: "Den Körper spüren\nInnere Ruhe finden",
     intro:
-      "Yoga für Körperbewusstsein, Entspannung, Kraft und mehr Balance im Alltag.",
+      "Yoga für Körperbewusstsein, Energiefluss und Ausgeglichenheit im Alltag.",
     heroImage: "/images/hero/yoga hero.jpg",
     heroAlt: "Hatha Yoga bei DeineQuelle in Adligenswil",
     heroObjectPosition: "40% center",
@@ -625,10 +624,9 @@ export const designPages = {
       },
     },
     trustItems: [
-      "Satyananda Yoga inspiriert",
+      "Hatha Yoga insp. Aus der Satyananda Yoga-Lehre",
       "Studio und online",
       "Yoga Nidra",
-      "CSS Coin · TWINT · Rechnung",
     ],
     quote: "Du darfst so kommen, wie du bist.",
     quoteAfterSectionId: "intro",
@@ -641,7 +639,7 @@ export const designPages = {
         hideSpread: true,
         kicker: "Willkommen",
         title: "Yoga als Weg",
-        titleEmphasis: "zurück zu dir",
+        titleEmphasis: "zurück zu deiner\ninneren Kraft",
         image: "/images/yoga/yoga-raum-claudia-dimmler.jpg",
         imageAlt: "Ruhiger Yogaraum in Adligenswil",
         imageObjectPosition: "center center",
@@ -656,17 +654,19 @@ export const designPages = {
         id: "satyananda",
         theme: "warm-deep",
         presentation: "spread",
-        kicker: "Satyananda Yoga",
+        kicker: "Satyananda Yoga® & Yoga Nidra®",
         title: "Inspiriert aus der",
-        titleEmphasis: "Satyananda\nYoga Lehre",
+        titleEmphasis: "Satyananda Yoga®\nLehre",
         image: "/images/yoga/yoga-raum-claudia-dimmler.jpg",
         imageAlt: "Hatha Yoga Praxis im Studio",
         imageObjectPosition: "center 35%",
         imageObjectPositionMobile: "center 26%",
-        lead: "Meine Yogalektionen sind inspiriert aus der Satyananda Yoga Lehre.",
+        lead: "Meine Yogalektionen sind inspiriert aus der Satyananda Yoga®-Lehre. Satyananda Yoga Nidra® ergänzt die Praxis als geführte Tiefenentspannung.",
         body: [
           "Diese integrale Yogatradition verbindet verschiedene Wege des Yoga zu einem ganzheitlichen System. Körper, Atem, Geist, Emotionen und innere Entwicklung werden dabei als verbunden betrachtet.",
           "Ziel der Praxis ist es, Körper und Geist in ein harmonisches Zusammenspiel zu bringen.",
+          "Im Alltag sind wir oft vielen Reizen ausgesetzt. Der Geist wird müde, der Körper bleibt angespannt und das Nervensystem findet schwer zur Ruhe. Satyananda Yoga Nidra® lenkt die Wahrnehmung Schritt für Schritt nach innen.",
+          "Körper und Geist dürfen sich erholen. Viele Menschen erleben dadurch mehr Entspannung, Klarheit und innere Stabilität.",
         ],
         layout: "single",
       },
@@ -710,24 +710,10 @@ export const designPages = {
         ],
       },
       {
-        id: "yoga-nidra",
-        theme: "warm-soft",
-        presentation: "cover",
-        kicker: "Yoga Nidra",
-        title: "Geführte",
-        titleEmphasis: "Tiefen-\nentspannung",
-        lead: "Yoga Nidra ist eine geführte Tiefenentspannung.",
-        body: [
-          "Im Alltag sind wir oft vielen Reizen ausgesetzt. Der Geist wird müde, der Körper bleibt angespannt und das Nervensystem findet schwer zur Ruhe.",
-          "Yoga Nidra lenkt die Wahrnehmung Schritt für Schritt nach innen. Körper und Geist dürfen sich erholen. Viele Menschen erleben dadurch mehr Entspannung, Klarheit und innere Stabilität.",
-        ],
-        layout: "single",
-      },
-      {
         id: "nidra-fuer-wen",
         theme: "warm-deep",
         presentation: "compact",
-        kicker: "Für wen eignet sich Yoga Nidra?",
+        kicker: "Für wen eignet sich Yoga und Yoga Nidra",
         title: "Ruhe finden in",
         titleEmphasis: "belastenden\nLebensphasen",
         image: "/images/yoga/yoga-nidra-fuer-wen.jpg",
@@ -735,12 +721,11 @@ export const designPages = {
         imageObjectPosition: "center center",
         imageObjectPositionMobile: "center 28%",
         lead:
-          "Yoga Nidra eignet sich für Menschen, die viel leisten, schlecht abschalten können oder körperlich, mental oder emotional belastet sind.",
+          "Satyananda Yoga Nidra® eignet sich für Menschen, die viel leisten, schlecht abschalten können oder körperlich, mental oder emotional belastet sind.",
         body: [],
         layout: "single",
         density: "tight",
         itemsVariant: "topics",
-        itemsIntro: "Besonders unterstützend kann Yoga Nidra sein für:",
         items: [
           "Kinder und Jugendliche",
           "junge Eltern",
@@ -764,7 +749,7 @@ export const designPages = {
         imageAlt: "Yoga für Balance und Regeneration",
         imageObjectPosition: "center center",
         imageObjectPositionMobile: "center 26%",
-        lead: "Yoga und Yoga Nidra können dich unterstützen bei:",
+        lead: "Yoga und Satyananda Yoga Nidra® können dich unterstützen bei:",
         body: [],
         layout: "single",
         density: "tight",
@@ -799,7 +784,7 @@ export const designPages = {
         imageObjectPositionMobile: "center 32%",
         lead: "Die Yogalektionen finden im Studio und online statt.",
         body: [
-          "Hatha Yoga mit Pratyahara-Meditation findet als 75- oder 90-minütige Lektion statt. Die Kurse werden im Studio und online durchgeführt.",
+          "Hatha Yoga mit Shavasana oder Pratyahara-Meditation findet als 75- oder 90-minütige Lektion statt. Die Kurse werden im Studio und online durchgeführt.",
           "Mindestteilnehmerzahl: 3 Personen. Privatlektionen, Firmenworkshops und Kurse sind auf Anfrage möglich.",
         ],
         layout: "single",
@@ -829,12 +814,19 @@ export const designPages = {
         title: "Tarife für",
         titleEmphasis: "Studio & online",
         lead: "Yoga kann mit CSS Coin, TWINT oder auf Rechnung bezahlt werden.",
-        body: [
-          "Lektionen à 75 Minuten: Einzellektion Fr. 34.00, Abo Fr. 28.50 pro Lektion, Online-Einzellektion Fr. 30.00, Online-Abo Fr. 25.00 pro Lektion.",
-          "Lektionen à 90 Minuten: Einzellektion Fr. 39.00, Abo Fr. 33.50 pro Lektion, Online-Einzellektion Fr. 35.00, Online-Abo Fr. 29.00 pro Lektion.",
-        ],
+        body: [],
         layout: "single",
         features: [
+          {
+            title: "Lektionen à 75 Minuten",
+            body:
+              "Einzellektion Fr. 34.00, im Abo Fr. 28.50 pro Lektion. Online-Einzellektion Fr. 30.00, im Abo Fr. 25.00 pro Lektion.",
+          },
+          {
+            title: "Lektionen à 90 Minuten",
+            body:
+              "Einzellektion Fr. 39.00, im Abo Fr. 33.50 pro Lektion. Online-Einzellektion Fr. 35.00, im Abo Fr. 29.00 pro Lektion.",
+          },
           {
             title: "Privatlektionen",
             body: "Kosten auf Anfrage.",
@@ -844,6 +836,9 @@ export const designPages = {
             body: "Kosten auf Anfrage oder gemäss Ausschreibung.",
           },
         ],
+        note:
+          "Falls du einmal eine Lektion verpasst… Nach Absprache kannst du diese innerhalb deines laufenden Abonnements in einem anderen Kurs nachholen. Gerne stelle ich dir auch eine Aufzeichnung der Lektion zur Verfügung (nur bei rechtzeitiger Absage – 24 Std. im voraus – und im Abo möglich).",
+        noteVariant: "callout",
       },
       {
         id: "yoga-videos",
@@ -861,7 +856,7 @@ export const designPages = {
         layout: "single",
         features: [
           {
-            title: "Yoga Nidra",
+            title: "Satyananda Yoga Nidra®",
             body: "Platzhalter für ein eingebettetes Video.",
           },
           {
@@ -884,7 +879,6 @@ export const designPages = {
     slug: "/leistungen/sport-kinesiologie",
     eyebrow: "Sport-Kinesiologie",
     title: "Sport-\nkinesiologie",
-    titleEmphasis: "Komplementär-\ntherapie",
     intro:
       "Sportkinesiologie fördert die Leistungsfähigkeit eines Sportlers, einer Sportlerin durch Optimieren von Ungleichgewichten in Biomechanik, Biochemie und Psyche.",
     heroImage: "/images/sections/sportkinesiologie-editorial.jpg",
@@ -892,8 +886,7 @@ export const designPages = {
     heroObjectPosition: "center 30%",
     heroObjectPositionMobile: "center 22%",
     trustItems: [
-      "Regeneration fördern",
-      "Überlastung reduzieren",
+      "Förderung der Leistungsfähigkeit durch optimieren des Energieflusses",
       "Mental stark bleiben",
       "Ergänzend zur Physiotherapie",
     ],
@@ -949,7 +942,7 @@ export const designPages = {
     },
     finalCta: {
       title: "Bring Bewegung",
-      emphasis: "& Balance zusammen.",
+      emphasis: "und inneres\nGleichgewicht zusammen",
       body: "Sport-Kinesiologie kann dich ergänzend zu Training, Medizin und Physiotherapie unterstützen.",
       primaryLabel: "Termin online buchen",
       primaryHref: site.bookingUrl,
@@ -960,10 +953,10 @@ export const designPages = {
     slug: "/ueber-mich",
     contentLayout: "dense",
     eyebrow: "Über mich",
-    title: "Ich begleite Menschen\nzurück zu",
-    titleEmphasis: "Körper, Kraft &\ninnerer Balance",
+    title: "Ich begleite Menschen",
+    titleEmphasis: "zurück zur inneren Balance",
     intro:
-      "Mit Kinesiologie und Yoga unterstütze ich dich achtsam, warm und körperorientiert.",
+      "Mit Kinesiologie und Yoga begleite ich dich achtsam, wertschätzend und körperorientiert.",
     heroImage: "/images/hero/about_hero.jpg",
     heroAlt: "Claudia Dimmler, Kinesiologin und Yogalehrerin",
     heroObjectPosition: "right 38%",
@@ -978,7 +971,7 @@ export const designPages = {
     trustItems: [
       "Medizinische Praxisassistentin EFZ",
       "Dipl. Komplementärtherapeutin Kinesiologie AKT",
-      "Yogalehrerin Satyananda Tradition",
+      "Yoga insp. aus der Satyananda Yoga®-Lehre",
       "EMR-zertifiziert · KineSuisse",
     ],
     sections: [
@@ -987,40 +980,17 @@ export const designPages = {
         theme: "warm-soft",
         presentation: "head",
         hideSpread: true,
-        title: "Hallo,",
-        titleEmphasis: "ich bin Claudia",
+        title: "Mein Weg",
         image: "/images/Claudia/claudia_dimmler_3.jpg",
         imageAlt: "Claudia Dimmler",
         imageObjectPosition: "28% 38%",
         imageObjectPositionMobile: "22% 34%",
         lead:
-          "Mein beruflicher Weg begann in der Medizin. Mit 19 Jahren schloss ich meine Ausbildung als medizinische Praxisassistentin ab und arbeitete danach fast zehn Jahre in diesem Beruf.",
+          "Schon früh interessierten mich der Mensch, sein Körper und die Zusammenhänge von Gesundheit und Bewegung. Diese Faszination führte mich zur Ausbildung als medizinische Praxisassistentin. Meine mehrjährige Tätigkeit in diesem Beruf prägte mein Verständnis für den menschlichen Körper, gesundheitliche Prozesse und die individuelle Situation jedes Menschen.",
         body: [
-          "Diese Zeit hat mein Verständnis für Menschen, Gesundheit und körperliche Prozesse geprägt.",
-          "Gleichzeitig begleitet mich seit vielen Jahren eine grosse Liebe zur Bewegung. Tanz, Körperwahrnehmung und Ausdruck waren schon früh Teil meines Lebens, vom klassischen Ballett über Modern Dance, Hip Hop und Jazz Dance bis zu einem Intensivjahr an der AVON DANCE Academy.",
-          "So waren Medizin, Bewegung und Körperbewusstsein lange die Grundlagen meines Weges, bevor Yoga und Kinesiologie dazukamen.",
-        ],
-        layout: "single",
-      },
-      {
-        id: "weg",
-        theme: "warm-deep",
-        presentation: "spread",
-        kicker: "Mein Weg zu Yoga und Kinesiologie",
-        title: "Ruhe,\nKörperwahrnehmung\u00A0&",
-        titleEmphasis: "ganzheitliche Begleitung",
-        titleEmphasisInline: true,
-        image: "/images/Claudia/ueber-mich-weg-yoga-kinesiologie.jpg",
-        imageAlt: "Claudia Dimmler in ruhiger, natürlicher Umgebung",
-        imageObjectPosition: "center top",
-        imageObjectPositionMobile: "center 28%",
-        imageInset: "-4% 0",
-        lead:
-          "Mit 26 Jahren heiratete ich und wurde später Mutter von vier Mädchen. Der Familienalltag war wunderschön, aber auch körperlich und emotional intensiv. In dieser Zeit suchte ich nach einer Entspannungstechnik, die in kurzer Zeit wirksam ist und mir hilft, wieder mehr Ruhe und Kraft zu finden.",
-        body: [
-          "So fand ich zu Yoga Nidra und Yoga. Diese Praxis schenkte mir Entspannung, innere Ruhe und Stabilität. Sie begleitet mich bis heute und weckte in mir den Wunsch, auch anderen Menschen diesen Weg weiterzugeben.",
-          "Später lernte ich die Komplementärtherapie kennen. Mich beeindruckte, wie ganzheitlich sie den Menschen betrachtet und wie sie die Selbstregulation unterstützen kann.",
-          "Mit der komplementärtherapeutischen Methode Kinesiologie habe ich eine Therapieform gefunden, die meiner Persönlichkeit entspricht und mit der ich Menschen von Herzen gerne begleite.",
+          "Über die Jahre wurde Bewegung und Körperbewusstsein zu einem wichtigen Bestandteil meines Lebens. Yoga eröffnete mir einen neuen Zugang zu Achtsamkeit, innerer Balance und dem bewussten Umgang mit Körper und Geist. Aus dieser persönlichen Erfahrung entwickelte sich der Wunsch, Yoga auch beruflich weiterzugeben.",
+          "Während meiner Familienzeit durfte ich wertvolle Erfahrungen sammeln und meine eigenen Ressourcen weiterentwickeln. Die Verbindung von Körper, Bewegung, Achtsamkeit und innerer Balance wurde dabei immer wichtiger.",
+          "Mit der Ausbildung zur Yogalehrerin und später zur KomplementärTherapeutin Methode Kinesiologie verbanden sich meine bisherigen Erfahrungen auf natürliche Weise. Heute begleite ich Menschen dabei, ihre Körperwahrnehmung zu vertiefen, ihre Ressourcen zu stärken und mehr Balance im Leben zu finden.",
         ],
         layout: "single",
       },
@@ -1049,8 +1019,8 @@ export const designPages = {
         theme: "warm-soft",
         presentation: "head",
         kicker: "Wie ich arbeite",
-        title: "Ruhig,\nachtsam &",
-        titleEmphasis: "ressourcen-\norientiert",
+        title: "individuell, körperzentriert und",
+        titleEmphasis: "ressourcenorientiert",
         image: "/images/Kinesiology/claudia-302.jpg",
         imageAlt: "Kinesiologische Begleitung",
         imageObjectPosition: "center 30%",
@@ -1072,14 +1042,13 @@ export const designPages = {
         splitMedia: "right",
         splitBodyFullWidth: true,
         kicker: "Meine Vision",
-        title: "Schneller gesund\nwerden durch",
-        titleEmphasis: "ein gutes\nZusammenspiel",
+        title: "Gesund durch das optimale Zusammenspiel",
         image: "/images/Claudia/claudia_dimmler_3.jpg",
         imageAlt: "Claudia Dimmler",
         imageObjectPosition: "28% 38%",
         imageObjectPositionMobile: "22% 34%",
         lead:
-          "Meine Vision ist, dass Menschen möglichst schnell, natürlich und nachhaltig wieder in ihre Gesundheit und Kraft finden.",
+          "Meine Vision ist, Menschen zu unterstützen möglichst schnell, natürlich und nachhaltig wieder zurück in ihre Gesundheit und Kraft zu finden.",
         body: [
           "Dafür braucht es oft mehr als nur eine einzelne Methode. Der Mensch wird besonders gut unterstützt, wenn Körper, Nervensystem, Emotionen, Gedanken, medizinische Versorgung, therapeutische Begleitung und die eigenen Ressourcen sinnvoll zusammenarbeiten.",
           "Ich sehe meine Arbeit als Teil dieses Zusammenspiels.",
@@ -1101,7 +1070,7 @@ export const designPages = {
         imageObjectPosition: "center 25%",
         imageObjectPositionMobile: "center 18%",
         lead:
-          "Meine Arbeit verbindet medizinisches Grundwissen, langjährige Körpererfahrung, Yoga, Yoga Nidra und Komplementärtherapie.",
+          "Meine Arbeit verbindet medizinisches Grundwissen, langjährige Körpererfahrung, Yoga, Satyananda Yoga Nidra® und Komplementärtherapie.",
         body: [],
         layout: "single",
       },
@@ -1109,7 +1078,7 @@ export const designPages = {
     guideSection: {
       title: "Ausbildungen",
       titleEmphasis: "im Überblick",
-      layout: "expanded",
+      layout: "groups",
       theme: "warm-soft",
       intro:
         "Medizinischer Hintergrund, Yoga und Kinesiologie bilden zusammen die Basis meiner Arbeit.",
@@ -1117,25 +1086,20 @@ export const designPages = {
         {
           number: "01",
           category: "Grundausbildung",
-          lead: "Der berufliche Einstieg und medizinische Grundlagen:",
           bullets: [
-            "Medizinische Praxisassistentin",
-            "Ernährung und Verpflegung, Bildungsgang Bäuerin",
+            "Schulabschluss Sekundarstufe",
+            "Medizinische Praxisassistentin EZF",
             "Ernährung und Verpflegung Modul 1, Bildungsgang Bäuerin",
           ],
         },
         {
           number: "02",
           category: "Yoga und Yoga Nidra",
-          lead: "Ausbildungen in der Satyananda-Tradition:",
           bullets: [
-            "Satyananda Yogaausbildung 2",
-            "Pawanmuktasana und Surya Namaskara",
-            "Pranayama und Pratyahara Meditation",
-            "Satyananda Yoga Nidra",
-            "3D Yogatrainer",
-            "Weiterbildung Yoga Nidra",
-            "Yoga Nidra Kursleiterin",
+            "Satyananda Yogaausbildung 2, Samatvam Yogaschule, Zürich",
+            "Pawanmuktasana und Surya Namaskara, Samatvam Yogaschule, Zürich",
+            "Pranayama und Pratyahara Meditation, Samatvam Yogaschule, Zürich",
+            "Satyananda Yoga Nidra, Samatvam Yogaschule, Zürich",
           ],
         },
         {
@@ -1143,8 +1107,8 @@ export const designPages = {
           category: "Kinesiologie KT",
           lead: "Komplementärtherapeutische Ausbildung:",
           bullets: [
-            "Eidgenössisches Diplom Komplementärtherapie Fachrichtung Kinesiologie",
-            "Dipl. Komplementärtherapeutin Kinesiologie AKT",
+            "Eidgenössisches Diplom, Komplementärtherapie Methode Kinesiologie, OdA KT",
+            "Branchenzertifikat, Komplementärtherapeutin Methode Kinesiologie, OdA KT",
             "My Kinesiologie Partnerin AKT",
           ],
         },

@@ -1,6 +1,7 @@
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { AmbientShell } from "@/components/ambient/AmbientShell";
+import { ScrollToTopButton } from "@/components/ScrollToTopButton";
 
 export default function SiteLayout({
   children,
@@ -15,6 +16,7 @@ export default function SiteLayout({
         <div className="relative z-[2] flex flex-1 flex-col">{children}</div>
       </div>
       <SiteFooter />
+      <ScrollToTopButton variant="site" />
     </div>
   );
 }

@@ -26,7 +26,7 @@ export const pages = {
     sub: "Komplementärtherapie",
     introTitle: "KINESIOLOGIE - DIE LEHRE DER BEWEGUNG",
     intro:
-      "Kinesiologie ist eine anerkannte Methode der Komplementär-Therapie. Sie unterstützt Menschen darin, das Wohlbefinden zu erhöhen, die mentalen Fähigkeiten zu stärken und ganzheitlich zu genesen. Die Methode verbindet Erkenntnisse aus der westlichen Medizin mit dem Wissen fernöstlicher Lehren, wie jene der fünf Elemente oder der Lehre der Meridiane. Dabei nutzt die Methode im therapeutischen Prozess die Beziehung der Muskeln zum menschlichen Organismus, um Ungleichgewichte im Energiesystem zu erkennen und Veränderungen erlebbar zu machen.",
+      "Kinesiologie ist eine anerkannte Methode der Komplementärtherapie. Sie unterstützt Menschen darin, das Wohlbefinden zu erhöhen, die mentalen Fähigkeiten zu stärken und ganzheitlich zu genesen. Die Methode verbindet Erkenntnisse aus der westlichen Medizin mit dem Wissen fernöstlicher Lehren, wie jene der fünf Elemente oder der Lehre der Meridiane. Dabei nutzt die Methode im therapeutischen Prozess die Beziehung der Muskeln zum menschlichen Organismus, um Ungleichgewichte im Energiesystem zu erkennen und Veränderungen erlebbar zu machen.",
     sportBlock: {
       title: "SPORT-KINESIOLOGIE",
       body: "Sportkinesiologie steigert die Leistungsfähigkeit von Sportlerinnen und Sportlern, indem sie Ungleichgewichte in Biomechanik, Biochemie und Psyche ausgleicht und so das volle Potenzial entfaltet.",
@@ -116,10 +116,10 @@ export const pages = {
     satyanandaTitle: "YOGA MIT INSPIRATION AUS DER SATYANANDA YOGA®-LEHRE",
     satyananda: [
       "Alle Yogalektionen sind inspiriert aus der Satyananda Yoga®-Lehre, einem integralen, von der Wissenschaft bestätigten Yogasystem. Es vereint traditionelle Techniken und Methoden, die von Swami Satyananda Saraswati erforscht, angepasst und genau beschrieben wurden, um sie den Menschen der heutigen Zeit zugänglich zu machen.",
-      "Aus der Sicht von Satyananda Yoga® wird der Mensch als vielschichtiges Wesen betrachtet. In der Satyananda®-Yogalehre wurden Hatha Yoga, Raja Yoga, Karma Yoga, Bhakti Yoga und Jnana Yoga zu einem ganzheitlichen System vereint, um die ganze Persönlichkeit des Menschen anzusprechen. Es ist die Absicht, den Körper-Geist-Komplex in ein harmonisches Zusammenspiel zu bringen.",
+      "Aus der Sicht von Satyananda Yoga® wird der Mensch als vielschichtiges Wesen betrachtet. In der Satyananda Yoga®-Lehre wurden Hatha Yoga, Raja Yoga, Karma Yoga, Bhakti Yoga und Jnana Yoga zu einem ganzheitlichen System vereint, um die ganze Persönlichkeit des Menschen anzusprechen. Es ist die Absicht, den Körper-Geist-Komplex in ein harmonisches Zusammenspiel zu bringen.",
       "Während einer Yogalektion werden verschiedene Techniken integriert. Asanas (Körperübungen) stärken den physischen Körper, machen ihn geschmeidig und bauen die Brücke zwischen der körperlichen und der mentalen Ebene. Pranayamas (Atemtechniken) erhöhen und stabilisieren die Lebensenergie (Prana/Chi), Tiefenentspannung und Meditation beruhigen und konzentrieren den Geist. Mit Mudras und Bandhas werden die Energieflüsse in bestimmte Richtungen gelenkt. Shatkarmas sind Reinigungstechniken für Körper und Energie. Als natürliche Folge des stetigen Übens wird inneres Gleichgewicht gefördert und persönliche Entwicklungsprozesse werden angeregt.",
     ],
-    nidraTitle: "Die Integration von Yoga Nidra® innerhalb der Yogalektion",
+    nidraTitle: "Die Integration von Satyananda Yoga Nidra® innerhalb der Yogalektion",
     nidra: [
       "Satyananda Yoga Nidra® (Tiefenentspannung), sowie eine Fülle von Meditationstechniken wurden von Swami Satyananda aus traditionellen Quellen abgeleitet, angepasst und präzise beschrieben um sie Yogaübenden der heutigen Zeit zugänglich zu machen.",
       "Moderne Entwicklung unseres Alltags führt dazu, dass wir konstant mit einer Vielzahl von Reizen, die unseren Geist überladen, überflutet werden. Es entsteht Anspannung und Nervosität auf körperlicher, mentaler und emotionaler Ebene. Die Folge davon sind fehlendes Gleichgewicht, schwache Konzentration und Ermüdungserscheinungen.",
@@ -150,7 +150,7 @@ export const pages = {
       "Personen mit chronischen Erkrankungen wie z.B. Hypertonie, Asthma, Spannungskopfschmerzen",
       "Personen mit Übermüdung",
     ],
-    nidraListeTitle: "Yoga Nidra hilft bei einer Vielzahl von Beschwerden!",
+    nidraListeTitle: "Satyananda Yoga Nidra® hilft bei einer Vielzahl von Beschwerden!",
     nidraListe: [
       "Tiefenentspannung",
       "Burn-out -Therapie unterstützend",
@@ -197,8 +197,8 @@ export const pages = {
     h1: "HALLO, ICH BIN CLAUDIA",
     bioParas: [
       "Am 01.11.1972 wurde ich in Luzern als zweites von zwei Kindern geboren. Ich absolvierte die Primar- und anschliessend die Sekundarschule in Luzern und Adligenswil. Mit 19 Jahren schloss ich die Ausbildung als medizinische Praxisassistentin ab und arbeitete danach knappe zehn Jahre auf meinem erlernten Beruf. Eines meiner allerliebsten Hobbies ist bis heute das Tanzen. Meine Freizeit füllte ich mit Kursen im klassischen Ballett, Modern Dance, Hip Hop sowie Jazz Dance. Mit 20 Jahren absolvierte ich bei der AVON DANCE Academy ein Intensivjahr, welches ich dem Tanzen widmete. Danach kehrte ich wieder zu meinem angestammten Beruf zurück. Mit 26 Jahren heiratete ich und wurde in den Jahren 2001, 2002, 2008 sowie 2009 Mami von 4 Mädchen.",
-      "Die körperlich wie auch emotional intensive Zeit mit der Familie veranlasste mich, eine in kurzer Zeit wirksame Entspannungstechnik zu finden. Das war mein Weg zu Yoga Nidra und Yoga welches mir zu viel Entspannung und auch innerer Ruhe verhalf und dies auch noch bis heute tut.",
-      "«Yoga und Yoga Nidra hat meiner Person sowie meinem Leben so viel Kraft vermittelt, dass ich mich entschlossen habe, möglichst vielen Menschen diesen Weg zur inneren Ruhe zu zeigen, damit sie ihre eigene Quelle entdecken und für ihre Anliegen im Leben optimal nutzen können.»",
+      "Die körperlich wie auch emotional intensive Zeit mit der Familie veranlasste mich, eine in kurzer Zeit wirksame Entspannungstechnik zu finden. Das war mein Weg zu Satyananda Yoga Nidra® und Yoga welches mir zu viel Entspannung und auch innerer Ruhe verhalf und dies auch noch bis heute tut.",
+      "«Yoga und Satyananda Yoga Nidra® hat meiner Person sowie meinem Leben so viel Kraft vermittelt, dass ich mich entschlossen habe, möglichst vielen Menschen diesen Weg zur inneren Ruhe zu zeigen, damit sie ihre eigene Quelle entdecken und für ihre Anliegen im Leben optimal nutzen können.»",
       "Schon während dem intensiven Familienalltag und meiner Zeit der Yogapraxis lernte ich die Komplementärtherapie kennen und deren Wirkungsbereich bewundern. Mir wurde klar, dass der Weg zu sich selbst manchmal auch eine intensivere Intervention bedeuten kann, um so die Selbstheilungskräfte über einen weiteren Weg zu aktivieren. Mit der komplementärtherapeutischen Technik der Kinesiologie habe ich eine wunderbare und meiner Person entsprechende Therapieform gefunden, mit der ich von Herzen gerne Menschen auf ihrem Weg persönlich wie auch gesundheitlich begleiten möchte.",
     ],
     ausbildungTitle: "MEINE AUSBILDUNG",
@@ -209,13 +209,13 @@ export const pages = {
         "Ernährung und Verpflegung Modul 1, Bildungsgang Bäuerin, 21.03.21",
       ],
       yoga: [
-        "Satyananda Yogaausbildung 2, Februar 2025 – September 2025",
+        "Satyananda Yoga®-Ausbildung 2, Februar 2025 – September 2025",
         "Pawanmuktasana & Surya Namaskara, Juni 2019 – Februar 2020",
         "Pranayama & Pratyahara-Meditation, Oktober 2018 – Juli 2019",
-        "Satyananda Yoga Nidra ® , Dezember 2017 – September 2018",
+        "Satyananda Yoga Nidra®, Dezember 2017 – September 2018",
         "3D Yogatrainer, 13.03. – 20.05.17",
-        "Weiterbildung Yoga Nidra, Claudia Eva Reinig, 20.03.17",
-        "Yoga Nidra Kursleiterin, 7. – 11.09.16",
+        "Weiterbildung Satyananda Yoga Nidra®, Claudia Eva Reinig, 20.03.17",
+        "Satyananda Yoga Nidra® Kursleiterin, 7. – 11.09.16",
       ],
       kinesiologie: [
         "Eidgenössisches Diplom Komplementärtherapie Fachrichtung Kinesiologie, April 2026",

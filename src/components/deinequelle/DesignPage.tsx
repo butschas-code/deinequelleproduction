@@ -209,6 +209,55 @@ function GuideSection({ guide }: { guide: NonNullable<DesignPageData["guideSecti
     return <GuideSectionAccordion guide={guide} surfaceClass={surfaceClass} />;
   }
 
+  if (guide.layout === "groups") {
+    return (
+      <section id="begleitung" className={surfaceClass.trim() || undefined}>
+        <div className="wrap">
+          <div className="begl-head reveal">
+            <DisplayHeading
+              as="h2"
+              className="begl-h2"
+              title={guide.title}
+              emphasis={guide.titleEmphasis}
+            />
+            <p className="begl-intro">{guide.intro}</p>
+          </div>
+          <div className="svc-groups">
+            {guide.categories.map((row) => (
+              <div key={row.number} className="svc-group reveal">
+                <span className="svc-group-num">{row.number}</span>
+                <div className="svc-group-content">
+                  <h3 className="svc-group-title">{row.category}</h3>
+                  {row.lead ? <p className="svc-group-lead">{row.lead}</p> : null}
+                  <p className="svc-group-desc">{row.bullets.join(" · ")}</p>
+                  {row.goal ? <p className="begl-goal">{row.goal}</p> : null}
+                </div>
+              </div>
+            ))}
+          </div>
+          {guide.footnote ? <p className="begl-footnote reveal">{guide.footnote}</p> : null}
+          {guide.logos?.length ? (
+            <div className="begl-logo-strip reveal d1" aria-label="Zertifizierungen und Verbände">
+              {guide.logos.map((logo) => (
+                <div
+                  key={logo.src}
+                  className={`begl-logo-item begl-logo-${logo.src
+                    .split("/")
+                    .pop()
+                    ?.replace(/\.[^.]+$/, "")
+                    .replace(/[^a-z0-9]+/gi, "-")
+                    .toLowerCase()}${logo.shape === "square" ? " begl-logo-square" : ""}`}
+                >
+                  <img src={logo.src} alt={logo.alt} style={getLogoStyle(logo.src)} />
+                </div>
+              ))}
+            </div>
+          ) : null}
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section id="begleitung" className={surfaceClass.trim() || undefined}>
       <div className="wrap">
@@ -227,7 +276,7 @@ function GuideSection({ guide }: { guide: NonNullable<DesignPageData["guideSecti
               <span className="begl-num">{row.number}</span>
               <div className="begl-rich-body">
                 <h3 className="begl-cat">{row.category}</h3>
-                <p className="begl-lead">{row.lead}</p>
+                {row.lead ? <p className="begl-lead">{row.lead}</p> : null}
                 <ul className="begl-list">
                   {row.bullets.map((item) => (
                     <li key={item}>{item}</li>
@@ -730,10 +779,22 @@ export function DesignFooter() {
         <div className="footer-grid">
           <div className="footer-col brand-col">
             <img src={site.logo.src} alt="DeineQuelle Logo" className="footer-logo" />
-            <p className="footer-desc">Ganzheitliche Begleitung mit Kinesiologie und Yoga für Körper, Geist und Seele.</p>
+            <p className="footer-desc">
+              <em>Ganzheitliche Begleitung mit Kinesiologie und Yoga für Körper, Geist und Seele.</em>
+            </p>
             <div className="footer-partner-logos">
-              <img src="/images/other/emr_zertifiziert_gs.png" alt="EMR zertifiziert" className="partner-logo" />
-              <img src="/images/other/css coin.png" alt="CSS Coin Partnerin" className="partner-logo" />
+              <img src="/images/other/emr_zertifiziert_gs.svg" alt="EMR zertifiziert" className="partner-logo" />
+              <img
+                src="/images/other/Kinesuisse_Logo_Byline_rechts_Black_RGB.svg"
+                alt="KineSuisse Verband"
+                className="partner-logo partner-logo-wide"
+              />
+              <img
+                src="/images/other/OdA_KT_Label_DE_Diplom.jpg"
+                alt="KT mit eidg. Diplom"
+                className="partner-logo partner-logo-square"
+              />
+              <img src="/images/other/css coin.png" alt="CSS Coins" className="partner-logo" />
             </div>
           </div>
           <div className="footer-col links-col">
@@ -752,8 +813,13 @@ export function DesignFooter() {
           <div className="footer-col contact-col">
             <h4>Kontakt</h4>
             <address>
-              <strong>DeineQuelle · Claudia Dimmler</strong>
-              <br />
+              <div className="footer-contact-name">
+                <span className="footer-contact-brand">DeineQuelle</span>
+                <strong className="footer-contact-person">
+                  <span>Claudia</span>
+                  <span>Dimmler</span>
+                </strong>
+              </div>
               Meggerstrasse 4a
               <br />
               6043 Adligenswil
@@ -772,7 +838,7 @@ export function DesignFooter() {
                 src={site.mapsEmbedUrl}
                 width="100%"
                 height="100%"
-                style={{ border: 0, filter: "grayscale(1) sepia(0.2) contrast(0.9) brightness(0.95)", borderRadius: 4 }}
+                style={{ border: 0, borderRadius: 4 }}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               />

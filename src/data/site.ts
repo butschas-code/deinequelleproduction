@@ -33,7 +33,7 @@ export const site = {
   },
   bookingUrl: "https://booking.masuyo.ch/dimmler",
   mapsEmbedUrl:
-    "https://maps.google.com/maps?q=Meggerstrasse%204a%2C%206043%20Adligenswil%2C%20Schweiz&t=m&z=18&output=embed&iwloc=near",
+    "https://maps.google.com/maps?q=Meggerstrasse%204a%2C%206043%20Adligenswil%2C%20Schweiz&t=m&z=14&output=embed&iwloc=near",
   mapsDirectionsUrl:
     "https://www.google.com/maps/dir/?api=1&destination=Meggerstrasse+4a,+6043+Adligenswil,+Schweiz",
   /** Optional: Google Place ID — eintragen sobald bekannt für präzisere Maps-Links */

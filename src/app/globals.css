@@ -261,3 +261,67 @@ body {
     box-shadow: var(--shadow);
   }
 }
+
+.scroll-to-top-site {
+  position: fixed;
+  right: max(1.15rem, env(safe-area-inset-right, 0px));
+  bottom: max(1.15rem, env(safe-area-inset-bottom, 0px));
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.65rem;
+  height: 2.65rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: var(--ink-muted);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(0.35rem);
+  transition:
+    opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.35s ease,
+    color 0.35s ease;
+}
+
+.scroll-to-top-site.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .scroll-to-top-site:hover {
+    background: var(--brand);
+    color: #fff;
+  }
+}
+
+.scroll-to-top-site:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.scroll-to-top-site .scroll-to-top-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+  transform: translateY(-0.05rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top-site {
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    transform: none;
+  }
+
+  .scroll-to-top-site.is-visible {
+    transform: none;
+  }
+}

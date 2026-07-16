@@ -1343,41 +1343,63 @@
 
     /* Praxis info bar */
     .praxis-bar {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
       border-top: 1px solid var(--sand);
-      padding: 4.5rem 0;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      padding-left: 5.5rem;
+      padding-right: 5.5rem;
     }
 
-    .praxis-cell {
-      padding: 0 3.5rem 0 0;
-      border-right: 1px solid var(--sand);
+    .praxis-row {
+      width: 100%;
+      max-width: none;
+      padding: clamp(2.5rem, 4vw, 3.5rem) 0;
+      border-bottom: 1px solid var(--sand);
+      text-align: left;
     }
 
-    .praxis-cell:nth-child(n+2) {
-      padding-left: 3.5rem;
+    .praxis-row:last-child {
+      border-bottom: none;
     }
 
-    .praxis-cell:last-child {
-      border-right: none;
-      padding-right: 0;
-    }
-
-    .praxis-cell h4 {
+    .praxis-row h4 {
       font-family: var(--f-d);
       font-size: 1.2rem;
       font-weight: 500;
       color: var(--text-mid);
-      margin-bottom: 1rem;
+      margin-bottom: 0;
     }
 
-    .praxis-cell p,
-    .praxis-cell address {
+    .praxis-row-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 4vw, 4rem);
+      width: 100%;
+      margin-top: 1.25rem;
+      text-align: left;
+    }
+
+    .praxis-row-body--single {
+      grid-template-columns: 1fr;
+    }
+
+    .praxis-row p,
+    .praxis-row address {
       font-size: 1.05rem;
       font-weight: 300;
       color: var(--text-mid);
       line-height: 1.9;
-      max-width: 28ch;
+      max-width: none;
+    }
+
+    .praxis-group--full {
+      grid-column: 1 / -1;
+    }
+
+    .praxis-label {
+      font-weight: 500;
+      color: var(--text);
     }
 
     /* ═══════════════════════════════════════════════════════════════
@@ -1428,18 +1450,32 @@
       margin-bottom: 2rem;
     }
 
+    .footer-desc em {
+      font-style: italic;
+    }
+
     .footer-partner-logos {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
-      gap: 1.8rem;
+      gap: 0.85rem 1.25rem;
     }
 
     .partner-logo {
-      height: 48px;
+      height: 2rem;
       width: auto;
       object-fit: contain;
-      opacity: 0.8;
+      opacity: 0.82;
       transition: opacity 0.3s var(--ease);
+    }
+
+    .partner-logo-square {
+      height: 2.35rem;
+    }
+
+    .partner-logo-wide {
+      height: 1.65rem;
+      max-width: 7.5rem;
     }
 
     .partner-logo:hover {
@@ -1469,6 +1505,31 @@
       line-height: 1.8;
     }
 
+    .footer-contact-name {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .footer-contact-brand {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .footer-contact-person {
+      display: flex;
+      flex-direction: column;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: 600;
+      line-height: 1.3;
+      color: inherit;
+    }
+
     .contact-methods {
       display: flex;
       flex-direction: column;
@@ -1487,11 +1548,11 @@
     }
 
     .footer-map-container {
-      height: 180px;
+      height: clamp(220px, 24vw, 280px);
       width: 100%;
-      border-radius: 4px;
+      border-radius: 6px;
       overflow: hidden;
-      box-shadow: 0 4px 18px rgba(28, 20, 16, 0.04);
+      box-shadow: 0 4px 18px rgba(28, 20, 16, 0.06);
     }
 
     .footer-bottom {
@@ -1586,6 +1647,11 @@
         padding: 0 3.5rem;
       }
 
+      .praxis-bar {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
+      }
+
       footer {
         padding: 2.2rem 3.5rem;
       }
@@ -1643,6 +1709,11 @@
 
       .wrap {
         padding: 0 2.5rem;
+      }
+
+      .praxis-bar {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
       }
 
       .erkl-inner {
@@ -1722,22 +1793,9 @@
         padding-bottom: 8rem;
       }
 
-      .praxis-bar {
+      .praxis-row-body {
         grid-template-columns: 1fr;
-      }
-
-      .praxis-cell {
-        border-right: none;
-        border-bottom: 1px solid var(--sand);
-        padding: 2.8rem 0;
-      }
-
-      .praxis-cell:nth-child(n+2) {
-        padding-left: 0;
-      }
-
-      .praxis-cell:last-child {
-        border-bottom: none;
+        gap: 1.5rem;
       }
     }
 
@@ -1749,6 +1807,11 @@
 
       .wrap {
         padding: 0 1.8rem;
+      }
+
+      .praxis-bar {
+        padding-left: 1.8rem;
+        padding-right: 1.8rem;
       }
 
       .erkl-inner {
@@ -1890,8 +1953,8 @@
           Lebensqualität</em>
       </h1>
       <p class="hero-sub">
-        Ich begleite Kinder, Jugendliche und Erwachsene mit Kinesiologie und Yoga,
-        damit Körper, Geist und Seele wieder ins Gleichgewicht kommen.
+        Mit Kinesiologie und Yoga begleite ich Kinder, Jugendliche und Erwachsene dabei,
+        ihre innere Balance wiederzufinden und ihr Wohlbefinden zu stärken.
       </p>
       <div class="hero-actions">
         <a href="#cta-final" class="btn-primary">
@@ -1916,10 +1979,14 @@
         „Dein Körper zeigt, wenn etwas aus dem Gleichgewicht ist."
       </blockquote>
       <p class="erkl-body reveal d2">
-        Überbelastung, Dauerstress, unverarbeitete Erlebnisse, unterdrückte Gefühle
-        und fordernde Lebensumstände rauben viel Energie. Kinesiologie unterstützt
-        durch eine körperzentrierte Behandlung in Kombination mit dem Gespräch. Dies
-        fördert Gesundheit und Wohlbefinden, innere Balance und Lebensenergie.
+        Überbelastung, Dauerstress, unverarbeitete Erlebnisse, unterdrückte Gefühle und
+        herausfordernde Lebenssituationen können viel Energie kosten und das innere
+        Gleichgewicht beeinträchtigen. Kinesiologie unterstützt mit einer körper- und
+        prozesszentrierten Arbeitsweise in Kombination mit dem Gespräch dabei, die
+        Selbstregulation zu stärken. Yoga ergänzt diesen Weg, indem es Körper, Atem und
+        Lebensenergie in Einklang bringt und so Ruhe, Balance und Wohlbefinden fördert.
+        Gemeinsam schaffen sie Raum für mehr Gesundheit, innere Balance und neue
+        Lebensenergie.
       </p>
     </div>
   </section>
@@ -1951,19 +2018,21 @@
 
           <div>
             <p class="svc-lead reveal">
-              Die komplementärtherapeutische Kinesiologie ist eine ganzheitliche,
-              körperzentrierte Methode: Sie sieht Körper, Geist und Seele als
-              Einheit und verbindet westliche Medizin mit dem Wissen fernöstlicher Lehren.
+              Die Komplementärtherapie Methode Kinesiologie ist eine ganzheitliche,
+              körper- und prozesszentrierte Methode. Sie nutzt den Körper als Wegweiser,
+              um Stressmuster und Blockaden sichtbar zu machen, Ressourcen zu stärken und die
+              Selbstregulation zu fördern. Dabei verbindet sie Erkenntnisse der westlichen
+              Medizin mit dem Wissen fernöstlicher Gesundheitslehren.
             </p>
             <p class="svc-body reveal d1">
-              Sie nutzt den Muskeltest als Biofeedback-Instrument, um mit dem
+              Kinesiologie nutzt den Muskeltest als Biofeedback-Instrument, um mit dem
               körpereigenen Wissen in Verbindung zu treten und die Ursachen von
               Ungleichgewichten aufzuspüren.
             </p>
             <p class="svc-body reveal d2">
               Ziel ist es, Blockaden zu lösen, Ressourcen zu stärken und die
-              Selbstregulation des Körpers zu aktivieren. Das Ziel ist mehr Wohlbefinden,
-              Lebensenergie und innere Balance.
+              Selbstregulation des Körpers zu aktivieren – für Gesundheit, Wohlbefinden
+              und innere Balance.
             </p>
             <a href="#" class="btn btn-sage reveal d3">
               Mehr zur Kinesiologie
@@ -2041,13 +2110,41 @@
           </div>
 
           <div class="svc-items-col reveal d1">
-            <div class="svc-item">Behandlung von körperlichen und geistigen Beschwerden sowie Optimierung des biochemischen, organischen und zellulären Ablaufs im Körper</div>
-            <div class="svc-item">Trainingsoptimierung durch Schritt-für-Schritt-Optimierung einzelner Elemente aus dem entsprechenden Sportbereich</div>
-            <div class="svc-item">Wettkampfvorbereitung in Form eines ganzheitlichen Stressmanagements</div>
-            <div class="svc-item">Unterstützung beim Management von Blockaden und Krisen</div>
-            <div class="svc-item">Fördern der Rekonvaleszenz nach körperlicher Erschöpfung und/oder Verletzungen</div>
-            <div class="svc-item">Vorbereitung auf Operationen</div>
-            <div class="svc-item">Zusammenarbeit mit Trainern, Ärzten, Physiotherapeuten sowie weiteren gesundheitsfördernden Therapieformen</div>
+            <div class="svc-group">
+              <span class="svc-group-num">01</span>
+              <div class="svc-group-content">
+                <h4 class="svc-group-title">Behandlung &amp; Optimierung</h4>
+                <p class="svc-group-desc">körperliche und geistige Beschwerden &nbsp;&middot;&nbsp; Optimierung des biochemischen, organischen und zellulären Ablaufs im Körper</p>
+              </div>
+            </div>
+            <div class="svc-group">
+              <span class="svc-group-num">02</span>
+              <div class="svc-group-content">
+                <h4 class="svc-group-title">Trainingsoptimierung</h4>
+                <p class="svc-group-desc">Schritt-für-Schritt-Optimierung einzelner Elemente &nbsp;&middot;&nbsp; entsprechender Sportbereich</p>
+              </div>
+            </div>
+            <div class="svc-group">
+              <span class="svc-group-num">03</span>
+              <div class="svc-group-content">
+                <h4 class="svc-group-title">Wettkampf &amp; Belastung</h4>
+                <p class="svc-group-desc">Wettkampfvorbereitung &nbsp;&middot;&nbsp; ganzheitliches Stressmanagement &nbsp;&middot;&nbsp; Blockaden und Krisen</p>
+              </div>
+            </div>
+            <div class="svc-group">
+              <span class="svc-group-num">04</span>
+              <div class="svc-group-content">
+                <h4 class="svc-group-title">Regeneration</h4>
+                <p class="svc-group-desc">Rekonvaleszenz nach körperlicher Erschöpfung &nbsp;&middot;&nbsp; Verletzungen &nbsp;&middot;&nbsp; Vorbereitung auf Operationen</p>
+              </div>
+            </div>
+            <div class="svc-group">
+              <span class="svc-group-num">05</span>
+              <div class="svc-group-content">
+                <h4 class="svc-group-title">Zusammenarbeit</h4>
+                <p class="svc-group-desc">Trainer &nbsp;&middot;&nbsp; Ärzte &nbsp;&middot;&nbsp; Physiotherapeuten &nbsp;&middot;&nbsp; weitere gesundheitsfördernde Therapieformen</p>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -2078,17 +2175,17 @@
 
           <div>
             <p class="svc-lead reveal">
-              Ein unerfüllter Kinderwunsch berührt alle Lebensbereiche:
-              körperlich, emotional und als Partnerschaft.
+              Ein unerfüllter Kinderwunsch berührt alle Lebensbereiche: körperlich,
+              emotional und auch die Partnerschaft.
             </p>
             <p class="svc-body reveal d1">
               Ich begleite dich in dieser sensiblen Zeit mit liebevoller und
               professioneller Unterstützung im Rahmen der komplementärtherapeutischen
-              Kinesiologie. Dabei begegne ich dir stets ruhig, achtsam und auf Augenhöhe.
+              Kinesiologie. Dabei begegne ich dir stets ruhig, achtsam und verständnisvoll.
             </p>
             <p class="svc-body reveal d2">
               Jeder Weg zum Kind ist individuell. Ich halte Raum für alles, was
-              dich bewegt: ohne Wertung, ohne Eile.
+              dich bewegt: ohne Wertung, ohne Eile und mit viel Einfühlungsvermögen.
             </p>
             <a href="#" class="btn btn-wine reveal d3">
               Mehr zur Kinderwunschbegleitung
@@ -2141,7 +2238,7 @@
             </p>
             <p class="svc-body reveal d1">
               Traditionelle Körperübungen, Atemübungen und Meditationen, inspiriert
-              aus der Satyananda&reg;-Tradition, wirken den Herausforderungen des
+              aus der Satyananda Yoga&reg;-Lehre, wirken den Herausforderungen des
               Alltags entgegen und ermöglichen vollkommene Entspannung für
               Körper und Geist.
             </p>
@@ -2190,44 +2287,43 @@
 
           <div class="claudia-left reveal">
             <h2 class="claudia-h2">
-              Deine Gesundheit<br>
-              <em>liegt mir am Herzen</em>
+              <em>Deine Erfahrung<br>liegt mir am Herzen</em>
             </h2>
             <div class="claudia-creds">
               <span>Eidg. dipl. Komplement&auml;rtherapeutin Methode Kinesiologie OdA-KT</span>
               <span>Komplement&auml;rtherapeutin Kinesiologie mit Branchenzertifikat OdA-KT</span>
-              <span>Yogalehrerin insp. aus der Satyananda&reg;-Yogalehre</span>
+              <span>Yogalehrerin insp. aus der Satyananda Yoga&reg;-Lehre</span>
             </div>
           </div>
 
           <div class="claudia-right">
             <p class="reveal d1">
               Ich wurde 1972 in Luzern geboren und bin in Luzern und Adligenswil aufgewachsen.
-              Schon früh faszinierte mich der Mensch &ndash; sein Körper, seine Gesundheit und die
-              Bedeutung von Bewegung. Diese Interessen durfte ich in meinem Beruf als medizinische
-              Praxisassistentin und auch in meiner Leidenschaft für das Tanzen leben.
+              Schon früh interessierten mich der Mensch, sein Körper, seine Gesundheit und die
+              Zusammenhänge von Bewegung und Wohlbefinden. Diese Faszination begleitete mich durch
+              meine Tätigkeit als medizinische Praxisassistentin und prägte meinen weiteren Weg.
             </p>
             <p class="reveal d1">
-              Mit der Geburt unserer vier Töchter begann für mich ein neuer Lebensabschnitt. Die
-              intensive Familienzeit war wunderschön, verlangte aber auch viel Energie. Auf der Suche
-              nach einem Ausgleich entdeckte ich Yoga. Er schenkte mir Ruhe, neue Kraft und einen
-              bewussteren Umgang mit den Herausforderungen des Alltags. Bis heute ist meine tägliche
-              Yogapraxis ein wertvoller Ort der Ruhe und des Auftankens.
+              Mit der Geburt unserer vier Töchter durfte ich eine intensive und bereichernde
+              Lebensphase erleben. Die Herausforderungen und Erfahrungen dieser Zeit haben meinen
+              Blick für die Bedürfnisse des Menschen und die Bedeutung von Balance im Alltag weiter
+              vertieft.
             </p>
             <p class="reveal d2">
-              Was einst mit klassischem Ballett begann, lebe ich heute mit grosser Freude beim
-              Salsa- und Bachata-Tanzen aus.
+              Auf der Suche nach Ausgleich und innerer Ruhe fand ich zum Yoga, das mich bis heute
+              begleitet. Auch die Freude an Bewegung ist ein wichtiger Teil meines Lebens geblieben.
             </p>
             <p class="reveal d2">
-              Mit der Kinesiologie haben sich schliesslich meine langjährige Faszination für Körper,
-              Bewegung und Gesundheit auf natürliche Weise verbunden. Für mich vereint sie Wissen,
-              Erfahrung und die Überzeugung, dass Körper, Geist und Seele als kraftvolle Einheit
-              untrennbar zusammengehören.
+              Mit der Kinesiologie haben sich meine langjährige Faszination für Körper, Gesundheit und
+              persönliche Entwicklung auf natürliche Weise verbunden. Für mich vereint sie Wissen,
+              Erfahrung und die Überzeugung, dass Körper, Geist und Seele in einer kraftvollen Einheit
+              miteinander verbunden sind.
             </p>
             <p class="reveal d3">
-              Ich bin überzeugt, dass jeder Mensch seine eigene Quelle für Kraft, Gesundheit und
-              Lebensfreude in sich trägt. Es ist mir eine Herzensangelegenheit, Menschen dabei zu
-              begleiten, diese Quelle wiederzuentdecken und für ihr Leben zu nutzen.
+              Ich bin überzeugt, dass jeder Mensch die Fähigkeit besitzt, seine eigenen Ressourcen zu
+              stärken und seine innere Balance wiederzufinden. Es ist mir eine Herzensangelegenheit,
+              Menschen auf ihrem Weg zu mehr Wohlbefinden, Lebensenergie und Selbstregulation zu
+              begleiten.
             </p>
           </div>
 
@@ -2290,22 +2386,55 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="praxis-bar reveal">
-        <div class="praxis-cell">
-          <h4>Sitzungsdauer</h4>
-          <p>Erstbehandlung rund <strong>90 Min.</strong><br>Folgesitzungen 60–75 Minuten.</p>
+    <div class="praxis-bar reveal">
+      <div class="praxis-row">
+        <h4>Sitzungsdauer</h4>
+        <div class="praxis-row-body">
+          <p class="praxis-group">
+            <span class="praxis-label">Kinesiologie</span><br>
+            Erstbehandlung rund 90 Min.<br>
+            Folgesitzungen 60&ndash;75 Minuten.<br>
+            Der Behandlungstarif betr&auml;gt pro 60 Min. CHF 150 Fr.
+          </p>
+          <p class="praxis-group">
+            <span class="praxis-label">Yogalektionen</span><br>
+            90 Min. mit Pratyahara-Meditation<br>
+            75 Min. mit Shavasana
+          </p>
         </div>
-        <div class="praxis-cell">
-          <h4>Krankenkasse</h4>
-          <p>EMR-Zertifiziert. Kostenübernahme im Rahmen der jeweiligen persönlichen Vertragsvereinbarungen. CSS Coin Partnerin (Yoga).</p>
+      </div>
+      <div class="praxis-row">
+        <h4>Krankenkasse</h4>
+        <div class="praxis-row-body">
+          <p class="praxis-group">
+            <span class="praxis-label">Kinesiologische Sitzungen</span><br>
+            Die Kosten werden von den Krankenkassen im Rahmen der Zusatzversicherung f&uuml;r
+            Komplement&auml;r- oder Alternativmedizin &uuml;bernommen. Die H&ouml;he der Verg&uuml;tung
+            richtet sich nach der jeweiligen pers&ouml;nlichen Versicherungsvereinbarung. Bitte kl&auml;ren
+            Sie die Kosten&uuml;bernahme im Vorfeld direkt mit Ihrer Krankenkasse.
+          </p>
+          <p class="praxis-group">
+            <span class="praxis-label">Yogalektionen</span><br>
+            Je nach Krankenkasse k&ouml;nnen Yogalektionen im Rahmen der Gesundheitsf&ouml;rderung
+            teilweise verg&uuml;tet werden. Bitte informieren Sie sich bei Ihrer Krankenkasse
+            &uuml;ber die individuellen M&ouml;glichkeiten.
+          </p>
+          <p class="praxis-group praxis-group--full">
+            Ich bin CSS-Coin Partnerin und akzeptiere CSS-Coins als Zahlungsmittel.
+          </p>
         </div>
-        <div class="praxis-cell">
-          <h4>Praxisadresse</h4>
+      </div>
+      <div class="praxis-row">
+        <h4>Praxisadresse</h4>
+        <div class="praxis-row-body praxis-row-body--single">
           <address>
             DeineQuelle &middot; Claudia Dimmler<br>
             Meggerstrasse 4a, 6043 Adligenswil<br>
-            Parkplätze vorhanden &middot; Postauto Nr. 73
+            <br>
+            Parkpl&auml;tze vorhanden<br>
+            Postauto Nr. 73
           </address>
         </div>
       </div>
@@ -2334,10 +2463,14 @@
         <!-- Col 1: Brand & Partner Logos -->
         <div class="footer-col brand-col">
           <img src="/images/brand/final-logo-horizontal.png" alt="DeineQuelle Logo" class="footer-logo">
-          <p class="footer-desc">Ganzheitliche Begleitung mit Kinesiologie und Yoga für Körper, Geist und Seele.</p>
+          <p class="footer-desc"><em>Ganzheitliche Begleitung mit Kinesiologie und Yoga f&uuml;r K&ouml;rper, Geist und Seele.</em></p>
           <div class="footer-partner-logos">
-            <img src="images/other/emr_zertifiziert_gs.png" alt="EMR zertifiziert" class="partner-logo">
-            <img src="images/other/css coin.png" alt="CSS Coin Partnerin" class="partner-logo">
+            <img src="/images/other/emr_zertifiziert_gs.svg" alt="EMR zertifiziert" class="partner-logo">
+            <img src="/images/other/Kinesuisse_Logo_Byline_rechts_Black_RGB.svg" alt="KineSuisse Verband"
+              class="partner-logo partner-logo-wide">
+            <img src="/images/other/OdA_KT_Label_DE_Diplom.jpg" alt="KT mit eidg. Diplom"
+              class="partner-logo partner-logo-square">
+            <img src="/images/other/css coin.png" alt="CSS Coins" class="partner-logo">
           </div>
         </div>
         <!-- Col 2: Navigation Links -->
@@ -2356,7 +2489,13 @@
         <div class="footer-col contact-col">
           <h4>Kontakt</h4>
           <address>
-            <strong>DeineQuelle &middot; Claudia Dimmler</strong><br>
+            <div class="footer-contact-name">
+              <span class="footer-contact-brand">DeineQuelle</span>
+              <strong class="footer-contact-person">
+                <span>Claudia</span>
+                <span>Dimmler</span>
+              </strong>
+            </div>
             Meggerstrasse 4a<br>
             6043 Adligenswil<br>
             <span class="contact-methods">
@@ -2370,9 +2509,9 @@
           <h4>Standort</h4>
           <div class="footer-map-container">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2719.1417062402123!2d8.361952377284795!3d47.05710087114457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478564f2fb9a72c1%3A0x6e9f50e7a2d8e6cb!2sMeggerstrasse%204a%2C%206043%20Adligenswil!5e0!3m2!1sde!2sch!4v1716900000000!5m2!1sde!2sch"
+              src="https://maps.google.com/maps?q=Meggerstrasse%204a%2C%206043%20Adligenswil%2C%20Schweiz&t=m&z=14&output=embed&iwloc=near"
               width="100%" height="100%"
-              style="border:0; filter: grayscale(1) sepia(0.2) contrast(0.9) brightness(0.95); border-radius: 4px;"
+              style="border:0; border-radius: 4px;"
               allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
@@ -2380,7 +2519,11 @@
 
       <div class="footer-bottom">
         <p>&copy; 2026 DeineQuelle &middot; Claudia Dimmler, Adligenswil. Alle Rechte vorbehalten.</p>
-        <p><a href="/impressum">Impressum &amp; Datenschutz</a></p>
+        <p>
+          <a href="/impressum">Impressum</a> &middot;
+          <a href="/datenschutz">Datenschutz</a> &middot;
+          <a href="/agb">AGB</a>
+        </p>
       </div>
     </div>
   </footer>

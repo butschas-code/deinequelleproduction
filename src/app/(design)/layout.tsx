@@ -1,6 +1,7 @@
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import { DesignRouteTransition } from "@/components/deinequelle/DesignRouteTransition";
 import { DeineQuelleDesignRuntime } from "@/components/home/DeineQuelleDesignRuntime";
+import { ScrollToTopButton } from "@/components/ScrollToTopButton";
 import "../deinequelle-design.css";
 
 const cormorant = Cormorant_Garamond({
@@ -34,6 +35,7 @@ export default function DesignLayout({
     >
       <DesignRouteTransition>{children}</DesignRouteTransition>
       <DeineQuelleDesignRuntime />
+      <ScrollToTopButton variant="design" />
     </div>
   );
 }
