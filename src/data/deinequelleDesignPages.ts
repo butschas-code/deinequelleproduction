@@ -405,7 +405,7 @@ export const designPages = {
     title: "Unterstütze\ndeinen Körper",
     titleEmphasis: "auf dem Weg\nzum\u00A0Wunschkind",
     intro:
-      "Kinesiologische Kinderwunschbegleitung für Paare, die ihren Körper auf eine Schwangerschaft vorbereiten möchten, Stress reduzieren und emotional gestärkt durch den Kinderwunschprozess gehen möchten.",
+      "Kinesiologische Kinderwunschbegleitung für Paare, die sich auf eine Schwangerschaft vorbereiten möchten, Stress reduzieren und emotional gestärkt durch den Kinderwunschprozess gehen möchten.",
     heroImage: "/images/layout images/pregnant.png",
     heroAlt: "Einfühlsame Begleitung auf dem Weg zum Wunschkind",
     heroEmphasisTone: "wine",
@@ -472,10 +472,10 @@ export const designPages = {
         kicker: "Natürlicher Kinderwunsch",
         title: "Körper",
         titleEmphasis: "bewusst\nbegleiten",
-        image: "/images/layout images/kinderwunsch-natuerlicher-kinderwunsch.jpg",
-        imageAlt: "Frau in ruhiger, achtsamer Haltung — Begleitung auf dem natürlichen Weg zum Wunschkind",
+        image: "/images/layout images/kinderwunsch-koerper-bewusst-tee.jpg",
+        imageAlt: "Junge Frau sitzt am Fenster und trinkt Tee",
         imageObjectPosition: "center center",
-        imageObjectPositionMobile: "center 30%",
+        imageObjectPositionMobile: "center center",
         lead:
           "Wenn du dir ein Kind wünschst und deinen Körper besser wahrnehmen möchtest, kann Kinesiologie helfen, deinen Zyklus, deine Bedürfnisse und dein inneres Erleben feiner zu spüren.",
         body: [
@@ -490,10 +490,6 @@ export const designPages = {
         kicker: "Medizinische Kinderwunschbehandlung",
         title: "Begleitung während",
         titleEmphasis: "IVF, ICSI oder IUI",
-        image: "/images/layout images/kinderwunsch-ganzheitliche-unterstuetzung.jpg",
-        imageAlt: "Ruhige Begleitung während medizinischer Kinderwunschbehandlung",
-        imageObjectPosition: "68% 42%",
-        imageObjectPositionMobile: "70% 34%",
         lead:
           "Medizinische Kinderwunschbehandlungen können Hoffnung geben und gleichzeitig sehr fordernd sein.",
         body: [
@@ -561,7 +557,7 @@ export const designPages = {
         kicker: "Partnerschaft",
         title: "Gemeinsam\ndurch eine",
         titleEmphasis: "sensible Zeit",
-        image: "/images/layout images/kinderwunsch-partnerschaft.jpg",
+        image: "/images/layout images/kinderwunsch-partnerschaft-haende.jpg",
         imageAlt: "Zwei Hände in ruhiger, verbundener Geste — Partnerschaft im Kinderwunsch",
         imageObjectPosition: "center center",
         imageObjectPositionMobile: "center 42%",
@@ -630,7 +626,7 @@ export const designPages = {
       },
     },
     trustItems: [
-      "Hatha Yoga insp. Aus der Satyananda Yoga-Lehre",
+      "Hatha Yoga insp. aus der Satyananda Yoga®-Lehre",
       "Studio und online",
       "Yoga Nidra",
     ],
@@ -888,8 +884,8 @@ export const designPages = {
     eyebrow: "Sport-Kinesiologie",
     title: "Sport-\nkinesiologie",
     intro:
-      "Sportkinesiologie fördert die Leistungsfähigkeit eines Sportlers, einer Sportlerin durch Optimieren von Ungleichgewichten in Biomechanik, Biochemie und Psyche.",
-    heroImage: "/images/sections/sportkinesiologie-editorial.jpg",
+      "Sportkinesiologie fördert die Leistungsfähigkeit von Sportler/innen durch die Optimierung des Energieflusses in Biomechanik, Biochemie und Psyche.",
+    heroImage: "/images/sections/sportkinesiologie-athletes-hero.jpg",
     heroAlt: "Sportkinesiologie in der Praxis",
     heroObjectPosition: "center 30%",
     heroObjectPositionMobile: "center 22%",
@@ -908,7 +904,7 @@ export const designPages = {
         title: "Potential",
         titleEmphasis: "vollumfänglich\nausschöpfen",
         lead:
-          "Sportkinesiologie fördert die Leistungsfähigkeit eines Sportlers, einer Sportlerin durch Optimieren von Ungleichgewichten in Biomechanik, Biochemie und Psyche, damit das eigene Potential vollumfänglich ausgeschöpft werden kann.",
+          "Sportkinesiologie fördert die Leistungsfähigkeit von Sportler/innen durch die Optimierung des Energieflusses in Biomechanik, Biochemie und Psyche, damit das eigene Potential vollumfänglich ausgeschöpft werden kann.",
         body: [
           "Die Begleitung kann körperliche und geistige Beschwerden einordnen und die Optimierung biochemischer, organischer und zellulärer Abläufe im Körper unterstützen.",
           "Sie kann ergänzend mit Trainerinnen und Trainern, Ärztinnen und Ärzten, Physiotherapeutinnen und Physiotherapeuten sowie weiteren gesundheitsfördernden Therapieformen zusammenspielen.",
@@ -1057,7 +1053,7 @@ export const designPages = {
         imageObjectPosition: "28% 38%",
         imageObjectPositionMobile: "22% 34%",
         lead:
-          "Meine Vision ist, Menschen zu unterstützen möglichst schnell, natürlich und nachhaltig wieder zurück in ihre Gesundheit und Kraft zu finden.",
+          "Menschen natürlich und nachhaltig zurück zu ihrer Gesundheit und Kraft zu begleiten.",
         body: [
           "Dafür braucht es oft mehr als nur eine einzelne Methode. Der Mensch wird besonders gut unterstützt, wenn Körper, Nervensystem, Emotionen, Gedanken, medizinische Versorgung, therapeutische Begleitung und die eigenen Ressourcen sinnvoll zusammenarbeiten.",
           "Ich sehe meine Arbeit als Teil dieses Zusammenspiels.",

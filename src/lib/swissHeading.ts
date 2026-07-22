@@ -18,7 +18,7 @@ const COMPOUND_SOFT_HYPHENS: Record<string, string> = {
   Lebensphasen: "Lebens\u00ADphasen",
   Neubeginn: "Neu\u00ADbeginn",
   Regeneration: "Regene\u00ADration",
-  ressourcenorientiert: "Ressourcen\u00ADorientiert",
+  ressourcenorientiert: "ressourcen\u00ADorientiert",
   Ressourcenorientiert: "Ressourcen\u00ADorientiert",
   Stabilität: "Stabi\u00ADlität",
   Tiefenentspannung: "Tiefen\u00ADentspannung",

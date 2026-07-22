@@ -14,10 +14,12 @@ import {
 export { DesignNav } from "@/components/deinequelle/DesignNav";
 
 export function Hero({ page }: { page: DesignPageData }) {
+  const pageSlugClass = page.slug.replace(/^\/+/, "").replace(/[^a-z0-9]+/gi, "-").replace(/-$/, "");
   const slugClass =
     page.slug === "/"
       ? undefined
-      : `hero-${page.slug.replace(/^\/+/, "").replace(/[^a-z0-9]+/gi, "-").replace(/-$/, "")}`;
+      : `hero-${pageSlugClass}`;
+  const trustSeparator = ["/leistungen/sport-kinesiologie", "/leistungen/yoga"].includes(page.slug) ? "—" : "•";
   const primaryAction = page.heroActions?.primary ?? {
     label: page.finalCta?.primaryLabel ?? "Kostenfreies Erstgespräch",
     href: page.finalCta?.primaryHref ?? "/kontakt",
@@ -120,10 +122,12 @@ export function Hero({ page }: { page: DesignPageData }) {
 
       {page.trustItems ? (
         <div id="trust">
-          <div className="trust-row reveal">
+          <div
+            className={`trust-row reveal trust-row-${pageSlugClass}`}
+          >
             {page.trustItems.map((item, index) => (
               <span key={item}>
-                {index > 0 ? <span className="trust-dot">•</span> : null}
+                {index > 0 ? <span className="trust-dot">{trustSeparator}</span> : null}
                 {item}
               </span>
             ))}
@@ -650,9 +654,13 @@ function ContentSection({
               <div
                 className={`svc-split${
                   splitMediaRight ? " svc-split-media-right" : ""
-                }`}
+                }${section.image ? "" : " svc-split-no-media"}`}
               >
-                <div className="svc-split-media reveal">
+                <div
+                  className={`svc-split-media reveal${
+                    section.image ? "" : " svc-split-media-empty"
+                  }`}
+                >
                   {section.image ? (
                     <img
                       src={section.image}

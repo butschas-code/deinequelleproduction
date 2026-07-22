@@ -1254,6 +1254,25 @@ html:has(.deinequelle-design-root) {
       line-height: 1;
     }
 
+    .deinequelle-design-page .trust-row-leistungen-sport-kinesiologie,
+    .deinequelle-design-page .trust-row-leistungen-yoga {
+      gap: 1.25rem;
+    }
+
+    .deinequelle-design-page .trust-row-leistungen-sport-kinesiologie span,
+    .deinequelle-design-page .trust-row-leistungen-yoga span {
+      font-size: clamp(1.04rem, 1.15vw, 1.16rem);
+      letter-spacing: 0.025em;
+    }
+
+    .deinequelle-design-page .trust-row-leistungen-sport-kinesiologie .trust-dot,
+    .deinequelle-design-page .trust-row-leistungen-yoga .trust-dot {
+      display: inline !important;
+      color: var(--text-mid);
+      font-size: 1rem;
+      margin-right: 1.25rem;
+    }
+
     /* ═══════════════════════════════════════════════════════════════
    ERKLÄRT — Quote section (ultra-clean)
 ═══════════════════════════════════════════════════════════════ */
@@ -2336,6 +2355,14 @@ html:has(.deinequelle-design-root) {
       order: 1;
     }
 
+    .deinequelle-design-page .svc-split-no-media {
+      grid-template-columns: 1fr;
+    }
+
+    .deinequelle-design-page .svc-split-no-media .svc-split-media-empty {
+      display: none;
+    }
+
     .deinequelle-design-page .svc-split-media img {
       display: block;
       width: 100%;
@@ -3152,6 +3179,23 @@ html:has(.deinequelle-design-root) {
       font-style: italic;
     }
 
+    .deinequelle-design-page #claudia .claudia-h2,
+    .deinequelle-design-page #claudia .claudia-h2 em {
+      font-family: var(--f-display-script);
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1.04;
+      letter-spacing: 0;
+    }
+
+    .deinequelle-design-page #claudia .claudia-h2::before {
+      content: "„";
+    }
+
+    .deinequelle-design-page #claudia .claudia-h2::after {
+      content: "“";
+    }
+
     .deinequelle-design-page .claudia-creds {
       padding-top: 2.4rem;
       border-top: 1px solid var(--sand);
@@ -3503,10 +3547,11 @@ html:has(.deinequelle-design-root) {
     }
 
     .deinequelle-design-page .praxis-row h4 {
-      font-family: var(--f-d);
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--text-mid);
+      font-family: var(--f-b);
+      font-size: clamp(1.35rem, 1.6vw, 1.7rem);
+      font-weight: 600;
+      line-height: 1.2;
+      color: var(--accent-dark);
       margin-bottom: 0;
     }
 
@@ -3583,25 +3628,27 @@ html:has(.deinequelle-design-root) {
     }
 
     .deinequelle-design-page .footer-desc {
-      font-size: 0.95rem;
+      font-family: var(--f-display-script);
+      font-size: 36px;
       color: var(--text-mid);
-      line-height: 1.8;
-      margin-bottom: 2rem;
+      line-height: 1em;
+      margin-bottom: 2.5rem;
     }
 
     .deinequelle-design-page .footer-desc em {
-      font-style: italic;
+      font-style: normal;
     }
 
     .deinequelle-design-page .footer-partner-logos {
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.85rem 1.25rem;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+      gap: 1.35rem;
     }
 
     .deinequelle-design-page .partner-logo {
-      height: 2rem;
+      height: 3rem;
       width: auto;
       object-fit: contain;
       opacity: 0.82;
@@ -3609,12 +3656,12 @@ html:has(.deinequelle-design-root) {
     }
 
     .deinequelle-design-page .partner-logo-square {
-      height: 2.35rem;
+      height: 4.6rem;
     }
 
     .deinequelle-design-page .partner-logo-wide {
-      height: 1.65rem;
-      max-width: 7.5rem;
+      height: 2.7rem;
+      max-width: 14rem;
     }
 
     .deinequelle-design-page .partner-logo:hover {
@@ -4768,6 +4815,9 @@ html:has(.deinequelle-design-root) {
 
 .deinequelle-design-page #nidra-fuer-wen .dq-kicker {
   font-size: clamp(1rem, 1.3vw, 1.24rem);
+  font-weight: 700;
+  color: var(--accent-dark);
+  text-shadow: 0 1px 8px rgba(250, 247, 242, 0.72);
   text-align: center;
 }
 
@@ -4918,23 +4968,23 @@ html:has(.deinequelle-design-root) {
 }
 
 .deinequelle-design-page #nidra-fuer-wen .svc-topic-list {
-  display: block;
-  columns: 2 13rem;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(13rem, 1fr));
   column-gap: clamp(2.5rem, 6vw, 5.5rem);
+  row-gap: 0.45rem;
   width: min(100%, 720px);
-  padding-left: 0;
-  list-style: none;
-  margin-inline: auto;
+  padding-left: 1.15rem;
+  list-style: disc;
+  margin-inline: 0;
 }
 
 .deinequelle-design-page #nidra-fuer-wen .svc-topic-list li {
-  break-inside: avoid;
-  list-style: none;
+  list-style: disc;
   width: 100%;
   max-width: 18rem;
-  margin: 0 auto 0.55rem;
-  padding-left: 0;
-  text-align: center;
+  margin: 0 0 0.55rem;
+  padding-left: 0.25rem;
+  text-align: left;
 }
 
 .deinequelle-design-page #nidra-fuer-wen .svc-topic-list li::before {
@@ -4943,7 +4993,7 @@ html:has(.deinequelle-design-root) {
 
 @media (max-width: 640px) {
   .deinequelle-design-page #nidra-fuer-wen .svc-topic-list {
-    columns: 1;
+    grid-template-columns: 1fr;
     width: min(100%, 22rem);
     row-gap: 0.2rem;
   }
@@ -4957,6 +5007,10 @@ html:has(.deinequelle-design-root) {
   grid-template-columns: minmax(0, 0.92fr) minmax(360px, 0.78fr);
   gap: clamp(3rem, 6vw, 5.5rem);
   align-items: center;
+}
+
+.deinequelle-design-page #medizinische-behandlung .svc-split-no-media {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .deinequelle-design-page #medizinische-behandlung .svc-split-media img {
@@ -6483,6 +6537,69 @@ html:has(.deinequelle-design-root) {
   letter-spacing: 0 !important;
 }
 
+.deinequelle-design-page:has(#hero.hero-home) #cta-final .cta-h2,
+.deinequelle-design-page:has(#hero.hero-home) #cta-final .cta-h2 em {
+  color: var(--accent-dark) !important;
+}
+
+.deinequelle-design-page:has(#hero.hero-home) #cta-final .cta-h2::before,
+.deinequelle-design-page:has(#hero.hero-home) #cta-final .cta-h2::after {
+  color: var(--accent-dark) !important;
+}
+
+.deinequelle-design-page:has(#hero.hero-leistungen-sport-kinesiologie) #cta-final .cta-h2,
+.deinequelle-design-page:has(#hero.hero-leistungen-sport-kinesiologie) #cta-final .cta-h2 em {
+  color: var(--accent-dark) !important;
+}
+
+.deinequelle-design-page:has(#hero.hero-leistungen-sport-kinesiologie) #cta-final .cta-h2::before,
+.deinequelle-design-page:has(#hero.hero-leistungen-sport-kinesiologie) #cta-final .cta-h2::after {
+  color: var(--accent-dark) !important;
+}
+
+.deinequelle-design-page #claudia .claudia-h2,
+.deinequelle-design-page #claudia .claudia-h2 em {
+  font-family: var(--f-display-script) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  line-height: 1.04 !important;
+  letter-spacing: 0 !important;
+}
+
+.deinequelle-design-page #nidra-fuer-wen .dq-kicker {
+  font-weight: 700 !important;
+  color: var(--accent-dark) !important;
+  text-shadow: 0 1px 8px rgba(250, 247, 242, 0.72) !important;
+}
+
+.deinequelle-design-page #vision .svc-lead {
+  max-width: 12ch !important;
+  font-family: var(--f-display-script) !important;
+  font-size: clamp(4.25rem, 7vw, 6.25rem) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  line-height: 1.04 !important;
+  letter-spacing: 0 !important;
+  color: var(--accent-dark) !important;
+}
+
+.deinequelle-design-page #vision .svc-lead::before {
+  content: "„";
+}
+
+.deinequelle-design-page #vision .svc-lead::after {
+  content: "“";
+}
+
+.deinequelle-design-page footer .footer-desc,
+.deinequelle-design-page footer .footer-desc em {
+  font-family: var(--f-display-script) !important;
+  font-size: 36px !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  line-height: 1em !important;
+}
+
 .deinequelle-design-page #cta-final .cta-h2::before {
   content: "„";
 }
@@ -6496,6 +6613,11 @@ html:has(.deinequelle-design-root) {
   .deinequelle-design-page #cta-final .cta-h2 em {
     font-size: clamp(3.5rem, 18vw, 5.2rem) !important;
   }
+}
+
+.deinequelle-design-page #content #vision .svc-lead,
+.deinequelle-design-page #vision .svc-lead {
+  font-family: var(--f-display-script) !important;
 }
 
 /* ═══════════════════════════════════════════════════════════════
