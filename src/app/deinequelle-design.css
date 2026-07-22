@@ -5692,16 +5692,11 @@ html:has(.deinequelle-design-root) {
   }
 
   .deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-bg img {
-    width: 100% !important;
-    height: min(38vh, 20rem) !important;
-    object-fit: contain !important;
-    object-position: right top !important;
-    opacity: 0.62 !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 58% 42% !important;
+    opacity: 1 !important;
     transform: none !important;
-  }
-
-  .deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-bg {
-    background: var(--beige-sand) !important;
   }
 
   .deinequelle-design-page #hero.hero-leistungen-yoga .hero-bg img {
@@ -5773,10 +5768,10 @@ html:has(.deinequelle-design-root) {
   }
 
   .deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-bg img {
-    height: min(36vh, 18rem) !important;
-    object-fit: contain !important;
-    object-position: right top !important;
-    opacity: 0.62 !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 56% 42% !important;
+    opacity: 1 !important;
     transform: none !important;
   }
 
