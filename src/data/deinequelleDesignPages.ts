@@ -886,7 +886,7 @@ export const designPages = {
     intro:
       "Sportkinesiologie fördert die Leistungsfähigkeit von Sportler/innen durch die Optimierung des Energieflusses in Biomechanik, Biochemie und Psyche.",
     heroImage: "/images/sections/sportkinesiologie-athletes-hero.jpg",
-    heroImageMobile: "/images/sections/sportkinesiologie-editorial.jpg",
+    heroImageMobile: "/images/sections/sportkinesiologie-athletes-hero-mobile.jpg",
     heroAlt: "Sportkinesiologie in der Praxis",
     heroObjectPosition: "center 30%",
     heroObjectPositionMobile: "center 22%",
