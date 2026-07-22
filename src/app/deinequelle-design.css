@@ -5692,9 +5692,16 @@ html:has(.deinequelle-design-root) {
   }
 
   .deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-bg img {
-    height: 115% !important;
-    object-position: 35% 50% !important;
-    transform: translateY(-10%) !important;
+    width: 100% !important;
+    height: min(38vh, 20rem) !important;
+    object-fit: contain !important;
+    object-position: right top !important;
+    opacity: 0.62 !important;
+    transform: none !important;
+  }
+
+  .deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-bg {
+    background: var(--beige-sand) !important;
   }
 
   .deinequelle-design-page #hero.hero-leistungen-yoga .hero-bg img {
@@ -5714,6 +5721,15 @@ html:has(.deinequelle-design-root) {
         rgba(250, 247, 242, 0.52) 0%,
         rgba(250, 247, 242, 0.3) 45%,
         rgba(250, 247, 242, 0.05) 84%) !important;
+  }
+
+  .deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-overlay {
+    background:
+      linear-gradient(to bottom,
+        rgba(250, 247, 242, 0.04) 0%,
+        rgba(250, 247, 242, 0.64) 24%,
+        rgba(250, 247, 242, 0.9) 46%,
+        rgba(250, 247, 242, 0.98) 100%) !important;
   }
 
   .deinequelle-design-page #hero.hero-home .hero-overlay {
@@ -5757,9 +5773,11 @@ html:has(.deinequelle-design-root) {
   }
 
   .deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-bg img {
-    height: 115% !important;
-    object-position: 35% 50% !important;
-    transform: translateY(-10%) !important;
+    height: min(36vh, 18rem) !important;
+    object-fit: contain !important;
+    object-position: right top !important;
+    opacity: 0.62 !important;
+    transform: none !important;
   }
 
   .deinequelle-design-page #hero.hero-leistungen-yoga .hero-bg img {
