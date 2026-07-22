@@ -19,13 +19,14 @@ export function Hero({ page }: { page: DesignPageData }) {
       ? undefined
       : `hero-${page.slug.replace(/^\/+/, "").replace(/[^a-z0-9]+/gi, "-").replace(/-$/, "")}`;
   const primaryAction = page.heroActions?.primary ?? {
-    label: page.finalCta?.primaryLabel ?? "Kontakt",
+    label: page.finalCta?.primaryLabel ?? "Kostenfreies Erstgespräch",
     href: page.finalCta?.primaryHref ?? "/kontakt",
     external: page.finalCta?.primaryExternal,
   };
   const secondaryAction = page.heroActions?.secondary ?? {
-    label: "Mehr erfahren",
-    href: "#content",
+    label: "Termin online buchen",
+    href: site.bookingUrl,
+    external: true,
   };
   const showSecondaryHeroAction = page.heroActions?.secondary !== undefined || !page.heroActions;
 
@@ -94,6 +95,7 @@ export function Hero({ page }: { page: DesignPageData }) {
               rel={primaryAction.external ? "noopener noreferrer" : undefined}
             >
               {primaryAction.label}
+              {" "}
               <span className="btn-pi" aria-hidden>
                 ↗
               </span>
@@ -746,6 +748,7 @@ function FinalCta({ cta }: { cta?: DesignPageData["finalCta"] }) {
                 rel={cta.primaryExternal ? "noopener noreferrer" : undefined}
               >
                 {cta.primaryLabel}
+                {" "}
                 <span className="btn-pi" aria-hidden>
                   ↗
                 </span>
@@ -813,13 +816,10 @@ export function DesignFooter() {
           <div className="footer-col contact-col">
             <h4>Kontakt</h4>
             <address>
-              <div className="footer-contact-name">
-                <span className="footer-contact-brand">DeineQuelle</span>
-                <strong className="footer-contact-person">
-                  <span>Claudia</span>
-                  <span>Dimmler</span>
-                </strong>
-              </div>
+              <span className="footer-contact-brand">DeineQuelle</span>
+              <br />
+              Claudia Dimmler
+              <br />
               Meggerstrasse 4a
               <br />
               6043 Adligenswil

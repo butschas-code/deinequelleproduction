@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  skipTrailingSlashRedirect: true,
   // Allow HMR + dev assets when accessing the dev server from your LAN IP.
   // Add additional IPs / hostnames as needed (IP may change per network).
   allowedDevOrigins: ["192.168.0.242", "172.20.10.10", "*.local"],
@@ -18,62 +19,62 @@ const nextConfig: NextConfig = {
       {
         source: "/leistungen",
         destination: "/leistungen/kinesiologie",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/leistungen/",
         destination: "/leistungen/kinesiologie",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/kinesiologie-kt",
         destination: "/leistungen/kinesiologie",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/kinesiologie-kt/",
         destination: "/leistungen/kinesiologie",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/sport-kinesiologie",
         destination: "/leistungen/sport-kinesiologie",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/sport-kinesiologie/",
         destination: "/leistungen/sport-kinesiologie",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yoga",
         destination: "/leistungen/yoga",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/yoga/",
         destination: "/leistungen/yoga",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/kinderwunsch",
         destination: "/leistungen/kinderwunsch",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/kinderwunsch/",
         destination: "/leistungen/kinderwunsch",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/infos",
         destination: "/kontakt",
-        permanent: true,
+        statusCode: 301,
       },
       {
         source: "/infos/",
         destination: "/kontakt",
-        permanent: true,
+        statusCode: 301,
       },
     ];
   },

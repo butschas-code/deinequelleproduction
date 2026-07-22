@@ -213,7 +213,7 @@ export function SiteHeader() {
               rel="noopener noreferrer"
               className="ml-2 whitespace-nowrap rounded-[4px] bg-brand px-4 py-2.5 text-[13px] font-semibold text-white transition hover:bg-brand-hover"
             >
-              Termin buchen
+              Kostenfreies Erstgespräch
             </Link>
           </nav>
         </div>
@@ -251,7 +251,7 @@ export function SiteHeader() {
             className="mx-1 mt-3 mb-3 inline-flex min-h-[52px] items-center justify-center rounded-[4px] bg-brand px-5 text-[14px] font-semibold uppercase tracking-[0.1em] text-white shadow-[0_8px_24px_-10px_rgba(58,92,61,0.55)]"
             onClick={() => setOpen(false)}
           >
-            Termin online buchen
+            Kostenfreies Erstgespräch
           </Link>
         </nav>
       </div>
