@@ -5664,6 +5664,13 @@ html:has(.deinequelle-design-root) {
   }
 }
 
+.deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-bg img {
+  height: 150% !important;
+  object-position: 88% 82% !important;
+  transform: scale(1.42) translate(-8%, -9%);
+  transform-origin: 86% 82%;
+}
+
 /* Mobile hero lock-in: keep every page as a real full-image hero. */
 @media (max-width: 960px) {
   .deinequelle-design-page #hero .hero-bg {
@@ -5685,7 +5692,10 @@ html:has(.deinequelle-design-root) {
   }
 
   .deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-bg img {
-    object-position: 54% 18% !important;
+    height: 128% !important;
+    object-position: 80% 72% !important;
+    transform: scale(1.22) translate(-4%, -5%);
+    transform-origin: 78% 70%;
   }
 
   .deinequelle-design-page #hero.hero-leistungen-yoga .hero-bg img {
@@ -5748,7 +5758,10 @@ html:has(.deinequelle-design-root) {
   }
 
   .deinequelle-design-page #hero.hero-leistungen-sport-kinesiologie .hero-bg img {
-    object-position: 54% 18% !important;
+    height: 118% !important;
+    object-position: 80% 68% !important;
+    transform: scale(1.2) translate(-4%, -5%);
+    transform-origin: 78% 68%;
   }
 
   .deinequelle-design-page #hero.hero-leistungen-yoga .hero-bg img {
@@ -6247,6 +6260,39 @@ html:has(.deinequelle-design-root) {
   .svc-items-intro
 ) {
   color: #294d5f !important;
+}
+
+.deinequelle-design-page:has(#hero.hero-ueber-mich) :is(
+  #hero .dq-kicker,
+  #hero .hero-h1,
+  #hero .hero-h1 em,
+  #hero .hero-sub,
+  #content .dq-kicker,
+  #content .spread-tag,
+  #content .spread-h2,
+  #content .spread-h2 em,
+  #content .svc-section-head,
+  #content .svc-section-head em,
+  #content .svc-lead,
+  #content .svc-body,
+  #content .svc-body-last,
+  #content .svc-items-intro,
+  #content .svc-topic-label,
+  #content .svc-topic-list li,
+  #content .svc-feature-title,
+  #content .svc-feature-body,
+  #content .svc-item,
+  #content p,
+  #content li,
+  #schritte .schritte-h2,
+  #schritte .schritte-h2 em,
+  #schritte .schritt h3,
+  #schritte .schritt p,
+  #cta-final .cta-h2,
+  #cta-final .cta-h2 em,
+  #cta-final .cta-sub
+) {
+  color: var(--sage-dark) !important;
 }
 
 /* Headline light parts: keep page colors, but use the same italic non-fat style everywhere. */
