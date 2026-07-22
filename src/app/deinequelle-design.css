@@ -6591,6 +6591,24 @@ html:has(.deinequelle-design-root) {
   color: var(--accent-dark) !important;
 }
 
+.deinequelle-design-page:has(#hero.hero-home) #cta-final .home-balance-quote {
+  max-width: 12ch !important;
+}
+
+.deinequelle-design-page:has(#hero.hero-home) #cta-final .home-balance-quote span {
+  display: block;
+}
+
+.deinequelle-design-page:has(#hero.hero-home) #cta-final .home-balance-quote .quote-open,
+.deinequelle-design-page:has(#hero.hero-home) #cta-final .home-balance-quote .quote-close {
+  display: inline;
+}
+
+.deinequelle-design-page:has(#hero.hero-home) #cta-final .home-balance-quote::before,
+.deinequelle-design-page:has(#hero.hero-home) #cta-final .home-balance-quote::after {
+  content: none !important;
+}
+
 .deinequelle-design-page:has(#hero.hero-leistungen-sport-kinesiologie) #cta-final .cta-h2,
 .deinequelle-design-page:has(#hero.hero-leistungen-sport-kinesiologie) #cta-final .cta-h2 em {
   color: var(--accent-dark) !important;
