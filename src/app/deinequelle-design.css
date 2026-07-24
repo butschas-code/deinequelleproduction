@@ -6435,10 +6435,13 @@ html:has(.deinequelle-design-root) {
 .deinequelle-design-page #yoga .yoga-bedeutung p {
   max-width: 48rem;
   font-family: var(--f-b);
-  font-size: clamp(1.08rem, 1.35vw, 1.24rem);
+  font-size: var(--type-base);
   font-weight: 400;
-  line-height: 1.82;
+  line-height: 1.75;
+  margin-bottom: 1.9rem;
   color: var(--accent-dark);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 /* Kinderwunsch headline restore: light headline parts stay wine, not body brown/black. */
@@ -6570,10 +6573,13 @@ html:has(.deinequelle-design-root) {
 
 .deinequelle-design-page .kinesiologie-bedeutung-copy p {
   font-family: var(--f-b);
-  font-size: clamp(1.08rem, 1.35vw, 1.24rem);
+  font-size: var(--type-base);
   font-weight: 400;
-  line-height: 1.8;
+  line-height: 1.75;
+  margin-bottom: 1.9rem;
   color: var(--sage-dark);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 @media (max-width: 960px) {
