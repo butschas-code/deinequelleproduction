@@ -576,10 +576,12 @@ html:has(.deinequelle-design-root) {
       border: 1px solid var(--sand);
       border-radius: 0;
       font-family: var(--f-b);
-      font-size: 0.72rem;
+      font-size: 0.68rem;
       font-weight: 400;
-      letter-spacing: 0.09em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
+      text-wrap: balance;
+      max-width: min(100%, 15rem);
       flex-shrink: 0;
       transition:
         background 0.35s var(--ease),
@@ -3051,8 +3053,10 @@ html:has(.deinequelle-design-root) {
       font-family: var(--f-b);
       font-size: 0.72rem;
       font-weight: 400;
-      letter-spacing: 0.09em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
+      text-wrap: balance;
+      max-width: 100%;
       transition: background 0.38s var(--ease), border-color 0.38s var(--ease), color 0.38s var(--ease), transform 0.38s var(--ease), box-shadow 0.38s var(--ease);
     }
 
@@ -3114,8 +3118,10 @@ html:has(.deinequelle-design-root) {
       font-family: var(--f-b);
       font-size: 0.72rem;
       font-weight: 400;
-      letter-spacing: 0.09em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
+      text-wrap: balance;
+      max-width: 100%;
       transition: background 0.38s var(--ease), border-color 0.38s var(--ease), color 0.38s var(--ease), transform 0.38s var(--ease), box-shadow 0.38s var(--ease);
     }
 

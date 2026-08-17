@@ -32,9 +32,9 @@ export function CtaStrip({ lead = DEFAULT_LEAD, sub = DEFAULT_SUB }: Props) {
             href={site.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-[48px] w-full min-w-0 items-center justify-center rounded-full bg-brand px-8 text-[15px] font-semibold text-white shadow-[0_8px_30px_-8px_rgba(30,110,72,0.42)] transition duration-200 hover:bg-brand-hover sm:w-auto sm:min-w-[160px]"
+            className="inline-flex min-h-[48px] w-full min-w-0 items-center justify-center rounded-full bg-brand px-6 text-center text-[14px] font-semibold leading-snug text-white shadow-[0_8px_30px_-8px_rgba(30,110,72,0.42)] transition duration-200 hover:bg-brand-hover sm:w-auto sm:max-w-[20rem]"
           >
-            Kostenfreies Erstgespräch
+            Kostenfreies Kennenlerngespräch
           </Link>
           <a
             href={site.bookingUrl}

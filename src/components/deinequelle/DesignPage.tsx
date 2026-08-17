@@ -21,7 +21,7 @@ export function Hero({ page }: { page: DesignPageData }) {
       : `hero-${pageSlugClass}`;
   const trustSeparator = ["/leistungen/sport-kinesiologie", "/leistungen/yoga"].includes(page.slug) ? "—" : "•";
   const primaryAction = page.heroActions?.primary ?? {
-    label: page.finalCta?.primaryLabel ?? "Kostenfreies Erstgespräch",
+    label: page.finalCta?.primaryLabel ?? "Kostenfreies Kennenlerngespräch",
     href: page.finalCta?.primaryHref ?? "/kontakt",
     external: page.finalCta?.primaryExternal,
   };
