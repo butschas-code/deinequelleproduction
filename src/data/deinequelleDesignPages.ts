@@ -406,7 +406,7 @@ export const designPages = {
     titleEmphasis: "auf dem Weg\nzum\u00A0Wunschkind",
     intro:
       "Kinesiologische Kinderwunschbegleitung für Paare, die sich auf eine Schwangerschaft vorbereiten möchten, Stress reduzieren und emotional gestärkt durch den Kinderwunschprozess gehen möchten.",
-    heroImage: "/images/optimized/layout images/pregnant-xl.webp",
+    heroImage: "/images/layout images/pregnant.png",
     heroAlt: "Einfühlsame Begleitung auf dem Weg zum Wunschkind",
     heroEmphasisTone: "wine",
     heroObjectPosition: "78% 42%",
@@ -435,7 +435,7 @@ export const designPages = {
         presentation: "head",
         title: "Wenn\nKinderwunsch",
         titleEmphasis: "zur Belastung\nwird",
-        image: "/images/optimized/layout images/pregnant-xl.webp",
+        image: "/images/layout images/pregnant.png",
         imageAlt: "Einfühlsame Kinderwunschbegleitung",
         imageObjectPosition: "78% 42%",
         imageObjectPositionMobile: "86% 38%",
