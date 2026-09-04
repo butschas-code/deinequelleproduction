@@ -780,7 +780,7 @@ export const designPages = {
         kicker: "Kurse und Angebote",
         title: "Yoga im",
         titleEmphasis: "Studio, online\noder auf Anfrage",
-        image: "/images/optimized/yoga/Claudia_breath-lg.webp",
+        image: "/images/yoga/Claudia_breath.png",
         imageAlt: "Claudia Dimmler bei einer Atemübung im Yogaraum",
         imageObjectPosition: "center center",
         imageObjectPositionMobile: "center 32%",
