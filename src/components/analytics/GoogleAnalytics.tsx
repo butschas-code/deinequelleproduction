@@ -33,9 +33,33 @@ export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
       }
     }
 
+    function handleBookingClick(e: MouseEvent) {
+      const anchor = (e.target as HTMLElement | null)?.closest<HTMLAnchorElement>(
+        'a[href*="booking.masuyo.ch"]'
+      );
+      if (!anchor) return;
+
+      if (typeof window.gtag === "function") {
+        const label =
+          anchor.innerText?.trim() ||
+          anchor.getAttribute("aria-label") ||
+          "Termin online buchen";
+
+        window.gtag("event", "cta_booking_click", {
+          event_category: "conversion",
+          event_label: label,
+          page_location: window.location.href,
+          link_url: anchor.href,
+        });
+      }
+    }
+
     window.addEventListener(GA_OPTOUT_EVENT, handleOptOutChange);
+    document.addEventListener("click", handleBookingClick, { capture: true });
+
     return () => {
       window.removeEventListener(GA_OPTOUT_EVENT, handleOptOutChange);
+      document.removeEventListener("click", handleBookingClick, { capture: true });
     };
   }, [gaId]);
 
