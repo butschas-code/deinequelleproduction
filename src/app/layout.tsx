@@ -4,7 +4,7 @@ import "./globals.css";
 import { site } from "@/data/site";
 import { buildLocalBusinessJsonLd } from "@/lib/seo/jsonld";
 import { JsonLd } from "@/components/JsonLd";
-import { CookieBanner } from "@/components/consent/CookieBanner";
+import { GoogleAnalytics } from "@/components/analytics/GoogleAnalytics";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -61,7 +61,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-full">
         {children}
-        <CookieBanner />
+        <GoogleAnalytics gaId={site.googleAnalyticsId} />
       </body>
     </html>
   );

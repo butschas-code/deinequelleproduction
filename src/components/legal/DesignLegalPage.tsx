@@ -11,6 +11,7 @@ type Props = {
   textFile: string;
   /** "editorial" = open prose like service sections; "boxed" = framed legal text block */
   variant?: "editorial" | "boxed";
+  children?: React.ReactNode;
 };
 
 function LegalBlocks({ blocks }: { blocks: string[] }) {
@@ -54,6 +55,7 @@ export function DesignLegalPage({
   intro,
   textFile,
   variant = "boxed",
+  children,
 }: Props) {
   const rawText = loadLegalText(textFile);
   const text = rawText
@@ -101,6 +103,8 @@ export function DesignLegalPage({
                     <LegalBlocks blocks={blocks} />
                   </article>
                 )}
+
+                {children}
               </div>
             </div>
           </div>

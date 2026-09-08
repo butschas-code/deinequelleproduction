@@ -42,6 +42,8 @@ export const site = {
     "Der Yogaraum/Die Praxis ist in Adligenswil gut erreichbar mit den ÖV (Postauto Nr. 73, Haltestelle Sagi, Adligenswil). Kostenlose Parkplätze sind vorhanden.",
   contactChannels:
     "Ich freue mich auf deine telefonische Kontaktaufnahme oder über die Möglichkeit des Online-Anmeldetools (ausschliesslich für kinesiologische Termine), WhatsApp/SMS oder E-Mail.",
+  /** Google Analytics Measurement ID */
+  googleAnalyticsId: "G-91WWD2TPSD",
   responseExpectation:
     "Kontaktanfragen werden in der Regel innerhalb von 1–2 Werktagen beantwortet.",
 } as const;
