@@ -10,6 +10,7 @@ import {
   DisplayHeading,
   DisplayHeadingLines,
 } from "@/components/deinequelle/DisplayHeadingLines";
+import { YogaAudioPlayer } from "@/components/deinequelle/YogaAudioPlayer";
 
 export { DesignNav } from "@/components/deinequelle/DesignNav";
 
@@ -685,6 +686,10 @@ function ContentSection({
             editorialBlock
           ) : null}
 
+          {section.audioTracks?.length ? (
+            <YogaAudioPlayer tracks={section.audioTracks} />
+          ) : null}
+
           {section.note && !inlineNote ? noteEl : null}
 
         </div>
@@ -857,6 +862,16 @@ export function DesignFooter() {
           <p>&copy; 2026 DeineQuelle · Claudia Dimmler, Adligenswil. Alle Rechte vorbehalten.</p>
           <p>
             <Link href="/impressum">Impressum</Link> · <Link href="/datenschutz">Datenschutz</Link> · <Link href="/agb">AGB</Link>
+          </p>
+          <p className="footer-credit">
+            Diese Website wurde gestaltet und entwickelt von{" "}
+            <a
+              href="https://gustafsonmarketing.ch/de/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Gustafsonmarketing
+            </a>.
           </p>
         </div>
       </div>

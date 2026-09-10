@@ -98,6 +98,15 @@ export type DesignPageData = {
     itemsVariant?: "list" | "topics";
     /** Title + body pairs (e.g. Asanas, Pranayama) rendered as numbered rows */
     features?: { title: string; body: string }[];
+    /** Guided audio with a still image (Shavasana, etc.) */
+    audioTracks?: {
+      id: string;
+      title: string;
+      durationLabel: string;
+      src: string;
+      still: string;
+      stillAlt: string;
+    }[];
     /** Tighter vertical rhythm for dense head + list sections */
     density?: "default" | "tight";
   }[];
@@ -844,27 +853,32 @@ export const designPages = {
         noteVariant: "callout",
       },
       {
-        id: "yoga-videos",
-        hidden: true,
+        id: "shavasana",
         theme: "warm-soft",
         presentation: "head",
-        kicker: "Videos",
-        title: "Video-Übungen",
-        titleEmphasis: "folgen",
+        kicker: "Shavasana",
+        title: "Entspannungs­übungen",
+        titleEmphasis: "zum Nachspüren",
         lead:
-          "Hier entstehen Videobereiche für ausgewählte Yoga- und Yoga-Nidra-Inhalte.",
-        body: [
-          "Die finalen Videos werden ergänzt, sobald die Kundin sie auf YouTube oder einer vergleichbaren Plattform bereitgestellt hat.",
-        ],
+          "Zwei geführte Shavasana-Übungen zum Anhören — zu Hause, nach der Lektion oder wenn du zwischendurch zur Ruhe kommen möchtest.",
+        body: [],
         layout: "single",
-        features: [
+        audioTracks: [
           {
-            title: "Satyananda Yoga Nidra®",
-            body: "Platzhalter für ein eingebettetes Video.",
+            id: "shavasana-8",
+            title: "Shavasana Entspannungsübung",
+            durationLabel: "8 Minuten",
+            src: "/audio/yoga/shavasana-8min.m4a",
+            still: "/images/yoga/shavasana-8min.jpg",
+            stillAlt: "Yogaraum mit Buddhafigur, Kissen und Kerzen",
           },
           {
-            title: "Hatha Yoga",
-            body: "Platzhalter für ein eingebettetes Video.",
+            id: "shavasana-15",
+            title: "Shavasana Entspannungsübung",
+            durationLabel: "15 Minuten",
+            src: "/audio/yoga/shavasana-15min.m4a",
+            still: "/images/yoga/shavasana-15min.jpg",
+            stillAlt: "Buddhafigur und Kerzenlicht im Yogaraum",
           },
         ],
       },

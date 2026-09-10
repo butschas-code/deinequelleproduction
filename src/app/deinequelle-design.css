@@ -3753,6 +3753,13 @@ html:has(.deinequelle-design-root) {
       color: var(--text);
     }
 
+    .deinequelle-design-page .footer-credit {
+      flex-basis: 100%;
+      margin: 0;
+      font-size: 0.75rem;
+      color: var(--text-light);
+    }
+
     /* Mobile responsive for footer */
     @media (max-width: 960px) {
       .deinequelle-design-page .footer-grid {
@@ -5098,24 +5105,154 @@ html:has(.deinequelle-design-root) {
   font-weight: 400;
 }
 
-.deinequelle-design-page #yoga-videos .svc-features {
+.deinequelle-design-page #shavasana .yoga-audio-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.2rem;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  margin-top: clamp(1.5rem, 3vw, 2.4rem);
 }
 
-.deinequelle-design-page #yoga-videos .svc-feature {
-  min-height: 220px;
-  border: 1px dashed rgba(123, 99, 71, 0.35);
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.62), rgba(250, 247, 242, 0.32)),
-    repeating-linear-gradient(
-      45deg,
-      rgba(123, 99, 71, 0.06) 0,
-      rgba(123, 99, 71, 0.06) 8px,
-      transparent 8px,
-      transparent 18px
-    );
+.deinequelle-design-page .yoga-audio-card {
+  min-width: 0;
+}
+
+.deinequelle-design-page .yoga-audio-still {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--beige-sand);
+}
+
+.deinequelle-design-page .yoga-audio-still img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;
+}
+
+.deinequelle-design-page .yoga-audio-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 4.25rem;
+  height: 4.25rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(250, 247, 242, 0.92);
+  color: var(--accent);
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.7) inset,
+    0 10px 28px -12px rgba(74, 52, 32, 0.45);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.deinequelle-design-page .yoga-audio-play:hover {
+  background: #fff;
+}
+
+.deinequelle-design-page .yoga-audio-play:active {
+  transform: translate(-50%, -50%) scale(0.96);
+}
+
+.deinequelle-design-page .yoga-audio-play:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.deinequelle-design-page .yoga-audio-play svg {
+  width: 1.45rem;
+  height: 1.45rem;
+  fill: currentColor;
+}
+
+.deinequelle-design-page .yoga-audio-still.is-playing .yoga-audio-play {
+  background: rgba(250, 247, 242, 0.86);
+}
+
+.deinequelle-design-page .yoga-audio-meta {
+  padding: 1.05rem 0.1rem 0;
+}
+
+.deinequelle-design-page .yoga-audio-kicker {
+  margin: 0 0 0.35rem;
+  font-family: var(--f-b);
+  font-size: 0.78rem;
+  font-weight: var(--type-weight-ui);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.deinequelle-design-page .yoga-audio-title {
+  margin: 0 0 0.85rem;
+  font-family: var(--f-d);
+  font-size: clamp(1.28rem, 1.7vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  line-height: 1.25;
+  color: var(--text);
+}
+
+.deinequelle-design-page .yoga-audio-range {
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin: 0;
+  appearance: none;
+  background: var(--beige-sand);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.deinequelle-design-page .yoga-audio-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.deinequelle-design-page .yoga-audio-range::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.deinequelle-design-page .yoga-audio-time {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.55rem 0 0;
+  font-family: var(--f-b);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--text-mid);
+}
+
+.deinequelle-design-page .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 960px) {
+  .deinequelle-design-page #shavasana .yoga-audio-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 960px) {
@@ -5129,7 +5266,7 @@ html:has(.deinequelle-design-root) {
 
   .deinequelle-design-page #medizinische-behandlung .svc-editorial,
   .deinequelle-design-page #medizinische-behandlung .svc-split,
-  .deinequelle-design-page #yoga-videos .svc-features {
+  .deinequelle-design-page #shavasana .yoga-audio-grid {
     grid-template-columns: 1fr;
   }
 
