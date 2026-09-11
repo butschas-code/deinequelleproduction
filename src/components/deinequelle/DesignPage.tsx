@@ -870,7 +870,7 @@ export function DesignFooter() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Gustafsonmarketing
+              GustafsonMarketing.ch
             </a>.
           </p>
         </div>
