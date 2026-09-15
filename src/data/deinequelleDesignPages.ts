@@ -576,6 +576,18 @@ export const designPages = {
           "Begleitung kann helfen, unterschiedliche Gefühle und Bedürfnisse sichtbarer zu machen. So können wieder mehr Verständnis, Nähe und Entlastung entstehen.",
         ],
       },
+      {
+        id: "kosten-versicherung",
+        theme: "wine-soft",
+        presentation: "head",
+        kicker: "Kinderwunschbegleitung",
+        title: "Kosten &\nVersicherung",
+        lead:
+          "Die kinesiologische Kinderwunschbegleitung ist Komplementärtherapie und gehört nicht zur obligatorischen Grundversicherung. Viele Krankenkassen beteiligen sich über die Zusatzversicherung für Komplementär- oder Alternativmedizin an den Sitzungen, wenn Kinesiologie in deiner Police enthalten ist. Als EMR-zertifizierte Therapeutin erfülle ich die Qualitätsvoraussetzung, die die meisten Kassen dafür verlangen. Bitte kläre die Kostenübernahme vor der ersten Sitzung direkt bei deiner Versicherung. CSS-Zusatzversicherte können die Behandlung bei mir zudem mit CSS Coins bezahlen – ich bin CSS-Coin-Partnerin.",
+        body: [],
+        layout: "single",
+        density: "tight",
+      },
     ],
     process: {
       title: "So läuft die",
