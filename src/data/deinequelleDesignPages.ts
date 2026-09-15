@@ -624,8 +624,8 @@ export const designPages = {
     heroImageHeight: "100%",
     heroActions: {
       primary: {
-        label: "Kostenfreies Kennenlerngespräch",
-        href: site.bookingUrl,
+        label: "Fragen & Buchung",
+        href: site.whatsappUrl,
         external: true,
       },
       secondary: {
