@@ -561,9 +561,8 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-chrome .nav-links {
       display: flex;
       align-items: center;
-      gap: 2.2rem;
+      gap: 2.8rem;
       flex: 1;
-      min-width: 0;
     }
 
     /* ── CTA (far right) ───────────────────────────────────────── */
@@ -571,18 +570,18 @@ html:has(.deinequelle-design-root) {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      padding: 0.5rem 0.5rem 0.5rem 1rem;
+      padding: 0.58rem 0.58rem 0.58rem 1.35rem;
       background: #ffffff;
       color: var(--text);
       border: 1px solid var(--sand);
       border-radius: 0;
       font-family: var(--f-b);
-      font-size: 0.62rem;
+      font-size: 0.68rem;
       font-weight: 400;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-      white-space: nowrap;
-      max-width: none;
+      text-wrap: balance;
+      max-width: min(100%, 15rem);
       flex-shrink: 0;
       transition:
         background 0.35s var(--ease),
@@ -637,19 +636,18 @@ html:has(.deinequelle-design-root) {
       white-space: nowrap;
     }
 
-    @media (min-width: 961px) and (max-width: 1440px) {
+    @media (min-width: 961px) and (max-width: 1180px) {
       .deinequelle-design-chrome #nav {
         gap: 2rem;
         padding: 0 3rem;
       }
 
       .deinequelle-design-chrome .nav-links {
-        gap: 1.25rem;
+        gap: 1.6rem;
       }
 
-      .deinequelle-design-chrome .nav-cta {
-        font-size: 0.58rem;
-        letter-spacing: 0.05em;
+      .deinequelle-design-chrome .nav-cta-contact {
+        font-size: 0.62rem;
         padding-left: 0.85rem;
       }
     }

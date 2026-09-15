@@ -32,6 +32,7 @@ export function Hero({ page }: { page: DesignPageData }) {
     external: true,
   };
   const showSecondaryHeroAction = page.heroActions?.secondary !== undefined || !page.heroActions;
+  const showWhatsappHeroAction = primaryAction.href !== site.whatsappUrl;
 
   return (
     <>
@@ -103,6 +104,16 @@ export function Hero({ page }: { page: DesignPageData }) {
                 ↗
               </span>
             </a>
+            {showWhatsappHeroAction ? (
+              <a
+                href={site.whatsappUrl}
+                className="btn-ghost"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Fragen & Buchung ↗
+              </a>
+            ) : null}
             {showSecondaryHeroAction ? (
               <a
                 href={secondaryAction.href}

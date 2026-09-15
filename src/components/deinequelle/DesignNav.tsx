@@ -83,15 +83,6 @@ export function DesignNav() {
             ))}
           </span>
         </Link>
-        <a
-          href={site.whatsappUrl}
-          className="mob-link"
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={() => setMenuOpen(false)}
-        >
-          Fragen & Buchung
-        </a>
       </div>
 
       <nav id="nav" aria-label="Hauptnavigation">
@@ -110,17 +101,6 @@ export function DesignNav() {
             {designContactNavItem.label}
           </Link>
         </div>
-        <a
-          href={site.whatsappUrl}
-          className="nav-cta"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Fragen & Buchung
-          <span className="nav-cta-icon" aria-hidden>
-            ↗
-          </span>
-        </a>
         <button
           className={`nav-ham${menuOpen ? " open" : ""}`}
           id="ham"
