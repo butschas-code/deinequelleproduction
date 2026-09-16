@@ -20,6 +20,8 @@ const liveSourceFiles = [
 const rasterPattern =
   /(?:\/images\/|images\/)[^"'`)]+?\.(?:jpe?g|png|webp)/gi;
 
+const originalExtensions = [".png", ".jpg", ".jpeg", ".PNG", ".JPG", ".JPEG"];
+
 function toWebpRef(ref) {
   return ref.replace(/\.(jpe?g|png)$/i, ".webp");
 }
@@ -43,6 +45,39 @@ async function exists(filePath) {
   }
 }
 
+function looksLikeLogo(sourcePath, metadata) {
+  const name = sourcePath.toLowerCase();
+  if (/logo|brand|label|coin|emr|oda|zertifikat|badge/.test(name)) {
+    return true;
+  }
+  const width = metadata.width ?? 0;
+  const height = metadata.height ?? 0;
+  return Boolean(metadata.hasAlpha) && Math.max(width, height) <= 900;
+}
+
+async function findOriginal(webpOrSourcePath) {
+  const base = webpOrSourcePath.replace(/\.(jpe?g|png|webp)$/i, "");
+  const candidates = [];
+  for (const extension of originalExtensions) {
+    const candidate = `${base}${extension}`;
+    if (await exists(candidate)) candidates.push(candidate);
+  }
+  if (candidates.length === 0) return null;
+  const ranked = await Promise.all(
+    candidates.map(async (candidate) => {
+      const metadata = await sharp(candidate).metadata();
+      const size = (await fs.stat(candidate)).size;
+      return {
+        candidate,
+        pixels: (metadata.width ?? 0) * (metadata.height ?? 0),
+        size,
+      };
+    }),
+  );
+  ranked.sort((a, b) => b.pixels - a.pixels || b.size - a.size);
+  return ranked[0].candidate;
+}
+
 async function collectRefs() {
   const refs = new Set();
   for (const relativeFile of liveSourceFiles) {
@@ -57,11 +92,22 @@ async function collectRefs() {
 async function convertToSiblingWebp(sourcePath) {
   const webpPath = sourcePath.replace(/\.(jpe?g|png)$/i, ".webp");
   const metadata = await sharp(sourcePath).metadata();
-  const hasAlpha = Boolean(metadata.hasAlpha);
   const pipeline = sharp(sourcePath).rotate();
-  const buffer = hasAlpha
-    ? await pipeline.webp({ quality: 88, effort: 5, alphaQuality: 90 }).toBuffer()
-    : await pipeline.webp({ quality: 80, effort: 5 }).toBuffer();
+  const buffer = looksLikeLogo(sourcePath, metadata)
+    ? await pipeline
+        .webp({
+          lossless: true,
+          effort: 6,
+        })
+        .toBuffer()
+    : await pipeline
+        .webp({
+          quality: 95,
+          alphaQuality: 100,
+          effort: 6,
+          smartSubsample: false,
+        })
+        .toBuffer();
   await fs.writeFile(webpPath, buffer);
   const original = (await fs.stat(sourcePath)).size;
   return {
@@ -69,21 +115,26 @@ async function convertToSiblingWebp(sourcePath) {
     webpPath,
     original,
     webp: buffer.length,
+    mode: looksLikeLogo(sourcePath, metadata) ? "lossless" : "q95",
   };
 }
 
 const refs = await collectRefs();
 const converted = [];
+const skipped = [];
 const missing = [];
 
+const uniqueSources = new Set();
 for (const ref of refs) {
-  if (/\.webp$/i.test(ref)) continue;
-  const sourcePath = fileFromRef(ref);
-  if (!sourcePath) continue;
-  if (!(await exists(sourcePath))) {
+  const livePath = fileFromRef(ref);
+  if (!livePath) continue;
+  const sourcePath = await findOriginal(livePath);
+  if (!sourcePath) {
     missing.push(ref);
     continue;
   }
+  if (uniqueSources.has(sourcePath)) continue;
+  uniqueSources.add(sourcePath);
   converted.push(await convertToSiblingWebp(sourcePath));
 }
 
@@ -103,8 +154,12 @@ console.log("\nConverted:");
 for (const item of converted) {
   const rel = path.relative(projectRoot, item.webpPath);
   console.log(
-    `${rel}  ${(item.original / 1024).toFixed(0)}KB -> ${(item.webp / 1024).toFixed(0)}KB`,
+    `${item.mode.padEnd(9)} ${rel}  ${(item.original / 1024).toFixed(0)}KB -> ${(item.webp / 1024).toFixed(0)}KB`,
   );
+}
+if (skipped.length) {
+  console.log("\nSkipped:");
+  for (const item of skipped) console.log(item);
 }
 if (missing.length) {
   console.log("\nMissing sources:");
