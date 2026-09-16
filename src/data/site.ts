@@ -18,6 +18,7 @@ export const site = {
   email: "info@deinequelle.com",
   emailAlt: "claudia@deinequelle.com",
   phone: "076 413 80 50",
+  phoneIntl: "+41 76 413 80 50",
   phoneTel: "+41764138050",
   whatsappUrl: "https://wa.me/41764138050",
   address: {
