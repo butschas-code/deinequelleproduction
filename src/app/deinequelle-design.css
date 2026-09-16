@@ -1261,24 +1261,25 @@ html:has(.deinequelle-design-root) {
     }
 
     .deinequelle-design-page .btn-whatsapp-banner {
-      gap: 1.25rem;
-      padding: 1.15rem 1.7rem 1.15rem 1.3rem;
+      gap: 0.55rem;
+      padding: 0.92rem 0.92rem 0.92rem 1.15rem;
+      box-sizing: border-box;
     }
 
     .deinequelle-design-page .btn-whatsapp-banner .btn-whatsapp-icon {
-      width: 2.65rem;
-      height: 2.65rem;
+      width: 27px;
+      height: 27px;
       color: #25d366;
     }
 
     .deinequelle-design-page .btn-whatsapp-banner .btn-whatsapp-copy {
-      gap: 0.22rem;
+      gap: 0.06rem;
     }
 
     .deinequelle-design-page .btn-whatsapp-title {
-      font-size: 1.12rem;
-      font-weight: 500;
-      letter-spacing: 0.04em;
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.09em;
       line-height: 1.15;
       text-transform: uppercase;
       white-space: nowrap;
@@ -1286,12 +1287,16 @@ html:has(.deinequelle-design-root) {
     }
 
     .deinequelle-design-page .btn-whatsapp-sub {
-      font-size: 1.02rem;
+      font-size: 0.68rem;
       font-weight: 400;
       letter-spacing: 0;
-      line-height: 1.25;
+      line-height: 1.15;
       text-transform: none;
       color: var(--text);
+    }
+
+    .deinequelle-design-page .cta-action-stack .btn-whatsapp-banner {
+      padding: 0.94rem 0.94rem 0.94rem 1.15rem;
     }
 
     .deinequelle-design-page .svc-cta-stack {
