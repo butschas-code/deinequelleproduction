@@ -16,7 +16,7 @@ const contactHero: DesignPageData = {
   titleEmphasis: "kommen.",
   intro:
     "Für Kinesiologie, Kinderwunschbegleitung und Yoga erreichst du mich per Formular, E-Mail, Telefon oder WhatsApp/SMS.",
-  heroImage: "/images/hero/home-hero-new.jpg",
+  heroImage: "/images/hero/home-hero-new.webp",
   heroAlt: "Landschaftsstimmung wie auf der Startseite",
   heroObjectPosition: "center center",
   heroObjectPositionMobile: "68% 20%",

@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "images:audit": "node scripts/commit-live-webps.mjs",
+    "images:optimize": "node scripts/commit-live-webps.mjs",
     "reviews:resolve-place-id": "node scripts/fetch-google-place-reviews.mjs --resolve-place-id",
     "reviews:fetch": "node scripts/fetch-google-place-reviews.mjs"
   },

@@ -2,12 +2,12 @@ export const site = {
   name: "DEINE QUELLE",
   tagline: "Mehr Leben",
   logo: {
-    src: "/images/brand/final-logo-horizontal.png",
+    src: "/images/brand/final-logo-horizontal.webp",
     width: 500,
     height: 275,
   },
   logoCompact: {
-    src: "/images/brand/final-logo-horizontal.png",
+    src: "/images/brand/final-logo-horizontal.webp",
     width: 500,
     height: 275,
   },

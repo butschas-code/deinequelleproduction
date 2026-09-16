@@ -1167,6 +1167,50 @@ html:has(.deinequelle-design-root) {
       margin-bottom: 3.8rem;
     }
 
+    .deinequelle-design-page .hero-cta-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.15rem;
+      margin-bottom: 3.8rem;
+    }
+
+    .deinequelle-design-page .hero-cta-stack .hero-actions {
+      margin-bottom: 0;
+    }
+
+    .deinequelle-design-page .btn-whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      padding: 0.88rem 1.35rem;
+      background: #25d366;
+      color: #ffffff;
+      border: 0;
+      font-family: var(--f-b);
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      line-height: 1.2;
+      text-decoration: none;
+      box-shadow: 0 8px 22px rgba(37, 211, 102, 0.28);
+      transition: background 0.25s var(--ease), transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
+    }
+
+    .deinequelle-design-page .btn-whatsapp:hover {
+      background: #1ebe57;
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(37, 211, 102, 0.34);
+    }
+
+    .deinequelle-design-page .btn-whatsapp-icon {
+      width: 1.35rem;
+      height: 1.35rem;
+      flex-shrink: 0;
+    }
+
     .deinequelle-design-page .hero-location {
       font-family: var(--f-d);
       font-size: 1.08rem;
@@ -3674,6 +3718,19 @@ html:has(.deinequelle-design-root) {
       opacity: 1;
     }
 
+    .deinequelle-design-page .svc-logo-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.75rem 2.4rem;
+      margin-top: 1.8rem;
+    }
+
+    .deinequelle-design-page .svc-logo-strip .partner-logo {
+      height: 3.4rem;
+      opacity: 1;
+    }
+
     .deinequelle-design-page .footer-col ul {
       display: flex;
       flex-direction: column;
@@ -4140,6 +4197,15 @@ html:has(.deinequelle-design-root) {
         align-items: stretch;
         gap: 1rem;
         margin-bottom: 2.5rem;
+      }
+
+      .deinequelle-design-page .hero-cta-stack {
+        align-items: stretch;
+        margin-bottom: 2.5rem;
+      }
+
+      .deinequelle-design-page .btn-whatsapp {
+        width: 100%;
       }
 
       .deinequelle-design-page .hero-actions .btn-primary,

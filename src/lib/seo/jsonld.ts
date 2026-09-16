@@ -40,7 +40,7 @@ export function buildLocalBusinessJsonLd(opts: {
     url: site.url,
     telephone: site.phoneTel,
     email: site.email,
-    image: `${site.url}/images/legacy/photos/claudia-portrait-036.jpg`,
+    image: `${site.url}/images/legacy/photos/claudia-portrait-036.webp`,
     address: {
       "@type": "PostalAddress",
       streetAddress: site.address.street,
