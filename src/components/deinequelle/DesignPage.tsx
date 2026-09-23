@@ -50,17 +50,13 @@ export function Hero({ page }: { page: DesignPageData }) {
       ? undefined
       : `hero-${pageSlugClass}`;
   const trustSeparator = ["/leistungen/sport-kinesiologie", "/leistungen/yoga"].includes(page.slug) ? "—" : "•";
-  const primaryAction = page.heroActions?.primary ?? {
-    label: page.finalCta?.primaryLabel ?? "Kostenfreies Kennenlerngespräch",
-    href: page.finalCta?.primaryHref ?? "/kontakt",
-    external: page.finalCta?.primaryExternal,
-  };
-  const secondaryAction = page.heroActions?.secondary ?? {
-    label: "Termin online buchen",
-    href: site.bookingUrl,
-    external: true,
-  };
-  const showSecondaryHeroAction = page.heroActions?.secondary !== undefined || !page.heroActions;
+  const primaryAction = page.heroActions
+    ? page.heroActions.primary
+    : {
+        label: page.finalCta?.primaryLabel ?? "Kostenfreies Kennenlerngespräch",
+        href: page.finalCta?.primaryHref ?? "/kontakt",
+        external: page.finalCta?.primaryExternal,
+      };
 
   return (
     <>
@@ -120,31 +116,21 @@ export function Hero({ page }: { page: DesignPageData }) {
           </h1>
           <p className="hero-sub reveal d2">{page.intro}</p>
           <div className="hero-cta-stack reveal d3">
-            <div className="hero-actions">
-              <a
-                href={primaryAction.href}
-                className="btn-primary"
-                target={primaryAction.external ? "_blank" : undefined}
-                rel={primaryAction.external ? "noopener noreferrer" : undefined}
-              >
-                {primaryAction.label}
-                {" "}
-                <span className="btn-pi" aria-hidden>
-                  ↗
-                </span>
-              </a>
-              {showSecondaryHeroAction ? (
+            {primaryAction ? (
+              <div className="hero-actions">
                 <a
-                  href={secondaryAction.href}
-                  className="btn-ghost"
-                  target={secondaryAction.external ? "_blank" : undefined}
-                  rel={secondaryAction.external ? "noopener noreferrer" : undefined}
+                  href={primaryAction.href}
+                  className="btn-primary"
+                  target={primaryAction.external ? "_blank" : undefined}
+                  rel={primaryAction.external ? "noopener noreferrer" : undefined}
                 >
-                  {secondaryAction.label}
-                  {secondaryAction.href.startsWith("#") ? "" : " ↗"}
+                  {primaryAction.label}{" "}
+                  <span className="btn-pi" aria-hidden>
+                    ↗
+                  </span>
                 </a>
-              ) : null}
-            </div>
+              </div>
+            ) : null}
             <WhatsappHeroButton />
           </div>
         </div>

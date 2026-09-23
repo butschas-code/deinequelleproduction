@@ -28,8 +28,7 @@ export type DesignPageData = {
   /** Hero title emphasis color — default sage (green) */
   heroEmphasisTone?: "sage" | "wine";
   heroActions?: {
-    primary: DesignPageAction;
-    secondary?: DesignPageAction;
+    primary?: DesignPageAction;
   };
   trustItems?: string[];
   quote?: string;
@@ -185,11 +184,6 @@ export const designPages = {
     heroActions: {
       primary: {
         label: "Kostenfreies Kennenlerngespräch",
-        href: site.bookingUrl,
-        external: true,
-      },
-      secondary: {
-        label: "Termin online buchen",
         href: site.bookingUrl,
         external: true,
       },
@@ -433,11 +427,6 @@ export const designPages = {
         href: site.bookingUrl,
         external: true,
       },
-      secondary: {
-        label: "Termin online buchen",
-        href: site.bookingUrl,
-        external: true,
-      },
     },
     quote: "Hier darfst du ankommen. Mit allem, was gerade da ist.",
     quoteAfterSectionId: "emotionaler-einstieg",
@@ -649,13 +638,7 @@ export const designPages = {
     heroObjectPosition: "40% center",
     heroObjectPositionMobile: "42% 28%",
     heroImageHeight: "100%",
-    heroActions: {
-      primary: {
-        label: "Termin online buchen",
-        href: site.bookingUrl,
-        external: true,
-      },
-    },
+    heroActions: {},
     trustItems: [
       "Hatha Yoga insp. aus der Satyananda Yoga®-Lehre",
       "Studio und online",

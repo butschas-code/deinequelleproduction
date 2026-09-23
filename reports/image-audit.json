@@ -1,0 +1,799 @@
+{
+  "generatedAt": "2026-07-30T07:14:19.209Z",
+  "scope": {
+    "note": "Live image references discovered from the current public design pages, shared site data, homepage HTML source, JSON-LD image, and contact page.",
+    "sourceFiles": [
+      "src/data/site.ts",
+      "src/data/deinequelleDesignPages.ts",
+      "src/content/deinequelle-design/index.html",
+      "src/lib/seo/jsonld.ts",
+      "src/app/(design)/kontakt/page.tsx"
+    ]
+  },
+  "summary": {
+    "publicRasterImageCount": 300,
+    "publicRasterBytes": 204386404,
+    "publicRasterSize": "194.9 MB",
+    "liveRasterImageCount": 27,
+    "liveRasterBytes": 18104096,
+    "liveRasterSize": "17.3 MB",
+    "liveVectorImageCount": 2,
+    "missingLiveImageCount": 0
+  },
+  "liveImages": [
+    {
+      "ref": "/images/Claudia/claudia-dimmler-Kinesiologie-Adligenswil.jpg",
+      "sources": [
+        "src/content/deinequelle-design/index.html",
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 116960,
+      "size": "114.2 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 800,
+        "height": 800,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/Claudia/claudia_dimmler_3.jpg",
+      "sources": [
+        "src/content/deinequelle-design/index.html",
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 261940,
+      "size": "255.8 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 3288,
+        "height": 1850,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/Kinesiology/claudia-302.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 1198082,
+      "size": "1.14 MB",
+      "kind": "raster",
+      "metadata": {
+        "width": 1920,
+        "height": 1280,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/Kinesiology/claudia_dimmler_cj_2022-117_resize.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 555520,
+      "size": "542.5 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 2828,
+        "height": 1884,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/brand/final-logo-horizontal.png",
+      "sources": [
+        "src/content/deinequelle-design/index.html",
+        "src/data/site.ts"
+      ],
+      "ext": ".png",
+      "exists": true,
+      "bytes": 111676,
+      "size": "109.1 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 500,
+        "height": 275,
+        "format": "png",
+        "hasAlpha": true
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/hero/Kinesiologie_hero.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 204827,
+      "size": "200.0 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 1672,
+        "height": 941,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/hero/about_hero.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 889658,
+      "size": "868.8 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 3160,
+        "height": 1778,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/hero/home-hero-mobile.jpg",
+      "sources": [
+        "src/content/deinequelle-design/index.html"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 337142,
+      "size": "329.2 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 1672,
+        "height": 941,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/hero/home-hero-new.jpg",
+      "sources": [
+        "src/app/(design)/kontakt/page.tsx",
+        "src/content/deinequelle-design/index.html"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 337142,
+      "size": "329.2 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 1672,
+        "height": 941,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/hero/review/02-editorial-therapy.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 303131,
+      "size": "296.0 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 2752,
+        "height": 1536,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/hero/yoga hero.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 280178,
+      "size": "273.6 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 1672,
+        "height": 941,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/layout images/kinderwunsch-fehlgeburt-trauer.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 272156,
+      "size": "265.8 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 2752,
+        "height": 1536,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/layout images/kinderwunsch-koerper-bewusst-tee.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 2298275,
+      "size": "2.19 MB",
+      "kind": "raster",
+      "metadata": {
+        "width": 2048,
+        "height": 2048,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/layout images/kinderwunsch-partnerschaft-haende.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 761671,
+      "size": "743.8 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 2048,
+        "height": 2048,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/legacy/photos/claudia-portrait-036.jpg",
+      "sources": [
+        "src/lib/seo/jsonld.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 1346995,
+      "size": "1.28 MB",
+      "kind": "raster",
+      "metadata": {
+        "width": 1920,
+        "height": 1280,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-347_klein.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 908220,
+      "size": "886.9 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 1920,
+        "height": 1280,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-357_klein.jpg",
+      "sources": [
+        "src/content/deinequelle-design/index.html",
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 1012597,
+      "size": "988.9 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 1920,
+        "height": 1280,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-425_klein.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 827528,
+      "size": "808.1 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 1920,
+        "height": 1280,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/optimized/layout images/pregnant-xl.webp",
+      "sources": [
+        "src/content/deinequelle-design/index.html",
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".webp",
+      "exists": true,
+      "bytes": 1194094,
+      "size": "1.14 MB",
+      "kind": "raster",
+      "metadata": {
+        "width": 1672,
+        "height": 941,
+        "format": "webp",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/optimized/yoga/Claudia_breath-lg.webp",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".webp",
+      "exists": true,
+      "bytes": 1295818,
+      "size": "1.24 MB",
+      "kind": "raster",
+      "metadata": {
+        "width": 1086,
+        "height": 1448,
+        "format": "webp",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/other/Kinesuisse_Logo_Byline_rechts_Black_RGB.svg",
+      "sources": [
+        "src/content/deinequelle-design/index.html",
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".svg",
+      "exists": true,
+      "bytes": 29427,
+      "size": "28.7 KB",
+      "kind": "vector",
+      "metadata": null,
+      "error": null
+    },
+    {
+      "ref": "/images/other/OdA_KT_Label_DE_Diplom.jpg",
+      "sources": [
+        "src/content/deinequelle-design/index.html",
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 706566,
+      "size": "690.0 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 3163,
+        "height": 3163,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/other/about_block_4.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 839299,
+      "size": "819.6 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 1638,
+        "height": 2048,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/other/css coin.png",
+      "sources": [
+        "src/content/deinequelle-design/index.html"
+      ],
+      "ext": ".png",
+      "exists": true,
+      "bytes": 21914,
+      "size": "21.4 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 377,
+        "height": 421,
+        "format": "png",
+        "hasAlpha": true
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/other/emr_zertifiziert_gs.svg",
+      "sources": [
+        "src/content/deinequelle-design/index.html",
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".svg",
+      "exists": true,
+      "bytes": 5089,
+      "size": "4.97 KB",
+      "kind": "vector",
+      "metadata": null,
+      "error": null
+    },
+    {
+      "ref": "/images/sections/sportkinesiologie-athletes-hero.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 672555,
+      "size": "656.8 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 2752,
+        "height": 1536,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/yoga/03.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 274302,
+      "size": "267.9 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 853,
+        "height": 1280,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/yoga/yoga-nidra-fuer-wen.jpg",
+      "sources": [
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 637735,
+      "size": "622.8 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 2752,
+        "height": 1536,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    },
+    {
+      "ref": "/images/yoga/yoga-raum-claudia-dimmler.jpg",
+      "sources": [
+        "src/content/deinequelle-design/index.html",
+        "src/data/deinequelleDesignPages.ts"
+      ],
+      "ext": ".jpg",
+      "exists": true,
+      "bytes": 438115,
+      "size": "427.8 KB",
+      "kind": "raster",
+      "metadata": {
+        "width": 2972,
+        "height": 1440,
+        "format": "jpeg",
+        "hasAlpha": false
+      },
+      "error": null
+    }
+  ],
+  "largestPublicImages": [
+    {
+      "ref": "/images/new/Gemini_Generated_Image_7253nr7253nr7253.png",
+      "bytes": 7780896,
+      "size": "7.42 MB"
+    },
+    {
+      "ref": "/images/legacy/photos/hatha-yoga-preview.jpg",
+      "bytes": 4128521,
+      "size": "3.94 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2025/02/Bild-Ausschreibung.png",
+      "bytes": 2531983,
+      "size": "2.41 MB"
+    },
+    {
+      "ref": "/images/hero/Kinesiologie_hero.png",
+      "bytes": 2489050,
+      "size": "2.37 MB"
+    },
+    {
+      "ref": "/images/layout images/kinderwunsch-koerper-bewusst-tee.jpg",
+      "bytes": 2298275,
+      "size": "2.19 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-077_klein.jpg",
+      "bytes": 2020441,
+      "size": "1.93 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/20160813_151442976_iOS-rotated.jpg",
+      "bytes": 1937189,
+      "size": "1.85 MB"
+    },
+    {
+      "ref": "/images/layout images/serne sunlit 1.png",
+      "bytes": 1908631,
+      "size": "1.82 MB"
+    },
+    {
+      "ref": "/images/brand/deinequelle-new-logo-09-trans.png",
+      "bytes": 1899514,
+      "size": "1.81 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-109_klein.jpg",
+      "bytes": 1839814,
+      "size": "1.75 MB"
+    },
+    {
+      "ref": "/images/yoga/Claudia_breath.png",
+      "bytes": 1798260,
+      "size": "1.71 MB"
+    },
+    {
+      "ref": "/images/layout images/pregnant.png",
+      "bytes": 1686192,
+      "size": "1.61 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-089_klein.jpg",
+      "bytes": 1426887,
+      "size": "1.36 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-088_klein.jpg",
+      "bytes": 1361802,
+      "size": "1.30 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-084_klein.jpg",
+      "bytes": 1358641,
+      "size": "1.30 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-420_klein.jpg",
+      "bytes": 1350077,
+      "size": "1.29 MB"
+    },
+    {
+      "ref": "/images/legacy/photos/claudia-portrait-036.jpg",
+      "bytes": 1346995,
+      "size": "1.28 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-036_klein-1.jpg",
+      "bytes": 1346995,
+      "size": "1.28 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-036_klein.jpg",
+      "bytes": 1346995,
+      "size": "1.28 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-278_klein.jpg",
+      "bytes": 1307685,
+      "size": "1.25 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-298_klein.jpg",
+      "bytes": 1287799,
+      "size": "1.23 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-054_klein.jpg",
+      "bytes": 1283631,
+      "size": "1.22 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-276_klein.jpg",
+      "bytes": 1278488,
+      "size": "1.22 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-065_klein-2.jpg",
+      "bytes": 1260820,
+      "size": "1.20 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-423_klein.jpg",
+      "bytes": 1227942,
+      "size": "1.17 MB"
+    },
+    {
+      "ref": "/images/Kinesiology/claudia-302.jpg",
+      "bytes": 1198082,
+      "size": "1.14 MB"
+    },
+    {
+      "ref": "/images/legacy/photos/claudia-302.jpg",
+      "bytes": 1198082,
+      "size": "1.14 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-302_klein.jpg",
+      "bytes": 1198082,
+      "size": "1.14 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-065_klein.jpg",
+      "bytes": 1161509,
+      "size": "1.11 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-167_klein.jpg",
+      "bytes": 1152908,
+      "size": "1.10 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-400_klein.jpg",
+      "bytes": 1142436,
+      "size": "1.09 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-227_klein.jpg",
+      "bytes": 1141367,
+      "size": "1.09 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-392_klein.jpg",
+      "bytes": 1127448,
+      "size": "1.08 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-375_klein.jpg",
+      "bytes": 1115519,
+      "size": "1.06 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-222_klein.jpg",
+      "bytes": 1108080,
+      "size": "1.06 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-229_klein.jpg",
+      "bytes": 1076342,
+      "size": "1.03 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-179_klein.jpg",
+      "bytes": 1071048,
+      "size": "1.02 MB"
+    },
+    {
+      "ref": "/images/legacy/photos/claudia-173.jpg",
+      "bytes": 1068980,
+      "size": "1.02 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-173_klein.jpg",
+      "bytes": 1068980,
+      "size": "1.02 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-351_klein.jpg",
+      "bytes": 1066468,
+      "size": "1.02 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-233_klein.jpg",
+      "bytes": 1058515,
+      "size": "1.01 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-186_klein.jpg",
+      "bytes": 1058145,
+      "size": "1.01 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-120_klein.jpg",
+      "bytes": 1056561,
+      "size": "1.01 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-385_klein.jpg",
+      "bytes": 1055356,
+      "size": "1.01 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-185_klein.jpg",
+      "bytes": 1050144,
+      "size": "1.00 MB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-189_klein.jpg",
+      "bytes": 1044839,
+      "size": "1020.4 KB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-144_klein.jpg",
+      "bytes": 1038808,
+      "size": "1014.5 KB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-131_klein.jpg",
+      "bytes": 1037497,
+      "size": "1013.2 KB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-207_klein.jpg",
+      "bytes": 1029538,
+      "size": "1005.4 KB"
+    },
+    {
+      "ref": "/images/legacy/wp/2022/10/claudia_dimmler_cj_2022-306_klein.jpg",
+      "bytes": 1027697,
+      "size": "1003.6 KB"
+    }
+  ]
+}

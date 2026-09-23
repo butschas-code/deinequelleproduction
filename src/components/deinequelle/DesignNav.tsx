@@ -83,6 +83,15 @@ export function DesignNav() {
             ))}
           </span>
         </Link>
+        <a
+          href={site.bookingUrl}
+          className="mob-link mob-link-booking"
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => setMenuOpen(false)}
+        >
+          Termin buchen
+        </a>
       </div>
 
       <nav id="nav" aria-label="Hauptnavigation">
@@ -101,6 +110,17 @@ export function DesignNav() {
             {designContactNavItem.label}
           </Link>
         </div>
+        <a
+          href={site.bookingUrl}
+          className="nav-cta"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Termin buchen
+          <span className="nav-cta-icon" aria-hidden>
+            ↗
+          </span>
+        </a>
         <button
           className={`nav-ham${menuOpen ? " open" : ""}`}
           id="ham"

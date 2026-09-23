@@ -26,10 +26,6 @@ const contactHero: DesignPageData = {
       label: "Formular öffnen",
       href: "#kontaktformular",
     },
-    secondary: {
-      label: "Kontaktwege ansehen",
-      href: "#kontaktformular",
-    },
   },
   finalCta: {
     title: "Kontakt",
