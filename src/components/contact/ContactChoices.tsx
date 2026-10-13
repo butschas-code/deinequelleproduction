@@ -3,10 +3,17 @@ import { WhatsAppIcon } from "./WhatsAppIcon";
 import { site } from "@/data/site";
 import styles from "./ContactChoices.module.css";
 
-export function ContactChoices({ topic = "Kinesiologie" }: { topic?: "Kinesiologie" | "Yoga" }) {
-  const heading = topic === "Yoga"
-    ? "Fragen zu Yoga oder deiner ersten Lektion?"
-    : "Fragen zur Kinesiologie oder Ersttermin?";
+const headings = {
+  Kinesiologie: "Fragen zur Kinesiologie oder Ersttermin?",
+  Yoga: "Fragen zu Yoga oder deiner ersten Lektion?",
+  Kinderwunsch: "Fragen zur Kinderwunschbegleitung?",
+  Sportkinesiologie: "Fragen zur Sport-Kinesiologie?",
+} as const;
+
+export type ContactTopic = keyof typeof headings;
+
+export function ContactChoices({ topic }: { topic: ContactTopic }) {
+  const heading = headings[topic];
 
   return (
     <div className={styles.panel} role="group" aria-label={heading}>

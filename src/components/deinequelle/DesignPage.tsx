@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import Link from "next/link";
 import { ContactAction } from "@/components/contact/ContactAction";
-import { ContactChoices } from "@/components/contact/ContactChoices";
+import { ContactChoices, type ContactTopic } from "@/components/contact/ContactChoices";
 import { WhatsAppIcon } from "@/components/contact/WhatsAppIcon";
 import { site } from "@/data/site";
 import type { DesignPageData } from "@/data/deinequelleDesignPages";
@@ -16,6 +16,13 @@ import {
 import { YogaAudioPlayer } from "@/components/deinequelle/YogaAudioPlayer";
 
 export { DesignNav } from "@/components/deinequelle/DesignNav";
+
+const contactTopicsBySlug: Record<string, ContactTopic> = {
+  "/leistungen/kinesiologie": "Kinesiologie",
+  "/leistungen/yoga": "Yoga",
+  "/leistungen/kinderwunsch": "Kinderwunsch",
+  "/leistungen/sport-kinesiologie": "Sportkinesiologie",
+};
 
 function WhatsappHeroButton() {
   return (
@@ -42,6 +49,7 @@ function WhatsappHeroButton() {
 }
 
 export function Hero({ page }: { page: DesignPageData }) {
+  const contactTopic = contactTopicsBySlug[page.slug];
   const pageSlugClass = page.slug.replace(/^\/+/, "").replace(/[^a-z0-9]+/gi, "-").replace(/-$/, "");
   const slugClass =
     page.slug === "/"
@@ -114,8 +122,8 @@ export function Hero({ page }: { page: DesignPageData }) {
           </h1>
           <p className="hero-sub reveal d2">{page.intro}</p>
           <div className="hero-cta-stack reveal d3">
-            {["/leistungen/kinesiologie", "/leistungen/yoga"].includes(page.slug) ? (
-              <ContactChoices topic={page.slug === "/leistungen/yoga" ? "Yoga" : "Kinesiologie"} />
+            {contactTopic ? (
+              <ContactChoices topic={contactTopic} />
             ) : (
               <>
                 {primaryAction ? (
