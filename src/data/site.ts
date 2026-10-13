@@ -34,6 +34,7 @@ export const site = {
     longitude: 8.378076,
   },
   bookingUrl: "https://booking.masuyo.ch/dimmler",
+  infoConversationHref: "#infogespraech",
   mapsEmbedUrl:
     "https://maps.google.com/maps?q=Meggerstrasse%204a%2C%206043%20Adligenswil%2C%20Schweiz&t=m&z=14&output=embed&iwloc=near",
   mapsDirectionsUrl:

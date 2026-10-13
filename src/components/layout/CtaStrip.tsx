@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { ContactAction } from "@/components/contact/ContactAction";
 import { site } from "@/data/site";
 import { SectionReveal } from "@/components/motion/SectionReveal";
 
@@ -28,14 +28,14 @@ export function CtaStrip({ lead = DEFAULT_LEAD, sub = DEFAULT_SUB }: Props) {
           {sub}
         </p>
         <div className="mx-auto mt-8 flex w-full max-w-md flex-col gap-3 sm:mt-10 sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center md:mt-12">
-          <Link
-            href={site.bookingUrl}
+          <ContactAction
+            href={site.infoConversationHref}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex min-h-[48px] w-full min-w-0 items-center justify-center rounded-full bg-brand px-6 text-center text-[14px] font-semibold leading-snug text-white shadow-[0_8px_30px_-8px_rgba(30,110,72,0.42)] transition duration-200 hover:bg-brand-hover sm:w-auto sm:max-w-[20rem]"
           >
-            Kostenfreies Kennenlerngespräch
-          </Link>
+            Kostenfreies Infogespräch
+          </ContactAction>
           <a
             href={site.bookingUrl}
             target="_blank"

@@ -1,3 +1,4 @@
+import { InfoConversationDialog } from "@/components/contact/InfoConversationDialog";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { AmbientShell } from "@/components/ambient/AmbientShell";
@@ -16,6 +17,7 @@ export default function SiteLayout({
         <div className="relative z-[2] flex flex-1 flex-col">{children}</div>
       </div>
       <SiteFooter />
+      <InfoConversationDialog />
       <ScrollToTopButton variant="site" />
     </div>
   );

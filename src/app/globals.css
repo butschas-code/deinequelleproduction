@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body:has(dialog[data-info-conversation-dialog][open]) {
+  overflow: hidden;
+}
+
 :root {
   /* Haupt-Raster: etwas luftiger auf sehr grossen Screens */
   --layout-max: 61.25rem; /* 980px */

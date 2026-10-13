@@ -16,6 +16,10 @@ interface GoogleAnalyticsProps {
 
 export const GA_OPTOUT_EVENT = "deinequelle:ga-optout";
 
+const GOOGLE_ADS_TAG_ID = "AW-18422643465";
+const WHATSAPP_CONVERSION_DESTINATION =
+  "AW-18422643465/FS3jCJyEgI0dEIn2zNBE";
+
 export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
   useEffect(() => {
     if (!gaId) return;
@@ -33,33 +37,39 @@ export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
       }
     }
 
-    function handleBookingClick(e: MouseEvent) {
-      const anchor = (e.target as HTMLElement | null)?.closest<HTMLAnchorElement>(
-        'a[href*="booking.masuyo.ch"]'
+    function handleConversionClick(e: MouseEvent) {
+      const anchor = (e.target as Element | null)?.closest<HTMLAnchorElement>(
+        'a[href*="booking.masuyo.ch"], a[href^="https://wa.me/"]'
       );
-      if (!anchor) return;
+      if (!anchor || typeof window.gtag !== "function") return;
 
-      if (typeof window.gtag === "function") {
-        const label =
-          anchor.innerText?.trim() ||
-          anchor.getAttribute("aria-label") ||
-          "Termin online buchen";
+      const isBooking = anchor.href.includes("booking.masuyo.ch");
+      const label =
+        anchor.innerText?.trim() ||
+        anchor.getAttribute("aria-label") ||
+        (isBooking ? "Termin online buchen" : "WhatsApp");
 
-        window.gtag("event", "cta_booking_click", {
-          event_category: "conversion",
-          event_label: label,
-          page_location: window.location.href,
-          link_url: anchor.href,
+      window.gtag("event", isBooking ? "cta_booking_click" : "cta_whatsapp_click", {
+        send_to: gaId,
+        event_category: "conversion",
+        event_label: label,
+        page_location: window.location.href,
+        link_url: anchor.href,
+      });
+
+      if (!isBooking) {
+        window.gtag("event", "conversion", {
+          send_to: WHATSAPP_CONVERSION_DESTINATION,
         });
       }
     }
 
     window.addEventListener(GA_OPTOUT_EVENT, handleOptOutChange);
-    document.addEventListener("click", handleBookingClick, { capture: true });
+    document.addEventListener("click", handleConversionClick, { capture: true });
 
     return () => {
       window.removeEventListener(GA_OPTOUT_EVENT, handleOptOutChange);
-      document.removeEventListener("click", handleBookingClick, { capture: true });
+      document.removeEventListener("click", handleConversionClick, { capture: true });
     };
   }, [gaId]);
 
@@ -109,6 +119,7 @@ export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
 
             gtag('js', new Date());
             gtag('config', '${gaId}');
+            gtag('config', '${GOOGLE_ADS_TAG_ID}');
           `,
         }}
       />

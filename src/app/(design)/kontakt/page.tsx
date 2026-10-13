@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ContactForm } from "@/components/contact/ContactForm";
 import { DesignChromePortal } from "@/components/deinequelle/DesignChromePortal";
 import { DesignFooter, DesignNav, Hero } from "@/components/deinequelle/DesignPage";
 import type { DesignPageData } from "@/data/deinequelleDesignPages";
@@ -105,45 +106,9 @@ export default function KontaktPage() {
                 </address>
               </div>
 
-              <form className="dq-form reveal d1" action="https://submit-form.com/FliKKBoxX" method="POST">
-                <input type="hidden" name="_subject" value="Neue Anfrage über deinequelle.com" />
-                <input type="hidden" name="_redirect" value={`${site.url}/kontakt`} />
-                <div className="dq-form-row">
-                  <label>
-                    Name
-                    <input name="name" type="text" autoComplete="name" required />
-                  </label>
-                  <label>
-                    E-Mail
-                    <input name="email" type="email" autoComplete="email" required />
-                  </label>
-                </div>
-                <div className="dq-form-row">
-                  <label>
-                    Telefon
-                    <input name="phone" type="tel" autoComplete="tel" />
-                  </label>
-                  <label>
-                    Thema
-                    <select name="topic" defaultValue="Kinesiologie">
-                      <option>Kinesiologie</option>
-                      <option>Kinderwunsch</option>
-                      <option>Yoga</option>
-                      <option>Allgemeine Anfrage</option>
-                    </select>
-                  </label>
-                </div>
-                <label>
-                  Nachricht
-                  <textarea name="message" rows={8} required />
-                </label>
-                <button type="submit" className="btn-dark dq-submit">
-                  Anfrage senden
-                  <span className="btn-pi" aria-hidden>
-                    ↗
-                  </span>
-                </button>
-              </form>
+              <div className="reveal d1">
+                <ContactForm />
+              </div>
             </div>
           </div>
         </section>

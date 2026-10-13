@@ -183,9 +183,8 @@ export const designPages = {
     heroImageHeight: "100%",
     heroActions: {
       primary: {
-        label: "Kostenfreies Kennenlerngespräch",
-        href: site.bookingUrl,
-        external: true,
+        label: "Kostenfreies Infogespräch",
+        href: site.infoConversationHref,
       },
     },
     quote:
@@ -398,9 +397,8 @@ export const designPages = {
       emphasis: "zuzuhören?",
       body:
         "Dein Körper spricht mit dir, manchmal leise, manchmal deutlich. Wenn du seine Signale besser verstehen und wieder mehr Balance, Klarheit und Wohlbefinden in dein Leben bringen möchtest, begleite ich dich gerne ein Stück auf deinem Weg.",
-      primaryLabel: "Kostenfreies Kennenlerngespräch",
-      primaryHref: site.bookingUrl,
-      primaryExternal: true,
+      primaryLabel: "Kostenfreies Infogespräch",
+      primaryHref: site.infoConversationHref,
       secondaryLabel: "Termin online buchen",
       secondaryHref: site.bookingUrl,
       secondaryExternal: true,
@@ -423,9 +421,8 @@ export const designPages = {
     heroReadableText: true,
     heroActions: {
       primary: {
-        label: "Kostenfreies Kennenlerngespräch",
-        href: site.bookingUrl,
-        external: true,
+        label: "Kostenfreies Infogespräch",
+        href: site.infoConversationHref,
       },
     },
     quote: "Hier darfst du ankommen. Mit allem, was gerade da ist.",
@@ -617,9 +614,8 @@ export const designPages = {
       emphasis: "nicht allein\ngehen",
       body:
         "Kinderwunsch kann ein stiller Schmerz sein. Hier bekommt er Raum. Ich begleite dich achtsam, körperorientiert und mit viel Respekt für deinen persönlichen Weg.",
-      primaryLabel: "Kostenfreies Kennenlerngespräch",
-      primaryHref: site.bookingUrl,
-      primaryExternal: true,
+      primaryLabel: "Kostenfreies Infogespräch",
+      primaryHref: site.infoConversationHref,
       secondaryLabel: "Termin online buchen",
       secondaryHref: site.bookingUrl,
       secondaryExternal: true,
@@ -817,9 +813,8 @@ export const designPages = {
           "Freie Plätze, Online-Teilnahme und Anmeldung: info@deinequelle.com oder 076 413 80 50.",
         noteVariant: "callout",
         cta: {
-          label: "Kostenfreies Kennenlerngespräch",
-          href: site.bookingUrl,
-          external: true,
+          label: "Kostenfreies Infogespräch",
+          href: site.infoConversationHref,
           tone: "accent",
         },
       },
@@ -893,9 +888,8 @@ export const designPages = {
       emphasis: "für dich",
       body:
         "Wenn du dir mehr Ruhe, Kraft und Verbindung zu deinem Körper wünschst, freue ich mich, dich im Yoga zu begleiten.",
-      primaryLabel: "Kostenfreies Kennenlerngespräch",
-      primaryHref: site.bookingUrl,
-      primaryExternal: true,
+      primaryLabel: "Kostenfreies Infogespräch",
+      primaryHref: site.infoConversationHref,
     },
   },
   sport: {
@@ -929,9 +923,8 @@ export const designPages = {
           "Sie kann ergänzend mit Trainerinnen und Trainern, Ärztinnen und Ärzten, Physiotherapeutinnen und Physiotherapeuten sowie weiteren gesundheitsfördernden Therapieformen zusammenspielen.",
         ],
         cta: {
-          label: "Kostenfreies Kennenlerngespräch",
-          href: site.bookingUrl,
-          external: true,
+          label: "Kostenfreies Infogespräch",
+          href: site.infoConversationHref,
           tone: "sage",
         },
         items: [
@@ -967,9 +960,8 @@ export const designPages = {
       title: "Bring Bewegung",
       emphasis: "und inneres\nGleichgewicht zusammen",
       body: "Sport-Kinesiologie kann dich ergänzend zu Training, Medizin und Physiotherapie unterstützen.",
-      primaryLabel: "Kostenfreies Kennenlerngespräch",
-      primaryHref: site.bookingUrl,
-      primaryExternal: true,
+      primaryLabel: "Kostenfreies Infogespräch",
+      primaryHref: site.infoConversationHref,
     },
   },
   ueberMich: {
@@ -987,9 +979,8 @@ export const designPages = {
     heroImageHeight: "100%",
     heroActions: {
       primary: {
-        label: "Kostenfreies Kennenlerngespräch",
-        href: site.bookingUrl,
-        external: true,
+        label: "Kostenfreies Infogespräch",
+        href: site.infoConversationHref,
       },
     },
     trustItems: [
@@ -1144,9 +1135,8 @@ export const designPages = {
       emphasis: "sprechen",
       body:
         "Wenn du spürst, dass du dir Unterstützung wünschst, freue ich mich über deine Nachricht. Gemeinsam schauen wir, was du gerade brauchst und welcher Weg für dich passend ist.",
-      primaryLabel: "Kostenfreies Kennenlerngespräch",
-      primaryHref: site.bookingUrl,
-      primaryExternal: true,
+      primaryLabel: "Kostenfreies Infogespräch",
+      primaryHref: site.infoConversationHref,
       secondaryLabel: "Termin online buchen",
       secondaryHref: site.bookingUrl,
       secondaryExternal: true,

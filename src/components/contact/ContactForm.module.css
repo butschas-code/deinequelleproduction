@@ -1,0 +1,74 @@
+.form.form {
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  border: 1px solid rgba(221, 209, 188, 0.8);
+  background: #fdfbf7;
+  color: #2d241e;
+  font-family: var(--font-body, var(--font-lato, sans-serif));
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.form .signature {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin: 0 0 1.5rem;
+  font-style: normal;
+}
+.form .portrait {
+  width: 96px;
+  height: 96px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+.form .signatureDetails { display: grid; gap: 0.25rem; min-width: 0; }
+.form .signatureLine { display: flex; align-items: baseline; gap: 0.25rem 1.25rem; min-width: 0; }
+.form .signatureName { font-size: 1.25rem; font-weight: 600; }
+.form .contactLinks { display: flex; column-gap: 1.25rem; row-gap: 0.1rem; }
+.form .signatureDetails a {
+  width: fit-content;
+  color: inherit;
+  overflow-wrap: anywhere;
+  text-decoration: underline;
+  text-decoration-color: rgba(74, 112, 72, 0.35);
+  text-underline-offset: 0.2em;
+}
+.form .signatureDetails a:hover { color: #4a7048; text-decoration-color: currentColor; }
+.form .signatureDetails a:focus-visible { outline: 2px solid #4a7048; outline-offset: 4px; }
+.form .signatureDetails span { color: #64564b; }
+
+.form .row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.form .field { display: grid; gap: 0.5rem; margin-bottom: 1.2rem; }
+.form .field input, .form .field select, .form .field textarea {
+  width: 100%; min-width: 0; border: 1px solid #ddd1bc; border-radius: 0;
+  background: #faf7f2; padding: 0.8rem 1rem; font: inherit; color: inherit;
+}
+.form .field textarea { resize: vertical; }
+.form .field input:focus, .form .field select:focus, .form .field textarea:focus {
+  outline: 2px solid #4a7048; outline-offset: 2px;
+}
+.form .choices { margin: 0 0 1.2rem; padding: 0; border: 0; min-width: 0; }
+.form .choices legend { margin-bottom: 0.65rem; }
+.form .choice { display: flex; align-items: center; gap: 0.75rem; min-height: 48px; cursor: pointer; }
+.form .choice input { width: 1.2rem; height: 1.2rem; flex-shrink: 0; accent-color: #4a7048; }
+.form .choices .field { margin: 0.6rem 0 0.6rem 1.95rem; }
+.form .hint { margin: -0.3rem 0 1.2rem; color: #64564b; }
+.form .submit {
+  display: inline-flex; min-height: 52px; align-items: center; justify-content: center;
+  gap: 1rem; padding: 0.9rem 1.6rem; border: 0; background: #4a7048;
+  color: #faf7f2; font: inherit; cursor: pointer; transition: background 0.2s;
+}
+.form .submit:hover { background: #365332; }
+.form .submit:focus-visible, .form .choice input:focus-visible { outline: 2px solid #4a7048; outline-offset: 4px; }
+@media (max-width: 600px) {
+  .form .signature { gap: 1rem; }
+  .form .portrait { width: 72px; height: 72px; }
+  .form .identity, .form .addressLine { flex-direction: column; align-items: flex-start; gap: 0; }
+  .form .brand { order: -1; }
+  .form .contactLinks { flex-wrap: wrap; }
+  .form .row { grid-template-columns: 1fr; gap: 0; }
+  .form .submit { width: 100%; }
+}

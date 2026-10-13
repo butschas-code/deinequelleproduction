@@ -1,5 +1,6 @@
 "use client";
 
+import { ContactAction } from "@/components/contact/ContactAction";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -207,14 +208,14 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
-            <Link
-              href={site.bookingUrl}
+            <ContactAction
+              href={site.infoConversationHref}
               target="_blank"
               rel="noopener noreferrer"
               className="ml-2 max-w-[11.5rem] rounded-[4px] bg-brand px-3.5 py-2.5 text-center text-[12px] font-semibold leading-snug text-white transition hover:bg-brand-hover lg:max-w-none lg:px-4 lg:text-[13px] lg:leading-normal"
             >
-              Kostenfreies Kennenlerngespräch
-            </Link>
+              Kostenfreies Infogespräch
+            </ContactAction>
           </nav>
         </div>
       </div>
@@ -244,15 +245,15 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link
-            href={site.bookingUrl}
+          <ContactAction
+            href={site.infoConversationHref}
             target="_blank"
             rel="noopener noreferrer"
             className="mx-1 mt-3 mb-3 inline-flex min-h-[52px] items-center justify-center rounded-[4px] bg-brand px-5 text-center text-[13px] font-semibold leading-snug tracking-[0.06em] text-white shadow-[0_8px_24px_-10px_rgba(58,92,61,0.55)]"
             onClick={() => setOpen(false)}
           >
-            Kostenfreies Kennenlerngespräch
-          </Link>
+            Kostenfreies Infogespräch
+          </ContactAction>
         </nav>
       </div>
     </header>

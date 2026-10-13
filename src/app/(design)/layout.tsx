@@ -1,3 +1,4 @@
+import { InfoConversationDialog } from "@/components/contact/InfoConversationDialog";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import { DesignRouteTransition } from "@/components/deinequelle/DesignRouteTransition";
 import { DeineQuelleDesignRuntime } from "@/components/home/DeineQuelleDesignRuntime";
@@ -35,6 +36,7 @@ export default function DesignLayout({
     >
       <DesignRouteTransition>{children}</DesignRouteTransition>
       <DeineQuelleDesignRuntime />
+      <InfoConversationDialog />
       <ScrollToTopButton variant="design" />
     </div>
   );

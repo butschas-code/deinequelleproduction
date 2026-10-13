@@ -1,5 +1,11 @@
 
 
+@media (max-width: 480px) {
+  .deinequelle-design-page #hero.hero-kinesiologie .hero-content {
+    padding-inline: 1rem !important;
+  }
+}
+
 body:has(.deinequelle-design-page) > header,
 body:has(.deinequelle-design-page) > footer {
   display: none;
@@ -3855,13 +3861,16 @@ html:has(.deinequelle-design-root) {
       gap: 0.9rem;
     }
 
-    .deinequelle-design-page .footer-col ul a {
+    .deinequelle-design-page .footer-col ul a,
+    .deinequelle-design-page .footer-col ul button[data-info-conversation] {
       font-size: 0.96rem;
       color: var(--text-mid);
       transition: color 0.3s var(--ease), padding-left 0.3s var(--ease);
+      text-align: left;
     }
 
-    .deinequelle-design-page .footer-col ul a:hover {
+    .deinequelle-design-page .footer-col ul a:hover,
+    .deinequelle-design-page .footer-col ul button[data-info-conversation]:hover {
       color: var(--text);
       padding-left: 4px;
     }
