@@ -14,9 +14,10 @@ export type ContactTopic = keyof typeof headings;
 
 export function ContactChoices({ topic }: { topic: ContactTopic }) {
   const heading = headings[topic];
+  const theme = topic === "Kinderwunsch" ? "wine" : topic === "Sportkinesiologie" ? "blue" : undefined;
 
   return (
-    <div className={styles.panel} role="group" aria-label={heading}>
+    <div className={styles.panel} role="group" aria-label={heading} data-theme={theme}>
       <h2 className={styles.heading}>{heading}</h2>
       <p className={styles.description}>
         Ich beantworte deine Fragen gerne im Gespräch oder per WhatsApp.
