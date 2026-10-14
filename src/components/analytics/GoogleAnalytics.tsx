@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 import Script from "next/script";
+import { CONSENT_CHANGE_EVENT, hasAnalyticsConsent } from "@/lib/consent";
+import { recordGoogleAdsArrival } from "@/lib/google-ads-arrival";
 declare global {
   interface Window {
     dataLayer?: unknown[];
@@ -20,9 +22,28 @@ const GOOGLE_ADS_TAG_ID = "AW-18422643465";
 const WHATSAPP_CONVERSION_DESTINATION =
   "AW-18422643465/FS3jCJyEgI0dEIn2zNBE";
 
+function recordPaidArrival(gaId: string) {
+  try {
+    if (typeof window.gtag !== "function" || !hasAnalyticsConsent()) return;
+    recordGoogleAdsArrival({
+      href: window.location.href,
+      gaId,
+      consentGranted: true,
+      analyticsOptedOut:
+        localStorage.getItem(`ga-disable-${gaId}`) === "true" ||
+        window[`ga-disable-${gaId}`] === true,
+      storage: localStorage,
+      emitEvent: (name, parameters) => window.gtag?.("event", name, parameters),
+    });
+  } catch {
+    // Optional instrumentation must not disrupt the website when storage fails.
+  }
+}
+
 export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
   useEffect(() => {
     if (!gaId) return;
+    const measurementId = gaId;
 
     function handleOptOutChange(e: Event) {
       const customEvent = e as CustomEvent<{ optedOut: boolean }>;
@@ -64,10 +85,17 @@ export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
       }
     }
 
+    function handleConsentChange() {
+      recordPaidArrival(measurementId);
+    }
+
+    recordPaidArrival(gaId);
+    window.addEventListener(CONSENT_CHANGE_EVENT, handleConsentChange);
     window.addEventListener(GA_OPTOUT_EVENT, handleOptOutChange);
     document.addEventListener("click", handleConversionClick, { capture: true });
 
     return () => {
+      window.removeEventListener(CONSENT_CHANGE_EVENT, handleConsentChange);
       window.removeEventListener(GA_OPTOUT_EVENT, handleOptOutChange);
       document.removeEventListener("click", handleConversionClick, { capture: true });
     };
@@ -85,6 +113,7 @@ export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
       <Script
         id="google-tag-init"
         strategy="afterInteractive"
+        onReady={() => recordPaidArrival(gaId)}
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
