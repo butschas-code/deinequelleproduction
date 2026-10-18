@@ -1,7 +1,13 @@
 "use client";
 
 import { useSyncExternalStore, useState, useTransition } from "react";
-import { GA_OPTOUT_EVENT } from "./GoogleAnalytics";
+import {
+  CONSENT_CHANGE_EVENT,
+  CONSENT_STORAGE_KEY,
+  GA_OPTOUT_EVENT,
+  isAnalyticsTrackingEnabled,
+} from "@/lib/consent";
+import { GOOGLE_ADS_ARRIVAL_STORAGE_KEY } from "@/lib/google-ads-arrival";
 
 interface GoogleAnalyticsOptOutProps {
   gaId?: string;
@@ -10,9 +16,11 @@ interface GoogleAnalyticsOptOutProps {
 function subscribeToOptOut(callback: () => void) {
   window.addEventListener("storage", callback);
   window.addEventListener(GA_OPTOUT_EVENT, callback);
+  window.addEventListener(CONSENT_CHANGE_EVENT, callback);
   return () => {
     window.removeEventListener("storage", callback);
     window.removeEventListener(GA_OPTOUT_EVENT, callback);
+    window.removeEventListener(CONSENT_CHANGE_EVENT, callback);
   };
 }
 
@@ -25,9 +33,9 @@ export function GoogleAnalyticsOptOut({ gaId = "G-91WWD2TPSD" }: GoogleAnalytics
     subscribeToOptOut,
     () => {
       try {
-        return localStorage.getItem(storageKey) === "true";
+        return !isAnalyticsTrackingEnabled(gaId, localStorage);
       } catch {
-        return false;
+        return true;
       }
     },
     () => false,
@@ -39,6 +47,10 @@ export function GoogleAnalyticsOptOut({ gaId = "G-91WWD2TPSD" }: GoogleAnalytics
         if (isOptedOut) {
           // Re-enable
           localStorage.removeItem(storageKey);
+          // An explicit re-enable also clears any older rejected preference.
+          if (localStorage.getItem(CONSENT_STORAGE_KEY) === "rejected") {
+            localStorage.removeItem(CONSENT_STORAGE_KEY);
+          }
           delete (window as unknown as Record<string, unknown>)[storageKey];
           if (typeof window.gtag === "function") {
             window.gtag("consent", "update", {
@@ -51,10 +63,11 @@ export function GoogleAnalyticsOptOut({ gaId = "G-91WWD2TPSD" }: GoogleAnalytics
           window.dispatchEvent(
             new CustomEvent(GA_OPTOUT_EVENT, { detail: { optedOut: false } }),
           );
-          setFeedback("Google Analytics wurde für diesen Browser wieder aktiviert.");
+          setFeedback("Webanalyse und Anzeigenmessung wurden für diesen Browser wieder aktiviert.");
         } else {
           // Disable
           localStorage.setItem(storageKey, "true");
+          localStorage.removeItem(GOOGLE_ADS_ARRIVAL_STORAGE_KEY);
           (window as unknown as Record<string, unknown>)[storageKey] = true;
           if (typeof window.gtag === "function") {
             window.gtag("consent", "update", {
@@ -67,7 +80,7 @@ export function GoogleAnalyticsOptOut({ gaId = "G-91WWD2TPSD" }: GoogleAnalytics
           window.dispatchEvent(
             new CustomEvent(GA_OPTOUT_EVENT, { detail: { optedOut: true } }),
           );
-          setFeedback("Google Analytics wurde für diesen Browser erfolgreich deaktiviert.");
+          setFeedback("Webanalyse und Anzeigenmessung wurden für diesen Browser deaktiviert.");
         }
       } catch {
         setFeedback("Die Einstellung konnte nicht im Browser gespeichert werden.");
@@ -78,19 +91,19 @@ export function GoogleAnalyticsOptOut({ gaId = "G-91WWD2TPSD" }: GoogleAnalytics
   return (
     <div className="mt-10 rounded-2xl border border-black/[0.08] bg-white/80 p-6 shadow-sm backdrop-blur-sm sm:p-8">
       <h3 className="text-xl font-semibold tracking-[-0.02em] text-ink sm:text-2xl">
-        Webanalyse &amp; Google Analytics Opt-Out
+        Webanalyse und Anzeigenmessung
       </h3>
 
       <p className="mt-3 text-[15px] leading-relaxed text-ink-muted">
-        Auf dieser Website nutzen wir <strong>Google Analytics</strong> (Google Ireland Limited / Google LLC), um
-        die Nutzung unserer Angebote statistisch auszuwerten und das Erlebnis für dich stetig zu optimieren.
-        Die Erfassung erfolgt standardmässig mit aktivierter IP-Anonymisierung.
+        Wir verwenden <strong>Google Analytics und Google Ads</strong> (Google Ireland Limited / Google LLC),
+        um die Nutzung dieser Website und Besuche über unsere Anzeigen auszuwerten. Zur Erkennung wiederholter
+        Anzeigenbesuche speichern wir beobachtete Klickkennungen bis zu 30 Tage in diesem Browser.
       </p>
 
       <p className="mt-2 text-[15px] leading-relaxed text-ink-muted">
-        Nach dem Schweizer Datenschutzgesetz (revDSG) ist für rein statistische Analysen kein vorgängiges
-        Cookie-Einwilligungsbanner vorgeschrieben. Du hast jedoch jederzeit das Recht, der Erfassung deiner Besuche
-        für die Zukunft zu widersprechen (Opt-Out).
+        Die Messung ist standardmässig aktiviert. Du kannst sie hier jederzeit ausschalten. Der Schalter gilt
+        für Webanalyse und Anzeigenmessung auf dieser Website. Beim Ausschalten werden auch die lokal
+        gespeicherten Kennungen wiederholter Anzeigenbesuche entfernt.
       </p>
 
       <div className="mt-6 flex flex-col gap-4 rounded-xl border border-black/[0.06] bg-[#FAF7F2] p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
@@ -106,8 +119,8 @@ export function GoogleAnalyticsOptOut({ gaId = "G-91WWD2TPSD" }: GoogleAnalytics
             />
             <span className="text-[15px] font-medium text-ink">
               {isOptedOut
-                ? "Erfassung deaktiviert (Opt-Out aktiv)"
-                : "Erfassung aktiv"}
+                ? "Messung deaktiviert"
+                : "Messung aktiv"}
             </span>
           </div>
         </div>
@@ -122,8 +135,8 @@ export function GoogleAnalyticsOptOut({ gaId = "G-91WWD2TPSD" }: GoogleAnalytics
           }`}
         >
           {isOptedOut
-            ? "Google Analytics wieder aktivieren"
-            : "Google Analytics deaktivieren (Opt-Out)"}
+            ? "Messung aktivieren"
+            : "Messung deaktivieren"}
         </button>
       </div>
 

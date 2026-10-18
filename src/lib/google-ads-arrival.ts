@@ -8,7 +8,7 @@ type ArrivalStorage = Pick<Storage, "getItem" | "setItem" | "removeItem">;
 type ArrivalOptions = {
   href: string;
   gaId: string;
-  consentGranted: boolean;
+  trackingEnabled: boolean;
   analyticsOptedOut: boolean;
   storage: ArrivalStorage;
   emitEvent: (name: string, parameters: { send_to: string }) => void;
@@ -19,13 +19,13 @@ type ArrivalOptions = {
 export function recordGoogleAdsArrival({
   href,
   gaId,
-  consentGranted,
+  trackingEnabled,
   analyticsOptedOut,
   storage,
   emitEvent,
   now = Date.now(),
 }: ArrivalOptions): boolean {
-  if (!gaId || !consentGranted || analyticsOptedOut) return false;
+  if (!gaId || !trackingEnabled || analyticsOptedOut) return false;
 
   let id: string | null;
   try {
@@ -43,7 +43,7 @@ export function recordGoogleAdsArrival({
       try {
         parsed = JSON.parse(previous);
       } catch {
-        // An invalid ledger is replaced only after a permitted paid arrival.
+        // An invalid ledger is replaced only after an enabled paid arrival.
       }
     }
     const arrivals: Arrival[] = Array.isArray(parsed)

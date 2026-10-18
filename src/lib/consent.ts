@@ -28,3 +28,22 @@ export function writeConsent(value: CookieConsentValue): void {
 export function hasAnalyticsConsent(): boolean {
   return readStoredConsent() === "accepted";
 }
+
+/** Tracking preference, not a record of explicit visitor consent. */
+export const GA_OPTOUT_EVENT = "deinequelle:ga-optout";
+
+export function isAnalyticsTrackingEnabled(
+  gaId: string,
+  storage: Pick<Storage, "getItem">,
+  runtimeOptOut = false,
+): boolean {
+  if (!gaId || runtimeOptOut) return false;
+  try {
+    return (
+      storage.getItem(`ga-disable-${gaId}`) !== "true" &&
+      storage.getItem(CONSENT_STORAGE_KEY) !== "rejected"
+    );
+  } catch {
+    return false;
+  }
+}

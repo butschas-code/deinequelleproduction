@@ -11,7 +11,7 @@ function setup() {
   const options = {
     href: "https://www.deinequelle.com/?gclid=first-click",
     gaId: "G-TEST",
-    consentGranted: true,
+    trackingEnabled: true,
     analyticsOptedOut: false,
     now: 2_000_000_000_000,
     storage: {
@@ -45,21 +45,21 @@ test("unpaid and braid-only visits do not count", () => {
   assert.equal(values.size, 0);
 });
 
-test("rejected, unset and opted-out visitors are neither stored nor counted", () => {
+test("disabled and opted-out visitors are neither stored nor counted", () => {
   const { options, events } = setup();
   const noAccess = {
-    getItem() { assert.fail("storage read without consent"); },
-    setItem() { assert.fail("storage write without consent"); },
-    removeItem() { assert.fail("storage removal without consent"); },
+    getItem() { assert.fail("storage read while disabled"); },
+    setItem() { assert.fail("storage write while disabled"); },
+    removeItem() { assert.fail("storage removal while disabled"); },
   };
-  assert.equal(recordGoogleAdsArrival({ ...options, storage: noAccess, consentGranted: false }), false);
+  assert.equal(recordGoogleAdsArrival({ ...options, storage: noAccess, trackingEnabled: false }), false);
   assert.equal(recordGoogleAdsArrival({ ...options, storage: noAccess, analyticsOptedOut: true }), false);
   assert.equal(events.length, 0);
 });
 
-test("accepting consent later counts the current arrival just once", () => {
+test("enabling tracking later counts the current arrival just once", () => {
   const { options, events } = setup();
-  assert.equal(recordGoogleAdsArrival({ ...options, consentGranted: false }), false);
+  assert.equal(recordGoogleAdsArrival({ ...options, trackingEnabled: false }), false);
   assert.equal(recordGoogleAdsArrival(options), true);
   assert.equal(recordGoogleAdsArrival(options), false);
   assert.equal(events.length, 1);
