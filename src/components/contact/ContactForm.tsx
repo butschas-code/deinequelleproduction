@@ -8,11 +8,46 @@ import styles from "./ContactForm.module.css";
 export function ContactForm({ autoFocus = false }: { autoFocus?: boolean }) {
   const id = useId();
   const [preference, setPreference] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    if (!form.reportValidity()) return;
+
+    setIsSubmitting(true);
+    const formData = new FormData(form);
+    const payload: Record<string, unknown> = {};
+    formData.forEach((value, key) => {
+      payload[key] = value;
+    });
+
+    try {
+      const response = await fetch("https://submit-form.com/FliKKBoxX", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (response.ok) {
+        window.location.href = "/danke";
+        return;
+      }
+    } catch {
+      // Fall through to native submission if fetch fails
+    }
+
+    form.submit();
+  };
 
   return (
-    <form className={styles.form} action="https://submit-form.com/FliKKBoxX" method="POST">
+    <form className={styles.form} action="https://submit-form.com/FliKKBoxX" method="POST" onSubmit={handleSubmit}>
       <input type="hidden" name="_subject" value="Neue Kontaktanfrage / Infogespräch über deinequelle.com" />
-      <input type="hidden" name="_redirect" value={`${site.url}/kontakt`} />
+      <input type="hidden" name="_redirect" value={`${site.url}/danke`} />
+      <input type="hidden" name="_append" value="false" />
       <address className={styles.signature}>
         <Image
           className={styles.portrait}
@@ -91,8 +126,8 @@ export function ContactForm({ autoFocus = false }: { autoFocus?: boolean }) {
         Nachricht (optional)
         <textarea name="message" rows={3} />
       </label>
-      <button type="submit" className={styles.submit}>
-        Anfrage senden <span aria-hidden="true">↗</span>
+      <button type="submit" className={styles.submit} disabled={isSubmitting}>
+        {isSubmitting ? "Wird gesendet..." : "Anfrage senden"} <span aria-hidden="true">↗</span>
       </button>
     </form>
   );

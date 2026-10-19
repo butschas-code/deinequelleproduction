@@ -103,10 +103,32 @@ export function GoogleAnalytics({ gaId }: GoogleAnalyticsProps) {
       } catch {
         return;
       }
-      const anchor = (e.target as Element | null)?.closest<HTMLAnchorElement>(
+
+      const target = e.target as Element | null;
+      if (!target || typeof window.gtag !== "function") return;
+
+      const popupTrigger = target.closest<HTMLElement>(
+        '[data-info-conversation], a[href="#infogespraech"]'
+      );
+      if (popupTrigger) {
+        const label =
+          popupTrigger.innerText?.trim() ||
+          popupTrigger.getAttribute("aria-label") ||
+          "Kostenfreies Infogespräch";
+
+        window.gtag("event", "cta_contact_popup_click", {
+          send_to: gaId,
+          event_category: "conversion",
+          event_label: label,
+          page_location: window.location.href,
+        });
+        return;
+      }
+
+      const anchor = target.closest<HTMLAnchorElement>(
         'a[href*="booking.masuyo.ch"], a[href^="https://wa.me/"]'
       );
-      if (!anchor || typeof window.gtag !== "function") return;
+      if (!anchor) return;
 
       const isBooking = anchor.href.includes("booking.masuyo.ch");
       const label =

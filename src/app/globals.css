@@ -81,6 +81,15 @@ body {
   -webkit-tap-highlight-color: color-mix(in srgb, var(--brand) 14%, transparent);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-lato), Lato, system-ui, sans-serif;
+}
+
 ::selection {
   background: color-mix(in srgb, var(--brand) 28%, transparent);
 }
