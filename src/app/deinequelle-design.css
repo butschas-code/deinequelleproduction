@@ -1194,13 +1194,25 @@ html:has(.deinequelle-design-root) {
 
     .deinequelle-design-page .hero-cta-stack .hero-actions {
       margin-bottom: 0;
+      width: 100%;
+      max-width: 330px;
+    }
+
+    .deinequelle-design-page .hero-cta-stack .btn-primary,
+    .deinequelle-design-page .hero-cta-stack .btn-ghost,
+    .deinequelle-design-page .hero-cta-stack .btn-whatsapp {
+      width: 100%;
+      max-width: 330px;
+      min-height: 52px;
+      box-sizing: border-box;
     }
 
     .deinequelle-design-page .btn-whatsapp {
       display: inline-flex;
       align-items: center;
+      justify-content: space-between;
       gap: 0.75rem;
-      padding: 0.7rem 0.7rem 0.7rem 1.05rem;
+      padding: 0.7rem 0.94rem 0.7rem 1.05rem;
       background: #eaf2e8;
       color: var(--text);
       border: 1px solid #a8d19d;
@@ -1324,8 +1336,14 @@ html:has(.deinequelle-design-root) {
       margin-top: 1.2rem;
     }
 
-    .deinequelle-design-page .svc-cta-stack .btn {
+    .deinequelle-design-page .svc-cta-stack .btn,
+    .deinequelle-design-page .svc-cta-stack .btn-whatsapp {
+      width: 100%;
+      max-width: 330px;
+      min-height: 52px;
+      box-sizing: border-box;
       margin-top: 0;
+      justify-content: space-between;
     }
 
     .deinequelle-design-page .cta-action-stack {
@@ -1398,7 +1416,8 @@ html:has(.deinequelle-design-root) {
 ═══════════════════════════════════════════════════════════════ */
     .deinequelle-design-page #trust {
       background: var(--beige);
-      border-bottom: 1px solid var(--sand-light);
+      border-top: none;
+      border-bottom: none;
       padding: 1.7rem 0;
     }
 
@@ -1453,14 +1472,14 @@ html:has(.deinequelle-design-root) {
 
     .deinequelle-design-page #erklaert.erkl-sage-soft {
       background: var(--sage-soft);
-      border-top: 1px solid color-mix(in srgb, var(--sage-mid) 40%, transparent);
-      border-bottom: 1px solid color-mix(in srgb, var(--sage-mid) 40%, transparent);
+      border-top: none;
+      border-bottom: none;
     }
 
     .deinequelle-design-page #erklaert.erkl-sage {
       background: var(--sage);
-      border-top: 1px solid color-mix(in srgb, var(--sage-mid) 45%, transparent);
-      border-bottom: 1px solid color-mix(in srgb, var(--sage-mid) 45%, transparent);
+      border-top: none;
+      border-bottom: none;
     }
 
     .deinequelle-design-page #erklaert.erkl-sage-soft .erkl-quote,
@@ -1470,20 +1489,20 @@ html:has(.deinequelle-design-root) {
 
     .deinequelle-design-page #erklaert.erkl-warm-soft {
       background: var(--warm-soft);
-      border-top: 1px solid color-mix(in srgb, var(--sand-light) 80%, transparent);
-      border-bottom: 1px solid color-mix(in srgb, var(--sand-light) 80%, transparent);
+      border-top: none;
+      border-bottom: none;
     }
 
     .deinequelle-design-page #erklaert.erkl-warm {
       background: var(--beige-warm);
-      border-top: 1px solid var(--sand-light);
-      border-bottom: 1px solid var(--sand-light);
+      border-top: none;
+      border-bottom: none;
     }
 
     .deinequelle-design-page #erklaert.erkl-warm-deep {
       background: var(--warm-deep);
-      border-top: 1px solid color-mix(in srgb, var(--sand) 45%, transparent);
-      border-bottom: 1px solid color-mix(in srgb, var(--sand) 45%, transparent);
+      border-top: none;
+      border-bottom: none;
     }
 
     .deinequelle-design-page #erklaert.erkl-warm-deep .erkl-quote {
@@ -1492,14 +1511,14 @@ html:has(.deinequelle-design-root) {
 
     .deinequelle-design-page #erklaert.erkl-wine-soft {
       background: var(--wine-soft);
-      border-top: 1px solid color-mix(in srgb, var(--wine-mid) 35%, transparent);
-      border-bottom: 1px solid color-mix(in srgb, var(--wine-mid) 35%, transparent);
+      border-top: none;
+      border-bottom: none;
     }
 
     .deinequelle-design-page #erklaert.erkl-wine {
       background: var(--blush);
-      border-top: 1px solid color-mix(in srgb, var(--wine-mid) 42%, transparent);
-      border-bottom: 1px solid color-mix(in srgb, var(--wine-mid) 42%, transparent);
+      border-top: none;
+      border-bottom: none;
     }
 
     .deinequelle-design-page #erklaert.erkl-wine-soft .erkl-quote,
@@ -2406,8 +2425,8 @@ html:has(.deinequelle-design-root) {
 
     .deinequelle-design-page .svc-section-head {
       margin-bottom: clamp(3rem, 5vw, 4.5rem);
-      padding-bottom: clamp(2rem, 3.5vw, 3rem);
-      border-bottom: 1px solid color-mix(in srgb, var(--sage-mid) 55%, transparent);
+      padding-bottom: 0;
+      border-bottom: none;
     }
 
     .deinequelle-design-page .svc-section-head .spread-h2 {
@@ -2423,12 +2442,12 @@ html:has(.deinequelle-design-root) {
     }
 
     .deinequelle-design-page :is(.warm-bg, .beige-bg) .svc-section-head {
-      border-bottom-color: var(--sand-light);
+      border-bottom: none;
     }
 
     .deinequelle-design-page :is(.blush-bg, .wine-soft-bg, .wine-deep-bg) .svc-section-head {
       color: var(--wine);
-      border-bottom-color: color-mix(in srgb, var(--wine) 20%, transparent);
+      border-bottom: none;
     }
 
     .deinequelle-design-page :is(.blush-bg, .wine-soft-bg, .wine-deep-bg) .svc-section-head .spread-h2 {
@@ -2754,6 +2773,7 @@ html:has(.deinequelle-design-root) {
       line-height: 1.78;
       color: var(--text-mid);
       max-width: 34ch;
+      white-space: pre-line;
     }
 
     .deinequelle-design-page :is(.warm-bg, .warm-soft-bg, .warm-deep-bg) .svc-features,
@@ -2787,8 +2807,8 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .svc-lead {
       font-family: var(--f-d);
       font-size: clamp(1.45rem, 2.3vw, 1.85rem);
-      font-weight: 400;
-      font-style: italic;
+      font-weight: 700;
+      font-style: normal;
       font-synthesis: none;
       line-height: 1.6;
       letter-spacing: -0.01em;
@@ -2954,8 +2974,8 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .svc-editorial-topics .svc-lead {
       font-family: var(--f-d);
       font-size: clamp(1.45rem, 2.3vw, 1.85rem);
-      font-weight: 400;
-      font-style: italic;
+      font-weight: 700;
+      font-style: normal;
       line-height: 1.6;
       letter-spacing: -0.01em;
       -webkit-font-smoothing: antialiased;
@@ -3109,8 +3129,11 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: space-between;
       gap: 0.55rem;
-      padding: 0.92rem 0.92rem 0.92rem 1.95rem;
+      padding: 0.75rem 0.94rem 0.75rem 1.45rem;
+      min-height: 52px;
+      box-sizing: border-box;
       border: 1px solid transparent;
       border-radius: 0;
       font-family: var(--f-b);
@@ -3212,8 +3235,11 @@ html:has(.deinequelle-design-root) {
     .deinequelle-design-page .btn-primary {
       display: inline-flex;
       align-items: center;
+      justify-content: space-between;
       gap: 0.55rem;
-      padding: 0.94rem 0.94rem 0.94rem 1.95rem;
+      padding: 0.75rem 0.94rem 0.75rem 1.45rem;
+      min-height: 52px;
+      box-sizing: border-box;
       background: #ffffff;
       color: var(--text);
       border: 1px solid var(--sand);
@@ -4317,18 +4343,26 @@ html:has(.deinequelle-design-root) {
         margin-bottom: 2.5rem;
       }
 
-      .deinequelle-design-page .hero-cta-stack {
+      .deinequelle-design-page .hero-cta-stack,
+      .deinequelle-design-page .svc-cta-stack {
         align-items: stretch;
+        width: 100%;
         margin-bottom: 2.5rem;
       }
 
-      .deinequelle-design-page .btn-whatsapp {
-        width: 100%;
-      }
-
-      .deinequelle-design-page .hero-actions .btn-primary,
-      .deinequelle-design-page .hero-actions .btn-ghost {
-        justify-content: center;
+      .deinequelle-design-page .hero-cta-stack .hero-actions,
+      .deinequelle-design-page .hero-cta-stack .btn-primary,
+      .deinequelle-design-page .hero-cta-stack .btn-ghost,
+      .deinequelle-design-page .hero-cta-stack .btn-whatsapp,
+      .deinequelle-design-page .svc-cta-stack .btn,
+      .deinequelle-design-page .svc-cta-stack .btn-whatsapp {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 52px !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
       }
 
       .deinequelle-design-page .scroll-cue {
@@ -4616,12 +4650,29 @@ html:has(.deinequelle-design-root) {
       }
 
       .deinequelle-design-page .claudia-grid {
-        grid-template-columns: 1fr;
-        gap: 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
       }
 
       .deinequelle-design-page .claudia-left {
-        position: static;
+        display: contents;
+      }
+
+      .deinequelle-design-page .claudia-h2 {
+        order: 1;
+        margin-bottom: 0;
+      }
+
+      .deinequelle-design-page .claudia-right {
+        order: 2;
+      }
+
+      .deinequelle-design-page .claudia-creds {
+        order: 3;
+        padding-top: 2rem;
+        margin-top: 0.5rem;
+        border-top: 1px solid var(--sand);
       }
 
       .deinequelle-design-page .schritte-cols {
@@ -6870,8 +6921,8 @@ html:has(.deinequelle-design-root) {
 
 .deinequelle-design-page #kinesiologie-bedeutung {
   padding: clamp(6rem, 9vw, 10rem) 0;
-  border-top: 1px solid color-mix(in srgb, var(--sage-mid) 58%, var(--sand) 42%);
-  border-bottom: 1px solid color-mix(in srgb, var(--sage-mid) 58%, var(--sand) 42%);
+  border-top: none;
+  border-bottom: none;
   background: color-mix(in srgb, var(--sage-soft) 72%, var(--beige) 28%);
 }
 
@@ -6965,14 +7016,25 @@ html:has(.deinequelle-design-root) {
 }
 
 .deinequelle-design-page #vision .svc-lead {
-  max-width: 12ch !important;
+  max-width: 26ch !important;
   font-family: var(--f-display-script) !important;
-  font-size: clamp(4.25rem, 7vw, 6.25rem) !important;
+  font-size: clamp(2rem, 3.2vw, 3.25rem) !important;
   font-weight: 400 !important;
   font-style: normal !important;
-  line-height: 1.04 !important;
+  line-height: 1.25 !important;
   letter-spacing: 0 !important;
   color: var(--accent-dark) !important;
+}
+
+.deinequelle-design-page #vision .svc-split-media {
+  align-self: center;
+}
+
+.deinequelle-design-page #vision .svc-split-media img {
+  max-height: 520px;
+  width: 100%;
+  object-fit: cover;
+  object-position: 28% 30%;
 }
 
 .deinequelle-design-page #vision .svc-lead::before {
@@ -6992,12 +7054,14 @@ html:has(.deinequelle-design-root) {
   line-height: 1em !important;
 }
 
-.deinequelle-design-page #cta-final .cta-h2::before {
-  content: "„";
+.deinequelle-design-page #cta-final .cta-h2::before,
+.deinequelle-design-page #cta-final .cta-h2::after {
+  content: none !important;
 }
 
-.deinequelle-design-page #cta-final .cta-h2::after {
-  content: "“";
+.deinequelle-design-page :is(.svc-lead, .svc-editorial-topics .svc-lead, .svc-density-tight .svc-editorial-topics .svc-lead) {
+  font-style: normal !important;
+  font-weight: 700 !important;
 }
 
 .deinequelle-design-page #content #vision .svc-lead,

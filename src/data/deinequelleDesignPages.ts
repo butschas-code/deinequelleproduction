@@ -391,7 +391,7 @@ export const designPages = {
         },
       ],
     },
-    guideAfterSectionId: "koerper-signale",
+    guideAfterSectionId: "komplementaertherapie",
     finalCta: {
       title: "Bereit, deinem\nKörper",
       emphasis: "zuzuhören?",
@@ -452,8 +452,8 @@ export const designPages = {
         kicker: "Ganzheitliche Unterstützung",
         title: "Stress regulieren,\nKörper & Hormone",
         titleEmphasis: "unterstützen",
-        image: "/images/hero/review/02-editorial-therapy.webp",
-        imageAlt: "Ruhige therapeutische Begleitung mit fliessendem Tuch",
+        image: "/images/layout images/kinderwunsch-begleitung-paar.webp",
+        imageAlt: "Paar hält sich liebevoll an den Händen",
         imageObjectPosition: "68% center",
         imageObjectPositionMobile: "62% 28%",
         lead:
@@ -574,18 +574,19 @@ export const designPages = {
         kicker: "Kinderwunschbegleitung",
         title: "Kosten &\nVersicherung",
         lead:
-          "Die kinesiologische Kinderwunschbegleitung ist Komplementärtherapie und gehört nicht zur obligatorischen Grundversicherung. Viele Krankenkassen beteiligen sich über die Zusatzversicherung für Komplementär- oder Alternativmedizin an den Sitzungen, wenn Kinesiologie in deiner Police enthalten ist. Als EMR-zertifizierte Therapeutin erfülle ich die Qualitätsvoraussetzung, die die meisten Kassen dafür verlangen. Bitte kläre die Kostenübernahme vor der ersten Sitzung direkt bei deiner Versicherung. CSS-Zusatzversicherte können die Behandlung bei mir zudem mit CSS Coins bezahlen – ich bin CSS-Coin-Partnerin.",
+          "Die kinesiologische Kinderwunschbegleitung ist Komplementärtherapie und gehört nicht zur obligatorischen Grundversicherung. Viele Krankenkassen beteiligen sich über die Zusatzversicherung für Komplementär- oder Alternativmedizin an den Sitzungen, wenn Kinesiologie in deiner Police enthalten ist. Als EMR-zertifizierte Therapeutin erfülle ich die Qualitätsvoraussetzung, die die meisten Kassen dafür verlangen. Bitte kläre die Kostenübernahme vor der ersten Sitzung direkt bei deiner Versicherung.",
         body: [],
         layout: "single",
         density: "tight",
         logos: [
           {
-            src: "/images/other/emr_zertifiziert_gs.svg",
-            alt: "EMR zertifiziert",
+            src: "/images/other/OdA_KT_Label_DE_Diplom.webp",
+            alt: "OdA KT Diplom Label",
+            shape: "square",
           },
           {
-            src: "/images/other/css coin.webp",
-            alt: "CSS Coin",
+            src: "/images/other/emr_zertifiziert_gs.svg",
+            alt: "EMR zertifiziert",
           },
         ],
       },
@@ -722,41 +723,12 @@ export const designPages = {
         ],
       },
       {
-        id: "nidra-fuer-wen",
-        theme: "warm-deep",
-        presentation: "compact",
-        kicker: "Für wen eignet sich Yoga und Yoga Nidra",
-        title: "Ruhe finden in",
-        titleEmphasis: "belastenden\nLebensphasen",
-        image: "/images/yoga/yoga-nidra-fuer-wen.webp",
-        imageAlt: "Ruhige Yogastudio-Atmosphäre am Morgen",
-        imageObjectPosition: "center center",
-        imageObjectPositionMobile: "center 28%",
-        lead:
-          "Satyananda Yoga Nidra® eignet sich für Menschen, die viel leisten, schlecht abschalten können oder körperlich, mental oder emotional belastet sind.",
-        body: [],
-        layout: "single",
-        density: "tight",
-        itemsVariant: "topics",
-        items: [
-          "Kinder und Jugendliche",
-          "Junge Eltern",
-          "Sportlerinnen und Sportler",
-          "Erschöpfung und Burnout-Themen",
-          "Psychosomatische Beschwerden",
-          "Studierende und Berufstätige",
-          "Ältere Menschen",
-          "Innere Unruhe und Schlafprobleme",
-          "ADS oder ADHS",
-        ],
-      },
-      {
         id: "wobei-yoga",
         theme: "warm",
         presentation: "head",
         kicker: "Wobei Yoga unterstützen kann",
         title: "Mehr Ruhe, Kraft",
-        titleEmphasis: "& Balance",
+        titleEmphasis: "& Balance finden in\nbelastenden Lebensphasen",
         image: "/images/yoga/yoga-raum-claudia-dimmler.webp",
         imageAlt: "Yoga für Balance und Regeneration",
         imageObjectPosition: "center center",
@@ -832,12 +804,12 @@ export const designPages = {
           {
             title: "Lektionen à 75 Minuten",
             body:
-              "Einzellektion Fr. 34.00, im Abo Fr. 28.50 pro Lektion. Online-Einzellektion Fr. 30.00, im Abo Fr. 25.00 pro Lektion.",
+              "Einzellektion Fr. 34.00, im Abo Fr. 28.50 pro Lektion.\nOnline-Einzellektion Fr. 30.00, im Abo Fr. 25.00 pro Lektion.",
           },
           {
             title: "Lektionen à 90 Minuten",
             body:
-              "Einzellektion Fr. 39.00, im Abo Fr. 33.50 pro Lektion. Online-Einzellektion Fr. 35.00, im Abo Fr. 29.00 pro Lektion.",
+              "Einzellektion Fr. 39.00, im Abo Fr. 33.50 pro Lektion.\nOnline-Einzellektion Fr. 35.00, im Abo Fr. 29.00 pro Lektion.",
           },
           {
             title: "Privatlektionen",
@@ -888,18 +860,19 @@ export const designPages = {
       emphasis: "für dich",
       body:
         "Wenn du dir mehr Ruhe, Kraft und Verbindung zu deinem Körper wünschst, freue ich mich, dich im Yoga zu begleiten.",
-      primaryLabel: "Kostenfreies Infogespräch",
-      primaryHref: site.infoConversationHref,
+      primaryLabel: "Fragen & Buchung per WhatsApp",
+      primaryHref: site.whatsappUrl,
+      primaryExternal: true,
     },
   },
   sport: {
     slug: "/leistungen/sport-kinesiologie",
     eyebrow: "Sport-Kinesiologie",
-    title: "Sport-\nkinesiologie",
+    title: "Sport-\nKinesiologie",
     intro:
-      "Sportkinesiologie fördert die Leistungsfähigkeit von Sportler/innen durch die Optimierung des Energieflusses in Biomechanik, Biochemie und Psyche.",
+      "Sport-Kinesiologie fördert die Leistungsfähigkeit von Sportler/innen durch die Optimierung des Energieflusses in Biomechanik, Biochemie und Psyche.",
     heroImage: "/images/sections/sportkinesiologie-athletes-hero.webp",
-    heroAlt: "Sportkinesiologie in der Praxis",
+    heroAlt: "Sport-Kinesiologie in der Praxis",
     heroObjectPosition: "center 30%",
     heroObjectPositionMobile: "center 22%",
     trustItems: [
@@ -913,11 +886,11 @@ export const designPages = {
         theme: "sage",
         presentation: "head",
         hideSpread: true,
-        kicker: "Sportkinesiologie",
+        kicker: "Sport-Kinesiologie",
         title: "Potential",
         titleEmphasis: "vollumfänglich\nausschöpfen",
         lead:
-          "Sportkinesiologie fördert die Leistungsfähigkeit von Sportler/innen durch die Optimierung des Energieflusses in Biomechanik, Biochemie und Psyche, damit das eigene Potential vollumfänglich ausgeschöpft werden kann.",
+          "Sport-Kinesiologie fördert die Leistungsfähigkeit von Sportler/innen durch die Optimierung des Energieflusses in Biomechanik, Biochemie und Psyche, damit das eigene Potential vollumfänglich ausgeschöpft werden kann.",
         body: [
           "Die Begleitung kann körperliche und geistige Beschwerden einordnen und die Optimierung biochemischer, organischer und zellulärer Abläufe im Körper unterstützen.",
           "Sie kann ergänzend mit Trainerinnen und Trainern, Ärztinnen und Ärzten, Physiotherapeutinnen und Physiotherapeuten sowie weiteren gesundheitsfördernden Therapieformen zusammenspielen.",
@@ -1131,8 +1104,8 @@ export const designPages = {
     },
     guideAfterSectionId: "qualifikationen",
     finalCta: {
-      title: "Lass uns",
-      emphasis: "sprechen",
+      title: "Ich spreche",
+      emphasis: "gerne mit dir",
       body:
         "Wenn du spürst, dass du dir Unterstützung wünschst, freue ich mich über deine Nachricht. Gemeinsam schauen wir, was du gerade brauchst und welcher Weg für dich passend ist.",
       primaryLabel: "Kostenfreies Infogespräch",

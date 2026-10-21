@@ -44,6 +44,7 @@ const contactOptions = [
     body: "Du kannst direkt online buchen, mir eine E-Mail senden, das Formular nutzen oder telefonisch beziehungsweise per WhatsApp/SMS Kontakt aufnehmen.",
     actions: [
       { label: "Online buchen", href: site.bookingUrl, external: true },
+      { label: "WhatsApp", href: site.whatsappUrl, external: true },
       { label: "E-Mail senden", href: `mailto:${site.email}` },
       { label: "Anrufen", href: `tel:${site.phoneTel}` },
     ],
@@ -52,6 +53,7 @@ const contactOptions = [
     title: "Yoga",
     body: "Für Yogakurse, freie Plätze, Online-Teilnahme, Privatlektionen oder Firmenworkshops melde dich bitte per E-Mail, Formular, Telefon oder WhatsApp/SMS.",
     actions: [
+      { label: "WhatsApp", href: site.whatsappUrl, external: true },
       { label: "E-Mail senden", href: `mailto:${site.email}` },
       { label: "Anrufen", href: `tel:${site.phoneTel}` },
     ],
