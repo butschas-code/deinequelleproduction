@@ -1192,19 +1192,35 @@ html:has(.deinequelle-design-root) {
       margin-bottom: 3.8rem;
     }
 
+    /* Paired CTA buttons share one size everywhere (hero, service teasers, final CTA). */
+    .deinequelle-design-page {
+      --cta-pair-w: 340px;
+      --cta-pair-h: 64px;
+    }
+
     .deinequelle-design-page .hero-cta-stack .hero-actions {
       margin-bottom: 0;
       width: 100%;
-      max-width: 330px;
+      max-width: var(--cta-pair-w);
     }
 
-    .deinequelle-design-page .hero-cta-stack .btn-primary,
-    .deinequelle-design-page .hero-cta-stack .btn-ghost,
-    .deinequelle-design-page .hero-cta-stack .btn-whatsapp {
+    .deinequelle-design-page :is(.hero-cta-stack, .svc-cta-stack, .cta-action-stack, .cta-actions) :is(.btn, .btn-primary, .btn-dark, .btn-whatsapp) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
       width: 100%;
-      max-width: 330px;
-      min-height: 52px;
+      max-width: var(--cta-pair-w);
+      height: var(--cta-pair-h);
+      min-height: var(--cta-pair-h);
+      margin-top: 0;
+      padding: 0.5rem 0.94rem 0.5rem 1.15rem;
       box-sizing: border-box;
+      text-align: left;
+    }
+
+    .deinequelle-design-page :is(.hero-cta-stack, .svc-cta-stack, .cta-action-stack, .cta-actions) .btn-whatsapp-copy {
+      flex: 1;
     }
 
     .deinequelle-design-page .btn-whatsapp {
@@ -1334,16 +1350,6 @@ html:has(.deinequelle-design-root) {
       align-items: flex-start;
       gap: 0.8rem;
       margin-top: 1.2rem;
-    }
-
-    .deinequelle-design-page .svc-cta-stack .btn,
-    .deinequelle-design-page .svc-cta-stack .btn-whatsapp {
-      width: 100%;
-      max-width: 330px;
-      min-height: 52px;
-      box-sizing: border-box;
-      margin-top: 0;
-      justify-content: space-between;
     }
 
     .deinequelle-design-page .cta-action-stack {
@@ -4350,19 +4356,8 @@ html:has(.deinequelle-design-root) {
         margin-bottom: 2.5rem;
       }
 
-      .deinequelle-design-page .hero-cta-stack .hero-actions,
-      .deinequelle-design-page .hero-cta-stack .btn-primary,
-      .deinequelle-design-page .hero-cta-stack .btn-ghost,
-      .deinequelle-design-page .hero-cta-stack .btn-whatsapp,
-      .deinequelle-design-page .svc-cta-stack .btn,
-      .deinequelle-design-page .svc-cta-stack .btn-whatsapp {
-        width: 100% !important;
-        max-width: 100% !important;
-        min-height: 52px !important;
-        box-sizing: border-box !important;
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
+      .deinequelle-design-page {
+        --cta-pair-w: 100%;
       }
 
       .deinequelle-design-page .scroll-cue {
@@ -7034,7 +7029,6 @@ html:has(.deinequelle-design-root) {
   max-height: 520px;
   width: 100%;
   object-fit: cover;
-  object-position: 28% 30%;
 }
 
 .deinequelle-design-page #vision .svc-lead::before {

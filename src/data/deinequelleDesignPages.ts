@@ -990,10 +990,10 @@ export const designPages = {
         kicker: "Gesundheit beginnt mit Verbindung",
         title: "Mehr als die",
         titleEmphasis: "Abwesenheit von\nBeschwerden",
-        image: "/images/other/about_block_4.webp",
-        imageAlt: "Ruhige, natürliche Szene als Symbol für Verbundenheit und Gesundheit",
-        imageObjectPosition: "center center",
-        imageObjectPositionMobile: "center 32%",
+        image: "/images/other/gesundheit-verbindung-natur.webp",
+        imageAlt: "Frau sitzt barfuss an einem Baum und blickt auf einen ruhigen See",
+        imageObjectPosition: "32% center",
+        imageObjectPositionMobile: "32% center",
         lead:
           "Für mich bedeutet Gesundheit, dass ein Mensch sich wieder spürt, dem eigenen Körper zuhören kann und Zugang zu seinen Ressourcen findet.",
         body: [
@@ -1031,10 +1031,10 @@ export const designPages = {
         splitBodyFullWidth: true,
         kicker: "Meine Vision",
         title: "Gesund durch das optimale Zusammenspiel",
-        image: "/images/Claudia/claudia_dimmler_3.webp",
-        imageAlt: "Claudia Dimmler",
-        imageObjectPosition: "28% 38%",
-        imageObjectPositionMobile: "22% 34%",
+        image: "/images/Claudia/ueber-mich-weg-yoga-kinesiologie.webp",
+        imageAlt: "Claudia Dimmler sitzt ruhig am Fenster in ihrem Praxisraum",
+        imageObjectPosition: "62% center",
+        imageObjectPositionMobile: "62% center",
         lead:
           "Menschen natürlich und nachhaltig zurück zu ihrer Gesundheit und Kraft zu begleiten.",
         body: [

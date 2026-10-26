@@ -798,18 +798,22 @@ function FinalCta({ cta }: { cta?: DesignPageData["finalCta"] }) {
           </div>
           <div className="cta-right reveal d2">
             <div className="cta-actions">
-              <ContactAction
-                href={cta.primaryHref}
-                className="btn-dark"
-                target={cta.primaryExternal ? "_blank" : undefined}
-                rel={cta.primaryExternal ? "noopener noreferrer" : undefined}
-              >
-                {cta.primaryLabel}
-                {" "}
-                <span className="btn-pi" aria-hidden>
-                  ↗
-                </span>
-              </ContactAction>
+              {cta.primaryHref === site.whatsappUrl ? (
+                <WhatsappHeroButton />
+              ) : (
+                <ContactAction
+                  href={cta.primaryHref}
+                  className="btn-dark"
+                  target={cta.primaryExternal ? "_blank" : undefined}
+                  rel={cta.primaryExternal ? "noopener noreferrer" : undefined}
+                >
+                  {cta.primaryLabel}
+                  {" "}
+                  <span className="btn-pi" aria-hidden>
+                    ↗
+                  </span>
+                </ContactAction>
+              )}
               {cta.secondaryLabel && cta.secondaryHref ? (
                 <a
                   href={cta.secondaryHref}
